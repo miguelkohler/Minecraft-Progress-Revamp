@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "/": {
+      "item": "minecraft:stick"
+    },
+    "R": {
+      "item": "minecraftprogressrevamp:loose_pebble"
+    },
+    "X": {
+      "item": "minecraftprogressrevamp:sharp_pebble"
+    }
+  },
+  "pattern": [
+    "XRX",
+    " / ",
+    " / "
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:primitive_pickaxe"
+  }
+}

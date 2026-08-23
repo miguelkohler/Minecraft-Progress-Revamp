@@ -20,7 +20,8 @@ public class ModBlocks {
     public static final DeferredBlock<Block> PRIMITIVECRAFTINGTABLE = registerBlock("primitive_crafting_table",
             () -> new Block(BlockBehaviour.Properties.of().strength(2.5f).sound(SoundType.WOOD)));
 
-
+    public static final DeferredBlock<Block> RUDIMENTARYCRAFTINGTABLE = registerBlock("rudimentary_crafting_table",
+            () -> new Block(BlockBehaviour.Properties.of().strength(2.5f).requiresCorrectToolForDrops().sound(SoundType.WOOD)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block){
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

@@ -22,7 +22,21 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.LOOSEPEBBLE);
                         output.accept(ModItems.SHARPPEBBLE);
                         output.accept(ModItems.PRIMITIVEAXE);
+                        output.accept(ModItems.PRIMITIVEPICKAXE);
+                        output.accept(ModItems.PRIMITIVEHAMMER);
+                        output.accept(ModItems.PRIMITIVESHEARS);
+                        output.accept(ModItems.PRIMITIVESAW);
+                        output.accept(ModItems.STARTERTOOLBOX);
+                        output.accept(ModItems.WOODENHANDLE);
+                        output.accept(ModItems.COALPOWDER);
+                        output.accept(ModItems.FIRECLAY);
+                        output.accept(ModItems.UNREFINEDCRUCIBLE);
+                        output.accept(ModItems.REFINEDCRUCIBLE);
+
                         output.accept(ModBlocks.PRIMITIVECRAFTINGTABLE);
+                        output.accept(ModBlocks.RUDIMENTARYCRAFTINGTABLE);
+
+
                     }).build());
 
     public static void register(IEventBus eventbus) {

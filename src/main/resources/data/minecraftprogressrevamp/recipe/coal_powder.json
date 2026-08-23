@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:coal"
+    },
+    {
+      "item": "minecraftprogressrevamp:primitive_hammer"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:coal_powder"
+  }
+}

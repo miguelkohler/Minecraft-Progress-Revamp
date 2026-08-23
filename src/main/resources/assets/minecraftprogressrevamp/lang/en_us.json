@@ -2,8 +2,19 @@
   "item.minecraftprogressrevamp.loose_pebble": "Loose Pebble",
   "item.minecraftprogressrevamp.sharp_pebble": "Sharp Pebble",
   "item.minecraftprogressrevamp.primitive_axe": "Primitive Axe",
+  "item.minecraftprogressrevamp.primitive_pickaxe": "Primitive Pickaxe",
+  "item.minecraftprogressrevamp.primitive_hammer": "Primitive Hammer",
+  "item.minecraftprogressrevamp.primitive_shears": "Primitive Shears",
+  "item.minecraftprogressrevamp.primitive_saw": "Primitive Saw",
+  "item.minecraftprogressrevamp.wooden_handle": "Wooden Handle",
+  "item.minecraftprogressrevamp.fireclay": "Fireclay",
+  "item.minecraftprogressrevamp.coal_powder": "Coal Powder",
+  "item.minecraftprogressrevamp.unrefined_crucible": "Unrefined Crucible",
+  "item.minecraftprogressrevamp.refined_crucible": "Crucible",
+  "item.minecraftprogressrevamp.starter_toolbox": "Starter Toolbox",
 
   "block.minecraftprogressrevamp.primitive_crafting_table": "Primitive Crafting Table",
+  "block.minecraftprogressrevamp.rudimentary_crafting_table": "Rudimentary Crafting Table",
 
   "creativetab.minecraftprogressrevamp.primitive_items": "Primitive Items"
 }

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "misc",
+  "cookingtime": 1200,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "minecraftprogressrevamp:unrefined_crucible"
+  },
+  "result": {
+    "id": "minecraftprogressrevamp:refined_crucible"
+  }
+}
