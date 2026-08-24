@@ -32,9 +32,12 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.FIRECLAY);
                         output.accept(ModItems.UNREFINEDCRUCIBLE);
                         output.accept(ModItems.REFINEDCRUCIBLE);
+                        output.accept(ModItems.SALT);
 
                         output.accept(ModBlocks.PRIMITIVECRAFTINGTABLE);
                         output.accept(ModBlocks.RUDIMENTARYCRAFTINGTABLE);
+                        output.accept(ModBlocks.STEELCUTTER);
+                        output.accept(ModBlocks.CHARCOALBLOCK);
 
 
                     }).build());

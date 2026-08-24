@@ -11,10 +11,13 @@
   "item.minecraftprogressrevamp.coal_powder": "Coal Powder",
   "item.minecraftprogressrevamp.unrefined_crucible": "Unrefined Crucible",
   "item.minecraftprogressrevamp.refined_crucible": "Crucible",
+  "item.minecraftprogressrevamp.salt": "Salt",
   "item.minecraftprogressrevamp.starter_toolbox": "Starter Toolbox",
 
   "block.minecraftprogressrevamp.primitive_crafting_table": "Primitive Crafting Table",
   "block.minecraftprogressrevamp.rudimentary_crafting_table": "Rudimentary Crafting Table",
+  "block.minecraftprogressrevamp.steel_cutter": "Steel Cutter",
+  "block.minecraftprogressrevamp.charcoal_block": "Charcoal Block",
 
   "creativetab.minecraftprogressrevamp.primitive_items": "Primitive Items"
 }

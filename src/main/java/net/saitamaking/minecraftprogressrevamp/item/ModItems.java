@@ -49,7 +49,10 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> STARTERTOOLBOX = ITEMS.register("starter_toolbox",
-            () -> new StarterToolboxItem(new Item.Properties().durability(96).stacksTo(1)));
+            () -> new StarterToolboxItem(new Item.Properties().durability(96).stacksTo(1).component(DataComponents.TOOL, StarterToolboxItem.createToolProperties())));
+
+    public static final DeferredItem<Item> SALT = ITEMS.register("salt",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.SALT)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

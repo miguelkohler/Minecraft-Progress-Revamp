@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "down": "minecraftprogressrevamp:block/charcoal_block",
+    "east": "minecraftprogressrevamp:block/charcoal_block",
+    "north": "minecraftprogressrevamp:block/charcoal_block",
+    "particle": "minecraftprogressrevamp:block/charcoal_block",
+    "south": "minecraftprogressrevamp:block/charcoal_block",
+    "up": "minecraftprogressrevamp:block/charcoal_block",
+    "west": "minecraftprogressrevamp:block/charcoal_block"
+  }
+}

@@ -1,6 +1,6 @@
 {
+  "replace": false,
   "values": [
-    "minecraftprogressrevamp:steel_cutter",
     "minecraftprogressrevamp:charcoal_block"
   ]
 }
