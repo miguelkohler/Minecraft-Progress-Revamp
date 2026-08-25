@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "minecraftprogressrevamp:block/charcoal_block"
+    "all": "minecraftprogressrevamp:block/fireclay"
   }
 }

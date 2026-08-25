@@ -3,10 +3,10 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "minecraftprogressrevamp:loose_pebble"
+      "tag": "minecraftprogressrevamp:loose_pebbles"
     },
     {
-      "item": "minecraftprogressrevamp:loose_pebble"
+      "tag": "minecraftprogressrevamp:loose_pebbles"
     }
   ],
   "result": {

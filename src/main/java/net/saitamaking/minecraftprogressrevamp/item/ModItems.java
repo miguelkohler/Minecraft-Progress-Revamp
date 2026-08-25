@@ -36,7 +36,7 @@ public class ModItems {
     public static final DeferredItem<Item> WOODENHANDLE = ITEMS.register("wooden_handle",
             () -> new Item(new Item.Properties()));
 
-    public static final DeferredItem<Item> FIRECLAY = ITEMS.register("fireclay",
+    public static final DeferredItem<Item> FIRECLAYBALL = ITEMS.register("fireclay_ball",
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> COALPOWDER = ITEMS.register("coal_powder",
@@ -53,6 +53,12 @@ public class ModItems {
 
     public static final DeferredItem<Item> SALT = ITEMS.register("salt",
             () -> new Item(new Item.Properties().food(ModFoodProperties.SALT)));
+
+    public static final DeferredItem<Item> SALTEDBEEF = ITEMS.register("salted_beef",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.SALTEDBEEF)));
+
+    public static final DeferredItem<Item> SALTEDCOOKEDBEEF = ITEMS.register("salted_cooked_beef",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.SALTEDCOOKEDBEEF)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

@@ -30,6 +30,9 @@ public class ModBlocks {
     public static final DeferredBlock<Block> CHARCOALBLOCK = registerBlock("charcoal_block",
             () -> new Block(BlockBehaviour.Properties.of().requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.STONE)));
 
+    public static final DeferredBlock<Block> FIRECLAY = registerBlock("fireclay",
+            () -> new Block(BlockBehaviour.Properties.of().strength(0.6F).sound(SoundType.GRAVEL)));
+
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block){
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);

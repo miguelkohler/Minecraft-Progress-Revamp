@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "minecraftprogressrevamp:item/fireclay"
-  }
+  "parent": "minecraftprogressrevamp:block/fireclay"
 }
