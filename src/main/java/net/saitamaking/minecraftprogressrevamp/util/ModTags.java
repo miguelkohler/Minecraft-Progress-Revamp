@@ -20,6 +20,7 @@ public class ModTags {
     public static class Items {
 
         public static final TagKey<Item> LOOSE_PEBBLES = createTag("loose_pebbles");
+        public static final TagKey<Item> PRIMITIVE_TOOLS = createTag("primitive_tools");
 
         private static TagKey<Item> createTag(String name){
 

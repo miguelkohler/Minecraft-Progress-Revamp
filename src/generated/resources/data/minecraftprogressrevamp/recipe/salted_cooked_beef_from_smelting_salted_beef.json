@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.4,
+  "group": "salted_cooked_beef",
+  "ingredient": {
+    "item": "minecraftprogressrevamp:salted_beef"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:salted_cooked_beef"
+  }
+}

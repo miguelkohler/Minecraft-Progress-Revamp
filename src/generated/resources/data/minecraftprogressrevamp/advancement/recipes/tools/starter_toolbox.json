@@ -1,0 +1,76 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_leather": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:leather"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_primitive_hammer": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:primitive_hammer"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_primitive_saw": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:primitive_saw"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_primitive_shears": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:primitive_shears"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_string": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:string"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraftprogressrevamp:starter_toolbox"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_string",
+      "has_leather",
+      "has_primitive_saw",
+      "has_primitive_shears",
+      "has_primitive_hammer"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraftprogressrevamp:starter_toolbox"
+    ]
+  }
+}

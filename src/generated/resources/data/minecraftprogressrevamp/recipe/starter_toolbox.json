@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:leather"
+    },
+    "H": {
+      "item": "minecraftprogressrevamp:primitive_hammer"
+    },
+    "S": {
+      "item": "minecraft:string"
+    },
+    "U": {
+      "item": "minecraftprogressrevamp:primitive_shears"
+    },
+    "X": {
+      "item": "minecraftprogressrevamp:primitive_saw"
+    }
+  },
+  "pattern": [
+    "S S",
+    "X#H",
+    " U "
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:starter_toolbox"
+  }
+}
