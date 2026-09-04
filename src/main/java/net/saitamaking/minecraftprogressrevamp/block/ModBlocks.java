@@ -3,12 +3,14 @@ package net.saitamaking.minecraftprogressrevamp.block;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.CraftingTableBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.saitamaking.minecraftprogressrevamp.ProgressRevamp;
+import net.saitamaking.minecraftprogressrevamp.block.custom.PebbleBlock;
 import net.saitamaking.minecraftprogressrevamp.block.custom.SteelCutterBlock;
 import net.saitamaking.minecraftprogressrevamp.item.ModItems;
 
@@ -32,6 +34,9 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> FIRECLAY = registerBlock("fireclay",
             () -> new Block(BlockBehaviour.Properties.of().strength(0.6F).sound(SoundType.GRAVEL)));
+
+    public static final DeferredBlock<Block> PEBBLE = registerBlock("pebble",
+            () -> new PebbleBlock(BlockBehaviour.Properties.of().strength(0.1F).sound(SoundType.STONE)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block){
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

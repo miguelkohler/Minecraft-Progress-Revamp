@@ -25,6 +25,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 ModItems.SALTEDBEEF
         );
 
+        List<ItemLike> UNREFINED_CRUCIBLES = List.of(
+                ModItems.UNREFINEDCRUCIBLE
+        );
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CHARCOALBLOCK.get())
                 .pattern("###")
                 .pattern("###")
@@ -216,9 +220,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_primitive_hammer", has(ModItems.PRIMITIVEHAMMER))
                 .save(recipeOutput);
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.PEBBLE.get())
+                .requires(ModItems.LOOSEPEBBLE)
+                .unlockedBy("has_loose_pebble", has(ModItems.LOOSEPEBBLE))
+                .save(recipeOutput);
+
         oreSmelting(recipeOutput, SALTED_BEEF_INGREDIENT, RecipeCategory.FOOD, ModItems.SALTEDCOOKEDBEEF.get(), 0.4f, 200, "salted_cooked_beef");
 
         campfireCooking(recipeOutput, SALTED_BEEF_INGREDIENT,RecipeCategory.FOOD, ModItems.SALTEDCOOKEDBEEF.get(), 0.4f, 600, "salted_cooked_beef");
+
+        campfireCooking(recipeOutput, UNREFINED_CRUCIBLES,RecipeCategory.MISC, ModItems.REFINEDCRUCIBLE.get(), 0.5f, 1200, "refined_crucible");
     }
 
     protected static void oreSmelting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,

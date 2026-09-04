@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraftprogressrevamp:refined_crucible_from_campfire_cooking_unrefined_crucible"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_unrefined_crucible": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:unrefined_crucible"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_unrefined_crucible"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraftprogressrevamp:refined_crucible_from_campfire_cooking_unrefined_crucible"
+    ]
+  }
+}

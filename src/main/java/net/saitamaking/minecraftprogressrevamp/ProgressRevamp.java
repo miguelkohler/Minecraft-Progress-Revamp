@@ -1,6 +1,7 @@
 package net.saitamaking.minecraftprogressrevamp;
 
 import net.saitamaking.minecraftprogressrevamp.block.ModBlocks;
+import net.saitamaking.minecraftprogressrevamp.component.ModDataComponents;
 import net.saitamaking.minecraftprogressrevamp.item.ModCreativeModeTabs;
 import net.saitamaking.minecraftprogressrevamp.item.ModItems;
 import org.slf4j.Logger;
@@ -51,6 +52,8 @@ public class ProgressRevamp {
         NeoForge.EVENT_BUS.register(this);
 
         ModCreativeModeTabs.register(modEventBus);
+
+        ModDataComponents.register(modEventBus);
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);

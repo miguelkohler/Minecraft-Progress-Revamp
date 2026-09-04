@@ -36,6 +36,9 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         add(ModBlocks.FIRECLAY.get(),
                 block -> createExactDrops(ModBlocks.FIRECLAY.get(), ModItems.FIRECLAYBALL.get(), 4));
 
+        add(ModBlocks.PEBBLE.get(),
+                block -> createExactDrops(ModBlocks.PEBBLE.get(), ModItems.LOOSEPEBBLE.get(), 1));
+
         dropWhenSilkTouch(ModBlocks.FIRECLAY.get());
     }
 

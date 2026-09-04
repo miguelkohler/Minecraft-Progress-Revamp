@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraftprogressrevamp:loose_pebble"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:pebble"
+  }
+}

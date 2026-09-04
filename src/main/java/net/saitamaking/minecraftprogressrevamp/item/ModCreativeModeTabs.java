@@ -19,6 +19,7 @@ public class ModCreativeModeTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.PRIMITIVEAXE.get()))
                     .title(Component.translatable("creativetab.minecraftprogressrevamp.primitive_items"))
                     .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModBlocks.PEBBLE);
                         output.accept(ModItems.LOOSEPEBBLE);
                         output.accept(ModItems.SHARPPEBBLE);
                         output.accept(ModItems.PRIMITIVEAXE);
