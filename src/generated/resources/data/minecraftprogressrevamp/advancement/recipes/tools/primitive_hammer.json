@@ -11,6 +11,16 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_loose_pebble": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:loose_pebble"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_stick": {
       "conditions": {
         "items": [
@@ -32,7 +42,8 @@
     [
       "has_the_recipe",
       "has_stick",
-      "has_cobblestone"
+      "has_cobblestone",
+      "has_loose_pebble"
     ]
   ],
   "rewards": {

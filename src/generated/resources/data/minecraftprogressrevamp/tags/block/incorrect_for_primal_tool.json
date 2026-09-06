@@ -1,0 +1,11 @@
+{
+  "remove": [
+    "#minecraftprogressrevamp:needs_primal_tools"
+  ],
+  "values": [
+    "#minecraft:needs_stone_tool",
+    "#minecraft:needs_iron_tool",
+    "#minecraft:needs_diamond_tool",
+    "minecraft:crafting_table"
+  ]
+}

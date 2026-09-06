@@ -10,6 +10,8 @@ import net.saitamaking.minecraftprogressrevamp.ProgressRevamp;
 
 public class ModTags {
     public static class Blocks {
+        public static TagKey<Block> NEEDS_PRIMAL_TOOLS = createTag("needs_primal_tools");
+        public static TagKey<Block> INCORRECT_FOR_PRIMAL_TOOL = createTag("incorrect_for_primal_tool");
 
         private static TagKey<Block> createTag(String name){
 

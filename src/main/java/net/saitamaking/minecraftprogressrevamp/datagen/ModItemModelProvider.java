@@ -17,17 +17,17 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.COALPOWDER.get());
         basicItem(ModItems.LOOSEPEBBLE.get());
         basicItem(ModItems.FIRECLAYBALL.get());
-        basicItem(ModItems.PRIMITIVEAXE.get());
-        basicItem(ModItems.PRIMITIVEHAMMER.get());
-        basicItem(ModItems.PRIMITIVEPICKAXE.get());
-        basicItem(ModItems.PRIMITIVESAW.get());
-        basicItem(ModItems.PRIMITIVESHEARS.get());
-        basicItem(ModItems.REFINEDCRUCIBLE.get());
+        handheldItem(ModItems.PRIMITIVEAXE.get());
+        handheldItem(ModItems.PRIMITIVEHAMMER.get());
+        handheldItem(ModItems.PRIMITIVEPICKAXE.get());
+        handheldItem(ModItems.PRIMITIVESAW.get());
+        handheldItem(ModItems.PRIMITIVESHEARS.get());
+        handheldItem(ModItems.REFINEDCRUCIBLE.get());
         basicItem(ModItems.SALT.get());
         basicItem(ModItems.SALTEDBEEF.get());
         basicItem(ModItems.SALTEDCOOKEDBEEF.get());
         basicItem(ModItems.SHARPPEBBLE.get());
-        basicItem(ModItems.STARTERTOOLBOX.get());
+        handheldItem(ModItems.STARTERTOOLBOX.get());
         basicItem(ModItems.UNREFINEDCRUCIBLE.get());
         basicItem(ModItems.WOODENHANDLE.get());
     }

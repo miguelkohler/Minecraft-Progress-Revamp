@@ -3,6 +3,7 @@ package net.saitamaking.minecraftprogressrevamp.datagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
@@ -96,13 +97,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput, "minecraftprogressrevamp:coal_powder_2");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.PRIMITIVEHAMMER.get())
-                .pattern("#/#")
+                .pattern("#O#")
                 .pattern("#/#")
                 .pattern(" / ")
                 .define('#', Items.COBBLESTONE)
                 .define('/', Items.STICK)
+                .define('O', ModItems.LOOSEPEBBLE)
                 .unlockedBy("has_stick", has(Items.STICK))
                 .unlockedBy("has_cobblestone", has(Items.COBBLESTONE))
+                .unlockedBy("has_loose_pebble", has(ModItems.LOOSEPEBBLE))
                 .save(recipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.PRIMITIVEPICKAXE.get())

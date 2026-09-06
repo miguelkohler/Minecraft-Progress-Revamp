@@ -1,6 +1,7 @@
 {
   "values": [
     "minecraftprogressrevamp:steel_cutter",
+    "minecraft:crafting_table",
     "minecraftprogressrevamp:charcoal_block"
   ]
 }

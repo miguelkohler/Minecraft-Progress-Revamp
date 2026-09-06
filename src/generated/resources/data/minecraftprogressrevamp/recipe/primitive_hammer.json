@@ -7,10 +7,13 @@
     },
     "/": {
       "item": "minecraft:stick"
+    },
+    "O": {
+      "item": "minecraftprogressrevamp:loose_pebble"
     }
   },
   "pattern": [
-    "#/#",
+    "#O#",
     "#/#",
     " / "
   ],

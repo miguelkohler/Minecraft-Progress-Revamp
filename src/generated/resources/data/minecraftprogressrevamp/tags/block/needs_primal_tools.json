@@ -1,0 +1,18 @@
+{
+  "remove": [
+    "minecraft:crafting_table"
+  ],
+  "values": [
+    "#minecraft:mineable/axe",
+    "#minecraft:planks",
+    "#minecraft:logs",
+    "#minecraft:all_signs",
+    "#minecraft:wooden_doors",
+    "#minecraft:wooden_fences",
+    "#minecraft:wooden_slabs",
+    "#minecraft:wooden_stairs",
+    "#minecraft:wooden_trapdoors",
+    "minecraftprogressrevamp:primitive_crafting_table",
+    "minecraftprogressrevamp:rudimentary_crafting_table"
+  ]
+}
