@@ -1,0 +1,20 @@
+{
+  "type": "minecraftprogressrevamp:durability_shaped",
+  "key": {
+    "#": {
+      "tag": "minecraftprogressrevamp:all_the_wood_item"
+    },
+    "V": {
+      "tag": "minecraftprogressrevamp:saws"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "#V ",
+    "   "
+  ],
+  "result": {
+    "count": 16,
+    "id": "minecraft:stick"
+  }
+}

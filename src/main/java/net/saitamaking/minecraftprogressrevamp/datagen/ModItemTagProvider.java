@@ -3,6 +3,7 @@ package net.saitamaking.minecraftprogressrevamp.datagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -38,6 +39,19 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.PRIMITIVESAW.get());
         tag(ItemTags.PICKAXES)
                 .add(ModItems.PRIMITIVEPICKAXE.get());
+        tag(ModTags.Items.SAWS)
+                .add(ModItems.PRIMITIVESAW.get());
+        tag(ModTags.Items.ALLTHEWOODITEM)
+                .addTag(ItemTags.ACACIA_LOGS)
+                .addTag(ItemTags.BIRCH_LOGS)
+                .addTag(ItemTags.SPRUCE_LOGS)
+                .addTag(ItemTags.DARK_OAK_LOGS)
+                .addTag(ItemTags.MANGROVE_LOGS)
+                .addTag(ItemTags.CHERRY_LOGS)
+                .addTag(ItemTags.JUNGLE_LOGS)
+                .addTag(ItemTags.WARPED_STEMS)
+                .addTag(ItemTags.CRIMSON_STEMS)
+                .addTag(ItemTags.OAK_LOGS);
 
     }
 }

@@ -1,9 +1,12 @@
 package net.saitamaking.minecraftprogressrevamp.datagen;
 
+import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
@@ -11,9 +14,14 @@ import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import net.saitamaking.minecraftprogressrevamp.ProgressRevamp;
 import net.saitamaking.minecraftprogressrevamp.block.ModBlocks;
 import net.saitamaking.minecraftprogressrevamp.item.ModItems;
+import net.saitamaking.minecraftprogressrevamp.item.crafting.ModCustomCraftingShaped;
+import net.saitamaking.minecraftprogressrevamp.item.crafting.ModCustomCraftingShapeless;
+import net.saitamaking.minecraftprogressrevamp.util.ModTags;
 
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.CompletableFuture;
+import java.util.function.Consumer;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
     public ModRecipeProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
@@ -82,7 +90,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_coal_powder", has(ModItems.COALPOWDER))
                 .save(recipeOutput);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.COALPOWDER.get())
+        /*ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.COALPOWDER.get())
                 .requires(Items.COAL)
                 .requires(ModItems.PRIMITIVEHAMMER)
                 .unlockedBy("has_coal", has(Items.COAL))
@@ -95,7 +103,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_charcoal", has(Items.CHARCOAL))
                 .unlockedBy("has_primitive_hammer", has(ModItems.PRIMITIVEHAMMER))
                 .save(recipeOutput, "minecraftprogressrevamp:coal_powder_2");
-
+        */
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.PRIMITIVEHAMMER.get())
                 .pattern("#O#")
                 .pattern("#/#")
@@ -227,6 +235,55 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModItems.LOOSEPEBBLE)
                 .unlockedBy("has_loose_pebble", has(ModItems.LOOSEPEBBLE))
                 .save(recipeOutput);
+
+        ShapedRecipePattern Mod_shaped_pattern1 = ShapedRecipePattern.of(
+                Map.of(
+                        '#', Ingredient.of(ModTags.Items.ALLTHEWOODITEM),
+                        'V', Ingredient.of(ModTags.Items.SAWS)
+                ),
+                List.of(
+                        "#  ",
+                        "#V ",
+                        "   "
+                )
+        );
+
+        ModCustomCraftingShaped Mod_shaped_recipe1 = new ModCustomCraftingShaped(
+                "",
+                CraftingBookCategory.MISC,
+                Mod_shaped_pattern1,
+                new ItemStack(Items.STICK, 16)
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "logs_to_sticks_with_saw"),
+                Mod_shaped_recipe1,
+                recipeOutput.advancement()
+                        .addCriterion("has_oak_log", RecipeProvider.has(Items.OAK_LOG))
+                        .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "logs_to_sticks_with_saw").withPrefix("recipes/"))
+        );
+
+        List<Ingredient> Mod_shapeless_ingredients1 = List.of(
+                Ingredient.of(Items.COAL),
+                Ingredient.of(ModItems.PRIMITIVEHAMMER.get())
+        );
+
+        ModCustomCraftingShapeless Mod_shapeless_recipe1 = new ModCustomCraftingShapeless(
+                "",
+                CraftingBookCategory.MISC,
+                new ItemStack(ModItems.COALPOWDER.get(), 2),
+                Mod_shapeless_ingredients1
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "coal_powder"),
+                Mod_shapeless_recipe1,
+                recipeOutput.advancement()
+                        .addCriterion("has_coal", RecipeProvider.has(Items.COAL))
+                        .addCriterion("has_primitive_hammer", RecipeProvider.has(ModItems.PRIMITIVEHAMMER.get()))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "coal_powder").withPrefix("recipes/"))
+        );
 
         oreSmelting(recipeOutput, SALTED_BEEF_INGREDIENT, RecipeCategory.FOOD, ModItems.SALTEDCOOKEDBEEF.get(), 0.4f, 200, "salted_cooked_beef");
 

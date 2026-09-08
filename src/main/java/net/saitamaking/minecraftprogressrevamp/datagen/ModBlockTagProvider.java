@@ -54,5 +54,33 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .addTag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(Blocks.CRAFTING_TABLE)
                 .remove(ModTags.Blocks.NEEDS_PRIMAL_TOOLS);
+
+        tag(ModTags.Blocks.STRIPPEDLOGS)
+                .add(Blocks.STRIPPED_ACACIA_LOG)
+                .add(Blocks.STRIPPED_BIRCH_LOG)
+                .add(Blocks.STRIPPED_SPRUCE_LOG)
+                .add(Blocks.STRIPPED_OAK_LOG)
+                .add(Blocks.STRIPPED_DARK_OAK_LOG)
+                .add(Blocks.STRIPPED_MANGROVE_LOG)
+                .add(Blocks.STRIPPED_CHERRY_LOG)
+                .add(Blocks.STRIPPED_JUNGLE_LOG)
+                .add(Blocks.STRIPPED_WARPED_STEM)
+                .add(Blocks.STRIPPED_CRIMSON_STEM);
+
+        tag(ModTags.Blocks.ALLTHELOGS)
+                .addTag(ModTags.Blocks.STRIPPEDLOGS)
+                .addTag(BlockTags.LOGS);
+
+        tag(ModTags.Blocks.ALLTHEWOOD)
+                .addTag(BlockTags.ACACIA_LOGS)
+                .addTag(BlockTags.BIRCH_LOGS)
+                .addTag(BlockTags.SPRUCE_LOGS)
+                .addTag(BlockTags.DARK_OAK_LOGS)
+                .addTag(BlockTags.MANGROVE_LOGS)
+                .addTag(BlockTags.CHERRY_LOGS)
+                .addTag(BlockTags.JUNGLE_LOGS)
+                .addTag(BlockTags.WARPED_STEMS)
+                .addTag(BlockTags.CRIMSON_STEMS)
+                .addTag(BlockTags.OAK_LOGS);
     }
 }

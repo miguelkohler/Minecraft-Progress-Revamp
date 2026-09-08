@@ -12,6 +12,9 @@ public class ModTags {
     public static class Blocks {
         public static TagKey<Block> NEEDS_PRIMAL_TOOLS = createTag("needs_primal_tools");
         public static TagKey<Block> INCORRECT_FOR_PRIMAL_TOOL = createTag("incorrect_for_primal_tool");
+        public static TagKey<Block> STRIPPEDLOGS = createTag("stripped_logs");
+        public static TagKey<Block> ALLTHELOGS = createTag("all_the_logs");
+        public static TagKey<Block> ALLTHEWOOD = createTag("all_the_wood");
 
         private static TagKey<Block> createTag(String name){
 
@@ -23,6 +26,8 @@ public class ModTags {
 
         public static final TagKey<Item> LOOSE_PEBBLES = createTag("loose_pebbles");
         public static final TagKey<Item> PRIMITIVE_TOOLS = createTag("primitive_tools");
+        public static final TagKey<Item> SAWS = createTag("saws");
+        public static final TagKey<Item> ALLTHEWOODITEM = createTag("all_the_wood_item");
 
         private static TagKey<Item> createTag(String name){
 
