@@ -6,6 +6,9 @@
     "minecraftprogressrevamp:primitive_saw",
     "minecraftprogressrevamp:primitive_pickaxe",
     "minecraftprogressrevamp:starter_toolbox",
+    "minecraftprogressrevamp:primitive_knife",
+    "minecraftprogressrevamp:ceramic_bucket",
+    "minecraftprogressrevamp:water_ceramic_bucket",
     "minecraftprogressrevamp:primitive_shears"
   ]
 }

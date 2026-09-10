@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_animal_hide": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:animal_hide"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_straw_string": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:straw_string"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraftprogressrevamp:hide_shorts"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_animal_hide",
+      "has_straw_string"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraftprogressrevamp:hide_shorts"
+    ]
+  }
+}

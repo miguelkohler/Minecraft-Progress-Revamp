@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraftprogressrevamp:animal_hide"
+    },
+    "S": {
+      "item": "minecraftprogressrevamp:straw_string"
+    },
+    "W": {
+      "tag": "minecraft:wool"
+    }
+  },
+  "pattern": [
+    "   ",
+    "WSW",
+    "#S#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:hide_boots"
+  }
+}

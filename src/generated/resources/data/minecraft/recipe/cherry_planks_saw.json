@@ -1,0 +1,15 @@
+{
+  "type": "minecraftprogressrevamp:durability_shapeless",
+  "ingredients": [
+    {
+      "tag": "minecraft:cherry_logs"
+    },
+    {
+      "tag": "minecraftprogressrevamp:saws"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "minecraft:cherry_planks"
+  }
+}

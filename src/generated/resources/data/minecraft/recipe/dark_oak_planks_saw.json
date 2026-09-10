@@ -1,0 +1,15 @@
+{
+  "type": "minecraftprogressrevamp:durability_shapeless",
+  "ingredients": [
+    {
+      "tag": "minecraft:dark_oak_logs"
+    },
+    {
+      "tag": "minecraftprogressrevamp:saws"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "minecraft:dark_oak_planks"
+  }
+}

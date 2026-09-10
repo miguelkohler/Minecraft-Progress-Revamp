@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "minecraftprogressrevamp:item/water_ceramic_bucket"
+  }
+}

@@ -32,6 +32,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.STEELCUTTER.get())
                 .add(Blocks.CRAFTING_TABLE)
+                .add(Blocks.COAL_ORE)
                 .add(ModBlocks.CHARCOALBLOCK.get());
         tag(ModTags.Blocks.NEEDS_PRIMAL_TOOLS)
                 .addTag(BlockTags.MINEABLE_WITH_AXE)

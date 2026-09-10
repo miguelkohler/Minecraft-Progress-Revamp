@@ -5,6 +5,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
@@ -33,6 +34,9 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.PRIMITIVESAW.get())
                 .add(ModItems.PRIMITIVEPICKAXE.get())
                 .add(ModItems.STARTERTOOLBOX.get())
+                .add(ModItems.PRIMITIVEKNIFE.get())
+                .add(ModItems.CERAMICBUCKET.get())
+                .add(ModItems.WATER_CERAMICBUCKET.get())
                 .add(ModItems.PRIMITIVESHEARS.get());
         tag(ItemTags.AXES)
                 .add(ModItems.PRIMITIVEAXE.get())
@@ -43,6 +47,11 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.PRIMITIVESAW.get());
         tag(ModTags.Items.HAMMERS)
                 .add(ModItems.PRIMITIVEHAMMER.get());
+        tag(ModTags.Items.KNIVES)
+                .add(ModItems.PRIMITIVEKNIFE.get());
+        tag(ModTags.Items.WATERCONTAINERS)
+                .add(Items.WATER_BUCKET)
+                .add(ModItems.WATER_CERAMICBUCKET.get());
         tag(ModTags.Items.ALLTHEWOODITEM)
                 .addTag(ItemTags.ACACIA_LOGS)
                 .addTag(ItemTags.BIRCH_LOGS)

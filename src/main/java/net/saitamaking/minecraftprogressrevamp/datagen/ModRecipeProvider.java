@@ -1,19 +1,15 @@
 package net.saitamaking.minecraftprogressrevamp.datagen;
 
-import net.minecraft.advancements.AdvancementHolder;
-import net.minecraft.advancements.Criterion;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import net.saitamaking.minecraftprogressrevamp.ProgressRevamp;
 import net.saitamaking.minecraftprogressrevamp.block.ModBlocks;
@@ -25,7 +21,6 @@ import net.saitamaking.minecraftprogressrevamp.util.ModTags;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
-import java.util.function.Consumer;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
     public ModRecipeProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
@@ -36,6 +31,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     protected void buildRecipes(RecipeOutput recipeOutput) {
         List<ItemLike> SALTED_BEEF_INGREDIENT = List.of(
                 ModItems.SALTEDBEEF
+        );
+
+        List<ItemLike> CERAMIC_BUCKET_INGREDIENTS = List.of(
+                ModItems.UNFIREDCLAYBUCKET
         );
 
         List<ItemLike> UNREFINED_CRUCIBLES = List.of(
@@ -194,6 +193,54 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_sharp_pebble", has(ModItems.SHARPPEBBLE))
                 .save(recipeOutput, "minecraftprogressrevamp:primitive_shears_4");
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.HIDEVEST.get())
+                .pattern("SS#")
+                .pattern("S##")
+                .pattern("###")
+                .define('#', ModItems.ANIMALHIDE)
+                .define('S', ModItems.STRAWSTRING)
+                .unlockedBy("has_animal_hide", has(ModItems.ANIMALHIDE))
+                .unlockedBy("has_straw_string", has(ModItems.STRAWSTRING))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.HIDESHORTS.get())
+                .pattern("S S")
+                .pattern("###")
+                .pattern("# #")
+                .define('#', ModItems.ANIMALHIDE)
+                .define('S', ModItems.STRAWSTRING)
+                .unlockedBy("has_animal_hide", has(ModItems.ANIMALHIDE))
+                .unlockedBy("has_straw_string", has(ModItems.STRAWSTRING))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.HIDEBOOTS.get())
+                .pattern("   ")
+                .pattern("WSW")
+                .pattern("#S#")
+                .define('W', ItemTags.WOOL)
+                .define('#', ModItems.ANIMALHIDE)
+                .define('S', ModItems.STRAWSTRING)
+                .unlockedBy("has_animal_hide", has(ModItems.ANIMALHIDE))
+                .unlockedBy("has_wool", has(ItemTags.WOOL))
+                .unlockedBy("has_straw_string", has(ModItems.STRAWSTRING))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.UNFIREDCLAYBUCKET.get())
+                .pattern("   ")
+                .pattern("# #")
+                .pattern(" # ")
+                .define('#', Items.CLAY_BALL)
+                .unlockedBy("has_clay_ball", has(Items.CLAY_BALL))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.STRAWSTRING.get())
+                .pattern("  #")
+                .pattern("# #")
+                .pattern(" # ")
+                .define('#', ModItems.STRAW)
+                .unlockedBy("has_straw", has(ModItems.STRAW))
+                .save(recipeOutput);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.UNREFINEDCRUCIBLE.get())
                 .pattern("# #")
                 .pattern("# #")
@@ -267,7 +314,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_warped_stems", has(ItemTags.WARPED_STEMS))
                 .save(recipeOutput);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, Items.BAMBOO_PLANKS, 1)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, Items.BAMBOO_PLANKS)
                 .requires(ItemTags.BAMBOO_BLOCKS)
                 .unlockedBy("has_bamboo_blocks", has(ItemTags.BAMBOO_BLOCKS))
                 .save(recipeOutput);
@@ -293,6 +340,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_primitive_saw", has(ModItems.PRIMITIVESAW))
                 .unlockedBy("has_primitive_shears", has(ModItems.PRIMITIVESHEARS))
                 .unlockedBy("has_primitive_hammer", has(ModItems.PRIMITIVEHAMMER))
+                .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.LEATHER)
+                .requires(ModItems.SCRAPEDANIMALHIDE)
+                .requires(ModItems.TREEBARK)
+                .requires(ModTags.Items.WATERCONTAINERS)
+                .unlockedBy("has_scraped_animal_hide", has(ModItems.SCRAPEDANIMALHIDE))
+                .unlockedBy("has_tree_bark", has(ModItems.TREEBARK))
+                .unlockedBy("has_water_container", has(ModTags.Items.WATERCONTAINERS))
                 .save(recipeOutput);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.PEBBLE.get())
@@ -355,6 +411,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
                         .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "planks_to_sticks_with_saw").withPrefix("recipes/"))
         );
+
 
         List<Ingredient> Mod_shapeless_ingredients1 = List.of(
                 Ingredient.of(Items.COAL),
@@ -818,9 +875,244 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         .build(ResourceLocation.fromNamespaceAndPath("minecraft", "stripped_warped_hyphae").withPrefix("recipes/"))
         );
 
+        List<Ingredient> Mod_shapeless_ingredients23 = List.of(
+                Ingredient.of(ModItems.ANIMALHIDE),
+                Ingredient.of(ModTags.Items.KNIVES)
+        );
+
+        ModCustomCraftingShapeless Mod_shapeless_recipe23 = new ModCustomCraftingShapeless(
+                "",
+                CraftingBookCategory.MISC,
+                new ItemStack(ModItems.SCRAPEDANIMALHIDE.get()),
+                Mod_shapeless_ingredients23
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "scraped_animal_hide"),
+                Mod_shapeless_recipe23,
+                recipeOutput.advancement()
+                        .addCriterion("has_animal_hide", RecipeProvider.has(ModItems.ANIMALHIDE))
+                        .addCriterion("has_knife", RecipeProvider.has(ModTags.Items.KNIVES))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "scraped_animal_hide").withPrefix("recipes/"))
+        );
+
+        List<Ingredient> Mod_shapeless_ingredients24 = List.of(
+                Ingredient.of(ItemTags.OAK_LOGS),
+                Ingredient.of(ModTags.Items.SAWS)
+        );
+
+        ModCustomCraftingShapeless Mod_shapeless_recipe24 = new ModCustomCraftingShapeless(
+                "",
+                CraftingBookCategory.MISC,
+                new ItemStack(Items.OAK_PLANKS, 4),
+                Mod_shapeless_ingredients24
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath("minecraft", "oak_planks_saw"),
+                Mod_shapeless_recipe24,
+                recipeOutput.advancement()
+                        .addCriterion("has_oak_logs", RecipeProvider.has(ItemTags.OAK_LOGS))
+                        .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
+                        .build(ResourceLocation.fromNamespaceAndPath("minecraft", "oak_planks_saw").withPrefix("recipes/"))
+        );
+
+        List<Ingredient> Mod_shapeless_ingredients25 = List.of(
+                Ingredient.of(ItemTags.DARK_OAK_LOGS),
+                Ingredient.of(ModTags.Items.SAWS)
+        );
+
+        ModCustomCraftingShapeless Mod_shapeless_recipe25 = new ModCustomCraftingShapeless(
+                "",
+                CraftingBookCategory.MISC,
+                new ItemStack(Items.DARK_OAK_PLANKS, 4),
+                Mod_shapeless_ingredients25
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath("minecraft", "dark_oak_planks_saw"),
+                Mod_shapeless_recipe25,
+                recipeOutput.advancement()
+                        .addCriterion("has_dark_oak_logs", RecipeProvider.has(ItemTags.DARK_OAK_LOGS))
+                        .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
+                        .build(ResourceLocation.fromNamespaceAndPath("minecraft", "dark_oak_planks_saw").withPrefix("recipes/"))
+        );
+
+        List<Ingredient> Mod_shapeless_ingredients26 = List.of(
+                Ingredient.of(ItemTags.SPRUCE_LOGS),
+                Ingredient.of(ModTags.Items.SAWS)
+        );
+
+        ModCustomCraftingShapeless Mod_shapeless_recipe26 = new ModCustomCraftingShapeless(
+                "",
+                CraftingBookCategory.MISC,
+                new ItemStack(Items.BIRCH_PLANKS, 4),
+                Mod_shapeless_ingredients26
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath("minecraft", "birch_planks_saw"),
+                Mod_shapeless_recipe26,
+                recipeOutput.advancement()
+                        .addCriterion("has_birch_logs", RecipeProvider.has(ItemTags.BIRCH_LOGS))
+                        .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
+                        .build(ResourceLocation.fromNamespaceAndPath("minecraft", "birch_planks_saw").withPrefix("recipes/"))
+        );
+
+        List<Ingredient> Mod_shapeless_ingredients27 = List.of(
+                Ingredient.of(ItemTags.JUNGLE_LOGS),
+                Ingredient.of(ModTags.Items.SAWS)
+        );
+
+        ModCustomCraftingShapeless Mod_shapeless_recipe27 = new ModCustomCraftingShapeless(
+                "",
+                CraftingBookCategory.MISC,
+                new ItemStack(Items.JUNGLE_PLANKS, 4),
+                Mod_shapeless_ingredients27
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath("minecraft", "jungle_planks_saw"),
+                Mod_shapeless_recipe27,
+                recipeOutput.advancement()
+                        .addCriterion("has_jungle_logs", RecipeProvider.has(ItemTags.JUNGLE_LOGS))
+                        .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
+                        .build(ResourceLocation.fromNamespaceAndPath("minecraft", "jungle_planks_saw").withPrefix("recipes/"))
+        );
+
+        List<Ingredient> Mod_shapeless_ingredients28 = List.of(
+                Ingredient.of(ItemTags.ACACIA_LOGS),
+                Ingredient.of(ModTags.Items.SAWS)
+        );
+
+        ModCustomCraftingShapeless Mod_shapeless_recipe28 = new ModCustomCraftingShapeless(
+                "",
+                CraftingBookCategory.MISC,
+                new ItemStack(Items.ACACIA_PLANKS, 4),
+                Mod_shapeless_ingredients28
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath("minecraft", "acacia_planks_saw"),
+                Mod_shapeless_recipe28,
+                recipeOutput.advancement()
+                        .addCriterion("has_acacia_logs", RecipeProvider.has(ItemTags.ACACIA_LOGS))
+                        .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
+                        .build(ResourceLocation.fromNamespaceAndPath("minecraft", "acacia_planks_saw").withPrefix("recipes/"))
+        );
+
+        List<Ingredient> Mod_shapeless_ingredients29 = List.of(
+                Ingredient.of(ItemTags.MANGROVE_LOGS),
+                Ingredient.of(ModTags.Items.SAWS)
+        );
+
+        ModCustomCraftingShapeless Mod_shapeless_recipe29 = new ModCustomCraftingShapeless(
+                "",
+                CraftingBookCategory.MISC,
+                new ItemStack(Items.MANGROVE_PLANKS, 4),
+                Mod_shapeless_ingredients29
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath("minecraft", "mangrove_planks_saw"),
+                Mod_shapeless_recipe29,
+                recipeOutput.advancement()
+                        .addCriterion("has_mangrove_logs", RecipeProvider.has(ItemTags.MANGROVE_LOGS))
+                        .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
+                        .build(ResourceLocation.fromNamespaceAndPath("minecraft", "mangrove_planks_saw").withPrefix("recipes/"))
+        );
+
+        List<Ingredient> Mod_shapeless_ingredients30 = List.of(
+                Ingredient.of(ItemTags.CHERRY_LOGS),
+                Ingredient.of(ModTags.Items.SAWS)
+        );
+
+        ModCustomCraftingShapeless Mod_shapeless_recipe30 = new ModCustomCraftingShapeless(
+                "",
+                CraftingBookCategory.MISC,
+                new ItemStack(Items.CHERRY_PLANKS, 4),
+                Mod_shapeless_ingredients30
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath("minecraft", "cherry_planks_saw"),
+                Mod_shapeless_recipe30,
+                recipeOutput.advancement()
+                        .addCriterion("has_cherry_logs", RecipeProvider.has(ItemTags.CHERRY_LOGS))
+                        .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
+                        .build(ResourceLocation.fromNamespaceAndPath("minecraft", "cherry_planks_saw").withPrefix("recipes/"))
+        );
+
+        List<Ingredient> Mod_shapeless_ingredients31 = List.of(
+                Ingredient.of(ItemTags.CRIMSON_STEMS),
+                Ingredient.of(ModTags.Items.SAWS)
+        );
+
+        ModCustomCraftingShapeless Mod_shapeless_recipe31 = new ModCustomCraftingShapeless(
+                "",
+                CraftingBookCategory.MISC,
+                new ItemStack(Items.CRIMSON_PLANKS, 4),
+                Mod_shapeless_ingredients31
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath("minecraft", "crimson_planks_saw"),
+                Mod_shapeless_recipe31,
+                recipeOutput.advancement()
+                        .addCriterion("has_crimson_stem", RecipeProvider.has(ItemTags.CRIMSON_STEMS))
+                        .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
+                        .build(ResourceLocation.fromNamespaceAndPath("minecraft", "crimson_planks_saw").withPrefix("recipes/"))
+        );
+
+        List<Ingredient> Mod_shapeless_ingredients32 = List.of(
+                Ingredient.of(ItemTags.WARPED_STEMS),
+                Ingredient.of(ModTags.Items.SAWS)
+        );
+
+        ModCustomCraftingShapeless Mod_shapeless_recipe32 = new ModCustomCraftingShapeless(
+                "",
+                CraftingBookCategory.MISC,
+                new ItemStack(Items.WARPED_PLANKS, 4),
+                Mod_shapeless_ingredients32
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath("minecraft", "warped_planks_saw"),
+                Mod_shapeless_recipe32,
+                recipeOutput.advancement()
+                        .addCriterion("has_warped_stem", RecipeProvider.has(ItemTags.WARPED_STEMS))
+                        .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
+                        .build(ResourceLocation.fromNamespaceAndPath("minecraft", "warped_planks_saw").withPrefix("recipes/"))
+        );
+
+        List<Ingredient> Mod_shapeless_ingredients33 = List.of(
+                Ingredient.of(ItemTags.BAMBOO_BLOCKS),
+                Ingredient.of(ModTags.Items.SAWS)
+        );
+
+        ModCustomCraftingShapeless Mod_shapeless_recipe33 = new ModCustomCraftingShapeless(
+                "",
+                CraftingBookCategory.MISC,
+                new ItemStack(Items.BAMBOO_PLANKS, 2),
+                Mod_shapeless_ingredients33
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath("minecraft", "bamboo_planks_saw"),
+                Mod_shapeless_recipe33,
+                recipeOutput.advancement()
+                        .addCriterion("has_bamboo_block", RecipeProvider.has(ItemTags.BAMBOO_BLOCKS))
+                        .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
+                        .build(ResourceLocation.fromNamespaceAndPath("minecraft", "bamboo_planks_saw").withPrefix("recipes/"))
+        );
+
         oreSmelting(recipeOutput, SALTED_BEEF_INGREDIENT, RecipeCategory.FOOD, ModItems.SALTEDCOOKEDBEEF.get(), 0.4f, 200, "salted_cooked_beef");
 
         campfireCooking(recipeOutput, SALTED_BEEF_INGREDIENT,RecipeCategory.FOOD, ModItems.SALTEDCOOKEDBEEF.get(), 0.4f, 600, "salted_cooked_beef");
+
+        oreSmelting(recipeOutput, CERAMIC_BUCKET_INGREDIENTS, RecipeCategory.MISC, ModItems.CERAMICBUCKET.get(), 0.5f, 300, "ceramic_bucket");
+
+        campfireCooking(recipeOutput, CERAMIC_BUCKET_INGREDIENTS,RecipeCategory.MISC, ModItems.CERAMICBUCKET.get(), 0.5f, 900, "ceramic_bucket");
 
         campfireCooking(recipeOutput, UNREFINED_CRUCIBLES,RecipeCategory.MISC, ModItems.REFINEDCRUCIBLE.get(), 0.5f, 1200, "refined_crucible");
     }

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 300,
+  "experience": 0.5,
+  "group": "ceramic_bucket",
+  "ingredient": {
+    "item": "minecraftprogressrevamp:unfired_clay_bucket"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:ceramic_bucket"
+  }
+}

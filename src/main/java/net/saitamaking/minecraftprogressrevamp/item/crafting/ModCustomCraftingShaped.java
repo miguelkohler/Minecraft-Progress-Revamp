@@ -41,7 +41,7 @@ public class ModCustomCraftingShaped extends ShapedRecipe {
             ModItems.PRIMITIVESHEARS.get(),
             ModItems.PRIMITIVEHAMMER.get(),
             ModItems.PRIMITIVEAXE.get(),
-            ModItems.PRIMITIVESAW.get()
+            ModItems.PRIMITIVEKNIFE.get()
     );
 
     @SuppressWarnings("UnstableApiUsage")

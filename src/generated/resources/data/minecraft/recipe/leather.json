@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraftprogressrevamp:scraped_animal_hide"
+    },
+    {
+      "item": "minecraftprogressrevamp:tree_bark"
+    },
+    {
+      "tag": "minecraftprogressrevamp:water_containers"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:leather"
+  }
+}

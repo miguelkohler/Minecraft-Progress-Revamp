@@ -1,9 +1,9 @@
 package net.saitamaking.minecraftprogressrevamp.item;
 
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.PickaxeItem;
-import net.minecraft.world.item.ShearsItem;
+import net.minecraft.world.item.*;
+import net.minecraft.world.level.material.Fluid;
+import net.minecraft.world.level.material.Fluids;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -36,8 +36,35 @@ public class ModItems {
     public static final DeferredItem<PrimitiveSawItem> PRIMITIVESAW = ITEMS.register("primitive_saw",
             () -> new PrimitiveSawItem(ModToolTiers.PRIMAL, new Item.Properties().attributes(PrimitiveSawItem.createAttributes(ModToolTiers.PRIMAL, 0.5F, 2.4F))));
 
+    public static final DeferredItem<PrimitiveKnifeItem> PRIMITIVEKNIFE = ITEMS.register("primitive_knife",
+            () -> new PrimitiveKnifeItem(ModToolTiers.PRIMAL, new Item.Properties().attributes(PrimitiveSawItem.createAttributes(ModToolTiers.PRIMAL, 1.0F, -1.0F))));
+
     public static final DeferredItem<Item> WOODENHANDLE = ITEMS.register("wooden_handle",
             () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> STRAW = ITEMS.register("straw",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> STRAWSTRING = ITEMS.register("straw_string",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> TREEBARK = ITEMS.register("tree_bark",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> ANIMALHIDE = ITEMS.register("animal_hide",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> SCRAPEDANIMALHIDE = ITEMS.register("scraped_animal_hide",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> UNFIREDCLAYBUCKET = ITEMS.register("unfired_clay_bucket",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> CERAMICBUCKET = ITEMS.register("ceramic_bucket",
+            () -> new BucketItem(Fluids.EMPTY, (new Item.Properties()).stacksTo(16)));
+
+    public static final DeferredItem<Item> WATER_CERAMICBUCKET = ITEMS.register("water_ceramic_bucket",
+            () -> new BucketItem(Fluids.WATER, (new Item.Properties()).craftRemainder(CERAMICBUCKET.get()).stacksTo(1)));
 
     public static final DeferredItem<Item> FIRECLAYBALL = ITEMS.register("fireclay_ball",
             () -> new Item(new Item.Properties()));
@@ -62,6 +89,18 @@ public class ModItems {
 
     public static final DeferredItem<Item> SALTEDCOOKEDBEEF = ITEMS.register("salted_cooked_beef",
             () -> new Item(new Item.Properties().food(ModFoodProperties.SALTEDCOOKEDBEEF)));
+
+    public static final DeferredItem<ArmorItem> HIDEVEST = ITEMS.register("hide_vest",
+            () -> new ArmorItem(ModArmorMaterials.PRIMITIVE_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
+                    new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(3))));
+
+    public static final DeferredItem<ArmorItem> HIDESHORTS = ITEMS.register("hide_shorts",
+            () -> new ArmorItem(ModArmorMaterials.PRIMITIVE_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
+                    new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(3))));
+
+    public static final DeferredItem<ArmorItem> HIDEBOOTS = ITEMS.register("hide_boots",
+            () -> new ArmorItem(ModArmorMaterials.PRIMITIVE_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
+                    new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(3))));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
