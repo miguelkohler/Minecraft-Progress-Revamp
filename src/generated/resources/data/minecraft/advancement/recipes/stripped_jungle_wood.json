@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_log": {
+    "has_jungle_wood": {
       "conditions": {
         "items": [
           {
-            "items": "#minecraftprogressrevamp:all_the_wood_item"
+            "items": "minecraft:jungle_wood"
           }
         ]
       },
@@ -24,7 +24,7 @@
   },
   "requirements": [
     [
-      "has_log"
+      "has_jungle_wood"
     ],
     [
       "has_saw"

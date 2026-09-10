@@ -1,16 +1,6 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_log": {
-      "conditions": {
-        "items": [
-          {
-            "items": "#minecraftprogressrevamp:all_the_wood_item"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "has_saw": {
       "conditions": {
         "items": [
@@ -20,11 +10,21 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
+    },
+    "has_warped_stem": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:warped_stem"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "requirements": [
     [
-      "has_log"
+      "has_warped_stem"
     ],
     [
       "has_saw"

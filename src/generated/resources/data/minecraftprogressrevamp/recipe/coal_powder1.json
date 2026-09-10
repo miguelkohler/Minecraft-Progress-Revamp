@@ -2,7 +2,7 @@
   "type": "minecraftprogressrevamp:durability_shapeless",
   "ingredients": [
     {
-      "item": "minecraft:coal"
+      "item": "minecraft:charcoal"
     },
     {
       "tag": "minecraftprogressrevamp:hammers"

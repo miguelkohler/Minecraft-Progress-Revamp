@@ -1,0 +1,20 @@
+{
+  "type": "minecraftprogressrevamp:durability_shaped",
+  "key": {
+    "#": {
+      "tag": "minecraft:planks"
+    },
+    "V": {
+      "tag": "minecraftprogressrevamp:saws"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "#V ",
+    "   "
+  ],
+  "result": {
+    "count": 4,
+    "id": "minecraft:stick"
+  }
+}

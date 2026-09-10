@@ -27,6 +27,7 @@ public class ModTags {
         public static final TagKey<Item> LOOSE_PEBBLES = createTag("loose_pebbles");
         public static final TagKey<Item> PRIMITIVE_TOOLS = createTag("primitive_tools");
         public static final TagKey<Item> SAWS = createTag("saws");
+        public static final TagKey<Item> HAMMERS = createTag("hammers");
         public static final TagKey<Item> ALLTHEWOODITEM = createTag("all_the_wood_item");
 
         private static TagKey<Item> createTag(String name){

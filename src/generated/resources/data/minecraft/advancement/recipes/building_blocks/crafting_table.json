@@ -1,31 +1,21 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_loose_pebble": {
+    "has_rudimentary_crafting_table": {
       "conditions": {
         "items": [
           {
-            "items": "minecraftprogressrevamp:loose_pebble"
+            "items": "minecraftprogressrevamp:rudimentary_crafting_table"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_sharp_pebble": {
+    "has_starter_toolbox": {
       "conditions": {
         "items": [
           {
-            "items": "minecraftprogressrevamp:sharp_pebble"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_stick": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:stick"
+            "items": "minecraftprogressrevamp:starter_toolbox"
           }
         ]
       },
@@ -33,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraftprogressrevamp:primitive_axe_2"
+        "recipe": "minecraft:crafting_table"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -41,14 +31,13 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_loose_pebble",
-      "has_stick",
-      "has_sharp_pebble"
+      "has_rudimentary_crafting_table",
+      "has_starter_toolbox"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraftprogressrevamp:primitive_axe_2"
+      "minecraft:crafting_table"
     ]
   }
 }

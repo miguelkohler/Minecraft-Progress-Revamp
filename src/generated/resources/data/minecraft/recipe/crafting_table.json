@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "minecraftprogressrevamp:rudimentary_crafting_table"
+    },
+    {
+      "item": "minecraftprogressrevamp:starter_toolbox"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:crafting_table"
+  }
+}

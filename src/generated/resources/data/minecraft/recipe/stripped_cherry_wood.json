@@ -1,0 +1,15 @@
+{
+  "type": "minecraftprogressrevamp:durability_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:cherry_wood"
+    },
+    {
+      "tag": "minecraftprogressrevamp:saws"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:stripped_cherry_wood"
+  }
+}

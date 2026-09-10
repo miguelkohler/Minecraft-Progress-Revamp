@@ -41,6 +41,8 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.PRIMITIVEPICKAXE.get());
         tag(ModTags.Items.SAWS)
                 .add(ModItems.PRIMITIVESAW.get());
+        tag(ModTags.Items.HAMMERS)
+                .add(ModItems.PRIMITIVEHAMMER.get());
         tag(ModTags.Items.ALLTHEWOODITEM)
                 .addTag(ItemTags.ACACIA_LOGS)
                 .addTag(ItemTags.BIRCH_LOGS)
