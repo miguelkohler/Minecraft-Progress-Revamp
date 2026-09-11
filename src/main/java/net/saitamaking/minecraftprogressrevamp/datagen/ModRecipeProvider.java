@@ -66,20 +66,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_sharp_pebble", has(ModItems.SHARPPEBBLE))
                 .save(recipeOutput, "minecraftprogressrevamp:primitive_axe_1");
 
-        /*ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.PRIMITIVEAXE.get())
-                .pattern(" O ")
-                .pattern(" /X")
-                .pattern(" / ")
-                .define('O', ModItems.LOOSEPEBBLE)
-                .define('X', ModItems.SHARPPEBBLE)
-                .define('/', Items.STICK)
-                .unlockedBy("has_loose_pebble", has(ModItems.LOOSEPEBBLE))
-                .unlockedBy("has_stick", has(Items.STICK))
-                .unlockedBy("has_sharp_pebble", has(ModItems.SHARPPEBBLE))
-                .save(recipeOutput, "minecraftprogressrevamp:primitive_axe_2");
-
-         */
-
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.FIRECLAY.get())
                 .pattern("## ")
                 .pattern("## ")
@@ -131,20 +117,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_sharp_pebble", has(ModItems.SHARPPEBBLE))
                 .save(recipeOutput, "minecraftprogressrevamp:primitive_saw_1");
 
-        /*ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.PRIMITIVESAW.get())
-                .pattern(" /X")
-                .pattern(" /X")
-                .pattern(" O ")
-                .define('O', ModItems.WOODENHANDLE)
-                .define('X', ModItems.SHARPPEBBLE)
-                .define('/', Items.STICK)
-                .unlockedBy("has_wooden_handle", has(ModItems.WOODENHANDLE))
-                .unlockedBy("has_stick", has(Items.STICK))
-                .unlockedBy("has_sharp_pebble", has(ModItems.SHARPPEBBLE))
-                .save(recipeOutput, "minecraftprogressrevamp:primitive_saw_2");
-
-         */
-
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.PRIMITIVESHEARS.get())
                 .pattern("O/ ")
                 .pattern("/ X")
@@ -158,18 +130,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput, "minecraftprogressrevamp:primitive_shears_1");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.PRIMITIVESHEARS.get())
-                .pattern(" /O")
-                .pattern("X /")
-                .pattern(" X ")
-                .define('O', ModItems.WOODENHANDLE)
-                .define('X', ModItems.SHARPPEBBLE)
-                .define('/', Items.STICK)
-                .unlockedBy("has_wooden_handle", has(ModItems.WOODENHANDLE))
-                .unlockedBy("has_stick", has(Items.STICK))
-                .unlockedBy("has_sharp_pebble", has(ModItems.SHARPPEBBLE))
-                .save(recipeOutput, "minecraftprogressrevamp:primitive_shears_2");
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.PRIMITIVESHEARS.get())
                 .pattern(" X ")
                 .pattern("/ X")
                 .pattern("O/ ")
@@ -179,19 +139,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_wooden_handle", has(ModItems.WOODENHANDLE))
                 .unlockedBy("has_stick", has(Items.STICK))
                 .unlockedBy("has_sharp_pebble", has(ModItems.SHARPPEBBLE))
-                .save(recipeOutput, "minecraftprogressrevamp:primitive_shears_3");
+                .save(recipeOutput, "minecraftprogressrevamp:primitive_shears_2");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.PRIMITIVESHEARS.get())
-                .pattern(" X ")
-                .pattern("X /")
-                .pattern(" /O")
-                .define('O', ModItems.WOODENHANDLE)
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.PRIMITIVEKNIFE.get())
+                .pattern("X  ")
+                .pattern("#  ")
+                .pattern("   ")
+                .define('#', Items.STICK)
                 .define('X', ModItems.SHARPPEBBLE)
-                .define('/', Items.STICK)
-                .unlockedBy("has_wooden_handle", has(ModItems.WOODENHANDLE))
                 .unlockedBy("has_stick", has(Items.STICK))
                 .unlockedBy("has_sharp_pebble", has(ModItems.SHARPPEBBLE))
-                .save(recipeOutput, "minecraftprogressrevamp:primitive_shears_4");
+                .save(recipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.HIDEVEST.get())
                 .pattern("SS#")
@@ -231,6 +189,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern(" # ")
                 .define('#', Items.CLAY_BALL)
                 .unlockedBy("has_clay_ball", has(Items.CLAY_BALL))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.WOODENHANDLE.get())
+                .pattern(" # ")
+                .pattern("# #")
+                .pattern(" # ")
+                .define('#', Items.STICK)
+                .unlockedBy("has_stick", has(Items.STICK))
                 .save(recipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.STRAWSTRING.get())

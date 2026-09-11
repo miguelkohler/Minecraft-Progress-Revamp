@@ -60,11 +60,11 @@ public class ModItems {
     public static final DeferredItem<Item> UNFIREDCLAYBUCKET = ITEMS.register("unfired_clay_bucket",
             () -> new Item(new Item.Properties()));
 
-    public static final DeferredItem<Item> CERAMICBUCKET = ITEMS.register("ceramic_bucket",
-            () -> new BucketItem(Fluids.EMPTY, (new Item.Properties()).stacksTo(16)));
+    public static final DeferredItem<CeramicBucketItem> CERAMICBUCKET = ITEMS.register("ceramic_bucket",
+            () -> new CeramicBucketItem(Fluids.EMPTY, (new Item.Properties()).stacksTo(16)));
 
-    public static final DeferredItem<Item> WATER_CERAMICBUCKET = ITEMS.register("water_ceramic_bucket",
-            () -> new BucketItem(Fluids.WATER, (new Item.Properties()).craftRemainder(CERAMICBUCKET.get()).stacksTo(1)));
+    public static final DeferredItem<CeramicBucketItem> WATER_CERAMICBUCKET = ITEMS.register("water_ceramic_bucket",
+            () -> new CeramicBucketItem(Fluids.WATER, (new Item.Properties()).craftRemainder(CERAMICBUCKET.get()).stacksTo(1)));
 
     public static final DeferredItem<Item> FIRECLAYBALL = ITEMS.register("fireclay_ball",
             () -> new Item(new Item.Properties()));
