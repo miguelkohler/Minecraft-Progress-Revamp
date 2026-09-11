@@ -22,6 +22,9 @@ public class ModDataMapProvider extends DataMapProvider {
                 .add(ModBlocks.RUDIMENTARYCRAFTINGTABLE.getId(), new FurnaceFuel(300), false)
                 .add(ModItems.COALPOWDER.getId(), new FurnaceFuel(1600), false)
                 .add(ModItems.WOODENHANDLE.getId(), new FurnaceFuel(200), false)
+                .add(ModItems.TREEBARK.getId(), new FurnaceFuel(100), false)
+                .add(ModItems.STRAW.getId(), new FurnaceFuel(30), false)
+                .add(ModItems.STRAWSTRING.getId(), new FurnaceFuel(100), false)
                 .add(ModBlocks.CHARCOALBLOCK.getId(), new FurnaceFuel(14400), false);
         super.gather(provider);
     }

@@ -63,7 +63,7 @@ public class SharpRockItem extends DiggerItem {
     }
 
     public SharpRockItem(Tier p_40521_, Item.Properties p_40524_) {
-        super(p_40521_, BlockTags.MINEABLE_WITH_AXE, p_40524_);
+        super(p_40521_, BlockTags.SWORD_EFFICIENT, p_40524_);
     }
 
     public static Tool createToolProperties() {

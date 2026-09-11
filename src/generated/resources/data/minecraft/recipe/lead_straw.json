@@ -2,20 +2,20 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "#": {
-      "item": "minecraftprogressrevamp:animal_hide"
+    "O": {
+      "item": "minecraft:slime_ball"
     },
-    "S": {
+    "~": {
       "item": "minecraftprogressrevamp:straw_string"
     }
   },
   "pattern": [
-    "S S",
-    "###",
-    "# #"
+    "~~ ",
+    "~O ",
+    "  ~"
   ],
   "result": {
     "count": 1,
-    "id": "minecraftprogressrevamp:hide_shorts"
+    "id": "minecraft:lead"
   }
 }

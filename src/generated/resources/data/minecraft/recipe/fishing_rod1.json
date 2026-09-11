@@ -3,19 +3,19 @@
   "category": "equipment",
   "key": {
     "#": {
-      "item": "minecraftprogressrevamp:animal_hide"
+      "item": "minecraft:stick"
     },
-    "S": {
+    "X": {
       "item": "minecraftprogressrevamp:straw_string"
     }
   },
   "pattern": [
-    "SS#",
-    "S##",
-    "###"
+    "  #",
+    " #X",
+    "# X"
   ],
   "result": {
     "count": 1,
-    "id": "minecraftprogressrevamp:hide_vest"
+    "id": "minecraft:fishing_rod"
   }
 }

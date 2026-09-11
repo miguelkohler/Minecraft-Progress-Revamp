@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_animal_hide": {
+    "has_stick": {
       "conditions": {
         "items": [
           {
-            "items": "minecraftprogressrevamp:animal_hide"
+            "items": "minecraft:stick"
           }
         ]
       },
@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraftprogressrevamp:hide_vest"
+        "recipe": "minecraft:fishing_rod1"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -31,13 +31,13 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_animal_hide",
-      "has_straw_string"
+      "has_straw_string",
+      "has_stick"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraftprogressrevamp:hide_vest"
+      "minecraft:fishing_rod1"
     ]
   }
 }

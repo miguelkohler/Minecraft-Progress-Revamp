@@ -23,8 +23,8 @@
   "item.minecraftprogressrevamp.unfired_clay_bucket": "Unfired Clay Bucket",
   "item.minecraftprogressrevamp.ceramic_bucket": "Ceramic Bucket",
   "item.minecraftprogressrevamp.water_ceramic_bucket": "Water Ceramic Bucket",
-  "item.minecraftprogressrevamp.hide_vest": "Hide Vest",
-  "item.minecraftprogressrevamp.hide_shorts": "Hide Shorts",
+  "item.minecraftprogressrevamp.hide_chestplate": "Hide Vest",
+  "item.minecraftprogressrevamp.hide_leggings": "Hide Shorts",
   "item.minecraftprogressrevamp.hide_boots": "Hide Boots",
   "item.minecraftprogressrevamp.starter_toolbox": "Starter Toolbox",
 
@@ -39,7 +39,7 @@
 
   "tooltip.minecraftprogressrevamp.primitive_saw.shift_down": "Can strip wood on right click",
   "tooltip.minecraftprogressrevamp.primitive_saw.not_shift_down": "§8Press [SHIFT] for more information",
-  "tooltip.minecraftprogressrevamp.primitive_knife.shift_down": "Can transform grass into straw on right click",
+  "tooltip.minecraftprogressrevamp.primitive_knife.shift_down": "Can transform grass into straw and extract tree bark on right click",
   "tooltip.minecraftprogressrevamp.primitive_knife.not_shift_down": "§8Press [SHIFT] for more information",
   "tooltip.minecraftprogressrevamp.starter_toolbox.shift_down": "Can do everything the tools used to make it do",
   "tooltip.minecraftprogressrevamp.starter_toolbox.not_shift_down": "§8Press [SHIFT] for more information",

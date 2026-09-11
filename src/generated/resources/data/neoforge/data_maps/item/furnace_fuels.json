@@ -12,6 +12,15 @@
     "minecraftprogressrevamp:rudimentary_crafting_table": {
       "burn_time": 300
     },
+    "minecraftprogressrevamp:straw": {
+      "burn_time": 30
+    },
+    "minecraftprogressrevamp:straw_string": {
+      "burn_time": 100
+    },
+    "minecraftprogressrevamp:tree_bark": {
+      "burn_time": 100
+    },
     "minecraftprogressrevamp:wooden_handle": {
       "burn_time": 200
     }

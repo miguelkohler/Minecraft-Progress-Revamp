@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraftprogressrevamp:animal_hide"
+    },
+    "S": {
+      "item": "minecraftprogressrevamp:straw_string"
+    }
+  },
+  "pattern": [
+    "SS#",
+    "S##",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:hide_chestplate"
+  }
+}

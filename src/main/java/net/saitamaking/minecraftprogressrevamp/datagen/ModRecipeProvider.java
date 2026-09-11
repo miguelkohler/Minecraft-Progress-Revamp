@@ -308,6 +308,42 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_primitive_hammer", has(ModItems.PRIMITIVEHAMMER))
                 .save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.STARTERTOOLBOX.get())
+                .pattern("S S")
+                .pattern("X#H")
+                .pattern(" U ")
+                .define('S', ModItems.STRAWSTRING)
+                .define('#', Items.LEATHER)
+                .define('X', ModItems.PRIMITIVESAW)
+                .define('U', ModItems.PRIMITIVESHEARS)
+                .define('H', ModItems.PRIMITIVEHAMMER)
+                .unlockedBy("has_straw_string", has(ModItems.STRAWSTRING))
+                .unlockedBy("has_leather", has(Items.LEATHER))
+                .unlockedBy("has_primitive_saw", has(ModItems.PRIMITIVESAW))
+                .unlockedBy("has_primitive_shears", has(ModItems.PRIMITIVESHEARS))
+                .unlockedBy("has_primitive_hammer", has(ModItems.PRIMITIVEHAMMER))
+                .save(recipeOutput, "starter_toolbox1");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.FISHING_ROD)
+                .define('#', Items.STICK)
+                .define('X', ModItems.STRAWSTRING)
+                .pattern("  #")
+                .pattern(" #X")
+                .pattern("# X")
+                .unlockedBy("has_straw_string", has(ModItems.STRAWSTRING))
+                .unlockedBy("has_stick", has(Items.STICK))
+                .save(recipeOutput, "fishing_rod1");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.LEAD)
+                .define('~', ModItems.STRAWSTRING)
+                .define('O', Items.SLIME_BALL)
+                .pattern("~~ ")
+                .pattern("~O ")
+                .pattern("  ~")
+                .unlockedBy("has_slime_ball", has(Items.SLIME_BALL))
+                .unlockedBy("has_straw_string", has(ModItems.STRAWSTRING))
+                .save(recipeOutput, "lead_straw");
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.LEATHER)
                 .requires(ModItems.SCRAPEDANIMALHIDE)
                 .requires(ModItems.TREEBARK)
@@ -905,7 +941,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         List<Ingredient> Mod_shapeless_ingredients26 = List.of(
-                Ingredient.of(ItemTags.SPRUCE_LOGS),
+                Ingredient.of(ItemTags.BIRCH_LOGS),
                 Ingredient.of(ModTags.Items.SAWS)
         );
 
@@ -1070,6 +1106,27 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         .addCriterion("has_bamboo_block", RecipeProvider.has(ItemTags.BAMBOO_BLOCKS))
                         .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
                         .build(ResourceLocation.fromNamespaceAndPath("minecraft", "bamboo_planks_saw").withPrefix("recipes/"))
+        );
+
+        List<Ingredient> Mod_shapeless_ingredients34 = List.of(
+                Ingredient.of(ItemTags.SPRUCE_LOGS),
+                Ingredient.of(ModTags.Items.SAWS)
+        );
+
+        ModCustomCraftingShapeless Mod_shapeless_recipe34 = new ModCustomCraftingShapeless(
+                "",
+                CraftingBookCategory.MISC,
+                new ItemStack(Items.SPRUCE_PLANKS, 4),
+                Mod_shapeless_ingredients34
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath("minecraft", "spruce_planks_saw"),
+                Mod_shapeless_recipe34,
+                recipeOutput.advancement()
+                        .addCriterion("has_spruce_logs", RecipeProvider.has(ItemTags.SPRUCE_LOGS))
+                        .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
+                        .build(ResourceLocation.fromNamespaceAndPath("minecraft", "spruce_planks_saw").withPrefix("recipes/"))
         );
 
         oreSmelting(recipeOutput, SALTED_BEEF_INGREDIENT, RecipeCategory.FOOD, ModItems.SALTEDCOOKEDBEEF.get(), 0.4f, 200, "salted_cooked_beef");

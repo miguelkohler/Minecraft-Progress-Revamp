@@ -90,11 +90,11 @@ public class ModItems {
     public static final DeferredItem<Item> SALTEDCOOKEDBEEF = ITEMS.register("salted_cooked_beef",
             () -> new Item(new Item.Properties().food(ModFoodProperties.SALTEDCOOKEDBEEF)));
 
-    public static final DeferredItem<ArmorItem> HIDEVEST = ITEMS.register("hide_vest",
+    public static final DeferredItem<ArmorItem> HIDEVEST = ITEMS.register("hide_chestplate",
             () -> new ArmorItem(ModArmorMaterials.PRIMITIVE_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
                     new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(3))));
 
-    public static final DeferredItem<ArmorItem> HIDESHORTS = ITEMS.register("hide_shorts",
+    public static final DeferredItem<ArmorItem> HIDESHORTS = ITEMS.register("hide_leggings",
             () -> new ArmorItem(ModArmorMaterials.PRIMITIVE_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
                     new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(3))));
 

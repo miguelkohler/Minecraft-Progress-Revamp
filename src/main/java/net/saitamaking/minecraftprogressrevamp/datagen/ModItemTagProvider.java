@@ -64,5 +64,10 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .addTag(ItemTags.CRIMSON_STEMS)
                 .addTag(ItemTags.OAK_LOGS);
 
+        this.tag(ItemTags.TRIMMABLE_ARMOR)
+                .add(ModItems.HIDEVEST.get())
+                .add(ModItems.HIDEBOOTS.get())
+                .add(ModItems.HIDESHORTS.get());
+
     }
 }
