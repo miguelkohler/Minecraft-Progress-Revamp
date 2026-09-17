@@ -18,8 +18,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        //blockWithItem(ModBlocks.);
         blockWithItem(ModBlocks.CHARCOALBLOCK);
+        blockWithItem(ModBlocks.MELTEDCOPPERBLOCK);
         primitiveCraftingTableBlock(ModBlocks.PRIMITIVECRAFTINGTABLE, "primitive_crafting_table");
         blockWithItem(ModBlocks.FIRECLAY);
         rudimentaryCraftingTableBlock(ModBlocks.RUDIMENTARYCRAFTINGTABLE, "rudimentary_crafting_table");

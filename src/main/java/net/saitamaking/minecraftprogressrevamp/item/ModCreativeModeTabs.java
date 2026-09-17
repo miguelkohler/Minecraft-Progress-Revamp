@@ -2,8 +2,11 @@ package net.saitamaking.minecraftprogressrevamp.item;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.saitamaking.minecraftprogressrevamp.ProgressRevamp;
@@ -48,13 +51,30 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.FIRECLAY);
                         output.accept(ModItems.UNREFINEDCRUCIBLE);
                         output.accept(ModItems.REFINEDCRUCIBLE);
+                        output.accept(ModItems.EMPTYSANDMOLD);
+                        output.accept(ModItems.INGOTSANDMOLD);
                         output.accept(ModItems.SALT);
                         output.accept(ModItems.SALTEDBEEF);
                         output.accept(ModItems.SALTEDCOOKEDBEEF);
+                        output.accept(ModBlocks.CHARCOALBLOCK);
+                        output.accept(ModBlocks.WOODENCRATE);
 
+
+                    }).build());
+
+    public static final Supplier<CreativeModeTab> COPPER_AGE_ITEMS_TAB = CREATIVE_MODE_TAB.register("copper_age_items_tab",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(Items.COPPER_INGOT))
+                    .title(Component.translatable("creativetab.minecraftprogressrevamp.copper_age_items"))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "primitive_items_tab"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModItems.MELTEDCOPPERBLOB);
+                        output.accept(ModItems.SMALLMELTEDCOPPERBLOB);
+                        output.accept(ModBlocks.MELTEDCOPPERBLOCK);
+                        output.accept(Items.COPPER_INGOT);
+                        output.accept(ModBlocks.COPPERBARBLOCK);
+                        output.accept(Blocks.COPPER_BLOCK);
 
                         output.accept(ModBlocks.STEELCUTTER);
-                        output.accept(ModBlocks.CHARCOALBLOCK);
 
 
                     }).build());

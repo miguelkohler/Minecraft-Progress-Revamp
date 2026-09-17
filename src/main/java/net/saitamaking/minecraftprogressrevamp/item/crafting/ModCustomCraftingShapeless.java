@@ -10,9 +10,11 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.neoforged.neoforge.common.CommonHooks;
 import net.saitamaking.minecraftprogressrevamp.item.ModItems;
+import net.saitamaking.minecraftprogressrevamp.util.ModTags;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,6 +72,8 @@ public class ModCustomCraftingShapeless extends ShapelessRecipe {
 
             if (!stack.isEmpty() && CORRECT_TOOL.contains(stack.getItem())) {
                 remainingItems.set(i, damageItem(stack.copy()));
+            } else if (!stack.isEmpty() && stack.is(ModTags.Items.INGOTSHAPED)) {
+                remainingItems.set(i, stack.copyWithCount(stack.getCount()));
             } else {
                 remainingItems.set(i, CommonHooks.getCraftingRemainingItem(stack));
             }

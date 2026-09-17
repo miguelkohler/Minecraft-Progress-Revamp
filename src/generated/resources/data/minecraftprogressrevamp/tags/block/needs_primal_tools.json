@@ -13,6 +13,7 @@
     "#minecraft:wooden_stairs",
     "#minecraft:wooden_trapdoors",
     "minecraftprogressrevamp:primitive_crafting_table",
+    "minecraftprogressrevamp:wooden_crate",
     "minecraftprogressrevamp:rudimentary_crafting_table"
   ]
 }

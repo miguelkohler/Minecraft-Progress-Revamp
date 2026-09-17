@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraftprogressrevamp:melted_copper_blob"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "minecraftprogressrevamp:small_melted_copper_blob"
+  }
+}

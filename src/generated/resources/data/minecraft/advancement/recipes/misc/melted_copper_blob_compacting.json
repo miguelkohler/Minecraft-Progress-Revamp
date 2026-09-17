@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_small_melted_copper_blob": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:small_melted_copper_blob"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:melted_copper_blob_compacting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_small_melted_copper_blob"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:melted_copper_blob_compacting"
+    ]
+  }
+}

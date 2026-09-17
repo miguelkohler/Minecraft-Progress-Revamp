@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "minecraft:planks"
+    },
+    "-": {
+      "tag": "minecraft:wooden_slabs"
+    }
+  },
+  "pattern": [
+    "---",
+    "# #",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:wooden_crate"
+  }
+}

@@ -50,8 +50,75 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, ModItems.SHARPPEBBLE.get())
-                .requires(ModItems.LOOSEPEBBLE, 2)
+                .requires(ModItems.LOOSEPEBBLE)
+                .requires(ModItems.LOOSEPEBBLE)
                 .unlockedBy("has_loose_pebble", has(ModItems.LOOSEPEBBLE))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.COPPER_BLOCK)
+                .pattern("###")
+                .pattern("#X#")
+                .pattern("###")
+                .define('#', Items.ICE)
+                .define('X', ModBlocks.MELTEDCOPPERBLOCK)
+                .unlockedBy("has_ice", has(Items.ICE))
+                .unlockedBy("has_melted_copper_block", has(ModBlocks.MELTEDCOPPERBLOCK))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.COPPERBARBLOCK.get())
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', Items.COPPER_INGOT)
+                .unlockedBy("has_copper_ingot", has(Items.COPPER_INGOT))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.WOODENCRATE.get())
+                .pattern("---")
+                .pattern("# #")
+                .pattern("###")
+                .define('#', ItemTags.PLANKS)
+                .define('-', ItemTags.WOODEN_SLABS)
+                .unlockedBy("has_planks", has(ItemTags.PLANKS))
+                .unlockedBy("has_wooden_slabs", has(ItemTags.WOODEN_SLABS))
+                .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.COPPER_INGOT, 9)
+                .requires(ModBlocks.COPPERBARBLOCK)
+                .unlockedBy("has_copper_bar_block", has(ModBlocks.COPPERBARBLOCK))
+                .save(recipeOutput, "minecraftprogressrevamp:copper_bar_block_to_ingots");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.COPPER_INGOT)
+                .requires(ModItems.INGOTSANDMOLD)
+                .requires(ModItems.MELTEDCOPPERBLOB)
+                .unlockedBy("has_ingot_sand_mold", has(ModItems.INGOTSANDMOLD))
+                .unlockedBy("has_melted_copper_blob", has(ModItems.MELTEDCOPPERBLOB))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.MELTEDCOPPERBLOCK.get())
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', ModItems.MELTEDCOPPERBLOB)
+                .unlockedBy("has_melted_copper_blob", has(ModItems.MELTEDCOPPERBLOB))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MELTEDCOPPERBLOB.get())
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', ModItems.SMALLMELTEDCOPPERBLOB)
+                .unlockedBy("has_small_melted_copper_blob", has(ModItems.SMALLMELTEDCOPPERBLOB))
+                .save(recipeOutput, "melted_copper_blob_compacting");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.SMALLMELTEDCOPPERBLOB.get(), 9)
+                .requires(ModItems.MELTEDCOPPERBLOB)
+                .unlockedBy("has_melted_copper_blob", has(ModItems.MELTEDCOPPERBLOB))
+                .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.MELTEDCOPPERBLOB.get(), 9)
+                .requires(ModBlocks.MELTEDCOPPERBLOCK)
+                .unlockedBy("has_melted_copper_block", has(ModBlocks.MELTEDCOPPERBLOCK))
                 .save(recipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.PRIMITIVEAXE.get())
@@ -911,12 +978,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         recipeOutput.accept(
-                ResourceLocation.fromNamespaceAndPath("minecraft", "oak_planks_saw"),
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "oak_planks_saw"),
                 Mod_shapeless_recipe24,
                 recipeOutput.advancement()
                         .addCriterion("has_oak_logs", RecipeProvider.has(ItemTags.OAK_LOGS))
                         .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
-                        .build(ResourceLocation.fromNamespaceAndPath("minecraft", "oak_planks_saw").withPrefix("recipes/"))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "oak_planks_saw").withPrefix("recipes/"))
         );
 
         List<Ingredient> Mod_shapeless_ingredients25 = List.of(
@@ -932,12 +999,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         recipeOutput.accept(
-                ResourceLocation.fromNamespaceAndPath("minecraft", "dark_oak_planks_saw"),
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "dark_oak_planks_saw"),
                 Mod_shapeless_recipe25,
                 recipeOutput.advancement()
                         .addCriterion("has_dark_oak_logs", RecipeProvider.has(ItemTags.DARK_OAK_LOGS))
                         .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
-                        .build(ResourceLocation.fromNamespaceAndPath("minecraft", "dark_oak_planks_saw").withPrefix("recipes/"))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "dark_oak_planks_saw").withPrefix("recipes/"))
         );
 
         List<Ingredient> Mod_shapeless_ingredients26 = List.of(
@@ -953,12 +1020,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         recipeOutput.accept(
-                ResourceLocation.fromNamespaceAndPath("minecraft", "birch_planks_saw"),
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "birch_planks_saw"),
                 Mod_shapeless_recipe26,
                 recipeOutput.advancement()
                         .addCriterion("has_birch_logs", RecipeProvider.has(ItemTags.BIRCH_LOGS))
                         .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
-                        .build(ResourceLocation.fromNamespaceAndPath("minecraft", "birch_planks_saw").withPrefix("recipes/"))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "birch_planks_saw").withPrefix("recipes/"))
         );
 
         List<Ingredient> Mod_shapeless_ingredients27 = List.of(
@@ -974,12 +1041,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         recipeOutput.accept(
-                ResourceLocation.fromNamespaceAndPath("minecraft", "jungle_planks_saw"),
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "jungle_planks_saw"),
                 Mod_shapeless_recipe27,
                 recipeOutput.advancement()
                         .addCriterion("has_jungle_logs", RecipeProvider.has(ItemTags.JUNGLE_LOGS))
                         .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
-                        .build(ResourceLocation.fromNamespaceAndPath("minecraft", "jungle_planks_saw").withPrefix("recipes/"))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "jungle_planks_saw").withPrefix("recipes/"))
         );
 
         List<Ingredient> Mod_shapeless_ingredients28 = List.of(
@@ -995,12 +1062,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         recipeOutput.accept(
-                ResourceLocation.fromNamespaceAndPath("minecraft", "acacia_planks_saw"),
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "acacia_planks_saw"),
                 Mod_shapeless_recipe28,
                 recipeOutput.advancement()
                         .addCriterion("has_acacia_logs", RecipeProvider.has(ItemTags.ACACIA_LOGS))
                         .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
-                        .build(ResourceLocation.fromNamespaceAndPath("minecraft", "acacia_planks_saw").withPrefix("recipes/"))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "acacia_planks_saw").withPrefix("recipes/"))
         );
 
         List<Ingredient> Mod_shapeless_ingredients29 = List.of(
@@ -1016,12 +1083,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         recipeOutput.accept(
-                ResourceLocation.fromNamespaceAndPath("minecraft", "mangrove_planks_saw"),
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "mangrove_planks_saw"),
                 Mod_shapeless_recipe29,
                 recipeOutput.advancement()
                         .addCriterion("has_mangrove_logs", RecipeProvider.has(ItemTags.MANGROVE_LOGS))
                         .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
-                        .build(ResourceLocation.fromNamespaceAndPath("minecraft", "mangrove_planks_saw").withPrefix("recipes/"))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "mangrove_planks_saw").withPrefix("recipes/"))
         );
 
         List<Ingredient> Mod_shapeless_ingredients30 = List.of(
@@ -1037,12 +1104,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         recipeOutput.accept(
-                ResourceLocation.fromNamespaceAndPath("minecraft", "cherry_planks_saw"),
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "cherry_planks_saw"),
                 Mod_shapeless_recipe30,
                 recipeOutput.advancement()
                         .addCriterion("has_cherry_logs", RecipeProvider.has(ItemTags.CHERRY_LOGS))
                         .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
-                        .build(ResourceLocation.fromNamespaceAndPath("minecraft", "cherry_planks_saw").withPrefix("recipes/"))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "cherry_planks_saw").withPrefix("recipes/"))
         );
 
         List<Ingredient> Mod_shapeless_ingredients31 = List.of(
@@ -1058,12 +1125,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         recipeOutput.accept(
-                ResourceLocation.fromNamespaceAndPath("minecraft", "crimson_planks_saw"),
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "crimson_planks_saw"),
                 Mod_shapeless_recipe31,
                 recipeOutput.advancement()
                         .addCriterion("has_crimson_stem", RecipeProvider.has(ItemTags.CRIMSON_STEMS))
                         .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
-                        .build(ResourceLocation.fromNamespaceAndPath("minecraft", "crimson_planks_saw").withPrefix("recipes/"))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "crimson_planks_saw").withPrefix("recipes/"))
         );
 
         List<Ingredient> Mod_shapeless_ingredients32 = List.of(
@@ -1079,12 +1146,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         recipeOutput.accept(
-                ResourceLocation.fromNamespaceAndPath("minecraft", "warped_planks_saw"),
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "warped_planks_saw"),
                 Mod_shapeless_recipe32,
                 recipeOutput.advancement()
                         .addCriterion("has_warped_stem", RecipeProvider.has(ItemTags.WARPED_STEMS))
                         .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
-                        .build(ResourceLocation.fromNamespaceAndPath("minecraft", "warped_planks_saw").withPrefix("recipes/"))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "warped_planks_saw").withPrefix("recipes/"))
         );
 
         List<Ingredient> Mod_shapeless_ingredients33 = List.of(
@@ -1100,12 +1167,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         recipeOutput.accept(
-                ResourceLocation.fromNamespaceAndPath("minecraft", "bamboo_planks_saw"),
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "bamboo_planks_saw"),
                 Mod_shapeless_recipe33,
                 recipeOutput.advancement()
                         .addCriterion("has_bamboo_block", RecipeProvider.has(ItemTags.BAMBOO_BLOCKS))
                         .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
-                        .build(ResourceLocation.fromNamespaceAndPath("minecraft", "bamboo_planks_saw").withPrefix("recipes/"))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "bamboo_planks_saw").withPrefix("recipes/"))
         );
 
         List<Ingredient> Mod_shapeless_ingredients34 = List.of(
@@ -1121,12 +1188,54 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         recipeOutput.accept(
-                ResourceLocation.fromNamespaceAndPath("minecraft", "spruce_planks_saw"),
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "spruce_planks_saw"),
                 Mod_shapeless_recipe34,
                 recipeOutput.advancement()
                         .addCriterion("has_spruce_logs", RecipeProvider.has(ItemTags.SPRUCE_LOGS))
                         .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
-                        .build(ResourceLocation.fromNamespaceAndPath("minecraft", "spruce_planks_saw").withPrefix("recipes/"))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "spruce_planks_saw").withPrefix("recipes/"))
+        );
+
+        List<Ingredient> Mod_shapeless_ingredients35 = List.of(
+                Ingredient.of(Items.SAND),
+                Ingredient.of(ModTags.Items.KNIVES)
+        );
+
+        ModCustomCraftingShapeless Mod_shapeless_recipe35 = new ModCustomCraftingShapeless(
+                "",
+                CraftingBookCategory.MISC,
+                new ItemStack(ModItems.EMPTYSANDMOLD.get(), 4),
+                Mod_shapeless_ingredients35
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "empty_sand_mold"),
+                Mod_shapeless_recipe35,
+                recipeOutput.advancement()
+                        .addCriterion("has_sand", RecipeProvider.has(Items.SAND))
+                        .addCriterion("has_knife", RecipeProvider.has(ModTags.Items.KNIVES))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "empty_sand_mold").withPrefix("recipes/"))
+        );
+
+        List<Ingredient> Mod_shapeless_ingredients36 = List.of(
+                Ingredient.of(ModTags.Items.INGOTSHAPED),
+                Ingredient.of(ModItems.EMPTYSANDMOLD)
+        );
+
+        ModCustomCraftingShapeless Mod_shapeless_recipe36 = new ModCustomCraftingShapeless(
+                "",
+                CraftingBookCategory.MISC,
+                new ItemStack(ModItems.INGOTSANDMOLD.get()),
+                Mod_shapeless_ingredients36
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "ingot_sand_mold"),
+                Mod_shapeless_recipe36,
+                recipeOutput.advancement()
+                        .addCriterion("has_empty_sand_mold", RecipeProvider.has(ModItems.EMPTYSANDMOLD))
+                        .addCriterion("has_ingot_shaped", RecipeProvider.has(ModTags.Items.INGOTSHAPED))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "ingot_sand_mold").withPrefix("recipes/"))
         );
 
         oreSmelting(recipeOutput, SALTED_BEEF_INGREDIENT, RecipeCategory.FOOD, ModItems.SALTEDCOOKEDBEEF.get(), 0.4f, 200, "salted_cooked_beef");

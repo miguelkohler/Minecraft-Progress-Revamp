@@ -52,6 +52,16 @@ public class ModItemTagProvider extends ItemTagsProvider {
         tag(ModTags.Items.WATERCONTAINERS)
                 .add(Items.WATER_BUCKET)
                 .add(ModItems.WATER_CERAMICBUCKET.get());
+        tag(ModTags.Items.SANDMOLDS)
+                .add(ModItems.EMPTYSANDMOLD.get())
+                .add(ModItems.INGOTSANDMOLD.get());
+        tag(ModTags.Items.INGOTSHAPED)
+                .add(Items.BRICK)
+                .add(Items.NETHER_BRICK)
+                .add(Items.COPPER_INGOT)
+                .add(Items.IRON_INGOT)
+                .add(Items.GOLD_INGOT)
+                .add(Items.NETHERITE_INGOT);
         tag(ModTags.Items.ALLTHEWOODITEM)
                 .addTag(ItemTags.ACACIA_LOGS)
                 .addTag(ItemTags.BIRCH_LOGS)

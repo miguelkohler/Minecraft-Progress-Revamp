@@ -22,18 +22,29 @@ public class ModBlockTagProvider extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(ModBlocks.CHARCOALBLOCK.get());
+                .add(
+                        ModBlocks.COPPERBARBLOCK.get(),
+                        ModBlocks.CHARCOALBLOCK.get()
+                );
         tag(BlockTags.MINEABLE_WITH_SHOVEL)
-                .add(ModBlocks.FIRECLAY.get());
+                .add(
+                        ModBlocks.FIRECLAY.get(),
+                        ModBlocks.MELTEDCOPPERBLOCK.get()
+                );
         tag(BlockTags.MINEABLE_WITH_AXE)
-                .add(ModBlocks.PRIMITIVECRAFTINGTABLE.get())
-                .add(ModBlocks.RUDIMENTARYCRAFTINGTABLE.get())
-                .add(ModBlocks.STEELCUTTER.get());
+                .add(
+                        ModBlocks.PRIMITIVECRAFTINGTABLE.get(),
+                        ModBlocks.RUDIMENTARYCRAFTINGTABLE.get(),
+                        ModBlocks.STEELCUTTER.get(),
+                        ModBlocks.WOODENCRATE.get()
+                );
         tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.STEELCUTTER.get())
                 .add(Blocks.CRAFTING_TABLE)
                 .add(Blocks.COAL_ORE)
-                .add(ModBlocks.CHARCOALBLOCK.get());
+                .add(
+                        ModBlocks.CHARCOALBLOCK.get()
+                );
         tag(ModTags.Blocks.NEEDS_PRIMAL_TOOLS)
                 .addTag(BlockTags.MINEABLE_WITH_AXE)
                 .addTag(BlockTags.PLANKS)
@@ -47,6 +58,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .remove(Blocks.CRAFTING_TABLE)
                 .add(
                         ModBlocks.PRIMITIVECRAFTINGTABLE.get(),
+                        ModBlocks.WOODENCRATE.get(),
                         ModBlocks.RUDIMENTARYCRAFTINGTABLE.get()
                 );
         tag(ModTags.Blocks.INCORRECT_FOR_PRIMAL_TOOL)

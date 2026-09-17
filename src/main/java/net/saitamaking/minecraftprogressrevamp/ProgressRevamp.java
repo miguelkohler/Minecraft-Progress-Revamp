@@ -1,10 +1,22 @@
 package net.saitamaking.minecraftprogressrevamp;
 
+import net.minecraft.client.Minecraft;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+import net.neoforged.neoforge.client.gui.ConfigurationScreen;
+import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.saitamaking.minecraftprogressrevamp.block.ModBlocks;
+import net.saitamaking.minecraftprogressrevamp.block.entity.ModBlockEntities;
 import net.saitamaking.minecraftprogressrevamp.component.ModDataComponents;
 import net.saitamaking.minecraftprogressrevamp.item.ModCreativeModeTabs;
 import net.saitamaking.minecraftprogressrevamp.item.ModItems;
 import net.saitamaking.minecraftprogressrevamp.item.crafting.ModRecipeSerializers;
+import net.saitamaking.minecraftprogressrevamp.loot.ModLootModifiers;
+import net.saitamaking.minecraftprogressrevamp.screen.ModMenuTypes;
+import net.saitamaking.minecraftprogressrevamp.screen.custom.WoodenCrateScreen;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -41,6 +53,12 @@ public class ProgressRevamp {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
+        ModLootModifiers.register(modEventBus);
+
+        ModBlockEntities.register(modEventBus);
+
+        ModMenuTypes.register(modEventBus);
+
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
@@ -56,5 +74,28 @@ public class ProgressRevamp {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         //if(event.getTabKey() == CreativeModeTabs.)
         //bruh
+    }
+
+    @Mod(value = ProgressRevamp.MODID, dist = Dist.CLIENT)
+    // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
+    @EventBusSubscriber(modid = ProgressRevamp.MODID, value = Dist.CLIENT)
+    public class ExampleModClient {
+        public ExampleModClient(ModContainer container) {
+            // Allows NeoForge to create a config screen for this mod's configs.
+            // The config screen is accessed by going to the Mods screen > clicking on your mod > clicking on config.
+            // Do not forget to add translations for your config options to the en_us.json file.
+            container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
+        }
+
+        @SubscribeEvent
+        static void onClientSetup(FMLClientSetupEvent event) {
+            // Some client setup code
+            ProgressRevamp.LOGGER.info("HELLO FROM CLIENT SETUP");
+            ProgressRevamp.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+        }
+
+        public static void registerScreens(RegisterMenuScreensEvent event) {
+            event.register(ModMenuTypes.WOODEN_CRATE_MENU.get(), WoodenCrateScreen::new);
+        }
     }
 }

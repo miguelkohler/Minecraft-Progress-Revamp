@@ -7,6 +7,7 @@ import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
@@ -27,19 +28,21 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        //dropSelf(ModBlocks..get());
         dropSelf(ModBlocks.PRIMITIVECRAFTINGTABLE.get());
         dropSelf(ModBlocks.RUDIMENTARYCRAFTINGTABLE.get());
         dropSelf(ModBlocks.STEELCUTTER.get());
         dropSelf(ModBlocks.CHARCOALBLOCK.get());
+        dropSelf(ModBlocks.MELTEDCOPPERBLOCK.get());
+        dropSelf(ModBlocks.WOODENCRATE.get());
 
         add(ModBlocks.FIRECLAY.get(),
                 block -> createExactDrops(ModBlocks.FIRECLAY.get(), ModItems.FIRECLAYBALL.get(), 4));
 
+        add(ModBlocks.COPPERBARBLOCK.get(),
+                block -> createExactDrops(ModBlocks.COPPERBARBLOCK.get(), Items.COPPER_INGOT, 9));
+
         add(ModBlocks.PEBBLE.get(),
                 block -> createExactDrops(ModBlocks.PEBBLE.get(), ModItems.LOOSEPEBBLE.get(), 1));
-
-        dropWhenSilkTouch(ModBlocks.FIRECLAY.get());
     }
 
     protected LootTable.Builder createMultipleOreDrops(Block pBlock, Item item, float minDrops, float maxDrops) {
@@ -51,6 +54,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
     }
 
     protected LootTable.Builder createExactDrops(Block pBlock, Item item, float exactDrops) {
+        HolderLookup.RegistryLookup<Enchantment> registryLookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
         return this.createSilkTouchDispatchTable(pBlock,
                 this.applyExplosionDecay(pBlock, LootItem.lootTableItem(item)
                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(exactDrops, exactDrops)))));

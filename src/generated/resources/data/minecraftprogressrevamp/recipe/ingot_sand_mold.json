@@ -1,0 +1,15 @@
+{
+  "type": "minecraftprogressrevamp:durability_shapeless",
+  "ingredients": [
+    {
+      "tag": "minecraftprogressrevamp:ingot_shaped"
+    },
+    {
+      "item": "minecraftprogressrevamp:empty_sand_mold"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:ingot_sand_mold"
+  }
+}

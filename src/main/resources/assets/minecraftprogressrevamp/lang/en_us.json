@@ -27,6 +27,10 @@
   "item.minecraftprogressrevamp.hide_leggings": "Hide Shorts",
   "item.minecraftprogressrevamp.hide_boots": "Hide Boots",
   "item.minecraftprogressrevamp.starter_toolbox": "Starter Toolbox",
+  "item.minecraftprogressrevamp.melted_copper_blob": "Melted Copper Blob",
+  "item.minecraftprogressrevamp.small_melted_copper_blob": "Small Melted Copper Blob",
+  "item.minecraftprogressrevamp.empty_sand_mold": "Empty Sand Mold",
+  "item.minecraftprogressrevamp.ingot_sand_mold": "Ingot Sand Mold",
 
   "block.minecraftprogressrevamp.primitive_crafting_table": "Primitive Crafting Table",
   "block.minecraftprogressrevamp.rudimentary_crafting_table": "Rudimentary Crafting Table",
@@ -34,8 +38,12 @@
   "block.minecraftprogressrevamp.charcoal_block": "Charcoal Block",
   "block.minecraftprogressrevamp.fireclay": "Fireclay",
   "block.minecraftprogressrevamp.pebble": "Pebble",
+  "block.minecraftprogressrevamp.melted_copper_block": "Melted Copper Block",
+  "block.minecraftprogressrevamp.copper_bar_block": "Block of Copper Bars",
+  "block.minecraftprogressrevamp.wooden_crate": "Wooden Crate",
 
   "creativetab.minecraftprogressrevamp.primitive_items": "Primitive Items",
+  "creativetab.minecraftprogressrevamp.copper_age_items": "Copper Age Items",
 
   "tooltip.minecraftprogressrevamp.primitive_saw.shift_down": "Can strip wood on right click",
   "tooltip.minecraftprogressrevamp.primitive_saw.not_shift_down": "§8Press [SHIFT] for more information",
