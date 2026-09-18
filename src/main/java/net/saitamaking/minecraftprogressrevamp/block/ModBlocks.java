@@ -13,6 +13,7 @@ import net.saitamaking.minecraftprogressrevamp.block.custom.*;
 import net.saitamaking.minecraftprogressrevamp.item.ModItems;
 
 import java.util.function.Supplier;
+import java.util.function.ToIntFunction;
 
 import static net.minecraft.world.level.block.Blocks.COPPER_BLOCK;
 
@@ -45,7 +46,10 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of().strength(2.5F, 5.0F).sound(SoundType.COPPER).noOcclusion()));
 
     public static final DeferredBlock<Block> WOODENCRATE = registerBlock("wooden_crate",
-            () -> new WoodenCrateBlock(BlockBehaviour.Properties.of().strength(2.0F, 3.0F).noOcclusion()));
+            () -> new WoodenCrateBlock(BlockBehaviour.Properties.of().strength(2.0F, 3.0F).noOcclusion().sound(SoundType.WOOD)));
+
+    public static final DeferredBlock<Block> CAMPFIREWITHCRUCIBLE = registerBlock("campfire_with_crucible",
+            () -> new CampfireWithCrucibleBlock(true, BlockBehaviour.Properties.of().strength(2.0F).sound(SoundType.WOOD).lightLevel(state -> 15).noOcclusion().ignitedByLava()));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block){
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

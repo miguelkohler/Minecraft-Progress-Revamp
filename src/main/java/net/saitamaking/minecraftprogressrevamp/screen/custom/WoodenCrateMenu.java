@@ -34,15 +34,15 @@ public class WoodenCrateMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         //1 slot distancia = 19px, slot bem do centro = coord x 80 y 35
-        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 0, 61, 16));
-        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 0, 80, 16));
-        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 0, 99, 16));
-        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 0, 61, 35));
-        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 0, 80, 35));
-        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 0, 99, 35));
-        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 0, 61, 54));
-        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 0, 80, 54));
-        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 0, 99, 54));
+        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 0, 62, 17));
+        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 1, 80, 17));
+        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 2, 98, 17));
+        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 3, 62, 35));
+        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 4, 80, 35));
+        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 5, 98, 35));
+        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 6, 62, 53));
+        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 7, 80, 53));
+        this.addSlot(new SlotItemHandler(this.blockEntity.inventory, 8, 98, 53));
     }
 
     // CREDIT GOES TO: diesieben07 | https://github.com/diesieben07/SevenCommons

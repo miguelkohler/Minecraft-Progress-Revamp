@@ -71,20 +71,9 @@ public class WoodenCrateBlock extends BaseEntityBlock {
                                               Player player, InteractionHand hand, BlockHitResult hitResult) {
 
         if(level.getBlockEntity(pos) instanceof WoodenCrateEntity woodenCrateEntity){
-            if(player.isCrouching() && !level.isClientSide()) {
+            if(!level.isClientSide()) {
                 ((ServerPlayer) player).openMenu(new SimpleMenuProvider(woodenCrateEntity, Component.literal("Wooden Crate")), pos);
                 return ItemInteractionResult.SUCCESS;
-            }
-            
-            if(woodenCrateEntity.inventory.getStackInSlot(0).isEmpty() && !stack.isEmpty()) {
-                woodenCrateEntity.inventory.insertItem(0, stack.copy(), false);
-                stack.shrink(1);
-                level.playSound(player,pos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1f, 2f);
-            } else if (stack.isEmpty()) {
-                ItemStack stackInside = woodenCrateEntity.inventory.extractItem(0, 1, false);
-                player.setItemInHand(InteractionHand.MAIN_HAND, stackInside);
-                woodenCrateEntity.clearContents();
-                level.playSound(player,pos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1f, 1f);
             }
         }
 
