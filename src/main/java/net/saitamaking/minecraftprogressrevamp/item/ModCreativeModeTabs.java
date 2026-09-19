@@ -51,8 +51,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.FIRECLAY);
                         output.accept(ModItems.UNREFINEDCRUCIBLE);
                         output.accept(ModItems.REFINEDCRUCIBLE);
+                        output.accept(ModBlocks.CAMPFIREWITHCRUCIBLE);
                         output.accept(ModItems.EMPTYSANDMOLD);
                         output.accept(ModItems.INGOTSANDMOLD);
+                        output.accept(ModItems.NAILSANDMOLD);
                         output.accept(ModItems.SALT);
                         output.accept(ModItems.SALTEDBEEF);
                         output.accept(ModItems.SALTEDCOOKEDBEEF);
@@ -70,6 +72,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.MELTEDCOPPERBLOB);
                         output.accept(ModItems.SMALLMELTEDCOPPERBLOB);
                         output.accept(ModBlocks.MELTEDCOPPERBLOCK);
+                        output.accept(ModItems.COPPERNAIL);
                         output.accept(Items.COPPER_INGOT);
                         output.accept(ModBlocks.COPPERBARBLOCK);
                         output.accept(Blocks.COPPER_BLOCK);

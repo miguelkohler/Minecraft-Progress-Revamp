@@ -34,6 +34,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.CHARCOALBLOCK.get());
         dropSelf(ModBlocks.MELTEDCOPPERBLOCK.get());
         dropSelf(ModBlocks.WOODENCRATE.get());
+        dropSelf(ModBlocks.CAMPFIREWITHCRUCIBLE.get());
 
         add(ModBlocks.FIRECLAY.get(),
                 block -> createExactDrops(ModBlocks.FIRECLAY.get(), ModItems.FIRECLAYBALL.get(), 4));

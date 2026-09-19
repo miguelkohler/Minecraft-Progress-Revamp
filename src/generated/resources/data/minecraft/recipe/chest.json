@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "minecraftprogressrevamp:all_the_wood_item"
+    },
+    "O": {
+      "item": "minecraft:iron_ingot"
+    },
+    "X": {
+      "item": "minecraftprogressrevamp:wooden_crate"
+    }
+  },
+  "pattern": [
+    "#O#",
+    "X X",
+    "#X#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:chest"
+  }
+}

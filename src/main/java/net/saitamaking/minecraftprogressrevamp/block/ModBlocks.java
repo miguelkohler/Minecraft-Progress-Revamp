@@ -3,6 +3,7 @@ package net.saitamaking.minecraftprogressrevamp.block;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.GlazedTerracottaBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
@@ -43,7 +44,7 @@ public class ModBlocks {
             () -> new MeltedMetalBlock(COPPER_BLOCK, BlockBehaviour.Properties.of().strength(2.0F, 4.0F).sound(SoundType.FROGLIGHT)));
 
     public static final DeferredBlock<Block> COPPERBARBLOCK = registerBlock("copper_bar_block",
-            () -> new Block(BlockBehaviour.Properties.of().strength(2.5F, 5.0F).sound(SoundType.COPPER).noOcclusion()));
+            () -> new FourDirectionalBlock(BlockBehaviour.Properties.of().strength(2.5F, 5.0F).sound(SoundType.COPPER).noOcclusion()));
 
     public static final DeferredBlock<Block> WOODENCRATE = registerBlock("wooden_crate",
             () -> new WoodenCrateBlock(BlockBehaviour.Properties.of().strength(2.0F, 3.0F).noOcclusion().sound(SoundType.WOOD)));

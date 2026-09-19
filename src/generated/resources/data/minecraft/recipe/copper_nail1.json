@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraftprogressrevamp:small_melted_copper_blob"
+    },
+    "X": {
+      "item": "minecraftprogressrevamp:nail_sand_mold"
+    }
+  },
+  "pattern": [
+    "#  ",
+    " ##",
+    " #X"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:copper_nail"
+  }
+}

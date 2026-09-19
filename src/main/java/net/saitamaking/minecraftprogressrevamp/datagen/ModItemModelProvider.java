@@ -61,6 +61,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.ANIMALHIDE.get());
         basicItem(ModItems.TREEBARK.get());
         basicItem(ModItems.EMPTYSANDMOLD.get());
+        basicItem(ModItems.NAILSANDMOLD.get());
+        basicItem(ModItems.COPPERNAIL.get());
         basicItem(ModItems.MELTEDCOPPERBLOB.get());
         basicItem(ModItems.SMALLMELTEDCOPPERBLOB.get());
         basicItem(ModItems.INGOTSANDMOLD.get());

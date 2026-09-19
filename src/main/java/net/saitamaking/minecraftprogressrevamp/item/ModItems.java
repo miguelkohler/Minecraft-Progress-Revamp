@@ -54,6 +54,9 @@ public class ModItems {
     public static final DeferredItem<Item> INGOTSANDMOLD = ITEMS.register("ingot_sand_mold",
             () -> new Item(new Item.Properties().stacksTo(16)));
 
+    public static final DeferredItem<Item> NAILSANDMOLD = ITEMS.register("nail_sand_mold",
+            () -> new Item(new Item.Properties().stacksTo(16)));
+
     public static final DeferredItem<Item> TREEBARK = ITEMS.register("tree_bark",
             () -> new Item(new Item.Properties()));
 
@@ -88,6 +91,9 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> SMALLMELTEDCOPPERBLOB = ITEMS.register("small_melted_copper_blob",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> COPPERNAIL = ITEMS.register("copper_nail",
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<StarterToolboxItem> STARTERTOOLBOX = ITEMS.register("starter_toolbox",

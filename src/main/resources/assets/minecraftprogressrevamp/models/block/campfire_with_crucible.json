@@ -1,6 +1,7 @@
 {
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
+	"parent": "block/block",
 	"textures": {
 		"0": "minecraft:block/campfire_log",
 		"2": "minecraftprogressrevamp:block/crucible_in_campfire",

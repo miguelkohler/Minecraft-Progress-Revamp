@@ -1,0 +1,27 @@
+{
+  "type": "minecraftprogressrevamp:durability_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "tag": "minecraft:planks"
+    },
+    "I": {
+      "item": "minecraft:stick"
+    },
+    "T": {
+      "tag": "minecraftprogressrevamp:hammers"
+    },
+    "V": {
+      "tag": "minecraftprogressrevamp:saws"
+    }
+  },
+  "pattern": [
+    "##T",
+    "#I ",
+    "VI "
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:wooden_axe"
+  }
+}
