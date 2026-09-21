@@ -28,6 +28,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.PRIMITIVEAXE);
                         output.accept(ModBlocks.PRIMITIVECRAFTINGTABLE);
                         output.accept(ModBlocks.RUDIMENTARYCRAFTINGTABLE);
+                        output.accept(ModBlocks.COBBLESTONEANVIL);
                         output.accept(ModItems.PRIMITIVEPICKAXE);
                         output.accept(ModItems.PRIMITIVEHAMMER);
                         output.accept(ModItems.PRIMITIVESHEARS);

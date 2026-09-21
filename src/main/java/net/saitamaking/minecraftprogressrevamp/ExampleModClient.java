@@ -11,6 +11,7 @@ import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.saitamaking.minecraftprogressrevamp.screen.ModMenuTypes;
+import net.saitamaking.minecraftprogressrevamp.screen.custom.CampfireWithCrucibleScreen;
 import net.saitamaking.minecraftprogressrevamp.screen.custom.WoodenCrateScreen;
 
 // This class will not load on dedicated servers. Accessing client side code from here is safe.
@@ -35,5 +36,6 @@ public class ExampleModClient {
     @SubscribeEvent
     public static void registerScreens(RegisterMenuScreensEvent event) {
         event.register(ModMenuTypes.WOODEN_CRATE_MENU.get(), WoodenCrateScreen::new);
+        event.register(ModMenuTypes.CAMPFIRE_WITH_CRUCIBLE_MENU.get(), CampfireWithCrucibleScreen::new);
     }
 }

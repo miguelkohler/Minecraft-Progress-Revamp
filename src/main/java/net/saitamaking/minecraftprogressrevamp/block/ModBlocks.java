@@ -3,7 +3,6 @@ package net.saitamaking.minecraftprogressrevamp.block;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.GlazedTerracottaBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
@@ -14,7 +13,6 @@ import net.saitamaking.minecraftprogressrevamp.block.custom.*;
 import net.saitamaking.minecraftprogressrevamp.item.ModItems;
 
 import java.util.function.Supplier;
-import java.util.function.ToIntFunction;
 
 import static net.minecraft.world.level.block.Blocks.COPPER_BLOCK;
 
@@ -47,10 +45,13 @@ public class ModBlocks {
             () -> new FourDirectionalBlock(BlockBehaviour.Properties.of().strength(2.5F, 5.0F).sound(SoundType.COPPER).noOcclusion()));
 
     public static final DeferredBlock<Block> WOODENCRATE = registerBlock("wooden_crate",
-            () -> new WoodenCrateBlock(BlockBehaviour.Properties.of().strength(2.0F, 3.0F).noOcclusion().sound(SoundType.WOOD)));
+            () -> new CampfireWithCrucibleBlock(BlockBehaviour.Properties.of().strength(2.0F, 3.0F).noOcclusion().sound(SoundType.WOOD)));
 
     public static final DeferredBlock<Block> CAMPFIREWITHCRUCIBLE = registerBlock("campfire_with_crucible",
-            () -> new CampfireWithCrucibleBlock(true, BlockBehaviour.Properties.of().strength(2.0F).sound(SoundType.WOOD).lightLevel(state -> 15).noOcclusion().ignitedByLava()));
+            () -> new CampfireWithCrucibleBlock(BlockBehaviour.Properties.of().strength(2.0F).sound(SoundType.WOOD).lightLevel(state -> 15).noOcclusion().ignitedByLava()));
+
+    public static final DeferredBlock<Block> COBBLESTONEANVIL = registerBlock("cobblestone_anvil",
+            () -> new FourDirectionalBlock(BlockBehaviour.Properties.of().strength(2.0F, 5.0F).sound(SoundType.STONE).noOcclusion()));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block){
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

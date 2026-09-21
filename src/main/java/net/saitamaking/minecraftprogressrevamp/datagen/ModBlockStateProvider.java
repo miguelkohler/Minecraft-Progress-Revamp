@@ -25,6 +25,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
         rudimentaryCraftingTableBlock(ModBlocks.RUDIMENTARYCRAFTINGTABLE, "rudimentary_crafting_table");
         steelCutterBlock(ModBlocks.STEELCUTTER, "steel_cutter");
         pebbleBlock(ModBlocks.PEBBLE, "pebble");
+        horizontalBlock(ModBlocks.COPPERBARBLOCK.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/copper_bar_block")));
+        horizontalBlock(ModBlocks.CAMPFIREWITHCRUCIBLE.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/campfire_with_crucible")));
+        horizontalBlock(ModBlocks.COBBLESTONEANVIL.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/cobblestone_anvil")));
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock) {

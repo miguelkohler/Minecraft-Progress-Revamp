@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "minecraftprogressrevamp:block/cobblestone_anvil",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "minecraftprogressrevamp:block/cobblestone_anvil"
+    },
+    "facing=south": {
+      "model": "minecraftprogressrevamp:block/cobblestone_anvil",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "minecraftprogressrevamp:block/cobblestone_anvil",
+      "y": 270
+    }
+  }
+}

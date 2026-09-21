@@ -4,8 +4,6 @@ import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.SimpleMenuProvider;
@@ -26,7 +24,7 @@ import net.saitamaking.minecraftprogressrevamp.block.entity.WoodenCrateEntity;
 
 public class WoodenCrateBlock extends BaseEntityBlock {
     public static final VoxelShape SHAPE = Block.box(0,0,0,16,16,16);
-    public static final MapCodec<WoodenCrateBlock> CODEC = simpleCodec(WoodenCrateBlock::new);
+    public static final MapCodec<CampfireWithCrucibleBlock> CODEC = simpleCodec(CampfireWithCrucibleBlock::new);
 
     public WoodenCrateBlock(Properties properties) {
         super(properties);

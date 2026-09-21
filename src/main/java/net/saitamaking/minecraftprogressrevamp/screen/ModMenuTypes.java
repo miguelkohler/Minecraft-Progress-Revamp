@@ -9,6 +9,7 @@ import net.neoforged.neoforge.network.IContainerFactory;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.saitamaking.minecraftprogressrevamp.ProgressRevamp;
+import net.saitamaking.minecraftprogressrevamp.screen.custom.CampfireWithCrucibleMenu;
 import net.saitamaking.minecraftprogressrevamp.screen.custom.WoodenCrateMenu;
 
 public class ModMenuTypes {
@@ -18,6 +19,9 @@ public class ModMenuTypes {
 
     public static final DeferredHolder<MenuType<?>, MenuType<WoodenCrateMenu>> WOODEN_CRATE_MENU =
             registerMenuType("wooden_crate_menu", WoodenCrateMenu::new);
+
+    public static final DeferredHolder<MenuType<?>, MenuType<CampfireWithCrucibleMenu>> CAMPFIRE_WITH_CRUCIBLE_MENU =
+            registerMenuType("campfire_with_crucible_menu", CampfireWithCrucibleMenu::new);
 
     private static <T extends AbstractContainerMenu>DeferredHolder<MenuType<?>, MenuType<T>> registerMenuType(String name,
                                                                                                               IContainerFactory<T> factory){

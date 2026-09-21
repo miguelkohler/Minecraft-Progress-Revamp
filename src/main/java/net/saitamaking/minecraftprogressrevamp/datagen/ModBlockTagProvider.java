@@ -24,6 +24,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(
                         ModBlocks.COPPERBARBLOCK.get(),
+                        ModBlocks.COBBLESTONEANVIL.get(),
                         ModBlocks.CHARCOALBLOCK.get()
                 );
         tag(BlockTags.MINEABLE_WITH_SHOVEL)
@@ -47,18 +48,48 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 );
         tag(ModTags.Blocks.NEEDS_PRIMAL_TOOLS)
                 .addTag(BlockTags.MINEABLE_WITH_AXE)
-                .addTag(BlockTags.PLANKS)
-                .addTag(BlockTags.LOGS)
-                .addTag(BlockTags.ALL_SIGNS)
-                .addTag(BlockTags.WOODEN_DOORS)
-                .addTag(BlockTags.WOODEN_FENCES)
-                .addTag(BlockTags.WOODEN_SLABS)
-                .addTag(BlockTags.WOODEN_STAIRS)
-                .addTag(BlockTags.WOODEN_TRAPDOORS)
-                .remove(Blocks.CRAFTING_TABLE)
+                .remove(
+                        BlockTags.SAPLINGS,
+                        BlockTags.WOODEN_BUTTONS,
+                        BlockTags.SIGNS
+                        )
+                .remove(
+                        Blocks.CRAFTING_TABLE,
+                        Blocks.WHEAT,
+                        Blocks.WEEPING_VINES_PLANT,
+                        Blocks.WEEPING_VINES,
+                        Blocks.WARPED_FUNGUS,
+                        Blocks.VINE,
+                        Blocks.TWISTING_VINES_PLANT,
+                        Blocks.TWISTING_VINES,
+                        Blocks.TALL_GRASS,
+                        Blocks.SMALL_DRIPLEAF,
+                        Blocks.SCAFFOLDING,
+                        Blocks.RED_MUSHROOM,
+                        Blocks.PUMPKIN_STEM,
+                        Blocks.POTATOES,
+                        Blocks.NETHER_WART,
+                        Blocks.MELON_STEM,
+                        Blocks.LILY_PAD,
+                        Blocks.LARGE_FERN,
+                        Blocks.LADDER,
+                        Blocks.JACK_O_LANTERN,
+                        Blocks.SHORT_GRASS,
+                        Blocks.GLOW_LICHEN,
+                        Blocks.FERN,
+                        Blocks.DEAD_BUSH,
+                        Blocks.CARROTS,
+                        Blocks.CARVED_PUMPKIN,
+                        Blocks.BIG_DRIPLEAF_STEM,
+                        Blocks.BIG_DRIPLEAF,
+                        Blocks.BEETROOTS,
+                        Blocks.ATTACHED_PUMPKIN_STEM,
+                        Blocks.ATTACHED_MELON_STEM
+                )
                 .add(
                         ModBlocks.PRIMITIVECRAFTINGTABLE.get(),
                         ModBlocks.WOODENCRATE.get(),
+                        ModBlocks.COBBLESTONEANVIL.get(),
                         ModBlocks.RUDIMENTARYCRAFTINGTABLE.get()
                 );
         tag(ModTags.Blocks.INCORRECT_FOR_PRIMAL_TOOL)

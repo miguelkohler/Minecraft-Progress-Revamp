@@ -98,6 +98,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_copper_ingot", has(Items.COPPER_INGOT))
                 .save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.COBBLESTONEANVIL.get())
+                .pattern("---")
+                .pattern(" # ")
+                .pattern("###")
+                .define('#', Items.COBBLESTONE)
+                .define('-', Items.COBBLESTONE_SLAB)
+                .unlockedBy("has_cobblestone", has(Items.COBBLESTONE))
+                .unlockedBy("has_cobblestone_slab", has(Items.COBBLESTONE_SLAB))
+                .save(recipeOutput);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.COPPERNAIL.get())
                 .pattern(" #X")
                 .pattern(" ##")

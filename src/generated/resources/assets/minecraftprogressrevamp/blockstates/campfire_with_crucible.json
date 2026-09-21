@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "minecraftprogressrevamp:block/campfire_with_crucible",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "minecraftprogressrevamp:block/campfire_with_crucible"
+    },
+    "facing=south": {
+      "model": "minecraftprogressrevamp:block/campfire_with_crucible",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "minecraftprogressrevamp:block/campfire_with_crucible",
+      "y": 270
+    }
+  }
+}

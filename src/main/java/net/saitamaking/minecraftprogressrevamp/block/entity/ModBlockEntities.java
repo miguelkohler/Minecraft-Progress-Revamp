@@ -19,6 +19,10 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("wooden_crate_be", () -> BlockEntityType.Builder.of(
                     WoodenCrateEntity::new, ModBlocks.WOODENCRATE.get()).build(null));
 
+    public static final Supplier<BlockEntityType<CampfireWithCrucibleEntity>> CAMPFIREWITHCRUCIBLE_BE =
+            BLOCK_ENTITIES.register("campfire_with_crucible_be", () -> BlockEntityType.Builder.of(
+                    CampfireWithCrucibleEntity::new, ModBlocks.CAMPFIREWITHCRUCIBLE.get()).build(null));
+
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }
