@@ -4,6 +4,8 @@ import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.SimpleMenuProvider;
@@ -71,6 +73,10 @@ public class WoodenCrateBlock extends BaseEntityBlock {
         if(level.getBlockEntity(pos) instanceof WoodenCrateEntity woodenCrateEntity){
             if(!level.isClientSide()) {
                 ((ServerPlayer) player).openMenu(new SimpleMenuProvider(woodenCrateEntity, Component.literal("Wooden Crate")), pos);
+                level.playSound(
+                        null, pos, SoundEvents.BARREL_OPEN, SoundSource.BLOCKS, 0.5F,
+                        1.35F
+                );
                 return ItemInteractionResult.SUCCESS;
             }
         }

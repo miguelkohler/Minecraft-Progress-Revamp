@@ -66,6 +66,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_melted_copper_block", has(ModBlocks.MELTEDCOPPERBLOCK))
                 .save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.GOLD_BLOCK)
+                .pattern("###")
+                .pattern("#X#")
+                .pattern("###")
+                .define('#', Items.ICE)
+                .define('X', ModBlocks.MELTEDGOLDBLOCK)
+                .unlockedBy("has_ice", has(Items.ICE))
+                .unlockedBy("has_melted_gold_block", has(ModBlocks.MELTEDGOLDBLOCK))
+                .save(recipeOutput);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Blocks.CHEST)
                 .pattern("#O#")
                 .pattern("X X")
@@ -96,6 +106,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("###")
                 .define('#', Items.COPPER_INGOT)
                 .unlockedBy("has_copper_ingot", has(Items.COPPER_INGOT))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.GOLDBARBLOCK.get())
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', Items.GOLD_INGOT)
+                .unlockedBy("has_gold_ingot", has(Items.GOLD_INGOT))
                 .save(recipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.COBBLESTONEANVIL.get())
@@ -143,6 +161,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_copper_bar_block", has(ModBlocks.COPPERBARBLOCK))
                 .save(recipeOutput, "minecraftprogressrevamp:copper_bar_block_to_ingots");
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.GOLD_INGOT, 9)
+                .requires(ModBlocks.GOLDBARBLOCK)
+                .unlockedBy("has_gold_bar_block", has(ModBlocks.GOLDBARBLOCK))
+                .save(recipeOutput, "minecraftprogressrevamp:gold_bar_block_to_ingots");
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.NAILSANDMOLD.get())
                 .requires(ModItems.EMPTYSANDMOLD)
                 .requires(Items.STICK)
@@ -157,12 +180,27 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_melted_copper_blob", has(ModItems.MELTEDCOPPERBLOB))
                 .save(recipeOutput);
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.GOLD_INGOT)
+                .requires(ModItems.INGOTSANDMOLD)
+                .requires(ModItems.MELTEDGOLDBLOB)
+                .unlockedBy("has_ingot_sand_mold", has(ModItems.INGOTSANDMOLD))
+                .unlockedBy("has_melted_gold_blob", has(ModItems.MELTEDGOLDBLOB))
+                .save(recipeOutput);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.MELTEDCOPPERBLOCK.get())
                 .pattern("###")
                 .pattern("###")
                 .pattern("###")
                 .define('#', ModItems.MELTEDCOPPERBLOB)
                 .unlockedBy("has_melted_copper_blob", has(ModItems.MELTEDCOPPERBLOB))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.MELTEDGOLDBLOCK.get())
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', ModItems.MELTEDGOLDBLOB)
+                .unlockedBy("has_melted_gold_blob", has(ModItems.MELTEDGOLDBLOB))
                 .save(recipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MELTEDCOPPERBLOB.get())
@@ -173,6 +211,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_small_melted_copper_blob", has(ModItems.SMALLMELTEDCOPPERBLOB))
                 .save(recipeOutput, "melted_copper_blob_compacting");
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MELTEDGOLDBLOB.get())
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', ModItems.SMALLMELTEDGOLDBLOB)
+                .unlockedBy("has_small_melted_gold_blob", has(ModItems.SMALLMELTEDGOLDBLOB))
+                .save(recipeOutput, "melted_gold_blob_compacting");
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.SMALLMELTEDCOPPERBLOB.get(), 9)
                 .requires(ModItems.MELTEDCOPPERBLOB)
                 .unlockedBy("has_melted_copper_blob", has(ModItems.MELTEDCOPPERBLOB))
@@ -181,6 +227,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.MELTEDCOPPERBLOB.get(), 9)
                 .requires(ModBlocks.MELTEDCOPPERBLOCK)
                 .unlockedBy("has_melted_copper_block", has(ModBlocks.MELTEDCOPPERBLOCK))
+                .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.SMALLMELTEDGOLDBLOB.get(), 9)
+                .requires(ModItems.MELTEDGOLDBLOB)
+                .unlockedBy("has_melted_gold_blob", has(ModItems.MELTEDGOLDBLOB))
+                .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.MELTEDGOLDBLOB.get(), 9)
+                .requires(ModBlocks.MELTEDGOLDBLOCK)
+                .unlockedBy("has_melted_gold_block", has(ModBlocks.MELTEDGOLDBLOCK))
                 .save(recipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.PRIMITIVEAXE.get())

@@ -68,7 +68,7 @@ public class WoodenCrateEntity extends BlockEntity implements MenuProvider {
 
     @Override
     public Component getDisplayName() {
-        return Component.literal("Wooden Crate");
+        return Component.translatable("block.minecraftprogressrevamp.wooden_crate");
     }
 
     @Override

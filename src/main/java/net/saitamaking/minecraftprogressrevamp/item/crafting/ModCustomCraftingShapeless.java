@@ -73,7 +73,7 @@ public class ModCustomCraftingShapeless extends ShapelessRecipe {
             if (!stack.isEmpty() && CORRECT_TOOL.contains(stack.getItem())) {
                 remainingItems.set(i, damageItem(stack.copy()));
             } else if (!stack.isEmpty() && stack.is(ModTags.Items.INGOTSHAPED)) {
-                remainingItems.set(i, stack.copyWithCount(stack.getCount()));
+                remainingItems.set(i, stack.copyWithCount(1));
             } else {
                 remainingItems.set(i, CommonHooks.getCraftingRemainingItem(stack));
             }

@@ -23,7 +23,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import net.saitamaking.minecraftprogressrevamp.item.ModItems;
 import net.saitamaking.minecraftprogressrevamp.screen.custom.CampfireWithCrucibleMenu;
-import net.saitamaking.minecraftprogressrevamp.screen.custom.WoodenCrateMenu;
 import org.jetbrains.annotations.Nullable;
 
 public class CampfireWithCrucibleEntity extends BlockEntity implements MenuProvider {

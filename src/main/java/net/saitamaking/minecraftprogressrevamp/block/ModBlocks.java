@@ -3,6 +3,7 @@ package net.saitamaking.minecraftprogressrevamp.block;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.CraftingTableBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
@@ -15,16 +16,17 @@ import net.saitamaking.minecraftprogressrevamp.item.ModItems;
 import java.util.function.Supplier;
 
 import static net.minecraft.world.level.block.Blocks.COPPER_BLOCK;
+import static net.minecraft.world.level.block.Blocks.GOLD_BLOCK;
 
 public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(ProgressRevamp.MODID);
 
     public static final DeferredBlock<Block> PRIMITIVECRAFTINGTABLE = registerBlock("primitive_crafting_table",
-            () -> new Block(BlockBehaviour.Properties.of().strength(2.5f).sound(SoundType.WOOD)));
+            () -> new PrimitiveCraftingTableBlock(BlockBehaviour.Properties.of().strength(2.5f).sound(SoundType.WOOD)));
 
     public static final DeferredBlock<Block> RUDIMENTARYCRAFTINGTABLE = registerBlock("rudimentary_crafting_table",
-            () -> new Block(BlockBehaviour.Properties.of().strength(2.5f).requiresCorrectToolForDrops().sound(SoundType.WOOD)));
+            () -> new RudimentaryCraftingTableBlock(BlockBehaviour.Properties.of().strength(2.5f).requiresCorrectToolForDrops().sound(SoundType.WOOD)));
 
     public static final DeferredBlock<Block> STEELCUTTER = registerBlock("steel_cutter",
             () -> new SteelCutterBlock(BlockBehaviour.Properties.of().strength(3.5f).requiresCorrectToolForDrops().sound(SoundType.WOOD)));
@@ -41,11 +43,17 @@ public class ModBlocks {
     public static final DeferredBlock<MeltedMetalBlock> MELTEDCOPPERBLOCK = registerBlock("melted_copper_block",
             () -> new MeltedMetalBlock(COPPER_BLOCK, BlockBehaviour.Properties.of().strength(2.0F, 4.0F).sound(SoundType.FROGLIGHT)));
 
+    public static final DeferredBlock<MeltedMetalBlock> MELTEDGOLDBLOCK = registerBlock("melted_gold_block",
+            () -> new MeltedMetalBlock(GOLD_BLOCK, BlockBehaviour.Properties.of().strength(2.0F, 4.0F).sound(SoundType.FROGLIGHT)));
+
     public static final DeferredBlock<Block> COPPERBARBLOCK = registerBlock("copper_bar_block",
             () -> new FourDirectionalBlock(BlockBehaviour.Properties.of().strength(2.5F, 5.0F).sound(SoundType.COPPER).noOcclusion()));
 
+    public static final DeferredBlock<Block> GOLDBARBLOCK = registerBlock("gold_bar_block",
+            () -> new FourDirectionalBlock(BlockBehaviour.Properties.of().strength(3.5F, 5.0F).sound(SoundType.METAL).noOcclusion()));
+
     public static final DeferredBlock<Block> WOODENCRATE = registerBlock("wooden_crate",
-            () -> new CampfireWithCrucibleBlock(BlockBehaviour.Properties.of().strength(2.0F, 3.0F).noOcclusion().sound(SoundType.WOOD)));
+            () -> new WoodenCrateBlock(BlockBehaviour.Properties.of().strength(2.0F, 3.0F).noOcclusion().sound(SoundType.WOOD)));
 
     public static final DeferredBlock<Block> CAMPFIREWITHCRUCIBLE = registerBlock("campfire_with_crucible",
             () -> new CampfireWithCrucibleBlock(BlockBehaviour.Properties.of().strength(2.0F).sound(SoundType.WOOD).lightLevel(state -> 15).noOcclusion().ignitedByLava()));

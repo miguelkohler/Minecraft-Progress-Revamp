@@ -20,13 +20,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         blockWithItem(ModBlocks.CHARCOALBLOCK);
         blockWithItem(ModBlocks.MELTEDCOPPERBLOCK);
-        primitiveCraftingTableBlock(ModBlocks.PRIMITIVECRAFTINGTABLE, "primitive_crafting_table");
+        blockWithItem(ModBlocks.WOODENCRATE);
+        blockWithItem(ModBlocks.MELTEDGOLDBLOCK);
         blockWithItem(ModBlocks.FIRECLAY);
-        rudimentaryCraftingTableBlock(ModBlocks.RUDIMENTARYCRAFTINGTABLE, "rudimentary_crafting_table");
         steelCutterBlock(ModBlocks.STEELCUTTER, "steel_cutter");
         pebbleBlock(ModBlocks.PEBBLE, "pebble");
         horizontalBlock(ModBlocks.COPPERBARBLOCK.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/copper_bar_block")));
+        horizontalBlock(ModBlocks.GOLDBARBLOCK.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/gold_bar_block")));
         horizontalBlock(ModBlocks.CAMPFIREWITHCRUCIBLE.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/campfire_with_crucible")));
         horizontalBlock(ModBlocks.COBBLESTONEANVIL.get(),
@@ -35,38 +37,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     private void blockWithItem(DeferredBlock<?> deferredBlock) {
         simpleBlockWithItem(deferredBlock.get(), cubeAll(deferredBlock.get()));
-    }
-
-    private void primitiveCraftingTableBlock(DeferredBlock<?> deferredBlock, String name) {
-        Block block = deferredBlock.get();
-
-        ModelFile model = models().cube(name,
-                mcLoc("minecraft:block/oak_log_top"), // down
-                modLoc("block/" + name + "_top"),    // up
-                modLoc("block/" + name + "_front"),  // north
-                modLoc("block/" + name + "_front"),   // south
-                modLoc("block/" + name + "_side"),   // east
-                modLoc("block/" + name + "_side")    // west
-        ).texture("particle", modLoc("block/" + name + "_side"));
-
-        simpleBlock(block, model);
-        simpleBlockItem(block, model);
-    }
-
-    private void rudimentaryCraftingTableBlock(DeferredBlock<?> deferredBlock, String name) {
-        Block block = deferredBlock.get();
-
-        ModelFile model = models().cube(name,
-                mcLoc("minecraft:block/stripped_oak_log_top"), // down
-                modLoc("block/" + name + "_top"),    // up
-                modLoc("block/" + name + "_front"),  // north
-                modLoc("block/" + name + "_side"),   // south
-                modLoc("block/" + name + "_back"),   // east
-                modLoc("block/" + name + "_side")    // west
-        ).texture("particle", modLoc("block/" + name + "_side"));
-
-        simpleBlock(block, model);
-        simpleBlockItem(block, model);
     }
 
     private void steelCutterBlock(DeferredBlock<?> deferredBlock, String name) {

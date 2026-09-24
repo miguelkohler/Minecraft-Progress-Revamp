@@ -65,6 +65,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.COPPERNAIL.get());
         basicItem(ModItems.MELTEDCOPPERBLOB.get());
         basicItem(ModItems.SMALLMELTEDCOPPERBLOB.get());
+        basicItem(ModItems.MELTEDGOLDBLOB.get());
+        basicItem(ModItems.SMALLMELTEDGOLDBLOB.get());
         basicItem(ModItems.INGOTSANDMOLD.get());
         handheldItem(ModItems.STARTERTOOLBOX.get());
         basicItem(ModItems.UNREFINEDCRUCIBLE.get());

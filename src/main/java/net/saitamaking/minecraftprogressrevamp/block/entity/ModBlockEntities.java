@@ -23,6 +23,14 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("campfire_with_crucible_be", () -> BlockEntityType.Builder.of(
                     CampfireWithCrucibleEntity::new, ModBlocks.CAMPFIREWITHCRUCIBLE.get()).build(null));
 
+    public static final Supplier<BlockEntityType<PrimitiveCraftingTableEntity>> PRIMITIVECRAFTINGTABLE_BE =
+            BLOCK_ENTITIES.register("primitive_crafting_table_be", () -> BlockEntityType.Builder.of(
+                    PrimitiveCraftingTableEntity::new, ModBlocks.PRIMITIVECRAFTINGTABLE.get()).build(null));
+
+    public static final Supplier<BlockEntityType<RudimentaryCraftingTableEntity>> RUDIMENTARYCRAFTINGTABLE_BE =
+            BLOCK_ENTITIES.register("rudimentary_crafting_table_be", () -> BlockEntityType.Builder.of(
+                    RudimentaryCraftingTableEntity::new, ModBlocks.RUDIMENTARYCRAFTINGTABLE.get()).build(null));
+
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

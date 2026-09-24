@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "minecraftprogressrevamp:block/wooden_crate"
+  }
+}

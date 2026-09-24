@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraftprogressrevamp:ingot_sand_mold"
+    },
+    {
+      "item": "minecraftprogressrevamp:melted_gold_blob"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:gold_ingot"
+  }
+}

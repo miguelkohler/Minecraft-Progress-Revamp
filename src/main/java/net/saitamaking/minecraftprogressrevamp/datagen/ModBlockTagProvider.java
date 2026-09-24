@@ -24,12 +24,14 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(
                         ModBlocks.COPPERBARBLOCK.get(),
+                        ModBlocks.GOLDBARBLOCK.get(),
                         ModBlocks.COBBLESTONEANVIL.get(),
                         ModBlocks.CHARCOALBLOCK.get()
                 );
         tag(BlockTags.MINEABLE_WITH_SHOVEL)
                 .add(
                         ModBlocks.FIRECLAY.get(),
+                        ModBlocks.MELTEDGOLDBLOCK.get(),
                         ModBlocks.MELTEDCOPPERBLOCK.get()
                 );
         tag(BlockTags.MINEABLE_WITH_AXE)

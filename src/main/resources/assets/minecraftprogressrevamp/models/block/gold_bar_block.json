@@ -3,9 +3,9 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
-		"1": "minecraftprogressrevamp:block/copperbarblock_bottom",
-		"2": "minecraftprogressrevamp:block/copperbarblock_top",
-		"particle": "minecraftprogressrevamp:block/copperbarblock_top"
+		"1": "minecraftprogressrevamp:block/goldbarblock_bottom",
+		"2": "minecraftprogressrevamp:block/goldbarblock_top",
+		"particle": "minecraftprogressrevamp:block/goldbarblock_top"
 	},
 	"elements": [
 		{

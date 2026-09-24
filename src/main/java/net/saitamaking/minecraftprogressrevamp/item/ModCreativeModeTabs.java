@@ -76,6 +76,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.COPPERNAIL);
                         output.accept(Items.COPPER_INGOT);
                         output.accept(ModBlocks.COPPERBARBLOCK);
+                        output.accept(ModItems.MELTEDGOLDBLOB);
+                        output.accept(ModItems.SMALLMELTEDGOLDBLOB);
+                        output.accept(ModBlocks.MELTEDGOLDBLOCK);
+                        output.accept(ModBlocks.GOLDBARBLOCK);
                         output.accept(Blocks.COPPER_BLOCK);
 
                         output.accept(ModBlocks.STEELCUTTER);

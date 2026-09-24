@@ -85,12 +85,18 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> REFINEDCRUCIBLE = ITEMS.register("refined_crucible",
-            () -> new Item(new Item.Properties()));
+            () -> new RefinedCrucibleItem(new Item.Properties().stacksTo(8)));
 
     public static final DeferredItem<Item> MELTEDCOPPERBLOB = ITEMS.register("melted_copper_blob",
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> SMALLMELTEDCOPPERBLOB = ITEMS.register("small_melted_copper_blob",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> MELTEDGOLDBLOB = ITEMS.register("melted_gold_blob",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> SMALLMELTEDGOLDBLOB = ITEMS.register("small_melted_gold_blob",
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> COPPERNAIL = ITEMS.register("copper_nail",

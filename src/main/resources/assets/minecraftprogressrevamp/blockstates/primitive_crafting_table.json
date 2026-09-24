@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "minecraftprogressrevamp:block/primitive_crafting_table",
+      "y": 180
+    },
+    "facing=north": {
+      "model": "minecraftprogressrevamp:block/primitive_crafting_table",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "minecraftprogressrevamp:block/primitive_crafting_table",
+      "y": 270
+    },
+    "facing=west": {
+      "model": "minecraftprogressrevamp:block/primitive_crafting_table"
+    }
+  }
+}
