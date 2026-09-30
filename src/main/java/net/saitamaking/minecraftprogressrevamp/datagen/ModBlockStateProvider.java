@@ -29,6 +29,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 new ModelFile.UncheckedModelFile(modLoc("block/copper_bar_block")));
         horizontalBlock(ModBlocks.GOLDBARBLOCK.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/gold_bar_block")));
+        horizontalBlock(ModBlocks.IRONBARBLOCK.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/iron_bar_block")));
         horizontalBlock(ModBlocks.CAMPFIREWITHCRUCIBLE.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/campfire_with_crucible")));
         horizontalBlock(ModBlocks.COBBLESTONEANVIL.get(),

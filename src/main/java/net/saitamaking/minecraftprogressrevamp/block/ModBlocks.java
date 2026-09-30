@@ -52,6 +52,9 @@ public class ModBlocks {
     public static final DeferredBlock<Block> GOLDBARBLOCK = registerBlock("gold_bar_block",
             () -> new FourDirectionalBlock(BlockBehaviour.Properties.of().strength(3.5F, 5.0F).sound(SoundType.METAL).noOcclusion()));
 
+    public static final DeferredBlock<Block> IRONBARBLOCK = registerBlock("iron_bar_block",
+            () -> new FourDirectionalBlock(BlockBehaviour.Properties.of().strength(3.5F, 5.0F).sound(SoundType.METAL).noOcclusion()));
+
     public static final DeferredBlock<Block> WOODENCRATE = registerBlock("wooden_crate",
             () -> new WoodenCrateBlock(BlockBehaviour.Properties.of().strength(2.0F, 3.0F).noOcclusion().sound(SoundType.WOOD)));
 

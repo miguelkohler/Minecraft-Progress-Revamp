@@ -12,6 +12,8 @@ public class ModTags {
     public static class Blocks {
         public static TagKey<Block> NEEDS_PRIMAL_TOOLS = createTag("needs_primal_tools");
         public static TagKey<Block> INCORRECT_FOR_PRIMAL_TOOL = createTag("incorrect_for_primal_tool");
+        public static TagKey<Block> NEEDS_COPPER_TOOLS = createTag("needs_copper_tools");
+        public static TagKey<Block> INCORRECT_FOR_COPPER_TOOL = createTag("incorrect_for_copper_tool");
         public static TagKey<Block> STRIPPEDLOGS = createTag("stripped_logs");
         public static TagKey<Block> ALLTHELOGS = createTag("all_the_logs");
         public static TagKey<Block> ALLTHEWOOD = createTag("all_the_wood");

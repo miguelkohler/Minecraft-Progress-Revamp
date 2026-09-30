@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "minecraftprogressrevamp:block/iron_bar_block",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "minecraftprogressrevamp:block/iron_bar_block"
+    },
+    "facing=south": {
+      "model": "minecraftprogressrevamp:block/iron_bar_block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "minecraftprogressrevamp:block/iron_bar_block",
+      "y": 270
+    }
+  }
+}

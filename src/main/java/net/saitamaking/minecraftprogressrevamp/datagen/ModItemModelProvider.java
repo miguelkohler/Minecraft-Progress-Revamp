@@ -71,10 +71,20 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.STARTERTOOLBOX.get());
         basicItem(ModItems.UNREFINEDCRUCIBLE.get());
         basicItem(ModItems.WOODENHANDLE.get());
+        basicItem(ModItems.LEATHERSTICK.get());
+        handheldItem(ModItems.COPPERAXE.get());
+        handheldItem(ModItems.COPPERPICKAXE.get());
+        handheldItem(ModItems.COPPERSHOVEL.get());
+        handheldItem(ModItems.COPPERSWORD.get());
+        handheldItem(ModItems.COPPERHOE.get());
 
         trimmedArmorItem(ModItems.HIDEVEST);
         trimmedArmorItem(ModItems.HIDESHORTS);
         trimmedArmorItem(ModItems.HIDEBOOTS);
+        trimmedArmorItem(ModItems.COPPERHELMET);
+        trimmedArmorItem(ModItems.COPPERCHESTPLATE);
+        trimmedArmorItem(ModItems.COPPERLEGGINGS);
+        trimmedArmorItem(ModItems.COPPERBOOTS);
     }
 
     // Shoutout to El_Redstoniano for making this

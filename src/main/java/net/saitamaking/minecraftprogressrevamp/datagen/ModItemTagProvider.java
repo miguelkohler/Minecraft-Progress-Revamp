@@ -40,8 +40,10 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.PRIMITIVESHEARS.get());
         tag(ItemTags.AXES)
                 .add(ModItems.PRIMITIVEAXE.get())
+                .add(ModItems.COPPERAXE.get())
                 .add(ModItems.PRIMITIVESAW.get());
         tag(ItemTags.PICKAXES)
+                .add(ModItems.COPPERPICKAXE.get())
                 .add(ModItems.PRIMITIVEPICKAXE.get());
         tag(ModTags.Items.SAWS)
                 .add(ModItems.PRIMITIVESAW.get());
@@ -75,6 +77,10 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .addTag(ItemTags.OAK_LOGS);
 
         this.tag(ItemTags.TRIMMABLE_ARMOR)
+                .add(ModItems.COPPERHELMET.get())
+                .add(ModItems.COPPERCHESTPLATE.get())
+                .add(ModItems.COPPERLEGGINGS.get())
+                .add(ModItems.COPPERBOOTS.get())
                 .add(ModItems.HIDEVEST.get())
                 .add(ModItems.HIDEBOOTS.get())
                 .add(ModItems.HIDESHORTS.get());

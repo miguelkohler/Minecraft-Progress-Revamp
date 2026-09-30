@@ -116,6 +116,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_gold_ingot", has(Items.GOLD_INGOT))
                 .save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.IRONBARBLOCK.get())
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', Items.IRON_INGOT)
+                .unlockedBy("has_iron_ingot", has(Items.IRON_INGOT))
+                .save(recipeOutput);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.COBBLESTONEANVIL.get())
                 .pattern("---")
                 .pattern(" # ")
@@ -276,6 +284,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_stick", has(Items.STICK))
                 .unlockedBy("has_cobblestone", has(Items.COBBLESTONE))
                 .unlockedBy("has_loose_pebble", has(ModItems.LOOSEPEBBLE))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.LEATHERSTICK.get())
+                .pattern(" # ")
+                .pattern(" / ")
+                .pattern(" # ")
+                .define('#', Items.LEATHER)
+                .define('/', Items.STICK)
+                .unlockedBy("has_stick", has(Items.STICK))
+                .unlockedBy("has_leather", has(Items.LEATHER))
                 .save(recipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.PRIMITIVEPICKAXE.get())

@@ -45,8 +45,33 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.STEELCUTTER.get())
                 .add(Blocks.CRAFTING_TABLE)
                 .add(Blocks.COAL_ORE)
+                .remove(
+                        Blocks.IRON_ORE,
+                        Blocks.DEEPSLATE_IRON_ORE,
+                        Blocks.IRON_BLOCK,
+                        Blocks.IRON_BARS,
+                        Blocks.RAW_IRON_BLOCK,
+                        Blocks.IRON_DOOR,
+                        Blocks.IRON_TRAPDOOR,
+                        Blocks.LAPIS_BLOCK,
+                        Blocks.LAPIS_ORE,
+                        Blocks.DEEPSLATE_LAPIS_ORE
+                )
                 .add(
                         ModBlocks.CHARCOALBLOCK.get()
+                );
+        tag(ModTags.Blocks.NEEDS_COPPER_TOOLS)
+                .add(
+                        Blocks.IRON_ORE,
+                        Blocks.DEEPSLATE_IRON_ORE,
+                        Blocks.IRON_BLOCK,
+                        Blocks.IRON_BARS,
+                        Blocks.RAW_IRON_BLOCK,
+                        Blocks.IRON_DOOR,
+                        Blocks.IRON_TRAPDOOR,
+                        Blocks.LAPIS_BLOCK,
+                        Blocks.LAPIS_ORE,
+                        Blocks.DEEPSLATE_LAPIS_ORE
                 );
         tag(ModTags.Blocks.NEEDS_PRIMAL_TOOLS)
                 .addTag(BlockTags.MINEABLE_WITH_AXE)
@@ -96,10 +121,22 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 );
         tag(ModTags.Blocks.INCORRECT_FOR_PRIMAL_TOOL)
                 .addTag(BlockTags.NEEDS_STONE_TOOL)
+                .addTag(ModTags.Blocks.NEEDS_COPPER_TOOLS)
                 .addTag(BlockTags.NEEDS_IRON_TOOL)
                 .addTag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(Blocks.CRAFTING_TABLE)
                 .remove(ModTags.Blocks.NEEDS_PRIMAL_TOOLS);
+
+        tag(BlockTags.INCORRECT_FOR_STONE_TOOL)
+                .addTag(ModTags.Blocks.NEEDS_COPPER_TOOLS)
+                .addTag(BlockTags.NEEDS_IRON_TOOL)
+                .addTag(BlockTags.NEEDS_DIAMOND_TOOL)
+                .remove(BlockTags.NEEDS_STONE_TOOL);
+
+        tag(ModTags.Blocks.INCORRECT_FOR_COPPER_TOOL)
+                .addTag(BlockTags.NEEDS_IRON_TOOL)
+                .addTag(BlockTags.NEEDS_DIAMOND_TOOL)
+                .remove(ModTags.Blocks.NEEDS_COPPER_TOOLS);
 
         tag(ModTags.Blocks.STRIPPEDLOGS)
                 .add(Blocks.STRIPPED_ACACIA_LOG)

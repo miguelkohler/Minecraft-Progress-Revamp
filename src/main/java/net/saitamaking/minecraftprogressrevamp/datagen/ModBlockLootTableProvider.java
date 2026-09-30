@@ -47,6 +47,9 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         add(ModBlocks.GOLDBARBLOCK.get(),
                 block -> createExactDrops(ModBlocks.GOLDBARBLOCK.get(), Items.GOLD_INGOT, 9));
 
+        add(ModBlocks.IRONBARBLOCK.get(),
+                block -> createExactDrops(ModBlocks.IRONBARBLOCK.get(), Items.IRON_INGOT, 9));
+
         add(ModBlocks.PEBBLE.get(),
                 block -> createExactDrops(ModBlocks.PEBBLE.get(), ModItems.LOOSEPEBBLE.get(), 1));
     }

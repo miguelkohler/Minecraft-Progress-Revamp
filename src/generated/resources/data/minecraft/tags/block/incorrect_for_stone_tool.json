@@ -1,0 +1,10 @@
+{
+  "remove": [
+    "#minecraft:needs_stone_tool"
+  ],
+  "values": [
+    "#minecraftprogressrevamp:needs_copper_tools",
+    "#minecraft:needs_iron_tool",
+    "#minecraft:needs_diamond_tool"
+  ]
+}

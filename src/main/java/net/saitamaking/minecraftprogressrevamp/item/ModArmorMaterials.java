@@ -10,6 +10,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.saitamaking.minecraftprogressrevamp.ProgressRevamp;
 
@@ -26,6 +27,15 @@ public class ModArmorMaterials {
                 attribute.put(ArmorItem.Type.HELMET, 1);
                 attribute.put(ArmorItem.Type.BODY, 3);
             }), 10, 0.0F, 0.0F, () -> ModItems.ANIMALHIDE.get(), SoundEvents.ARMOR_EQUIP_LEATHER);
+
+    public static final Holder<ArmorMaterial> COPPER_ARMOR_MATERIAL = register("copper",
+            Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
+                attribute.put(ArmorItem.Type.BOOTS, 1);
+                attribute.put(ArmorItem.Type.CHESTPLATE, 4);
+                attribute.put(ArmorItem.Type.LEGGINGS, 3);
+                attribute.put(ArmorItem.Type.HELMET, 2);
+                attribute.put(ArmorItem.Type.BODY, 4);
+            }), 8, 0.0F, 0.0F, () -> Items.COPPER_INGOT, SoundEvents.ARMOR_EQUIP_GENERIC);
 
     private static Holder<ArmorMaterial> register(String name, EnumMap<ArmorItem.Type, Integer> typeProtection, int enchantability, float toughness,
                                                   float knockbackResistance, Supplier<Item> ingredientItem, Holder<SoundEvent> equipSound) {

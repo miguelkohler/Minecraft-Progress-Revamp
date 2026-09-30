@@ -1,5 +1,9 @@
 {
   "values": [
+    "minecraftprogressrevamp:copper_helmet",
+    "minecraftprogressrevamp:copper_chestplate",
+    "minecraftprogressrevamp:copper_leggings",
+    "minecraftprogressrevamp:copper_boots",
     "minecraftprogressrevamp:hide_chestplate",
     "minecraftprogressrevamp:hide_boots",
     "minecraftprogressrevamp:hide_leggings"

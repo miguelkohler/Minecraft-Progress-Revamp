@@ -4,6 +4,7 @@
   ],
   "values": [
     "#minecraft:needs_stone_tool",
+    "#minecraftprogressrevamp:needs_copper_tools",
     "#minecraft:needs_iron_tool",
     "#minecraft:needs_diamond_tool",
     "minecraft:crafting_table"

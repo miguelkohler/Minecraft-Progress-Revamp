@@ -37,6 +37,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.STRAW);
                         output.accept(ModItems.STRAWSTRING);
                         output.accept(ModItems.STARTERTOOLBOX);
+                        output.accept(ModItems.LEATHERSTICK);
                         output.accept(ModItems.WOODENHANDLE);
                         output.accept(ModItems.TREEBARK);
                         output.accept(ModItems.ANIMALHIDE);
@@ -76,10 +77,20 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.COPPERNAIL);
                         output.accept(Items.COPPER_INGOT);
                         output.accept(ModBlocks.COPPERBARBLOCK);
+                        output.accept(ModItems.COPPERAXE);
+                        output.accept(ModItems.COPPERPICKAXE);
+                        output.accept(ModItems.COPPERHOE);
+                        output.accept(ModItems.COPPERSHOVEL);
+                        output.accept(ModItems.COPPERSWORD);
+                        output.accept(ModItems.COPPERHELMET);
+                        output.accept(ModItems.COPPERCHESTPLATE);
+                        output.accept(ModItems.COPPERLEGGINGS);
+                        output.accept(ModItems.COPPERBOOTS);
                         output.accept(ModItems.MELTEDGOLDBLOB);
                         output.accept(ModItems.SMALLMELTEDGOLDBLOB);
                         output.accept(ModBlocks.MELTEDGOLDBLOCK);
                         output.accept(ModBlocks.GOLDBARBLOCK);
+                        output.accept(ModBlocks.IRONBARBLOCK);
                         output.accept(Blocks.COPPER_BLOCK);
 
                         output.accept(ModBlocks.STEELCUTTER);
