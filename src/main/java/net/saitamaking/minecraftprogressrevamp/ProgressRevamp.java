@@ -1,22 +1,14 @@
 package net.saitamaking.minecraftprogressrevamp;
 
-import net.minecraft.client.Minecraft;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
-import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
-import net.neoforged.neoforge.client.gui.ConfigurationScreen;
-import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
+import net.minecraft.world.item.crafting.ShapedRecipePattern;
 import net.saitamaking.minecraftprogressrevamp.block.ModBlocks;
 import net.saitamaking.minecraftprogressrevamp.block.entity.ModBlockEntities;
 import net.saitamaking.minecraftprogressrevamp.component.ModDataComponents;
 import net.saitamaking.minecraftprogressrevamp.item.ModCreativeModeTabs;
 import net.saitamaking.minecraftprogressrevamp.item.ModItems;
-import net.saitamaking.minecraftprogressrevamp.item.crafting.ModRecipeSerializers;
+import net.saitamaking.minecraftprogressrevamp.recipe.ModRecipeSerializers;
 import net.saitamaking.minecraftprogressrevamp.loot.ModLootModifiers;
 import net.saitamaking.minecraftprogressrevamp.screen.ModMenuTypes;
-import net.saitamaking.minecraftprogressrevamp.screen.custom.WoodenCrateScreen;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -49,6 +41,9 @@ public class ProgressRevamp {
         ModDataComponents.register(modEventBus);
 
         ModRecipeSerializers.RECIPE_SERIALIZERS.register(modEventBus);
+        ModRecipeSerializers.TYPES.register(modEventBus);
+
+        ShapedRecipePattern.setCraftingSize(4, 3);
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);

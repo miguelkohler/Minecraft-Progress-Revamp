@@ -5,16 +5,12 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -22,16 +18,15 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.phys.BlockHitResult;
 import net.saitamaking.minecraftprogressrevamp.block.entity.CampfireWithCrucibleEntity;
-import net.saitamaking.minecraftprogressrevamp.block.entity.PrimitiveCraftingTableEntity;
-import net.saitamaking.minecraftprogressrevamp.screen.custom.PrimitiveCraftingTableMenu;
+import net.saitamaking.minecraftprogressrevamp.block.entity.CobblestoneAnvilEntity;
 import org.jetbrains.annotations.Nullable;
 
-public class PrimitiveCraftingTableBlock extends BaseEntityBlock {
+public class CobblestoneAnvilBlock extends BaseEntityBlock {
 
-    public static final MapCodec<PrimitiveCraftingTableBlock> CODEC = simpleCodec(PrimitiveCraftingTableBlock::new);
-    private static final Component CONTAINER_TITLE = Component.translatable("block.minecraftprogressrevamp.primitive_crafting_table");
+    public static final MapCodec<CobblestoneAnvilBlock> CODEC = simpleCodec(CobblestoneAnvilBlock::new);
+    private static final Component CONTAINER_TITLE = Component.translatable("block.minecraftprogressrevamp.cobblestone_anvil");
 
-    public MapCodec<? extends PrimitiveCraftingTableBlock> codec() {
+    public MapCodec<? extends CobblestoneAnvilBlock> codec() {
         return CODEC;
     }
 
@@ -57,7 +52,7 @@ public class PrimitiveCraftingTableBlock extends BaseEntityBlock {
         return state.rotate(mirror.getRotation((Direction)state.getValue(FACING)));
     }
 
-    public PrimitiveCraftingTableBlock(BlockBehaviour.Properties properties) {
+    public CobblestoneAnvilBlock(Properties properties) {
         super(properties);
     }
 
@@ -65,8 +60,8 @@ public class PrimitiveCraftingTableBlock extends BaseEntityBlock {
     protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
         //drop items inside
         if (state.getBlock() != newState.getBlock()){
-            if(level.getBlockEntity(pos) instanceof PrimitiveCraftingTableEntity primitiveCraftingTableEntity){
-                primitiveCraftingTableEntity.dropContents();
+            if(level.getBlockEntity(pos) instanceof CobblestoneAnvilEntity cobblestoneAnvilEntity){
+                cobblestoneAnvilEntity.dropContents();
                 level.updateNeighbourForOutputSignal(pos, this);
             }
         }
@@ -77,7 +72,7 @@ public class PrimitiveCraftingTableBlock extends BaseEntityBlock {
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos,
                                                Player player, BlockHitResult hit) {
         if (!level.isClientSide && player instanceof ServerPlayer serverPlayer
-                && level.getBlockEntity(pos) instanceof PrimitiveCraftingTableEntity be) {
+                && level.getBlockEntity(pos) instanceof CobblestoneAnvilEntity be) {
             serverPlayer.openMenu(be, pos);
         }
         return InteractionResult.sidedSuccess(level.isClientSide);
@@ -91,6 +86,6 @@ public class PrimitiveCraftingTableBlock extends BaseEntityBlock {
     @Override
     public @Nullable BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
 
-        return new PrimitiveCraftingTableEntity(blockPos, blockState);
+        return new CobblestoneAnvilEntity(blockPos, blockState);
     }
 }

@@ -10,10 +10,7 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.saitamaking.minecraftprogressrevamp.ProgressRevamp;
 import net.saitamaking.minecraftprogressrevamp.block.entity.RudimentaryCraftingTableEntity;
-import net.saitamaking.minecraftprogressrevamp.screen.custom.CampfireWithCrucibleMenu;
-import net.saitamaking.minecraftprogressrevamp.screen.custom.PrimitiveCraftingTableMenu;
-import net.saitamaking.minecraftprogressrevamp.screen.custom.RudimentaryCraftingTableMenu;
-import net.saitamaking.minecraftprogressrevamp.screen.custom.WoodenCrateMenu;
+import net.saitamaking.minecraftprogressrevamp.screen.custom.*;
 
 public class ModMenuTypes {
 
@@ -31,6 +28,9 @@ public class ModMenuTypes {
 
     public static final DeferredHolder<MenuType<?>, MenuType<RudimentaryCraftingTableMenu>> RUDIMENTARY_CRAFTING_TABLE_MENU =
             registerMenuType("rudimentary_crafting_table_menu", RudimentaryCraftingTableMenu::new);
+
+    public static final DeferredHolder<MenuType<?>, MenuType<CobblestoneAnvilMenu>> COBBLESTONE_ANVIL_MENU =
+            registerMenuType("cobblestone_anvil_menu", CobblestoneAnvilMenu::new);
 
     private static <T extends AbstractContainerMenu>DeferredHolder<MenuType<?>, MenuType<T>> registerMenuType(String name,
                                                                                                               IContainerFactory<T> factory){

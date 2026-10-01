@@ -17,6 +17,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.phys.BlockHitResult;
+import net.saitamaking.minecraftprogressrevamp.block.entity.CampfireWithCrucibleEntity;
 import net.saitamaking.minecraftprogressrevamp.block.entity.PrimitiveCraftingTableEntity;
 import net.saitamaking.minecraftprogressrevamp.block.entity.RudimentaryCraftingTableEntity;
 import org.jetbrains.annotations.Nullable;
@@ -54,6 +55,18 @@ public class RudimentaryCraftingTableBlock extends BaseEntityBlock {
 
     protected BlockState mirror(BlockState state, Mirror mirror) {
         return state.rotate(mirror.getRotation((Direction)state.getValue(FACING)));
+    }
+
+    @Override
+    protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
+        //drop items inside
+        if (state.getBlock() != newState.getBlock()){
+            if(level.getBlockEntity(pos) instanceof RudimentaryCraftingTableEntity rudimentaryCraftingTableEntity){
+                rudimentaryCraftingTableEntity.dropContents();
+                level.updateNeighbourForOutputSignal(pos, this);
+            }
+        }
+        super.onRemove(state, level, pos, newState, movedByPiston);
     }
 
     @Override

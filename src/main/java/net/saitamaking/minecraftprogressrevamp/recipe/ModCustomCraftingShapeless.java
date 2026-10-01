@@ -1,4 +1,4 @@
-package net.saitamaking.minecraftprogressrevamp.item.crafting;
+package net.saitamaking.minecraftprogressrevamp.recipe;
 
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -10,7 +10,6 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.neoforged.neoforge.common.CommonHooks;
 import net.saitamaking.minecraftprogressrevamp.item.ModItems;

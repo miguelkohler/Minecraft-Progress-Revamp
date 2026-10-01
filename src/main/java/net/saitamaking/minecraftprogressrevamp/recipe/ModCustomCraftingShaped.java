@@ -1,4 +1,4 @@
-package net.saitamaking.minecraftprogressrevamp.item.crafting;
+package net.saitamaking.minecraftprogressrevamp.recipe;
 
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;

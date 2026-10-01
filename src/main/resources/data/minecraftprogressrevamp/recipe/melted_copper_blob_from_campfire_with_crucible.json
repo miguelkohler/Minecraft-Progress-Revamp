@@ -1,0 +1,9 @@
+{
+  "type": "minecraftprogressrevamp:campfire_with_crucible",
+  "ingredient": {
+      "item": "minecraft:raw_copper"
+  },
+  "result": {
+    "id": "minecraftprogressrevamp:melted_copper_blob"
+  }
+}

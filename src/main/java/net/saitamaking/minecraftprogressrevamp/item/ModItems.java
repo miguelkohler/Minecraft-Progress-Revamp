@@ -60,6 +60,9 @@ public class ModItems {
     public static final DeferredItem<Item> WOODENHANDLE = ITEMS.register("wooden_handle",
             () -> new Item(new Item.Properties()));
 
+    public static final DeferredItem<Item> MELTEDCOPPERPLATE = ITEMS.register("melted_copper_plate",
+            () -> new Item(new Item.Properties()));
+
     public static final DeferredItem<Item> STRAW = ITEMS.register("straw",
             () -> new Item(new Item.Properties()));
 

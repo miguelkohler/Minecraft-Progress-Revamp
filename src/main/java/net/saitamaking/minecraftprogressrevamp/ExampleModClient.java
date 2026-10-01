@@ -11,10 +11,7 @@ import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.saitamaking.minecraftprogressrevamp.screen.ModMenuTypes;
-import net.saitamaking.minecraftprogressrevamp.screen.custom.CampfireWithCrucibleScreen;
-import net.saitamaking.minecraftprogressrevamp.screen.custom.PrimitiveCraftingTableScreen;
-import net.saitamaking.minecraftprogressrevamp.screen.custom.RudimentaryCraftingTableScreen;
-import net.saitamaking.minecraftprogressrevamp.screen.custom.WoodenCrateScreen;
+import net.saitamaking.minecraftprogressrevamp.screen.custom.*;
 
 // This class will not load on dedicated servers. Accessing client side code from here is safe.
 @Mod(value = ProgressRevamp.MODID, dist = Dist.CLIENT)
@@ -41,5 +38,6 @@ public class ExampleModClient {
         event.register(ModMenuTypes.CAMPFIRE_WITH_CRUCIBLE_MENU.get(), CampfireWithCrucibleScreen::new);
         event.register(ModMenuTypes.PRIMITIVE_CRAFTING_TABLE_MENU.get(), PrimitiveCraftingTableScreen::new);
         event.register(ModMenuTypes.RUDIMENTARY_CRAFTING_TABLE_MENU.get(), RudimentaryCraftingTableScreen::new);
+        event.register(ModMenuTypes.COBBLESTONE_ANVIL_MENU.get(), CobblestoneAnvilScreen::new);
     }
 }

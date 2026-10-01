@@ -6,7 +6,6 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.saitamaking.minecraftprogressrevamp.ProgressRevamp;
 import net.saitamaking.minecraftprogressrevamp.block.ModBlocks;
-import net.saitamaking.minecraftprogressrevamp.block.custom.CampfireWithCrucibleBlock;
 
 import java.util.function.Supplier;
 
@@ -30,6 +29,10 @@ public class ModBlockEntities {
     public static final Supplier<BlockEntityType<RudimentaryCraftingTableEntity>> RUDIMENTARYCRAFTINGTABLE_BE =
             BLOCK_ENTITIES.register("rudimentary_crafting_table_be", () -> BlockEntityType.Builder.of(
                     RudimentaryCraftingTableEntity::new, ModBlocks.RUDIMENTARYCRAFTINGTABLE.get()).build(null));
+
+    public static final Supplier<BlockEntityType<CobblestoneAnvilEntity>> COBBLESTONEANVIL_BE =
+            BLOCK_ENTITIES.register("cobblestone_anvil_be", () -> BlockEntityType.Builder.of(
+                    CobblestoneAnvilEntity::new, ModBlocks.COBBLESTONEANVIL.get()).build(null));
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

@@ -16,14 +16,21 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.CampfireCookingRecipe;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import net.saitamaking.minecraftprogressrevamp.item.ModItems;
+import net.saitamaking.minecraftprogressrevamp.recipe.CampfireWithCrucibleRecipe;
+import net.saitamaking.minecraftprogressrevamp.recipe.CampfireWithCrucibleRecipeInput;
+import net.saitamaking.minecraftprogressrevamp.recipe.ModRecipeSerializers;
 import net.saitamaking.minecraftprogressrevamp.screen.custom.CampfireWithCrucibleMenu;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Optional;
 
 public class CampfireWithCrucibleEntity extends BlockEntity implements MenuProvider {
     public final ItemStackHandler itemHandler = new ItemStackHandler(2) {
@@ -143,8 +150,10 @@ public class CampfireWithCrucibleEntity extends BlockEntity implements MenuProvi
     }
 
     private void craftItem() {
-        ItemStack output = new ItemStack(ModItems.MELTEDCOPPERBLOB.get());
+        Optional<RecipeHolder<CampfireWithCrucibleRecipe>> recipe = getCurrentRecipe();
+        ItemStack output = recipe.get().value().output();
 
+        // to implement if i need 2+ inputs taken: recipe.get().value().inputItem().getItems()[0].getCount()
         itemHandler.extractItem(INPUT_SLOT, 1, false);
         itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(output.getItem(),
                 itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + output.getCount()));
@@ -164,9 +173,19 @@ public class CampfireWithCrucibleEntity extends BlockEntity implements MenuProvi
     }
 
     private boolean hasRecipe() {
-        ItemStack output = new ItemStack(ModItems.MELTEDCOPPERBLOB.get());
-        return itemHandler.getStackInSlot(INPUT_SLOT).is(Items.RAW_COPPER) &&
-                canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output);
+        Optional<RecipeHolder<CampfireWithCrucibleRecipe>> recipe = getCurrentRecipe();
+        if(recipe.isEmpty()){
+            return false;
+        }
+
+        ItemStack output = recipe.get().value().output();
+
+        return canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output);
+    }
+
+    private Optional<RecipeHolder<CampfireWithCrucibleRecipe>> getCurrentRecipe() {
+        return this.level.getRecipeManager()
+                .getRecipeFor(ModRecipeSerializers.CAMPFIRE_WITH_CRUCIBLE_TYPE.get(), new CampfireWithCrucibleRecipeInput(itemHandler.getStackInSlot(INPUT_SLOT)), level);
     }
 
     private boolean canInsertAmountIntoOutputSlot(int count) {

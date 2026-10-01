@@ -41,6 +41,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.COALPOWDER.get());
         basicItem(ModItems.LOOSEPEBBLE.get());
         basicItem(ModItems.FIRECLAYBALL.get());
+        basicItem(ModItems.MELTEDCOPPERPLATE.get());
         handheldItem(ModItems.PRIMITIVEAXE.get());
         handheldItem(ModItems.PRIMITIVEHAMMER.get());
         handheldItem(ModItems.PRIMITIVEPICKAXE.get());

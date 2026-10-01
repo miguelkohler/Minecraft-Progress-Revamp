@@ -4,7 +4,6 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -15,8 +14,10 @@ import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import net.saitamaking.minecraftprogressrevamp.ProgressRevamp;
 import net.saitamaking.minecraftprogressrevamp.block.ModBlocks;
 import net.saitamaking.minecraftprogressrevamp.item.ModItems;
-import net.saitamaking.minecraftprogressrevamp.item.crafting.ModCustomCraftingShaped;
-import net.saitamaking.minecraftprogressrevamp.item.crafting.ModCustomCraftingShapeless;
+import net.saitamaking.minecraftprogressrevamp.recipe.CampfireWithCrucibleRecipe;
+import net.saitamaking.minecraftprogressrevamp.recipe.CobblestoneAnvilRecipeBuilder;
+import net.saitamaking.minecraftprogressrevamp.recipe.ModCustomCraftingShaped;
+import net.saitamaking.minecraftprogressrevamp.recipe.ModCustomCraftingShapeless;
 import net.saitamaking.minecraftprogressrevamp.util.ModTags;
 
 import java.util.List;
@@ -1533,6 +1534,104 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         .addCriterion("has_ingot_shaped", RecipeProvider.has(ModTags.Items.INGOTSHAPED))
                         .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "ingot_sand_mold").withPrefix("recipes/"))
         );
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.MELTEDCOPPERPLATE)
+                .pattern(" #  ")
+                .pattern(" OO ")
+                .pattern("    ")
+                .define('#', ModTags.Items.HAMMERS)
+                .define('O', ModItems.MELTEDCOPPERBLOB)
+                .unlockedBy("has_hammer", has(ModTags.Items.HAMMERS))
+                .unlockedBy("has_melted_copper_blob", has(ModItems.MELTEDCOPPERBLOB))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "melted_copper_plate_1"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.MELTEDCOPPERPLATE)
+                .pattern("    ")
+                .pattern(" OO ")
+                .pattern("  # ")
+                .define('#', ModTags.Items.HAMMERS)
+                .define('O', ModItems.MELTEDCOPPERBLOB)
+                .unlockedBy("has_hammer", has(ModTags.Items.HAMMERS))
+                .unlockedBy("has_melted_copper_blob", has(ModItems.MELTEDCOPPERBLOB))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "melted_copper_plate_2"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.MELTEDCOPPERPLATE)
+                .pattern("    ")
+                .pattern("#OO ")
+                .pattern("    ")
+                .define('#', ModTags.Items.HAMMERS)
+                .define('O', ModItems.MELTEDCOPPERBLOB)
+                .unlockedBy("has_hammer", has(ModTags.Items.HAMMERS))
+                .unlockedBy("has_melted_copper_blob", has(ModItems.MELTEDCOPPERBLOB))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "melted_copper_plate_3"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERHELMET)
+                .pattern(" OUO")
+                .pattern(" U#U")
+                .pattern("    ")
+                .define('#', ModTags.Items.HAMMERS)
+                .define('O', ModItems.MELTEDCOPPERBLOB)
+                .define('U', ModItems.MELTEDCOPPERPLATE)
+                .unlockedBy("has_hammer", has(ModTags.Items.HAMMERS))
+                .unlockedBy("has_melted_copper_blob", has(ModItems.MELTEDCOPPERBLOB))
+                .unlockedBy("has_melted_copper_plate", has(ModItems.MELTEDCOPPERPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "copper_helmet"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERCHESTPLATE)
+                .pattern("UOUO")
+                .pattern("OUO#")
+                .pattern("UOUO")
+                .define('#', ModTags.Items.HAMMERS)
+                .define('O', ModItems.MELTEDCOPPERBLOB)
+                .define('U', ModItems.MELTEDCOPPERPLATE)
+                .unlockedBy("has_hammer", has(ModTags.Items.HAMMERS))
+                .unlockedBy("has_melted_copper_blob", has(ModItems.MELTEDCOPPERBLOB))
+                .unlockedBy("has_melted_copper_plate", has(ModItems.MELTEDCOPPERPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "copper_chestplate"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERLEGGINGS)
+                .pattern("UOUO")
+                .pattern("  #U")
+                .pattern("UOUO")
+                .define('#', ModTags.Items.HAMMERS)
+                .define('O', ModItems.MELTEDCOPPERBLOB)
+                .define('U', ModItems.MELTEDCOPPERPLATE)
+                .unlockedBy("has_hammer", has(ModTags.Items.HAMMERS))
+                .unlockedBy("has_melted_copper_blob", has(ModItems.MELTEDCOPPERBLOB))
+                .unlockedBy("has_melted_copper_plate", has(ModItems.MELTEDCOPPERPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "copper_leggings"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERBOOTS)
+                .pattern(" UO ")
+                .pattern("  # ")
+                .pattern(" UO ")
+                .define('#', ModTags.Items.HAMMERS)
+                .define('O', ModItems.MELTEDCOPPERBLOB)
+                .define('U', ModItems.MELTEDCOPPERPLATE)
+                .unlockedBy("has_hammer", has(ModTags.Items.HAMMERS))
+                .unlockedBy("has_melted_copper_blob", has(ModItems.MELTEDCOPPERBLOB))
+                .unlockedBy("has_melted_copper_plate", has(ModItems.MELTEDCOPPERPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "copper_boots"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERBOOTS)
+                .pattern(" O#O")
+                .pattern(" U U")
+                .pattern("    ")
+                .define('#', ModTags.Items.HAMMERS)
+                .define('O', ModItems.MELTEDCOPPERBLOB)
+                .define('U', ModItems.MELTEDCOPPERPLATE)
+                .unlockedBy("has_hammer", has(ModTags.Items.HAMMERS))
+                .unlockedBy("has_melted_copper_blob", has(ModItems.MELTEDCOPPERBLOB))
+                .unlockedBy("has_melted_copper_plate", has(ModItems.MELTEDCOPPERPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "copper_boots2"));
 
         oreSmelting(recipeOutput, SALTED_BEEF_INGREDIENT, RecipeCategory.FOOD, ModItems.SALTEDCOOKEDBEEF.get(), 0.4f, 200, "salted_cooked_beef");
 

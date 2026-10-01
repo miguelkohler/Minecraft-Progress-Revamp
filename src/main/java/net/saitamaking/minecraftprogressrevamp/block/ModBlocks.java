@@ -62,7 +62,7 @@ public class ModBlocks {
             () -> new CampfireWithCrucibleBlock(BlockBehaviour.Properties.of().strength(2.0F).sound(SoundType.WOOD).lightLevel(state -> 15).noOcclusion().ignitedByLava()));
 
     public static final DeferredBlock<Block> COBBLESTONEANVIL = registerBlock("cobblestone_anvil",
-            () -> new FourDirectionalBlock(BlockBehaviour.Properties.of().strength(2.0F, 5.0F).sound(SoundType.STONE).noOcclusion()));
+            () -> new CobblestoneAnvilBlock(BlockBehaviour.Properties.of().strength(2.0F, 5.0F).sound(SoundType.STONE).noOcclusion()));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block){
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

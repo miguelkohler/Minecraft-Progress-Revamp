@@ -2,6 +2,8 @@ package net.saitamaking.minecraftprogressrevamp.screen.custom;
 
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -20,7 +22,10 @@ import net.neoforged.neoforge.common.CommonHooks;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import net.neoforged.neoforge.items.SlotItemHandler;
 import net.saitamaking.minecraftprogressrevamp.block.ModBlocks;
+import net.saitamaking.minecraftprogressrevamp.block.entity.CobblestoneAnvilEntity;
 import net.saitamaking.minecraftprogressrevamp.block.entity.RudimentaryCraftingTableEntity;
+import net.saitamaking.minecraftprogressrevamp.recipe.CobblestoneAnvilRecipe;
+import net.saitamaking.minecraftprogressrevamp.recipe.ModRecipeSerializers;
 import net.saitamaking.minecraftprogressrevamp.screen.ModMenuTypes;
 
 import java.util.ArrayList;
@@ -28,47 +33,48 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
-public class RudimentaryCraftingTableMenu extends AbstractContainerMenu {
+public class CobblestoneAnvilMenu extends AbstractContainerMenu {
     private static final int VANILLA_SLOT_COUNT = 36;
     private static final int RESULT_SLOT_INDEX = 36;
     private static final int INPUT_FIRST_SLOT_INDEX = 37;
-    private static final int INPUT_SLOT_COUNT = 7;
-    private static final int INPUT_END_INDEX = INPUT_FIRST_SLOT_INDEX + INPUT_SLOT_COUNT; // 42
-
-    // onde cada slot do cai na grade 3x3:
-    private static final int[] SLOT_TO_GRID = {0, 1, 2, 3, 4, 5, 7};
-    private static final int[] GRID_TO_SLOT = {0, 1, 2, 3, 4, 5, -1, 6, -1};
+    private static final int INPUT_SLOT_COUNT = 12;
+    private static final int INPUT_END_INDEX = INPUT_FIRST_SLOT_INDEX + INPUT_SLOT_COUNT;
 
     private final ContainerLevelAccess access;
     private final Player player;
     private final Level level;
     private final ResultContainer resultSlots = new ResultContainer();
-    public final RudimentaryCraftingTableEntity blockEntity;
+    public final CobblestoneAnvilEntity blockEntity;
     private int lastChangeCount = -1;
 
-    public RudimentaryCraftingTableMenu(int containerId, Inventory inv, FriendlyByteBuf extraData) {
+    public CobblestoneAnvilMenu(int containerId, Inventory inv, FriendlyByteBuf extraData) {
         this(containerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), ContainerLevelAccess.NULL);
     }
 
-    public RudimentaryCraftingTableMenu(int id, Inventory inv, BlockEntity entity, ContainerLevelAccess access) {
-        super(ModMenuTypes.RUDIMENTARY_CRAFTING_TABLE_MENU.get(), id);
+    public CobblestoneAnvilMenu(int id, Inventory inv, BlockEntity entity, ContainerLevelAccess access) {
+        super(ModMenuTypes.COBBLESTONE_ANVIL_MENU.get(), id);
         this.access = access;
         this.player = inv.player;
         this.level = inv.player.level();
-        this.blockEntity = (RudimentaryCraftingTableEntity) entity;
+        this.blockEntity = (CobblestoneAnvilEntity) entity;
 
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
 
         ItemStackHandler handler = blockEntity.getInventory();
-        addSlot(new RudimentaryResultSlot(resultSlots, 0, 124, 35));
-        addSlot(new SlotItemHandler(handler, 0, 30, 17));
-        addSlot(new SlotItemHandler(handler, 1, 48, 17));
-        addSlot(new SlotItemHandler(handler, 2, 66, 17));
-        addSlot(new SlotItemHandler(handler, 3, 30, 35));
-        addSlot(new SlotItemHandler(handler, 4, 48, 35));
-        addSlot(new SlotItemHandler(handler, 5, 66, 35));
-        addSlot(new SlotItemHandler(handler, 6, 48, 53));
+        addSlot(new ResultSlot(resultSlots, 0, 124, 35));
+        addSlot(new SlotItemHandler(handler, 0, 12, 17));
+        addSlot(new SlotItemHandler(handler, 1, 30, 17));
+        addSlot(new SlotItemHandler(handler, 2, 48, 17));
+        addSlot(new SlotItemHandler(handler, 3, 66, 17));
+        addSlot(new SlotItemHandler(handler, 4, 12, 35));
+        addSlot(new SlotItemHandler(handler, 5, 30, 35));
+        addSlot(new SlotItemHandler(handler, 6, 48, 35));
+        addSlot(new SlotItemHandler(handler, 7, 66, 35));
+        addSlot(new SlotItemHandler(handler, 8, 12, 53));
+        addSlot(new SlotItemHandler(handler, 9, 30, 53));
+        addSlot(new SlotItemHandler(handler, 10, 48, 53));
+        addSlot(new SlotItemHandler(handler, 11, 66, 53));
     }
 
     private void addPlayerInventory(Inventory playerInventory) {
@@ -86,11 +92,11 @@ public class RudimentaryCraftingTableMenu extends AbstractContainerMenu {
     }
 
     private CraftingInput.Positioned positioned() {
-        List<ItemStack> grid = new ArrayList<>(Collections.nCopies(9, ItemStack.EMPTY));
+        List<ItemStack> grid = new ArrayList<>(INPUT_SLOT_COUNT);
         for (int i = 0; i < INPUT_SLOT_COUNT; i++) {
-            grid.set(SLOT_TO_GRID[i], blockEntity.getInventory().getStackInSlot(i));
+            grid.add(blockEntity.getInventory().getStackInSlot(i));
         }
-        return CraftingInput.ofPositioned(3, 3, grid);
+        return CraftingInput.ofPositioned(4, 3, grid);
     }
 
     private static final org.slf4j.Logger LOGGER = com.mojang.logging.LogUtils.getLogger();
@@ -103,14 +109,14 @@ public class RudimentaryCraftingTableMenu extends AbstractContainerMenu {
         ItemStack result = ItemStack.EMPTY;
 
         if (!input.isEmpty()) {
-            Optional<RecipeHolder<CraftingRecipe>> recipe =
-                    level.getRecipeManager().getRecipeFor(RecipeType.CRAFTING, input, level);
+            Optional<RecipeHolder<CobblestoneAnvilRecipe>> recipe =
+                    level.getRecipeManager().getRecipeFor(ModRecipeSerializers.COBBLESTONE_ANVIL_TYPE.get(), input, level);
             if (recipe.isPresent()) {
                 ItemStack assembled = recipe.get().value().assemble(input, level.registryAccess());
                 if (assembled.isItemEnabled(level.enabledFeatures())) result = assembled;
             }
         } else {
-            LOGGER.info("[Rudimentary] refresh with empty input");
+            LOGGER.info("[Cobblestone Anvil] refresh with empty input");
         }
         resultSlots.setItem(0, result);
     }
@@ -129,14 +135,13 @@ public class RudimentaryCraftingTableMenu extends AbstractContainerMenu {
 
         CommonHooks.setCraftingPlayer(p);
         NonNullList<ItemStack> remaining =
-                p.level().getRecipeManager().getRemainingItemsFor(RecipeType.CRAFTING, input, p.level());
+                p.level().getRecipeManager().getRemainingItemsFor(ModRecipeSerializers.COBBLESTONE_ANVIL_TYPE.get(), input, p.level());
         CommonHooks.setCraftingPlayer(null);
 
         ItemStackHandler inv = blockEntity.getInventory();
         for (int y = 0; y < input.height(); y++) {
             for (int x = 0; x < input.width(); x++) {
-                int gridIndex = (y + positioned.top()) * 3 + (x + positioned.left());
-                int slot = GRID_TO_SLOT[gridIndex];
+                int slot = (y + positioned.top()) * 4 + (x + positioned.left());
                 if (slot < 0) continue;
 
                 ItemStack in = inv.getStackInSlot(slot);
@@ -160,10 +165,10 @@ public class RudimentaryCraftingTableMenu extends AbstractContainerMenu {
         }
     }
 
-    private class RudimentaryResultSlot extends Slot {
+    private class ResultSlot extends Slot {
         private int removeCount;
 
-        RudimentaryResultSlot(Container container, int index, int x, int y) {
+        ResultSlot(Container container, int index, int x, int y) {
             super(container, index, x, y);
         }
 
@@ -201,7 +206,7 @@ public class RudimentaryCraftingTableMenu extends AbstractContainerMenu {
     @Override
     public boolean stillValid(Player player) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                player, ModBlocks.RUDIMENTARYCRAFTINGTABLE.get());
+                player, ModBlocks.COBBLESTONEANVIL.get());
     }
 
     @Override

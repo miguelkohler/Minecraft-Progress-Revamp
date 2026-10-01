@@ -77,6 +77,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.COPPERNAIL);
                         output.accept(Items.COPPER_INGOT);
                         output.accept(ModBlocks.COPPERBARBLOCK);
+                        output.accept(ModItems.MELTEDCOPPERPLATE);
                         output.accept(ModItems.COPPERAXE);
                         output.accept(ModItems.COPPERPICKAXE);
                         output.accept(ModItems.COPPERHOE);
