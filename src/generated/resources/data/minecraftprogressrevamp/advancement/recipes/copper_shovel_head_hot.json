@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_hammer": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraftprogressrevamp:hammers"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_melted_copper_plate": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:melted_copper_plate"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_small_melted_copper_blob": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:small_melted_copper_blob"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraftprogressrevamp:copper_shovel_head_hot"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_hammer",
+      "has_small_melted_copper_blob",
+      "has_melted_copper_plate"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraftprogressrevamp:copper_shovel_head_hot"
+    ]
+  }
+}

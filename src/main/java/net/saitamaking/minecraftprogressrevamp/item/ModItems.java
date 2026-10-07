@@ -2,6 +2,7 @@ package net.saitamaking.minecraftprogressrevamp.item;
 
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.bus.api.IEventBus;
@@ -61,6 +62,9 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> MELTEDCOPPERPLATE = ITEMS.register("melted_copper_plate",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> CLAYBRICK = ITEMS.register("clay_brick",
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> STRAW = ITEMS.register("straw",
@@ -162,6 +166,48 @@ public class ModItems {
     public static final DeferredItem<ArmorItem> COPPERBOOTS = ITEMS.register("copper_boots",
             () -> new ArmorItem(ModArmorMaterials.COPPER_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
                     new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(11))));
+
+    public static final DeferredItem<Item> COPPERAXEHEAD = ITEMS.register("copper_axe_head",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> COPPERSHOVELHEAD = ITEMS.register("copper_shovel_head",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> COPPERPICKAXEHEAD = ITEMS.register("copper_pickaxe_head",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> COPPERHOEHEAD = ITEMS.register("copper_hoe_head",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> COPPERCROSSGUARD = ITEMS.register("copper_cross_guard",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> COPPERSWORDHEAD = ITEMS.register("copper_sword_head",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> COPPERSWORDHEADDULL = ITEMS.register("copper_sword_head_dull",
+            () -> new TransformItem("grindstone",ModItems.COPPERSWORDHEAD,new Item.Properties()));
+
+    public static final DeferredItem<Item> COPPERAXEHEADDULL = ITEMS.register("copper_axe_head_dull",
+            () -> new TransformItem("grindstone",ModItems.COPPERAXEHEAD,new Item.Properties()));
+
+    public static final DeferredItem<Item> COPPERAXEHEADHOT = ITEMS.register("copper_axe_head_hot",
+            () -> new TransformItem("water_cauldron", COPPERAXEHEAD, new Item.Properties()));
+
+    public static final DeferredItem<Item> COPPERSHOVELHEADHOT = ITEMS.register("copper_shovel_head_hot",
+            () -> new TransformItem("water_cauldron", COPPERSHOVELHEAD, new Item.Properties()));
+
+    public static final DeferredItem<Item> COPPERPICKAXEHEADHOT = ITEMS.register("copper_pickaxe_head_hot",
+            () -> new TransformItem("water_cauldron", COPPERPICKAXEHEAD, new Item.Properties()));
+
+    public static final DeferredItem<Item> COPPERHOEHEADHOT = ITEMS.register("copper_hoe_head_hot",
+            () -> new TransformItem("water_cauldron", COPPERHOEHEAD, new Item.Properties()));
+
+    public static final DeferredItem<Item> COPPERCROSSGUARDHOT = ITEMS.register("copper_cross_guard_hot",
+            () -> new TransformItem("water_cauldron", COPPERCROSSGUARD, new Item.Properties()));
+
+    public static final DeferredItem<Item> COPPERSWORDHEADHOT = ITEMS.register("copper_sword_head_hot",
+            () -> new TransformItem("water_cauldron", COPPERSWORDHEADDULL, new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

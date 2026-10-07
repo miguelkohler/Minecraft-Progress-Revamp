@@ -35,6 +35,9 @@ public class ModTags {
         public static final TagKey<Item> WATERCONTAINERS = createTag("water_containers");
         public static final TagKey<Item> SANDMOLDS = createTag("sand_molds");
         public static final TagKey<Item> INGOTSHAPED = createTag("ingot_shaped");
+        public static final TagKey<Item> COPPERTOOLS = createTag("copper_tools");
+        public static final TagKey<Item> COPPERARMOR = createTag("copper_armor");
+        public static final TagKey<Item> COPPERTOOLPARTS = createTag("copper_tool_parts");
 
         private static TagKey<Item> createTag(String name){
 

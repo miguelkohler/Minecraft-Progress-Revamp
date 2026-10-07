@@ -31,17 +31,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     @Override
     protected void buildRecipes(RecipeOutput recipeOutput) {
-        List<ItemLike> SALTED_BEEF_INGREDIENT = List.of(
-                ModItems.SALTEDBEEF
-        );
-
-        List<ItemLike> CERAMIC_BUCKET_INGREDIENTS = List.of(
-                ModItems.UNFIREDCLAYBUCKET
-        );
-
-        List<ItemLike> UNREFINED_CRUCIBLES = List.of(
-                ModItems.UNREFINEDCRUCIBLE
-        );
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CHARCOALBLOCK.get())
                 .pattern("###")
@@ -124,6 +113,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('#', Items.IRON_INGOT)
                 .unlockedBy("has_iron_ingot", has(Items.IRON_INGOT))
                 .save(recipeOutput);
+
+        /*ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.CAULDRON)
+                .pattern("# #")
+                .pattern("# #")
+                .pattern("###")
+                .define('#', Items.TERRACOTTA)
+                .unlockedBy("has_terracotta", has(Items.TERRACOTTA))
+                .save(recipeOutput);
+                */
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.COBBLESTONEANVIL.get())
                 .pattern("---")
@@ -297,6 +295,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_leather", has(Items.LEATHER))
                 .save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Blocks.CAMPFIRE)
+                .pattern("XXX")
+                .pattern("/O/")
+                .pattern(" / ")
+                .define('O', ItemTags.COALS)
+                .define('X', ItemTags.LOGS)
+                .define('/', Items.STICK)
+                .unlockedBy("has_coals", has(ItemTags.COALS))
+                .unlockedBy("has_stick", has(Items.STICK))
+                .unlockedBy("has_logs", has(ItemTags.LOGS))
+                .save(recipeOutput, "campfire_upside_down");
+
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.PRIMITIVEPICKAXE.get())
                 .pattern("XOX")
                 .pattern(" / ")
@@ -391,6 +401,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("   ")
                 .pattern("# #")
                 .pattern(" # ")
+                .define('#', Items.CLAY_BALL)
+                .unlockedBy("has_clay_ball", has(Items.CLAY_BALL))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CLAYBRICK.get(),4)
+                .pattern("   ")
+                .pattern("###")
+                .pattern("   ")
                 .define('#', Items.CLAY_BALL)
                 .unlockedBy("has_clay_ball", has(Items.CLAY_BALL))
                 .save(recipeOutput);
@@ -776,6 +794,286 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         .addCriterion("has_stick", RecipeProvider.has(Items.STICK))
                         .addCriterion("has_hammer", RecipeProvider.has(ModTags.Items.HAMMERS))
                         .build(ResourceLocation.fromNamespaceAndPath("minecraft", "wooden_hoe").withPrefix("recipes/"))
+        );
+
+        ShapedRecipePattern Mod_shaped_pattern8 = ShapedRecipePattern.of(
+                Map.of(
+                        '#', Ingredient.of(ModTags.Items.ALLTHEWOODITEM),
+                        'V', Ingredient.of(ModTags.Items.SAWS)
+                ),
+                List.of(
+                        "V# ",
+                        " # ",
+                        "   "
+                )
+        );
+
+        ModCustomCraftingShaped Mod_shaped_recipe8 = new ModCustomCraftingShaped(
+                "",
+                CraftingBookCategory.MISC,
+                Mod_shaped_pattern8,
+                new ItemStack(Items.STICK, 16)
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "logs_to_sticks_with_saw2"),
+                Mod_shaped_recipe8,
+                recipeOutput.advancement()
+                        .addCriterion("has_log", RecipeProvider.has(ModTags.Items.ALLTHEWOODITEM))
+                        .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "logs_to_sticks_with_saw2").withPrefix("recipes/"))
+        );
+
+        ShapedRecipePattern Mod_shaped_pattern9 = ShapedRecipePattern.of(
+                Map.of(
+                        '#', Ingredient.of(ModTags.Items.ALLTHEWOODITEM),
+                        'V', Ingredient.of(ModTags.Items.SAWS)
+                ),
+                List.of(
+                        " # ",
+                        " # ",
+                        " V "
+                )
+        );
+
+        ModCustomCraftingShaped Mod_shaped_recipe9 = new ModCustomCraftingShaped(
+                "",
+                CraftingBookCategory.MISC,
+                Mod_shaped_pattern9,
+                new ItemStack(Items.STICK, 16)
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "logs_to_sticks_with_saw3"),
+                Mod_shaped_recipe9,
+                recipeOutput.advancement()
+                        .addCriterion("has_log", RecipeProvider.has(ModTags.Items.ALLTHEWOODITEM))
+                        .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "logs_to_sticks_with_saw3").withPrefix("recipes/"))
+        );
+
+        ShapedRecipePattern Mod_shaped_pattern10 = ShapedRecipePattern.of(
+                Map.of(
+                        '#', Ingredient.of(ModTags.Items.ALLTHEWOODITEM),
+                        'V', Ingredient.of(ModTags.Items.SAWS)
+                ),
+                List.of(
+                        " V ",
+                        " # ",
+                        " # "
+                )
+        );
+
+        ModCustomCraftingShaped Mod_shaped_recipe10 = new ModCustomCraftingShaped(
+                "",
+                CraftingBookCategory.MISC,
+                Mod_shaped_pattern10,
+                new ItemStack(Items.STICK, 16)
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "logs_to_sticks_with_saw4"),
+                Mod_shaped_recipe10,
+                recipeOutput.advancement()
+                        .addCriterion("has_log", RecipeProvider.has(ModTags.Items.ALLTHEWOODITEM))
+                        .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "logs_to_sticks_with_saw4").withPrefix("recipes/"))
+        );
+
+        ShapedRecipePattern Mod_shaped_pattern11 = ShapedRecipePattern.of(
+                Map.of(
+                        '#', Ingredient.of(ModTags.Items.ALLTHEWOODITEM),
+                        'V', Ingredient.of(ModTags.Items.SAWS)
+                ),
+                List.of(
+                        "V  ",
+                        " # ",
+                        " # "
+                )
+        );
+
+        ModCustomCraftingShaped Mod_shaped_recipe11 = new ModCustomCraftingShaped(
+                "",
+                CraftingBookCategory.MISC,
+                Mod_shaped_pattern11,
+                new ItemStack(Items.STICK, 16)
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "logs_to_sticks_with_saw5"),
+                Mod_shaped_recipe11,
+                recipeOutput.advancement()
+                        .addCriterion("has_log", RecipeProvider.has(ModTags.Items.ALLTHEWOODITEM))
+                        .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "logs_to_sticks_with_saw5").withPrefix("recipes/"))
+        );
+
+        ShapedRecipePattern Mod_shaped_pattern12 = ShapedRecipePattern.of(
+                Map.of(
+                        '#', Ingredient.of(ModTags.Items.ALLTHEWOODITEM),
+                        'V', Ingredient.of(ModTags.Items.SAWS)
+                ),
+                List.of(
+                        " # ",
+                        " # ",
+                        "V  "
+                )
+        );
+
+        ModCustomCraftingShaped Mod_shaped_recipe12 = new ModCustomCraftingShaped(
+                "",
+                CraftingBookCategory.MISC,
+                Mod_shaped_pattern12,
+                new ItemStack(Items.STICK, 16)
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "logs_to_sticks_with_saw6"),
+                Mod_shaped_recipe12,
+                recipeOutput.advancement()
+                        .addCriterion("has_log", RecipeProvider.has(ModTags.Items.ALLTHEWOODITEM))
+                        .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "logs_to_sticks_with_saw6").withPrefix("recipes/"))
+        );
+
+        ShapedRecipePattern Mod_shaped_pattern13 = ShapedRecipePattern.of(
+                Map.of(
+                        '#', Ingredient.of(ItemTags.PLANKS),
+                        'V', Ingredient.of(ModTags.Items.SAWS)
+                ),
+                List.of(
+                        "V# ",
+                        " # ",
+                        "   "
+                )
+        );
+
+        ModCustomCraftingShaped Mod_shaped_recipe13 = new ModCustomCraftingShaped(
+                "",
+                CraftingBookCategory.MISC,
+                Mod_shaped_pattern13,
+                new ItemStack(Items.STICK, 4)
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "planks_to_sticks_with_saw2"),
+                Mod_shaped_recipe13,
+                recipeOutput.advancement()
+                        .addCriterion("has_planks", RecipeProvider.has(ItemTags.PLANKS))
+                        .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "planks_to_sticks_with_saw2").withPrefix("recipes/"))
+        );
+
+        ShapedRecipePattern Mod_shaped_pattern14 = ShapedRecipePattern.of(
+                Map.of(
+                        '#', Ingredient.of(ItemTags.PLANKS),
+                        'V', Ingredient.of(ModTags.Items.SAWS)
+                ),
+                List.of(
+                        " V ",
+                        " # ",
+                        " # "
+                )
+        );
+
+        ModCustomCraftingShaped Mod_shaped_recipe14 = new ModCustomCraftingShaped(
+                "",
+                CraftingBookCategory.MISC,
+                Mod_shaped_pattern14,
+                new ItemStack(Items.STICK, 4)
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "planks_to_sticks_with_saw3"),
+                Mod_shaped_recipe14,
+                recipeOutput.advancement()
+                        .addCriterion("has_planks", RecipeProvider.has(ItemTags.PLANKS))
+                        .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "planks_to_sticks_with_saw3").withPrefix("recipes/"))
+        );
+
+        ShapedRecipePattern Mod_shaped_pattern15 = ShapedRecipePattern.of(
+                Map.of(
+                        '#', Ingredient.of(ItemTags.PLANKS),
+                        'V', Ingredient.of(ModTags.Items.SAWS)
+                ),
+                List.of(
+                        " # ",
+                        " # ",
+                        " V "
+                )
+        );
+
+        ModCustomCraftingShaped Mod_shaped_recipe15 = new ModCustomCraftingShaped(
+                "",
+                CraftingBookCategory.MISC,
+                Mod_shaped_pattern15,
+                new ItemStack(Items.STICK, 4)
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "planks_to_sticks_with_saw4"),
+                Mod_shaped_recipe15,
+                recipeOutput.advancement()
+                        .addCriterion("has_planks", RecipeProvider.has(ItemTags.PLANKS))
+                        .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "planks_to_sticks_with_saw4").withPrefix("recipes/"))
+        );
+
+        ShapedRecipePattern Mod_shaped_pattern16 = ShapedRecipePattern.of(
+                Map.of(
+                        '#', Ingredient.of(ItemTags.PLANKS),
+                        'V', Ingredient.of(ModTags.Items.SAWS)
+                ),
+                List.of(
+                        "V  ",
+                        " # ",
+                        " # "
+                )
+        );
+
+        ModCustomCraftingShaped Mod_shaped_recipe16 = new ModCustomCraftingShaped(
+                "",
+                CraftingBookCategory.MISC,
+                Mod_shaped_pattern16,
+                new ItemStack(Items.STICK, 4)
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "planks_to_sticks_with_saw5"),
+                Mod_shaped_recipe16,
+                recipeOutput.advancement()
+                        .addCriterion("has_planks", RecipeProvider.has(ItemTags.PLANKS))
+                        .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "planks_to_sticks_with_saw5").withPrefix("recipes/"))
+        );
+
+        ShapedRecipePattern Mod_shaped_pattern17 = ShapedRecipePattern.of(
+                Map.of(
+                        '#', Ingredient.of(ItemTags.PLANKS),
+                        'V', Ingredient.of(ModTags.Items.SAWS)
+                ),
+                List.of(
+                        " # ",
+                        " # ",
+                        "V  "
+                )
+        );
+
+        ModCustomCraftingShaped Mod_shaped_recipe17 = new ModCustomCraftingShaped(
+                "",
+                CraftingBookCategory.MISC,
+                Mod_shaped_pattern17,
+                new ItemStack(Items.STICK, 4)
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "planks_to_sticks_with_saw6"),
+                Mod_shaped_recipe17,
+                recipeOutput.advancement()
+                        .addCriterion("has_planks", RecipeProvider.has(ItemTags.PLANKS))
+                        .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "planks_to_sticks_with_saw6").withPrefix("recipes/"))
         );
 
 
@@ -1633,9 +1931,111 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
                         ProgressRevamp.MODID, "copper_boots2"));
 
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERAXEHEADHOT)
+                .pattern(" ## ")
+                .pattern(" #HH")
+                .pattern("  T ")
+                .define('T', ModTags.Items.HAMMERS)
+                .define('H', ModItems.MELTEDCOPPERBLOB)
+                .define('#', ModItems.MELTEDCOPPERPLATE)
+                .unlockedBy("has_hammer", has(ModTags.Items.HAMMERS))
+                .unlockedBy("has_melted_copper_blob", has(ModItems.MELTEDCOPPERBLOB))
+                .unlockedBy("has_melted_copper_plate", has(ModItems.MELTEDCOPPERPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "copper_axe_head_hot"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERPICKAXEHEADHOT)
+                .pattern(" HHT")
+                .pattern("  HH")
+                .pattern("   H")
+                .define('T', ModTags.Items.HAMMERS)
+                .define('H', ModItems.MELTEDCOPPERBLOB)
+                .unlockedBy("has_hammer", has(ModTags.Items.HAMMERS))
+                .unlockedBy("has_melted_copper_blob", has(ModItems.MELTEDCOPPERBLOB))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "copper_pickaxe_head_hot"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERHOEHEADHOT)
+                .pattern("##H ")
+                .pattern("  T ")
+                .pattern("    ")
+                .define('T', ModTags.Items.HAMMERS)
+                .define('H', ModItems.MELTEDCOPPERBLOB)
+                .define('#', ModItems.MELTEDCOPPERPLATE)
+                .unlockedBy("has_hammer", has(ModTags.Items.HAMMERS))
+                .unlockedBy("has_melted_copper_blob", has(ModItems.MELTEDCOPPERBLOB))
+                .unlockedBy("has_melted_copper_plate", has(ModItems.MELTEDCOPPERPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "copper_hoe_head_hot"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERSWORDHEADHOT)
+                .pattern("T   ")
+                .pattern("H###")
+                .pattern("    ")
+                .define('T', ModTags.Items.HAMMERS)
+                .define('H', ModItems.MELTEDCOPPERBLOB)
+                .define('#', ModItems.MELTEDCOPPERPLATE)
+                .unlockedBy("has_hammer", has(ModTags.Items.HAMMERS))
+                .unlockedBy("has_melted_copper_blob", has(ModItems.MELTEDCOPPERBLOB))
+                .unlockedBy("has_melted_copper_plate", has(ModItems.MELTEDCOPPERPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "copper_sword_head_hot"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERCROSSGUARDHOT)
+                .pattern(" H  ")
+                .pattern(" #H ")
+                .pattern(" T#H")
+                .define('T', ModTags.Items.HAMMERS)
+                .define('H', ModItems.MELTEDCOPPERBLOB)
+                .define('#', ModItems.MELTEDCOPPERPLATE)
+                .unlockedBy("has_hammer", has(ModTags.Items.HAMMERS))
+                .unlockedBy("has_melted_copper_blob", has(ModItems.MELTEDCOPPERBLOB))
+                .unlockedBy("has_melted_copper_plate", has(ModItems.MELTEDCOPPERPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "copper_cross_guard_hot"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERSHOVELHEADHOT)
+                .pattern("  HH")
+                .pattern(" H#H")
+                .pattern(" TH ")
+                .define('T', ModTags.Items.HAMMERS)
+                .define('H', ModItems.SMALLMELTEDCOPPERBLOB)
+                .define('#', ModItems.MELTEDCOPPERPLATE)
+                .unlockedBy("has_hammer", has(ModTags.Items.HAMMERS))
+                .unlockedBy("has_small_melted_copper_blob", has(ModItems.SMALLMELTEDCOPPERBLOB))
+                .unlockedBy("has_melted_copper_plate", has(ModItems.MELTEDCOPPERPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "copper_shovel_head_hot"));
+
+        List<ItemLike> SALTED_BEEF_INGREDIENT = List.of(
+                ModItems.SALTEDBEEF
+        );
+
+        List<ItemLike> CERAMIC_BUCKET_INGREDIENTS = List.of(
+                ModItems.UNFIREDCLAYBUCKET
+        );
+
+        List<ItemLike> UNREFINED_CRUCIBLES = List.of(
+                ModItems.UNREFINEDCRUCIBLE
+        );
+
+        List<ItemLike> CLAY_BRICK_INGREDIENT = List.of(
+                ModItems.CLAYBRICK
+        );
+
+        List<ItemLike> TERRACOTTA_INGREDIENT = List.of(
+                Blocks.CLAY
+        );
+
         oreSmelting(recipeOutput, SALTED_BEEF_INGREDIENT, RecipeCategory.FOOD, ModItems.SALTEDCOOKEDBEEF.get(), 0.4f, 200, "salted_cooked_beef");
 
         campfireCooking(recipeOutput, SALTED_BEEF_INGREDIENT,RecipeCategory.FOOD, ModItems.SALTEDCOOKEDBEEF.get(), 0.4f, 600, "salted_cooked_beef");
+
+        oreSmelting(recipeOutput, CLAY_BRICK_INGREDIENT, RecipeCategory.MISC, Items.BRICK, 0.1f, 200, "brick");
+
+        campfireCooking(recipeOutput, CLAY_BRICK_INGREDIENT,RecipeCategory.MISC, Items.BRICK, 0.1f, 600, "brick");
+
+        campfireCooking(recipeOutput, TERRACOTTA_INGREDIENT,RecipeCategory.MISC, Items.TERRACOTTA, 0.2f, 800, "terracotta");
 
         oreSmelting(recipeOutput, CERAMIC_BUCKET_INGREDIENTS, RecipeCategory.MISC, ModItems.CERAMICBUCKET.get(), 0.5f, 300, "ceramic_bucket");
 

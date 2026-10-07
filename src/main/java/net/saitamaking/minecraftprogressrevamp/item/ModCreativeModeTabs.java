@@ -45,6 +45,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.HIDESHORTS);
                         output.accept(ModItems.HIDEBOOTS);
                         output.accept(ModItems.SCRAPEDANIMALHIDE);
+                        output.accept(ModItems.CLAYBRICK);
                         output.accept(ModItems.UNFIREDCLAYBUCKET);
                         output.accept(ModItems.CERAMICBUCKET);
                         output.accept(ModItems.WATER_CERAMICBUCKET);
@@ -78,6 +79,20 @@ public class ModCreativeModeTabs {
                         output.accept(Items.COPPER_INGOT);
                         output.accept(ModBlocks.COPPERBARBLOCK);
                         output.accept(ModItems.MELTEDCOPPERPLATE);
+                        output.accept(ModItems.COPPERAXEHEADHOT);
+                        output.accept(ModItems.COPPERPICKAXEHEADHOT);
+                        output.accept(ModItems.COPPERHOEHEADHOT);
+                        output.accept(ModItems.COPPERSHOVELHEADHOT);
+                        output.accept(ModItems.COPPERCROSSGUARDHOT);
+                        output.accept(ModItems.COPPERSWORDHEADHOT);
+                        output.accept(ModItems.COPPERAXEHEADDULL);
+                        output.accept(ModItems.COPPERAXEHEAD);
+                        output.accept(ModItems.COPPERPICKAXEHEAD);
+                        output.accept(ModItems.COPPERHOEHEAD);
+                        output.accept(ModItems.COPPERSHOVELHEAD);
+                        output.accept(ModItems.COPPERCROSSGUARD);
+                        output.accept(ModItems.COPPERSWORDHEADDULL);
+                        output.accept(ModItems.COPPERSWORDHEAD);
                         output.accept(ModItems.COPPERAXE);
                         output.accept(ModItems.COPPERPICKAXE);
                         output.accept(ModItems.COPPERHOE);

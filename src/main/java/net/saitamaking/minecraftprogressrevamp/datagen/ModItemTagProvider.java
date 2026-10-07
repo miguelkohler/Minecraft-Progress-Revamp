@@ -5,6 +5,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -75,6 +76,33 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .addTag(ItemTags.WARPED_STEMS)
                 .addTag(ItemTags.CRIMSON_STEMS)
                 .addTag(ItemTags.OAK_LOGS);
+
+        tag(ModTags.Items.COPPERARMOR)
+                .add(
+                        ModItems.COPPERHELMET.get(),
+                        ModItems.COPPERCHESTPLATE.get(),
+                        ModItems.COPPERLEGGINGS.get(),
+                        ModItems.COPPERBOOTS.get()
+                );
+
+        tag(ModTags.Items.COPPERTOOLS)
+                .add(
+                        ModItems.COPPERHOE.get(),
+                        ModItems.COPPERSHOVEL.get(),
+                        ModItems.COPPERSWORD.get(),
+                        ModItems.COPPERPICKAXE.get(),
+                        ModItems.COPPERAXE.get()
+                );
+
+        tag(ModTags.Items.COPPERTOOLPARTS)
+                .add(
+                        ModItems.COPPERHOEHEAD.get(),
+                        ModItems.COPPERSHOVELHEAD.get(),
+                        ModItems.COPPERSWORDHEAD.get(),
+                        ModItems.COPPERPICKAXEHEAD.get(),
+                        ModItems.COPPERCROSSGUARD.get(),
+                        ModItems.COPPERAXEHEAD.get()
+                );
 
         this.tag(ItemTags.TRIMMABLE_ARMOR)
                 .add(ModItems.COPPERHELMET.get())
