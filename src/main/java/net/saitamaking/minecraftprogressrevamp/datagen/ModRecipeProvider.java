@@ -114,15 +114,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_iron_ingot", has(Items.IRON_INGOT))
                 .save(recipeOutput);
 
-        /*ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.CAULDRON)
-                .pattern("# #")
-                .pattern("# #")
-                .pattern("###")
-                .define('#', Items.TERRACOTTA)
-                .unlockedBy("has_terracotta", has(Items.TERRACOTTA))
-                .save(recipeOutput);
-                */
-
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.COBBLESTONEANVIL.get())
                 .pattern("---")
                 .pattern(" # ")
@@ -443,6 +434,58 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("   ")
                 .define('#', ItemTags.PLANKS)
                 .unlockedBy("has_planks", has(ItemTags.PLANKS))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPERAXE)
+                .pattern(" X ")
+                .pattern("#  ")
+                .pattern("   ")
+                .define('#', ModItems.LEATHERSTICK)
+                .define('X', ModItems.COPPERAXEHEAD)
+                .unlockedBy("has_leather_stick", has(ModItems.LEATHERSTICK))
+                .unlockedBy("has_copper_axe_head", has(ModItems.COPPERAXEHEAD))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPERPICKAXE)
+                .pattern(" X ")
+                .pattern("#  ")
+                .pattern("   ")
+                .define('#', ModItems.LEATHERSTICK)
+                .define('X', ModItems.COPPERPICKAXEHEAD)
+                .unlockedBy("has_leather_stick", has(ModItems.LEATHERSTICK))
+                .unlockedBy("has_copper_pickaxe_head", has(ModItems.COPPERPICKAXEHEAD))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPERHOE)
+                .pattern(" X ")
+                .pattern("#  ")
+                .pattern("   ")
+                .define('#', ModItems.LEATHERSTICK)
+                .define('X', ModItems.COPPERHOEHEAD)
+                .unlockedBy("has_leather_stick", has(ModItems.LEATHERSTICK))
+                .unlockedBy("has_copper_hoe_head", has(ModItems.COPPERHOEHEAD))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPERSHOVEL)
+                .pattern(" X ")
+                .pattern("#  ")
+                .pattern("   ")
+                .define('#', ModItems.LEATHERSTICK)
+                .define('X', ModItems.COPPERSHOVELHEAD)
+                .unlockedBy("has_leather_stick", has(ModItems.LEATHERSTICK))
+                .unlockedBy("has_copper_shovel_head", has(ModItems.COPPERSHOVELHEAD))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.COPPERSWORD)
+                .pattern("  /")
+                .pattern(" X ")
+                .pattern("#  ")
+                .define('#', ModItems.LEATHERSTICK)
+                .define('X', ModItems.COPPERCROSSGUARD)
+                .define('/', ModItems.COPPERSWORDHEAD)
+                .unlockedBy("has_leather_stick", has(ModItems.LEATHERSTICK))
+                .unlockedBy("has_copper_cross_guard", has(ModItems.COPPERCROSSGUARD))
+                .unlockedBy("has_copper_sword_head", has(ModItems.COPPERSWORDHEAD))
                 .save(recipeOutput);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, Items.CRAFTING_TABLE)
@@ -1866,7 +1909,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
                         ProgressRevamp.MODID, "melted_copper_plate_3"));
 
-        CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERHELMET)
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERHELMETHOT)
                 .pattern(" OUO")
                 .pattern(" U#U")
                 .pattern("    ")
@@ -1877,9 +1920,22 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_melted_copper_blob", has(ModItems.MELTEDCOPPERBLOB))
                 .unlockedBy("has_melted_copper_plate", has(ModItems.MELTEDCOPPERPLATE))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
-                        ProgressRevamp.MODID, "copper_helmet"));
+                        ProgressRevamp.MODID, "copper_helmet_hot"));
 
-        CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERCHESTPLATE)
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERHELMETHOT)
+                .pattern("  UO")
+                .pattern("  #U")
+                .pattern("  UO")
+                .define('#', ModTags.Items.HAMMERS)
+                .define('O', ModItems.MELTEDCOPPERBLOB)
+                .define('U', ModItems.MELTEDCOPPERPLATE)
+                .unlockedBy("has_hammer", has(ModTags.Items.HAMMERS))
+                .unlockedBy("has_melted_copper_blob", has(ModItems.MELTEDCOPPERBLOB))
+                .unlockedBy("has_melted_copper_plate", has(ModItems.MELTEDCOPPERPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "copper_helmet_hot2"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERCHESTPLATEHOT)
                 .pattern("UOUO")
                 .pattern("OUO#")
                 .pattern("UOUO")
@@ -1890,9 +1946,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_melted_copper_blob", has(ModItems.MELTEDCOPPERBLOB))
                 .unlockedBy("has_melted_copper_plate", has(ModItems.MELTEDCOPPERPLATE))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
-                        ProgressRevamp.MODID, "copper_chestplate"));
+                        ProgressRevamp.MODID, "copper_chestplate_hot"));
 
-        CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERLEGGINGS)
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERLEGGINGSHOT)
                 .pattern("UOUO")
                 .pattern("  #U")
                 .pattern("UOUO")
@@ -1903,9 +1959,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_melted_copper_blob", has(ModItems.MELTEDCOPPERBLOB))
                 .unlockedBy("has_melted_copper_plate", has(ModItems.MELTEDCOPPERPLATE))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
-                        ProgressRevamp.MODID, "copper_leggings"));
+                        ProgressRevamp.MODID, "copper_leggings_hot"));
 
-        CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERBOOTS)
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERBOOTSHOT)
                 .pattern(" UO ")
                 .pattern("  # ")
                 .pattern(" UO ")
@@ -1916,9 +1972,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_melted_copper_blob", has(ModItems.MELTEDCOPPERBLOB))
                 .unlockedBy("has_melted_copper_plate", has(ModItems.MELTEDCOPPERPLATE))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
-                        ProgressRevamp.MODID, "copper_boots"));
+                        ProgressRevamp.MODID, "copper_boots_hot"));
 
-        CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERBOOTS)
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERBOOTSHOT)
                 .pattern(" O#O")
                 .pattern(" U U")
                 .pattern("    ")
@@ -1929,7 +1985,33 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_melted_copper_blob", has(ModItems.MELTEDCOPPERBLOB))
                 .unlockedBy("has_melted_copper_plate", has(ModItems.MELTEDCOPPERPLATE))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
-                        ProgressRevamp.MODID, "copper_boots2"));
+                        ProgressRevamp.MODID, "copper_boots_hot2"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERBOOTSHOT)
+                .pattern(" UO ")
+                .pattern(" #  ")
+                .pattern(" UO ")
+                .define('#', ModTags.Items.HAMMERS)
+                .define('O', ModItems.MELTEDCOPPERBLOB)
+                .define('U', ModItems.MELTEDCOPPERPLATE)
+                .unlockedBy("has_hammer", has(ModTags.Items.HAMMERS))
+                .unlockedBy("has_melted_copper_blob", has(ModItems.MELTEDCOPPERBLOB))
+                .unlockedBy("has_melted_copper_plate", has(ModItems.MELTEDCOPPERPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "copper_boots_hot3"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERBOOTSHOT)
+                .pattern(" O O")
+                .pattern(" U#U")
+                .pattern("    ")
+                .define('#', ModTags.Items.HAMMERS)
+                .define('O', ModItems.MELTEDCOPPERBLOB)
+                .define('U', ModItems.MELTEDCOPPERPLATE)
+                .unlockedBy("has_hammer", has(ModTags.Items.HAMMERS))
+                .unlockedBy("has_melted_copper_blob", has(ModItems.MELTEDCOPPERBLOB))
+                .unlockedBy("has_melted_copper_plate", has(ModItems.MELTEDCOPPERPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "copper_boots_hot4"));
 
         CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERAXEHEADHOT)
                 .pattern(" ## ")

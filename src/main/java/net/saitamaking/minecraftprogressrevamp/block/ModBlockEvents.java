@@ -40,6 +40,13 @@ public class ModBlockEvents {
             }
         }
 
+        if (state.is(ModTags.Blocks.NEEDS_COPPER_TOOLS)) {
+            if (heldItem.isEmpty() || !hasCorrectToolAction(heldItem, state)) {
+                event.getDrops().clear();
+                return;
+            }
+        }
+
         if (state.is(BlockTags.NEEDS_IRON_TOOL)) {
             if (heldItem.isEmpty() || !hasCorrectToolAction(heldItem, state)) {
                 event.getDrops().clear();

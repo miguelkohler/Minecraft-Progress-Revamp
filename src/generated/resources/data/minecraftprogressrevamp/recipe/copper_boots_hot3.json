@@ -12,12 +12,12 @@
     }
   },
   "pattern": [
-    "UOUO",
-    "OUO#",
-    "UOUO"
+    " UO ",
+    " #  ",
+    " UO "
   ],
   "result": {
     "count": 1,
-    "id": "minecraftprogressrevamp:copper_chestplate"
+    "id": "minecraftprogressrevamp:copper_boots_hot"
   }
 }

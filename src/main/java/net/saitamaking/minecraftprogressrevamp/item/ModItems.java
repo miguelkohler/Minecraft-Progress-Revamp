@@ -41,19 +41,19 @@ public class ModItems {
             () -> new PrimitiveKnifeItem(ModToolTiers.PRIMAL, new Item.Properties().attributes(PrimitiveSawItem.createAttributes(ModToolTiers.PRIMAL, 1.0F, -1.0F))));
 
     public static final DeferredItem<AxeItem> COPPERAXE = ITEMS.register("copper_axe",
-            () -> new AxeItem(ModToolTiers.COPPER, new Item.Properties().attributes(AxeItem.createAttributes(ModToolTiers.COPPER, 8.5F, -3.2F))));
+            () -> new AxeItem(ModToolTiers.COPPER, new Item.Properties().attributes(AxeItem.createAttributes(ModToolTiers.COPPER, 7.0F, -3.2F))));
 
     public static final DeferredItem<PickaxeItem> COPPERPICKAXE = ITEMS.register("copper_pickaxe",
-            () -> new PickaxeItem(ModToolTiers.COPPER, new Item.Properties().attributes(PickaxeItem.createAttributes(ModToolTiers.COPPER, 2.5F, -2.8F))));
+            () -> new PickaxeItem(ModToolTiers.COPPER, new Item.Properties().attributes(PickaxeItem.createAttributes(ModToolTiers.COPPER, 0.5F, -2.8F))));
 
     public static final DeferredItem<HoeItem> COPPERHOE = ITEMS.register("copper_hoe",
-            () -> new HoeItem(ModToolTiers.COPPER, new Item.Properties().attributes(HoeItem.createAttributes(ModToolTiers.COPPER, 0.5F, -2.0F))));
+            () -> new HoeItem(ModToolTiers.COPPER, new Item.Properties().attributes(HoeItem.createAttributes(ModToolTiers.COPPER, -1.0F, -2.0F))));
 
     public static final DeferredItem<ShovelItem> COPPERSHOVEL = ITEMS.register("copper_shovel",
-            () -> new ShovelItem(ModToolTiers.COPPER, new Item.Properties().attributes(ShovelItem.createAttributes(ModToolTiers.COPPER, 3.0F, -3.0F))));
+            () -> new ShovelItem(ModToolTiers.COPPER, new Item.Properties().attributes(ShovelItem.createAttributes(ModToolTiers.COPPER, 1.5F, -3.0F))));
 
     public static final DeferredItem<SwordItem> COPPERSWORD = ITEMS.register("copper_sword",
-            () -> new SwordItem(ModToolTiers.COPPER, new Item.Properties().attributes(SwordItem.createAttributes(ModToolTiers.COPPER, 8.5F, -3.2F))));
+            () -> new SwordItem(ModToolTiers.COPPER, new Item.Properties().attributes(SwordItem.createAttributes(ModToolTiers.COPPER, 3.0F, -2.4F))));
 
     public static final DeferredItem<Item> LEATHERSTICK = ITEMS.register("leather_stick",
             () -> new Item(new Item.Properties()));
@@ -167,6 +167,18 @@ public class ModItems {
             () -> new ArmorItem(ModArmorMaterials.COPPER_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
                     new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(11))));
 
+    public static final DeferredItem<Item> COPPERHELMETHOT = ITEMS.register("copper_helmet_hot",
+            () -> new TransformItem("water_cauldron", COPPERHELMET, new Item.Properties()));
+
+    public static final DeferredItem<Item> COPPERCHESTPLATEHOT = ITEMS.register("copper_chestplate_hot",
+            () -> new TransformItem("water_cauldron", COPPERCHESTPLATE, new Item.Properties()));
+
+    public static final DeferredItem<Item> COPPERLEGGINGSHOT = ITEMS.register("copper_leggings_hot",
+            () -> new TransformItem("water_cauldron", COPPERLEGGINGS, new Item.Properties()));
+
+    public static final DeferredItem<Item> COPPERBOOTSHOT = ITEMS.register("copper_boots_hot",
+            () -> new TransformItem("water_cauldron", COPPERBOOTS, new Item.Properties()));
+
     public static final DeferredItem<Item> COPPERAXEHEAD = ITEMS.register("copper_axe_head",
             () -> new Item(new Item.Properties()));
 
@@ -192,7 +204,7 @@ public class ModItems {
             () -> new TransformItem("grindstone",ModItems.COPPERAXEHEAD,new Item.Properties()));
 
     public static final DeferredItem<Item> COPPERAXEHEADHOT = ITEMS.register("copper_axe_head_hot",
-            () -> new TransformItem("water_cauldron", COPPERAXEHEAD, new Item.Properties()));
+            () -> new TransformItem("water_cauldron", COPPERAXEHEADDULL, new Item.Properties()));
 
     public static final DeferredItem<Item> COPPERSHOVELHEADHOT = ITEMS.register("copper_shovel_head_hot",
             () -> new TransformItem("water_cauldron", COPPERSHOVELHEAD, new Item.Properties()));

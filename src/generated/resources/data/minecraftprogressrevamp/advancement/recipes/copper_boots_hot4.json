@@ -33,7 +33,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraftprogressrevamp:copper_boots"
+        "recipe": "minecraftprogressrevamp:copper_boots_hot4"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -48,7 +48,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraftprogressrevamp:copper_boots"
+      "minecraftprogressrevamp:copper_boots_hot4"
     ]
   }
 }

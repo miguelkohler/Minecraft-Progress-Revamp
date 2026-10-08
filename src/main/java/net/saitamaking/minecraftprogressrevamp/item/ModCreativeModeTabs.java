@@ -98,6 +98,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.COPPERHOE);
                         output.accept(ModItems.COPPERSHOVEL);
                         output.accept(ModItems.COPPERSWORD);
+                        output.accept(ModItems.COPPERHELMETHOT);
+                        output.accept(ModItems.COPPERCHESTPLATEHOT);
+                        output.accept(ModItems.COPPERLEGGINGSHOT);
+                        output.accept(ModItems.COPPERBOOTSHOT);
                         output.accept(ModItems.COPPERHELMET);
                         output.accept(ModItems.COPPERCHESTPLATE);
                         output.accept(ModItems.COPPERLEGGINGS);

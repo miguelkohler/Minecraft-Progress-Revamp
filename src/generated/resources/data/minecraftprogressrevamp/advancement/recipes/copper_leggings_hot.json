@@ -33,7 +33,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraftprogressrevamp:copper_helmet"
+        "recipe": "minecraftprogressrevamp:copper_leggings_hot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -48,7 +48,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraftprogressrevamp:copper_helmet"
+      "minecraftprogressrevamp:copper_leggings_hot"
     ]
   }
 }

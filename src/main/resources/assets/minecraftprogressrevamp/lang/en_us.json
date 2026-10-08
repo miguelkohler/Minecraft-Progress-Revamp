@@ -61,6 +61,10 @@
   "item.minecraftprogressrevamp.copper_shovel_head_hot": "Hot Copper Shovel Head",
   "item.minecraftprogressrevamp.copper_sword_head_dull": "Dull Copper Sword Head",
   "item.minecraftprogressrevamp.copper_axe_head_dull": "Dull Copper Axe Head",
+  "item.minecraftprogressrevamp.copper_helmet_hot": "Copper Helmet",
+  "item.minecraftprogressrevamp.copper_chestplate_hot": "Hot Copper Chestplate",
+  "item.minecraftprogressrevamp.copper_leggings_hot": "Hot Copper Leggings",
+  "item.minecraftprogressrevamp.copper_boots_hot": "Hot Copper Boots",
 
   "block.minecraftprogressrevamp.primitive_crafting_table": "Primitive Crafting Table",
   "block.minecraftprogressrevamp.rudimentary_crafting_table": "Rudimentary Crafting Table",
@@ -88,6 +92,8 @@
   "tooltip.minecraftprogressrevamp.starter_toolbox.not_shift_down": "§8Press [SHIFT] for more information",
   "tooltip.minecraftprogressrevamp.dull_item.not_shift_down": "§8Press [SHIFT] for more information",
   "tooltip.minecraftprogressrevamp.dull_item.shift_down": "This looks a little dull, maybe you need to sharpen it in a §eGrindstone",
+  "tooltip.minecraftprogressrevamp.hot_item.not_shift_down": "§8Press [SHIFT] for more information",
+  "tooltip.minecraftprogressrevamp.hot_item.shift_down": "This item is almost melting! Its too hot to use. \nMaybe cool it down in a §bCauldron with water",
   "tooltip.minecraftprogressrevamp.primitive_hammer.shift_down": "Can crack bricks on right click",
   "tooltip.minecraftprogressrevamp.primitive_hammer.not_shift_down": "§8Press [SHIFT] for more information"
 }

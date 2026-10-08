@@ -99,6 +99,12 @@ public class TransformItem extends Item {
             } else {
                 tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.dull_item.not_shift_down"));
             }
+        } else if(targetBlockId.getPath().endsWith("cauldron")){
+            if (Screen.hasShiftDown()) {
+                tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.hot_item.shift_down"));
+            } else {
+                tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.hot_item.not_shift_down"));
+            }
         }
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }

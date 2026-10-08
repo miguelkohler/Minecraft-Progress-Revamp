@@ -9,6 +9,7 @@ import net.saitamaking.minecraftprogressrevamp.item.ModItems;
 import net.saitamaking.minecraftprogressrevamp.recipe.ModRecipeSerializers;
 import net.saitamaking.minecraftprogressrevamp.loot.ModLootModifiers;
 import net.saitamaking.minecraftprogressrevamp.screen.ModMenuTypes;
+import net.saitamaking.minecraftprogressrevamp.util.ModDataPacks;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;

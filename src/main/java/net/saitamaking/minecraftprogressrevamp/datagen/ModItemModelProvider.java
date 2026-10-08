@@ -87,6 +87,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.COPPERSHOVELHEADHOT.get());
         basicItem(ModItems.COPPERCROSSGUARDHOT.get());
         basicItem(ModItems.COPPERSWORDHEADHOT.get());
+        basicItem(ModItems.COPPERBOOTSHOT.get());
+        basicItem(ModItems.COPPERLEGGINGSHOT.get());
+        basicItem(ModItems.COPPERCHESTPLATEHOT.get());
+        basicItem(ModItems.COPPERHELMETHOT.get());
         basicItem(ModItems.COPPERHOEHEADHOT.get());
         handheldItem(ModItems.COPPERAXE.get());
         handheldItem(ModItems.COPPERPICKAXE.get());
