@@ -31,6 +31,7 @@ public class ModTags {
         public static final TagKey<Item> SAWS = createTag("saws");
         public static final TagKey<Item> HAMMERS = createTag("hammers");
         public static final TagKey<Item> KNIVES = createTag("knives");
+        public static final TagKey<Item> SHEARS = createTag("shears");
         public static final TagKey<Item> ALLTHEWOODITEM = createTag("all_the_wood_item");
         public static final TagKey<Item> WATERCONTAINERS = createTag("water_containers");
         public static final TagKey<Item> SANDMOLDS = createTag("sand_molds");

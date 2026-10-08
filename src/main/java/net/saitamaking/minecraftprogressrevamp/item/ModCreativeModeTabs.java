@@ -85,6 +85,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.COPPERSHOVELHEADHOT);
                         output.accept(ModItems.COPPERCROSSGUARDHOT);
                         output.accept(ModItems.COPPERSWORDHEADHOT);
+                        output.accept(ModItems.COPPERCHISELBLADEHOT);
+                        output.accept(ModItems.COPPERHAMMERHEADHOT);
+                        output.accept(ModItems.COPPERSAWBLADEHOT);
+                        output.accept(ModItems.COPPERSMALLBLADEHOT);
                         output.accept(ModItems.COPPERAXEHEADDULL);
                         output.accept(ModItems.COPPERAXEHEAD);
                         output.accept(ModItems.COPPERPICKAXEHEAD);
@@ -93,11 +97,22 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.COPPERCROSSGUARD);
                         output.accept(ModItems.COPPERSWORDHEADDULL);
                         output.accept(ModItems.COPPERSWORDHEAD);
+                        output.accept(ModItems.COPPERCHISELBLADEDULL);
+                        output.accept(ModItems.COPPERCHISELBLADE);
+                        output.accept(ModItems.COPPERHAMMERHEAD);
+                        output.accept(ModItems.COPPERSAWBLADE);
+                        output.accept(ModItems.COPPERSMALLBLADEDULL);
+                        output.accept(ModItems.COPPERSMALLBLADE);
                         output.accept(ModItems.COPPERAXE);
                         output.accept(ModItems.COPPERPICKAXE);
                         output.accept(ModItems.COPPERHOE);
                         output.accept(ModItems.COPPERSHOVEL);
                         output.accept(ModItems.COPPERSWORD);
+                        output.accept(ModItems.COPPERCHISEL);
+                        output.accept(ModItems.COPPERHAMMER);
+                        output.accept(ModItems.COPPERSAW);
+                        output.accept(ModItems.COPPERKNIFE);
+                        output.accept(ModItems.COPPERSHEARS);
                         output.accept(ModItems.COPPERHELMETHOT);
                         output.accept(ModItems.COPPERCHESTPLATEHOT);
                         output.accept(ModItems.COPPERLEGGINGSHOT);
@@ -113,6 +128,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.IRONBARBLOCK);
                         output.accept(Blocks.COPPER_BLOCK);
 
+                        output.accept(ModItems.MAGNIFYINGGLASS);
                         output.accept(ModBlocks.STEELCUTTER);
 
 

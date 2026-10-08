@@ -1,11 +1,9 @@
 package net.saitamaking.minecraftprogressrevamp.item.custom;
 
-import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
@@ -28,7 +26,6 @@ import net.neoforged.neoforge.common.IShearable;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.ItemAbility;
 import net.saitamaking.minecraftprogressrevamp.block.ModBlocks;
-import net.saitamaking.minecraftprogressrevamp.component.ModDataComponents;
 
 import java.util.List;
 import java.util.Map;
@@ -79,8 +76,6 @@ public class StarterToolboxItem extends Item {
                         item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
 
                 level.playSound(null, context.getClickedPos(), SoundEvents.ANVIL_BREAK, SoundSource.BLOCKS);
-
-                context.getItemInHand().set(ModDataComponents.COORDINATES, context.getClickedPos());
             }
         }
 
@@ -92,8 +87,6 @@ public class StarterToolboxItem extends Item {
                         item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
 
                 level.playSound(null, context.getClickedPos(), SoundEvents.AXE_STRIP, SoundSource.BLOCKS);
-
-                context.getItemInHand().set(ModDataComponents.COORDINATES, context.getClickedPos());
             }
         }
 
@@ -105,8 +98,6 @@ public class StarterToolboxItem extends Item {
                         item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
 
                 level.playSound(null, context.getClickedPos(), SoundEvents.SMITHING_TABLE_USE, SoundSource.BLOCKS);
-
-                context.getItemInHand().set(ModDataComponents.COORDINATES, context.getClickedPos());
             }
         }
 
@@ -160,11 +151,6 @@ public class StarterToolboxItem extends Item {
         } else {
             tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.starter_toolbox.not_shift_down"));
         }
-
-        if (stack.get(ModDataComponents.COORDINATES) != null){
-            tooltipComponents.add(Component.literal("last block changed at: "+ stack.get(ModDataComponents.COORDINATES)));
-        }
-
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }
 }

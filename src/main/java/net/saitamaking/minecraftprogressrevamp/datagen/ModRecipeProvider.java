@@ -488,6 +488,60 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_copper_sword_head", has(ModItems.COPPERSWORDHEAD))
                 .save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPERSAW)
+                .pattern("  X")
+                .pattern(" # ")
+                .pattern("O  ")
+                .define('#', ModItems.LEATHERSTICK)
+                .define('X', ModItems.COPPERSAWBLADE)
+                .define('O', ModItems.WOODENHANDLE)
+                .unlockedBy("has_leather_stick", has(ModItems.LEATHERSTICK))
+                .unlockedBy("has_copper_saw_blade", has(ModItems.COPPERSAWBLADE))
+                .unlockedBy("has_wooden_handle", has(ModItems.WOODENHANDLE))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPERHAMMER)
+                .pattern(" X ")
+                .pattern("#  ")
+                .pattern("   ")
+                .define('#', ModItems.LEATHERSTICK)
+                .define('X', ModItems.COPPERHAMMERHEAD)
+                .unlockedBy("has_leather_stick", has(ModItems.LEATHERSTICK))
+                .unlockedBy("has_copper_hammer_head", has(ModItems.COPPERHAMMERHEAD))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPERCHISEL)
+                .pattern(" X ")
+                .pattern("#  ")
+                .pattern("   ")
+                .define('#', ModItems.LEATHERSTICK)
+                .define('X', ModItems.COPPERCHISELBLADE)
+                .unlockedBy("has_leather_stick", has(ModItems.LEATHERSTICK))
+                .unlockedBy("has_copper_chisel_blade", has(ModItems.COPPERCHISELBLADE))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPERKNIFE)
+                .pattern(" X ")
+                .pattern("#  ")
+                .pattern("   ")
+                .define('#', ModItems.LEATHERSTICK)
+                .define('X', ModItems.COPPERSMALLBLADE)
+                .unlockedBy("has_leather_stick", has(ModItems.LEATHERSTICK))
+                .unlockedBy("has_copper_small_blade", has(ModItems.COPPERSMALLBLADE))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPERSHEARS)
+                .pattern(" X ")
+                .pattern("# X")
+                .pattern("O# ")
+                .define('#', ModItems.LEATHERSTICK)
+                .define('X', ModItems.COPPERSMALLBLADE)
+                .define('O', ModItems.WOODENHANDLE)
+                .unlockedBy("has_leather_stick", has(ModItems.LEATHERSTICK))
+                .unlockedBy("has_copper_small_blade", has(ModItems.COPPERSMALLBLADE))
+                .unlockedBy("has_wooden_handle", has(ModItems.WOODENHANDLE))
+                .save(recipeOutput);
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, Items.CRAFTING_TABLE)
                 .requires(ModBlocks.RUDIMENTARYCRAFTINGTABLE)
                 .requires(ModItems.STARTERTOOLBOX)
@@ -2088,6 +2142,106 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_melted_copper_plate", has(ModItems.MELTEDCOPPERPLATE))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
                         ProgressRevamp.MODID, "copper_shovel_head_hot"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERHAMMERHEADHOT)
+                .pattern("   #")
+                .pattern("   X")
+                .pattern("   X")
+                .define('X', ModItems.MELTEDCOPPERBLOB)
+                .define('#', ModBlocks.MELTEDCOPPERBLOCK)
+                .unlockedBy("has_melted_copper_blob", has(ModItems.MELTEDCOPPERBLOB))
+                .unlockedBy("has_melted_copper_block", has(ModBlocks.MELTEDCOPPERBLOCK))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "copper_hammer_head_hot"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERHAMMERHEADHOT)
+                .pattern("    ")
+                .pattern(" #XX")
+                .pattern("    ")
+                .define('X', ModItems.MELTEDCOPPERBLOB)
+                .define('#', ModBlocks.MELTEDCOPPERBLOCK)
+                .unlockedBy("has_melted_copper_blob", has(ModItems.MELTEDCOPPERBLOB))
+                .unlockedBy("has_melted_copper_block", has(ModBlocks.MELTEDCOPPERBLOCK))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "copper_hammer_head_hot2"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERSMALLBLADEHOT)
+                .pattern("  T ")
+                .pattern(" H# ")
+                .pattern("    ")
+                .define('T', ModTags.Items.HAMMERS)
+                .define('H', ModItems.SMALLMELTEDCOPPERBLOB)
+                .define('#', ModItems.MELTEDCOPPERPLATE)
+                .unlockedBy("has_hammer", has(ModTags.Items.HAMMERS))
+                .unlockedBy("has_small_melted_copper_blob", has(ModItems.SMALLMELTEDCOPPERBLOB))
+                .unlockedBy("has_melted_copper_plate", has(ModItems.MELTEDCOPPERPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "copper_small_blade_hot"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERSMALLBLADEHOT)
+                .pattern(" T  ")
+                .pattern(" H# ")
+                .pattern("    ")
+                .define('T', ModTags.Items.HAMMERS)
+                .define('H', ModItems.SMALLMELTEDCOPPERBLOB)
+                .define('#', ModItems.MELTEDCOPPERPLATE)
+                .unlockedBy("has_hammer", has(ModTags.Items.HAMMERS))
+                .unlockedBy("has_small_melted_copper_blob", has(ModItems.SMALLMELTEDCOPPERBLOB))
+                .unlockedBy("has_melted_copper_plate", has(ModItems.MELTEDCOPPERPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "copper_small_blade_hot2"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERSAWBLADEHOT)
+                .pattern(" X# ")
+                .pattern(" X#T")
+                .pattern("    ")
+                .define('T', ModTags.Items.HAMMERS)
+                .define('X', ModItems.COPPERSMALLBLADEHOT)
+                .define('#', ModItems.MELTEDCOPPERPLATE)
+                .unlockedBy("has_hammer", has(ModTags.Items.HAMMERS))
+                .unlockedBy("has_copper_small_blade_hot", has(ModItems.COPPERSMALLBLADEHOT))
+                .unlockedBy("has_melted_copper_plate", has(ModItems.MELTEDCOPPERPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "copper_saw_blade_hot"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERSAWBLADEHOT)
+                .pattern(" X#T")
+                .pattern(" X# ")
+                .pattern("    ")
+                .define('T', ModTags.Items.HAMMERS)
+                .define('X', ModItems.COPPERSMALLBLADEHOT)
+                .define('#', ModItems.MELTEDCOPPERPLATE)
+                .unlockedBy("has_hammer", has(ModTags.Items.HAMMERS))
+                .unlockedBy("has_copper_small_blade_hot", has(ModItems.COPPERSMALLBLADEHOT))
+                .unlockedBy("has_melted_copper_plate", has(ModItems.MELTEDCOPPERPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "copper_saw_blade_hot2"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERCHISELBLADEHOT)
+                .pattern("  T ")
+                .pattern(" H# ")
+                .pattern("    ")
+                .define('T', ModTags.Items.HAMMERS)
+                .define('H', ModItems.MELTEDCOPPERBLOB)
+                .define('#', ModItems.MELTEDCOPPERPLATE)
+                .unlockedBy("has_hammer", has(ModTags.Items.HAMMERS))
+                .unlockedBy("has_melted_copper_blob", has(ModItems.MELTEDCOPPERBLOB))
+                .unlockedBy("has_melted_copper_plate", has(ModItems.MELTEDCOPPERPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "copper_chisel_blade_hot"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERCHISELBLADEHOT)
+                .pattern(" T  ")
+                .pattern(" H# ")
+                .pattern("    ")
+                .define('T', ModTags.Items.HAMMERS)
+                .define('H', ModItems.MELTEDCOPPERBLOB)
+                .define('#', ModItems.MELTEDCOPPERPLATE)
+                .unlockedBy("has_hammer", has(ModTags.Items.HAMMERS))
+                .unlockedBy("has_melted_copper_blob", has(ModItems.MELTEDCOPPERBLOB))
+                .unlockedBy("has_melted_copper_plate", has(ModItems.MELTEDCOPPERPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "copper_chisel_blade_hot2"));
 
         List<ItemLike> SALTED_BEEF_INGREDIENT = List.of(
                 ModItems.SALTEDBEEF

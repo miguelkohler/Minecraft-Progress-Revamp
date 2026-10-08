@@ -40,18 +40,39 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.WATER_CERAMICBUCKET.get())
                 .add(ModItems.PRIMITIVESHEARS.get());
         tag(ItemTags.AXES)
-                .add(ModItems.PRIMITIVEAXE.get())
-                .add(ModItems.COPPERAXE.get())
-                .add(ModItems.PRIMITIVESAW.get());
+                .add(
+                        ModItems.PRIMITIVEAXE.get(),
+                        ModItems.COPPERAXE.get(),
+                        ModItems.PRIMITIVESAW.get(),
+                        ModItems.COPPERSAW.get()
+                );
         tag(ItemTags.PICKAXES)
-                .add(ModItems.COPPERPICKAXE.get())
-                .add(ModItems.PRIMITIVEPICKAXE.get());
+                .add(
+                        ModItems.COPPERPICKAXE.get(),
+                        ModItems.PRIMITIVEPICKAXE.get()
+                );
         tag(ModTags.Items.SAWS)
-                .add(ModItems.PRIMITIVESAW.get());
+                .add(
+                        ModItems.PRIMITIVESAW.get(),
+                        ModItems.COPPERSAW.get()
+                );
         tag(ModTags.Items.HAMMERS)
-                .add(ModItems.PRIMITIVEHAMMER.get());
+                .add(
+                        ModItems.PRIMITIVEHAMMER.get(),
+                        ModItems.COPPERHAMMER.get()
+                );
         tag(ModTags.Items.KNIVES)
-                .add(ModItems.PRIMITIVEKNIFE.get());
+                .add(
+                        ModItems.PRIMITIVEKNIFE.get(),
+                        ModItems.COPPERKNIFE.get()
+                );
+
+        tag(ModTags.Items.SHEARS)
+                .add(
+                        ModItems.PRIMITIVESHEARS.get(),
+                        Items.SHEARS,
+                        ModItems.COPPERSHEARS.get()
+                );
         tag(ModTags.Items.WATERCONTAINERS)
                 .add(Items.WATER_BUCKET)
                 .add(ModItems.WATER_CERAMICBUCKET.get());
@@ -91,6 +112,11 @@ public class ModItemTagProvider extends ItemTagsProvider {
                         ModItems.COPPERSHOVEL.get(),
                         ModItems.COPPERSWORD.get(),
                         ModItems.COPPERPICKAXE.get(),
+                        ModItems.COPPERHAMMER.get(),
+                        ModItems.COPPERKNIFE.get(),
+                        ModItems.COPPERSAW.get(),
+                        ModItems.COPPERCHISEL.get(),
+                        ModItems.COPPERSHEARS.get(),
                         ModItems.COPPERAXE.get()
                 );
 
@@ -101,6 +127,10 @@ public class ModItemTagProvider extends ItemTagsProvider {
                         ModItems.COPPERSWORDHEAD.get(),
                         ModItems.COPPERPICKAXEHEAD.get(),
                         ModItems.COPPERCROSSGUARD.get(),
+                        ModItems.COPPERHAMMERHEAD.get(),
+                        ModItems.COPPERCHISELBLADE.get(),
+                        ModItems.COPPERSMALLBLADE.get(),
+                        ModItems.COPPERSAWBLADE.get(),
                         ModItems.COPPERAXEHEAD.get()
                 );
 

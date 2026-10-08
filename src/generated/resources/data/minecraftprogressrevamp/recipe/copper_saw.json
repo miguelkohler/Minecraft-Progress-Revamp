@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraftprogressrevamp:leather_stick"
+    },
+    "O": {
+      "item": "minecraftprogressrevamp:wooden_handle"
+    },
+    "X": {
+      "item": "minecraftprogressrevamp:copper_saw_blade"
+    }
+  },
+  "pattern": [
+    "  X",
+    " # ",
+    "O  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:copper_saw"
+  }
+}

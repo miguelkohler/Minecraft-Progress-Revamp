@@ -1,0 +1,23 @@
+{
+  "type": "minecraftprogressrevamp:cobblestone_anvil",
+  "key": {
+    "#": {
+      "item": "minecraftprogressrevamp:melted_copper_plate"
+    },
+    "H": {
+      "item": "minecraftprogressrevamp:small_melted_copper_blob"
+    },
+    "T": {
+      "tag": "minecraftprogressrevamp:hammers"
+    }
+  },
+  "pattern": [
+    "  T ",
+    " H# ",
+    "    "
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:copper_small_blade_hot"
+  }
+}

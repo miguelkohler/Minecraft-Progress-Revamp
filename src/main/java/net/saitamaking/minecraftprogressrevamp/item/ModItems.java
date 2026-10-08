@@ -38,7 +38,7 @@ public class ModItems {
             () -> new PrimitiveSawItem(ModToolTiers.PRIMAL, new Item.Properties().attributes(PrimitiveSawItem.createAttributes(ModToolTiers.PRIMAL, 0.5F, 2.4F))));
 
     public static final DeferredItem<PrimitiveKnifeItem> PRIMITIVEKNIFE = ITEMS.register("primitive_knife",
-            () -> new PrimitiveKnifeItem(ModToolTiers.PRIMAL, new Item.Properties().attributes(PrimitiveSawItem.createAttributes(ModToolTiers.PRIMAL, 1.0F, -1.0F))));
+            () -> new PrimitiveKnifeItem(ModToolTiers.PRIMAL, new Item.Properties().attributes(PrimitiveSawItem.createAttributes(ModToolTiers.PRIMAL, 1.0F, -1.6F))));
 
     public static final DeferredItem<AxeItem> COPPERAXE = ITEMS.register("copper_axe",
             () -> new AxeItem(ModToolTiers.COPPER, new Item.Properties().attributes(AxeItem.createAttributes(ModToolTiers.COPPER, 7.0F, -3.2F))));
@@ -54,6 +54,21 @@ public class ModItems {
 
     public static final DeferredItem<SwordItem> COPPERSWORD = ITEMS.register("copper_sword",
             () -> new SwordItem(ModToolTiers.COPPER, new Item.Properties().attributes(SwordItem.createAttributes(ModToolTiers.COPPER, 3.0F, -2.4F))));
+
+    public static final DeferredItem<PrimitiveKnifeItem> COPPERKNIFE = ITEMS.register("copper_knife",
+            () -> new PrimitiveKnifeItem(ModToolTiers.COPPER, new Item.Properties().attributes(PrimitiveKnifeItem.createAttributes(ModToolTiers.COPPER, 1.0F, -1.6F))));
+
+    public static final DeferredItem<PrimitiveHammerItem> COPPERHAMMER = ITEMS.register("copper_hammer",
+            () -> new PrimitiveHammerItem(ModToolTiers.COPPER, new Item.Properties().attributes(PrimitiveHammerItem.createAttributes(ModToolTiers.COPPER, 10.0F, -3.6F))));
+
+    public static final DeferredItem<PrimitiveSawItem> COPPERSAW = ITEMS.register("copper_saw",
+            () -> new PrimitiveSawItem(ModToolTiers.COPPER, new Item.Properties().attributes(PrimitiveSawItem.createAttributes(ModToolTiers.COPPER, -0.5F, 2.4F))));
+
+    public static final DeferredItem<ChiselItem> COPPERCHISEL = ITEMS.register("copper_chisel",
+            () -> new ChiselItem(ModToolTiers.COPPER, new Item.Properties().attributes(PrimitiveSawItem.createAttributes(ModToolTiers.COPPER, -1.0F, -1.8F))));
+
+    public static final DeferredItem<ShearsItem> COPPERSHEARS = ITEMS.register("copper_shears",
+            () -> new ShearsItem((new Item.Properties()).durability(191).component(DataComponents.TOOL, ShearsItem.createToolProperties())));
 
     public static final DeferredItem<Item> LEATHERSTICK = ITEMS.register("leather_stick",
             () -> new Item(new Item.Properties()));
@@ -99,6 +114,9 @@ public class ModItems {
 
     public static final DeferredItem<CeramicBucketItem> WATER_CERAMICBUCKET = ITEMS.register("water_ceramic_bucket",
             () -> new CeramicBucketItem(Fluids.WATER, (new Item.Properties()).craftRemainder(CERAMICBUCKET.get()).stacksTo(1)));
+
+    public static final DeferredItem<MagnifyingGlassItem> MAGNIFYINGGLASS = ITEMS.register("magnifying_glass",
+            () -> new MagnifyingGlassItem(new Item.Properties()));
 
     public static final DeferredItem<Item> FIRECLAYBALL = ITEMS.register("fireclay_ball",
             () -> new Item(new Item.Properties()));
@@ -197,11 +215,29 @@ public class ModItems {
     public static final DeferredItem<Item> COPPERSWORDHEAD = ITEMS.register("copper_sword_head",
             () -> new Item(new Item.Properties()));
 
+    public static final DeferredItem<Item> COPPERHAMMERHEAD = ITEMS.register("copper_hammer_head",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> COPPERSMALLBLADE = ITEMS.register("copper_small_blade",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> COPPERSAWBLADE = ITEMS.register("copper_saw_blade",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> COPPERCHISELBLADE = ITEMS.register("copper_chisel_blade",
+            () -> new Item(new Item.Properties()));
+
     public static final DeferredItem<Item> COPPERSWORDHEADDULL = ITEMS.register("copper_sword_head_dull",
             () -> new TransformItem("grindstone",ModItems.COPPERSWORDHEAD,new Item.Properties()));
 
     public static final DeferredItem<Item> COPPERAXEHEADDULL = ITEMS.register("copper_axe_head_dull",
             () -> new TransformItem("grindstone",ModItems.COPPERAXEHEAD,new Item.Properties()));
+
+    public static final DeferredItem<Item> COPPERSMALLBLADEDULL = ITEMS.register("copper_small_blade_dull",
+            () -> new TransformItem("grindstone",ModItems.COPPERSMALLBLADE,new Item.Properties()));
+
+    public static final DeferredItem<Item> COPPERCHISELBLADEDULL = ITEMS.register("copper_chisel_blade_dull",
+            () -> new TransformItem("grindstone",ModItems.COPPERCHISELBLADE,new Item.Properties()));
 
     public static final DeferredItem<Item> COPPERAXEHEADHOT = ITEMS.register("copper_axe_head_hot",
             () -> new TransformItem("water_cauldron", COPPERAXEHEADDULL, new Item.Properties()));
@@ -220,6 +256,18 @@ public class ModItems {
 
     public static final DeferredItem<Item> COPPERSWORDHEADHOT = ITEMS.register("copper_sword_head_hot",
             () -> new TransformItem("water_cauldron", COPPERSWORDHEADDULL, new Item.Properties()));
+
+    public static final DeferredItem<Item> COPPERHAMMERHEADHOT = ITEMS.register("copper_hammer_head_hot",
+            () -> new TransformItem("water_cauldron", COPPERHAMMERHEAD, new Item.Properties()));
+
+    public static final DeferredItem<Item> COPPERSAWBLADEHOT = ITEMS.register("copper_saw_blade_hot",
+            () -> new TransformItem("water_cauldron", COPPERSAWBLADE, new Item.Properties()));
+
+    public static final DeferredItem<Item> COPPERSMALLBLADEHOT = ITEMS.register("copper_small_blade_hot",
+            () -> new TransformItem("water_cauldron", COPPERSMALLBLADEDULL, new Item.Properties()));
+
+    public static final DeferredItem<Item> COPPERCHISELBLADEHOT = ITEMS.register("copper_chisel_blade_hot",
+            () -> new TransformItem("water_cauldron", COPPERCHISELBLADEDULL, new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

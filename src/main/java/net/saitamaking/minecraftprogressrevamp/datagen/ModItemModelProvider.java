@@ -80,8 +80,14 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.COPPERCROSSGUARD.get());
         basicItem(ModItems.COPPERSWORDHEAD.get());
         basicItem(ModItems.COPPERHOEHEAD.get());
+        basicItem(ModItems.COPPERHAMMERHEAD.get());
+        basicItem(ModItems.COPPERCHISELBLADE.get());
+        basicItem(ModItems.COPPERSMALLBLADE.get());
+        basicItem(ModItems.COPPERSAWBLADE.get());
         basicItem(ModItems.COPPERSWORDHEADDULL.get());
         basicItem(ModItems.COPPERAXEHEADDULL.get());
+        basicItem(ModItems.COPPERCHISELBLADEDULL.get());
+        basicItem(ModItems.COPPERSMALLBLADEDULL.get());
         basicItem(ModItems.COPPERAXEHEADHOT.get());
         basicItem(ModItems.COPPERPICKAXEHEADHOT.get());
         basicItem(ModItems.COPPERSHOVELHEADHOT.get());
@@ -92,11 +98,21 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.COPPERCHESTPLATEHOT.get());
         basicItem(ModItems.COPPERHELMETHOT.get());
         basicItem(ModItems.COPPERHOEHEADHOT.get());
+        basicItem(ModItems.COPPERCHISELBLADEHOT.get());
+        basicItem(ModItems.COPPERSAWBLADEHOT.get());
+        basicItem(ModItems.COPPERSMALLBLADEHOT.get());
+        basicItem(ModItems.COPPERHAMMERHEADHOT.get());
         handheldItem(ModItems.COPPERAXE.get());
         handheldItem(ModItems.COPPERPICKAXE.get());
         handheldItem(ModItems.COPPERSHOVEL.get());
         handheldItem(ModItems.COPPERSWORD.get());
+        handheldItem(ModItems.COPPERSHEARS.get());
+        handheldItem(ModItems.COPPERCHISEL.get());
+        handheldItem(ModItems.COPPERSAW.get());
+        handheldItem(ModItems.COPPERHAMMER.get());
+        handheldItem(ModItems.COPPERKNIFE.get());
         handheldItem(ModItems.COPPERHOE.get());
+        handheldItem(ModItems.MAGNIFYINGGLASS.get());
 
         trimmedArmorItem(ModItems.HIDEVEST);
         trimmedArmorItem(ModItems.HIDESHORTS);
