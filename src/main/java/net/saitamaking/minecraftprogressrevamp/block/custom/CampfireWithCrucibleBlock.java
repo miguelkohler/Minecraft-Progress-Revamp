@@ -26,18 +26,55 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.saitamaking.minecraftprogressrevamp.block.entity.CampfireWithCrucibleEntity;
 import net.saitamaking.minecraftprogressrevamp.block.entity.ModBlockEntities;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.EnumMap;
+import java.util.Map;
+
 public class CampfireWithCrucibleBlock extends BaseEntityBlock {
     public static final DirectionProperty FACING;
-    public static final VoxelShape SHAPE = Block.box(0,0,0,16,16,16);
+    private static final Map<Direction, VoxelShape> SHAPES = new EnumMap<>(Direction.class);
     public static final MapCodec<CampfireWithCrucibleBlock> CODEC = simpleCodec(CampfireWithCrucibleBlock::new);
 
     static {
         FACING = BlockStateProperties.HORIZONTAL_FACING;
+        VoxelShape north = Shapes.or(
+                Block.box(5, 0, 0, 11, 1, 16),
+                Block.box(1, 0, 0, 5, 4, 16),
+                Block.box(11, 0, 0, 15, 4, 16),
+                Block.box(0, 3, 1, 16, 7, 5),
+                Block.box(0, 3, 11, 16, 7, 15),
+                Block.box(4, 7, 4, 12, 8, 12),
+                Block.box(4, 8, 11, 12, 16, 12),
+                Block.box(4, 8, 4, 12, 16, 5),
+                Block.box(4, 8, 5, 5, 16, 11),
+                Block.box(11, 8, 5, 12, 16, 11)
+        );
+        SHAPES.put(Direction.NORTH, north);
+        SHAPES.put(Direction.EAST,  rotateY(north, 1));
+        SHAPES.put(Direction.SOUTH, rotateY(north, 2));
+        SHAPES.put(Direction.WEST,  rotateY(north, 3));
+    }
+
+    private static VoxelShape rotateY(VoxelShape shape, int times) {
+        VoxelShape[] buffer = { shape, Shapes.empty() };
+        for (int i = 0; i < times; i++) {
+            buffer[0].forAllBoxes((minX, minY, minZ, maxX, maxY, maxZ) ->
+                    buffer[1] = Shapes.or(buffer[1],
+                            Shapes.box(1 - maxZ, minY, minX, 1 - minZ, maxY, maxX)));
+            buffer[0] = buffer[1];
+            buffer[1] = Shapes.empty();
+        }
+        return buffer[0];
+    }
+
+    @Override
+    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        return SHAPES.get(state.getValue(HorizontalDirectionalBlock.FACING));
     }
 
     public CampfireWithCrucibleBlock(Properties properties) {
@@ -50,11 +87,6 @@ public class CampfireWithCrucibleBlock extends BaseEntityBlock {
 
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         return (BlockState)this.defaultBlockState().setValue(FACING, context.getHorizontalDirection());
-    }
-
-    @Override
-    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return SHAPE;
     }
 
     protected BlockState rotate(BlockState state, Rotation rot) {

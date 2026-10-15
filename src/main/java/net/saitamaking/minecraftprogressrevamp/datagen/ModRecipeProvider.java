@@ -14,7 +14,6 @@ import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import net.saitamaking.minecraftprogressrevamp.ProgressRevamp;
 import net.saitamaking.minecraftprogressrevamp.block.ModBlocks;
 import net.saitamaking.minecraftprogressrevamp.item.ModItems;
-import net.saitamaking.minecraftprogressrevamp.recipe.CampfireWithCrucibleRecipe;
 import net.saitamaking.minecraftprogressrevamp.recipe.CobblestoneAnvilRecipeBuilder;
 import net.saitamaking.minecraftprogressrevamp.recipe.ModCustomCraftingShaped;
 import net.saitamaking.minecraftprogressrevamp.recipe.ModCustomCraftingShapeless;
@@ -609,6 +608,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModItems.SALT)
                 .unlockedBy("has_beef", has(Items.BEEF))
                 .unlockedBy("has_salt", has(ModItems.SALT))
+                .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.CAMPFIREWITHCRUCIBLE.get())
+                .requires(Items.CAMPFIRE)
+                .requires(ModItems.REFINEDCRUCIBLE)
+                .unlockedBy("has_campfire", has(Items.CAMPFIRE))
+                .unlockedBy("has_refined_crucible", has(ModItems.REFINEDCRUCIBLE))
                 .save(recipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.STARTERTOOLBOX.get())

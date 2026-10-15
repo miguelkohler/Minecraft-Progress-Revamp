@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_campfire": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:campfire"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_refined_crucible": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:refined_crucible"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraftprogressrevamp:campfire_with_crucible"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_campfire",
+      "has_refined_crucible"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraftprogressrevamp:campfire_with_crucible"
+    ]
+  }
+}

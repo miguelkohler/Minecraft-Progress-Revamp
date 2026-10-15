@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:campfire"
+    },
+    {
+      "item": "minecraftprogressrevamp:refined_crucible"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:campfire_with_crucible"
+  }
+}

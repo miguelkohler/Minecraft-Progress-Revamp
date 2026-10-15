@@ -2,6 +2,7 @@ package net.saitamaking.minecraftprogressrevamp;
 
 import net.minecraft.world.item.crafting.ShapedRecipePattern;
 import net.saitamaking.minecraftprogressrevamp.block.ModBlocks;
+import net.saitamaking.minecraftprogressrevamp.block.ModCauldronInteractions;
 import net.saitamaking.minecraftprogressrevamp.block.entity.ModBlockEntities;
 import net.saitamaking.minecraftprogressrevamp.component.ModDataComponents;
 import net.saitamaking.minecraftprogressrevamp.item.ModCreativeModeTabs;
@@ -9,7 +10,6 @@ import net.saitamaking.minecraftprogressrevamp.item.ModItems;
 import net.saitamaking.minecraftprogressrevamp.recipe.ModRecipeSerializers;
 import net.saitamaking.minecraftprogressrevamp.loot.ModLootModifiers;
 import net.saitamaking.minecraftprogressrevamp.screen.ModMenuTypes;
-import net.saitamaking.minecraftprogressrevamp.util.ModDataPacks;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -64,6 +64,7 @@ public class ProgressRevamp {
 
     private void commonSetup(FMLCommonSetupEvent event) {
         // Some common setup code
+        event.enqueueWork(ModCauldronInteractions::register);
     }
 
     // Add the example block item to the building blocks tab

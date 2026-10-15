@@ -52,7 +52,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 .texture("side", modLoc("block/" + name + "_side"))
                 .texture("saw", modLoc("block/" + name + "_saw"));
 
-        // base cuboid (0,0,0) -> (16,9,16)
         model.element()
                 .from(0, 0, 0)
                 .to(16, 9, 16)
@@ -64,7 +63,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 .face(Direction.EAST).uvs(0, 7, 16, 16).texture("#side").cullface(Direction.EAST).end()
                 .end();
 
-        // saw blade (1,9,8) -> (15,16,8)
         model.element()
                 .from(1, 9, 8)
                 .to(15, 16, 8)
