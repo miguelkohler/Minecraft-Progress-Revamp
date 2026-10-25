@@ -1,0 +1,16 @@
+{
+  "type": "minecraftprogressrevamp:durability_shapeless",
+  "damageToTools": 9,
+  "ingredients": [
+    {
+      "tag": "minecraftprogressrevamp:coal_blocks"
+    },
+    {
+      "tag": "minecraftprogressrevamp:hammers"
+    }
+  ],
+  "result": {
+    "count": 18,
+    "id": "minecraftprogressrevamp:coal_powder"
+  }
+}

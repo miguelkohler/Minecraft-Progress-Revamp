@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_coal_blocks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraftprogressrevamp:coal_blocks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_hammer": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraftprogressrevamp:hammers"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_coal_blocks"
+    ],
+    [
+      "has_hammer"
+    ]
+  ]
+}

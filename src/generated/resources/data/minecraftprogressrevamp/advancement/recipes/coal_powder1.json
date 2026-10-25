@@ -11,11 +11,11 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_primitive_hammer": {
+    "has_hammer": {
       "conditions": {
         "items": [
           {
-            "items": "minecraftprogressrevamp:primitive_hammer"
+            "items": "#minecraftprogressrevamp:hammers"
           }
         ]
       },
@@ -27,7 +27,7 @@
       "has_charcoal"
     ],
     [
-      "has_primitive_hammer"
+      "has_hammer"
     ]
   ]
 }

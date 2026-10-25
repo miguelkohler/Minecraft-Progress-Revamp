@@ -73,6 +73,12 @@ public class ModItems {
     public static final DeferredItem<Item> LEATHERSTICK = ITEMS.register("leather_stick",
             () -> new Item(new Item.Properties()));
 
+    public static final DeferredItem<Item> ABRASIVEDUST = ITEMS.register("abrasive_powder",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> CERAMICDUST = ITEMS.register("ceramic_powder",
+            () -> new Item(new Item.Properties()));
+
     public static final DeferredItem<Item> WOODENHANDLE = ITEMS.register("wooden_handle",
             () -> new Item(new Item.Properties()));
 
@@ -157,6 +163,42 @@ public class ModItems {
     public static final DeferredItem<Item> SALTEDCOOKEDBEEF = ITEMS.register("salted_cooked_beef",
             () -> new Item(new Item.Properties().food(ModFoodProperties.SALTEDCOOKEDBEEF)));
 
+    public static final DeferredItem<Item> SALTEDCHICKEN= ITEMS.register("salted_chicken",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.SALTEDCHICKEN)));
+
+    public static final DeferredItem<Item> SALTEDCOOKEDCOD= ITEMS.register("salted_cooked_cod",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.SALTEDCOOKEDCOD)));
+
+    public static final DeferredItem<Item> SALTEDCOOKEDSALMON= ITEMS.register("salted_cooked_salmon",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.SALTEDCOOKEDSALMON)));
+
+    public static final DeferredItem<Item> SALTEDMUTTON= ITEMS.register("salted_mutton",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.SALTEDMUTTON)));
+
+    public static final DeferredItem<Item> SALTEDPORKCHOPS= ITEMS.register("salted_porkchops",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.SALTEDPORKCHOPS)));
+
+    public static final DeferredItem<Item> SALTEDRABBIT= ITEMS.register("salted_rabbit",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.SALTEDRABBIT)));
+
+    public static final DeferredItem<Item> RAWSALTEDCHICKEN= ITEMS.register("raw_salted_chicken",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.RAWSALTEDCHICKEN)));
+
+    public static final DeferredItem<Item> RAWSALTEDCOD= ITEMS.register("raw_salted_cod",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.RAWSALTEDCOD)));
+
+    public static final DeferredItem<Item> RAWSALTEDSALMON= ITEMS.register("raw_salted_salmon",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.RAWSALTEDSALMON)));
+
+    public static final DeferredItem<Item> RAWSALTEDMUTTON= ITEMS.register("raw_salted_mutton",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.RAWSALTEDMUTTON)));
+
+    public static final DeferredItem<Item> RAWSALTEDPORKCHOPS= ITEMS.register("raw_salted_porkchops",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.RAWSALTEDPORKCHOPS)));
+
+    public static final DeferredItem<Item> RAWSALTEDRABBIT= ITEMS.register("raw_salted_rabbit",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.RAWSALTEDRABBIT)));
+
     public static final DeferredItem<ArmorItem> HIDEVEST = ITEMS.register("hide_chestplate",
             () -> new ArmorItem(ModArmorMaterials.PRIMITIVE_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
                     new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(3))));
@@ -186,16 +228,16 @@ public class ModItems {
                     new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(11))));
 
     public static final DeferredItem<Item> COPPERHELMETHOT = ITEMS.register("copper_helmet_hot",
-            () -> new TransformItem("water_cauldron", COPPERHELMET, new Item.Properties()));
+            () -> new TransformItem("water_cauldron", COPPERHELMET, new Item.Properties().stacksTo(1)));
 
     public static final DeferredItem<Item> COPPERCHESTPLATEHOT = ITEMS.register("copper_chestplate_hot",
-            () -> new TransformItem("water_cauldron", COPPERCHESTPLATE, new Item.Properties()));
+            () -> new TransformItem("water_cauldron", COPPERCHESTPLATE, new Item.Properties().stacksTo(1)));
 
     public static final DeferredItem<Item> COPPERLEGGINGSHOT = ITEMS.register("copper_leggings_hot",
-            () -> new TransformItem("water_cauldron", COPPERLEGGINGS, new Item.Properties()));
+            () -> new TransformItem("water_cauldron", COPPERLEGGINGS, new Item.Properties().stacksTo(1)));
 
     public static final DeferredItem<Item> COPPERBOOTSHOT = ITEMS.register("copper_boots_hot",
-            () -> new TransformItem("water_cauldron", COPPERBOOTS, new Item.Properties()));
+            () -> new TransformItem("water_cauldron", COPPERBOOTS, new Item.Properties().stacksTo(1)));
 
     public static final DeferredItem<Item> COPPERAXEHEAD = ITEMS.register("copper_axe_head",
             () -> new Item(new Item.Properties()));

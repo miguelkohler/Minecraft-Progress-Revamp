@@ -7,6 +7,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
@@ -86,6 +87,19 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(Items.IRON_INGOT)
                 .add(Items.GOLD_INGOT)
                 .add(Items.NETHERITE_INGOT);
+        tag(ModTags.Items.COALBLOCKS)
+                .add(Items.COAL_BLOCK)
+                .add(ModBlocks.CHARCOALBLOCK.asItem());
+        tag(ModTags.Items.COPPERBLOBMELTABLES)
+                .add(Items.RAW_COPPER)
+                .add(Items.COPPER_INGOT)
+                .add(Items.DEEPSLATE_COPPER_ORE)
+                .add(Items.COPPER_ORE);
+        tag(ModTags.Items.GOLDBLOBMELTABLES)
+                .add(Items.RAW_GOLD)
+                .add(Items.GOLD_INGOT)
+                .add(Items.DEEPSLATE_GOLD_ORE)
+                .add(Items.GOLD_ORE);
         tag(ModTags.Items.ALLTHEWOODITEM)
                 .addTag(ItemTags.ACACIA_LOGS)
                 .addTag(ItemTags.BIRCH_LOGS)

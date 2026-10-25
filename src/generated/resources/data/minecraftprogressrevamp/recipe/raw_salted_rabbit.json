@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:rabbit"
+    },
+    {
+      "item": "minecraftprogressrevamp:salt"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:raw_salted_rabbit"
+  }
+}

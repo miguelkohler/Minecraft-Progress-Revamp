@@ -56,6 +56,18 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.UNFIREDCLAYBUCKET.get());
         basicItem(ModItems.SALTEDBEEF.get());
         basicItem(ModItems.SALTEDCOOKEDBEEF.get());
+        basicItem(ModItems.RAWSALTEDPORKCHOPS.get());
+        basicItem(ModItems.SALTEDPORKCHOPS.get());
+        basicItem(ModItems.RAWSALTEDCHICKEN.get());
+        basicItem(ModItems.SALTEDCHICKEN.get());
+        basicItem(ModItems.RAWSALTEDMUTTON.get());
+        basicItem(ModItems.SALTEDMUTTON.get());
+        basicItem(ModItems.RAWSALTEDRABBIT.get());
+        basicItem(ModItems.SALTEDRABBIT.get());
+        basicItem(ModItems.RAWSALTEDCOD.get());
+        basicItem(ModItems.SALTEDCOOKEDCOD.get());
+        basicItem(ModItems.RAWSALTEDSALMON.get());
+        basicItem(ModItems.SALTEDCOOKEDSALMON.get());
         basicItem(ModItems.STRAW.get());
         basicItem(ModItems.STRAWSTRING.get());
         basicItem(ModItems.SHARPPEBBLE.get());
@@ -73,6 +85,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.STARTERTOOLBOX.get());
         basicItem(ModItems.UNREFINEDCRUCIBLE.get());
         basicItem(ModItems.WOODENHANDLE.get());
+        basicItem(ModItems.CERAMICDUST.get());
+        basicItem(ModItems.ABRASIVEDUST.get());
         basicItem(ModItems.LEATHERSTICK.get());
         basicItem(ModItems.COPPERAXEHEAD.get());
         basicItem(ModItems.COPPERPICKAXEHEAD.get());

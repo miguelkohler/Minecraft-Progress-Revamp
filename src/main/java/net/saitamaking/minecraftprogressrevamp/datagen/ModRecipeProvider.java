@@ -263,6 +263,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_coal_powder", has(ModItems.COALPOWDER))
                 .save(recipeOutput);
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.ABRASIVEDUST.get(), 2)
+                .requires(Items.SAND)
+                .requires(ModItems.CERAMICDUST)
+                .unlockedBy("has_sand", has(Items.SAND))
+                .unlockedBy("has_ceramic_dust", has(ModItems.CERAMICDUST))
+                .save(recipeOutput);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.PRIMITIVEHAMMER.get())
                 .pattern("#O#")
                 .pattern("#/#")
@@ -607,6 +614,48 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(Items.BEEF)
                 .requires(ModItems.SALT)
                 .unlockedBy("has_beef", has(Items.BEEF))
+                .unlockedBy("has_salt", has(ModItems.SALT))
+                .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.RAWSALTEDCHICKEN.get())
+                .requires(Items.CHICKEN)
+                .requires(ModItems.SALT)
+                .unlockedBy("has_chicken", has(Items.CHICKEN))
+                .unlockedBy("has_salt", has(ModItems.SALT))
+                .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.RAWSALTEDPORKCHOPS.get())
+                .requires(Items.PORKCHOP)
+                .requires(ModItems.SALT)
+                .unlockedBy("has_porkchop", has(Items.PORKCHOP))
+                .unlockedBy("has_salt", has(ModItems.SALT))
+                .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.RAWSALTEDMUTTON.get())
+                .requires(Items.MUTTON)
+                .requires(ModItems.SALT)
+                .unlockedBy("has_mutton", has(Items.MUTTON))
+                .unlockedBy("has_salt", has(ModItems.SALT))
+                .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.RAWSALTEDRABBIT.get())
+                .requires(Items.RABBIT)
+                .requires(ModItems.SALT)
+                .unlockedBy("has_rabbit", has(Items.RABBIT))
+                .unlockedBy("has_salt", has(ModItems.SALT))
+                .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.RAWSALTEDCOD.get())
+                .requires(Items.COD)
+                .requires(ModItems.SALT)
+                .unlockedBy("has_cod", has(Items.COD))
+                .unlockedBy("has_salt", has(ModItems.SALT))
+                .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.RAWSALTEDSALMON.get())
+                .requires(Items.SALMON)
+                .requires(ModItems.SALT)
+                .unlockedBy("has_salmon", has(Items.SALMON))
                 .unlockedBy("has_salt", has(ModItems.SALT))
                 .save(recipeOutput);
 
@@ -1186,6 +1235,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe1 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(ModItems.COALPOWDER.get(), 2),
@@ -1197,7 +1248,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 Mod_shapeless_recipe1,
                 recipeOutput.advancement()
                         .addCriterion("has_coal", RecipeProvider.has(Items.COAL))
-                        .addCriterion("has_primitive_hammer", RecipeProvider.has(ModItems.PRIMITIVEHAMMER.get()))
+                        .addCriterion("has_hammer", RecipeProvider.has(ModTags.Items.HAMMERS))
                         .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "coal_powder").withPrefix("recipes/"))
         );
 
@@ -1207,6 +1258,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe2 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(ModItems.COALPOWDER.get(), 2),
@@ -1218,7 +1271,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 Mod_shapeless_recipe2,
                 recipeOutput.advancement()
                         .addCriterion("has_charcoal", RecipeProvider.has(Items.CHARCOAL))
-                        .addCriterion("has_primitive_hammer", RecipeProvider.has(ModItems.PRIMITIVEHAMMER.get()))
+                        .addCriterion("has_hammer", RecipeProvider.has(ModTags.Items.HAMMERS))
                         .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "coal_powder1").withPrefix("recipes/"))
         );
 
@@ -1228,6 +1281,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe3 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(Items.STRIPPED_OAK_LOG),
@@ -1249,6 +1304,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe4 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(Items.STRIPPED_DARK_OAK_LOG),
@@ -1270,6 +1327,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe5 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(Items.STRIPPED_SPRUCE_LOG),
@@ -1291,6 +1350,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe6 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(Items.STRIPPED_BIRCH_LOG),
@@ -1312,6 +1373,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe7 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(Items.STRIPPED_JUNGLE_LOG),
@@ -1333,6 +1396,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe8 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(Items.STRIPPED_ACACIA_LOG),
@@ -1354,6 +1419,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe9 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(Items.STRIPPED_MANGROVE_LOG),
@@ -1375,6 +1442,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe10 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(Items.STRIPPED_CHERRY_LOG),
@@ -1396,6 +1465,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe11 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(Items.STRIPPED_CRIMSON_STEM),
@@ -1417,6 +1488,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe12 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(Items.STRIPPED_WARPED_STEM),
@@ -1438,6 +1511,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe13 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(Items.STRIPPED_OAK_WOOD),
@@ -1459,6 +1534,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe14 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(Items.STRIPPED_DARK_OAK_WOOD),
@@ -1480,6 +1557,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe15 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(Items.STRIPPED_SPRUCE_WOOD),
@@ -1501,6 +1580,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe16 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(Items.STRIPPED_BIRCH_WOOD),
@@ -1522,6 +1603,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe17 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(Items.STRIPPED_JUNGLE_WOOD),
@@ -1543,6 +1626,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe18 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(Items.STRIPPED_ACACIA_WOOD),
@@ -1564,6 +1649,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe19 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(Items.STRIPPED_MANGROVE_WOOD),
@@ -1585,6 +1672,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe20 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(Items.STRIPPED_CHERRY_WOOD),
@@ -1606,6 +1695,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe21 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(Items.STRIPPED_CRIMSON_HYPHAE),
@@ -1627,6 +1718,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe22 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(Items.STRIPPED_WARPED_HYPHAE),
@@ -1648,6 +1741,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe23 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(ModItems.SCRAPEDANIMALHIDE.get()),
@@ -1669,6 +1764,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe24 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(Items.OAK_PLANKS, 4),
@@ -1690,6 +1787,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe25 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(Items.DARK_OAK_PLANKS, 4),
@@ -1711,6 +1810,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe26 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(Items.BIRCH_PLANKS, 4),
@@ -1732,6 +1833,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe27 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(Items.JUNGLE_PLANKS, 4),
@@ -1753,6 +1856,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe28 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(Items.ACACIA_PLANKS, 4),
@@ -1774,6 +1879,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe29 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(Items.MANGROVE_PLANKS, 4),
@@ -1795,6 +1902,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe30 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(Items.CHERRY_PLANKS, 4),
@@ -1816,6 +1925,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe31 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(Items.CRIMSON_PLANKS, 4),
@@ -1837,6 +1948,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe32 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(Items.WARPED_PLANKS, 4),
@@ -1858,6 +1971,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe33 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(Items.BAMBOO_PLANKS, 2),
@@ -1879,6 +1994,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe34 = new ModCustomCraftingShapeless(
+                1,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(Items.SPRUCE_PLANKS, 4),
@@ -1900,6 +2017,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe35 = new ModCustomCraftingShapeless(
+                0,
+                true,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(ModItems.EMPTYSANDMOLD.get(), 4),
@@ -1921,6 +2040,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         );
 
         ModCustomCraftingShapeless Mod_shapeless_recipe36 = new ModCustomCraftingShapeless(
+                0,
+                false,
                 "",
                 CraftingBookCategory.MISC,
                 new ItemStack(ModItems.INGOTSANDMOLD.get()),
@@ -1934,6 +2055,52 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         .addCriterion("has_empty_sand_mold", RecipeProvider.has(ModItems.EMPTYSANDMOLD))
                         .addCriterion("has_ingot_shaped", RecipeProvider.has(ModTags.Items.INGOTSHAPED))
                         .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "ingot_sand_mold").withPrefix("recipes/"))
+        );
+
+        List<Ingredient> Mod_shapeless_ingredients37 = List.of(
+                Ingredient.of(Items.BRICK),
+                Ingredient.of(ModTags.Items.HAMMERS)
+        );
+
+        ModCustomCraftingShapeless Mod_shapeless_recipe37 = new ModCustomCraftingShapeless(
+                1,
+                true,
+                "",
+                CraftingBookCategory.MISC,
+                new ItemStack(ModItems.CERAMICDUST.get()),
+                Mod_shapeless_ingredients37
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "ceramic_dust"),
+                Mod_shapeless_recipe37,
+                recipeOutput.advancement()
+                        .addCriterion("has_brick", RecipeProvider.has(Items.BRICK))
+                        .addCriterion("has_hammer", RecipeProvider.has(ModTags.Items.HAMMERS))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "ceramic_dust").withPrefix("recipes/"))
+        );
+
+        List<Ingredient> Mod_shapeless_ingredients38 = List.of(
+                Ingredient.of(ModTags.Items.COALBLOCKS),
+                Ingredient.of(ModTags.Items.HAMMERS)
+        );
+
+        ModCustomCraftingShapeless Mod_shapeless_recipe38 = new ModCustomCraftingShapeless(
+                9,
+                true,
+                "",
+                CraftingBookCategory.MISC,
+                new ItemStack(ModItems.COALPOWDER.get(), 18),
+                Mod_shapeless_ingredients38
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "coal_powder_from_block"),
+                Mod_shapeless_recipe38,
+                recipeOutput.advancement()
+                        .addCriterion("has_coal_blocks", RecipeProvider.has(ModTags.Items.COALBLOCKS))
+                        .addCriterion("has_hammer", RecipeProvider.has(ModTags.Items.HAMMERS))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "coal_powder_from_block").withPrefix("recipes/"))
         );
 
         CobblestoneAnvilRecipeBuilder.anvil(ModItems.MELTEDCOPPERPLATE)
@@ -2249,29 +2416,45 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
                         ProgressRevamp.MODID, "copper_chisel_blade_hot2"));
 
-        List<ItemLike> SALTED_BEEF_INGREDIENT = List.of(
-                ModItems.SALTEDBEEF
-        );
-
-        List<ItemLike> CERAMIC_BUCKET_INGREDIENTS = List.of(
-                ModItems.UNFIREDCLAYBUCKET
-        );
-
-        List<ItemLike> UNREFINED_CRUCIBLES = List.of(
-                ModItems.UNREFINEDCRUCIBLE
-        );
-
-        List<ItemLike> CLAY_BRICK_INGREDIENT = List.of(
-                ModItems.CLAYBRICK
-        );
-
-        List<ItemLike> TERRACOTTA_INGREDIENT = List.of(
-                Blocks.CLAY
-        );
+        List<ItemLike> SALTED_BEEF_INGREDIENT = List.of( ModItems.SALTEDBEEF );
+        List<ItemLike> SALTED_CHICKEN_INGREDIENT = List.of( ModItems.RAWSALTEDCHICKEN );
+        List<ItemLike> SALTED_PORKCHOPS_INGREDIENT = List.of( ModItems.RAWSALTEDPORKCHOPS );
+        List<ItemLike> SALTED_MUTTON_INGREDIENT = List.of( ModItems.RAWSALTEDMUTTON );
+        List<ItemLike> SALTED_RABBIT_INGREDIENT = List.of( ModItems.RAWSALTEDRABBIT );
+        List<ItemLike> SALTED_COD_INGREDIENT = List.of( ModItems.RAWSALTEDCOD );
+        List<ItemLike> SALTED_SALMON_INGREDIENT = List.of( ModItems.RAWSALTEDSALMON );
+        List<ItemLike> CERAMIC_BUCKET_INGREDIENTS = List.of( ModItems.UNFIREDCLAYBUCKET );
+        List<ItemLike> UNREFINED_CRUCIBLES = List.of( ModItems.UNREFINEDCRUCIBLE );
+        List<ItemLike> CLAY_BRICK_INGREDIENT = List.of( ModItems.CLAYBRICK );
+        List<ItemLike> TERRACOTTA_INGREDIENT = List.of( Blocks.CLAY );
 
         oreSmelting(recipeOutput, SALTED_BEEF_INGREDIENT, RecipeCategory.FOOD, ModItems.SALTEDCOOKEDBEEF.get(), 0.4f, 200, "salted_cooked_beef");
 
         campfireCooking(recipeOutput, SALTED_BEEF_INGREDIENT,RecipeCategory.FOOD, ModItems.SALTEDCOOKEDBEEF.get(), 0.4f, 600, "salted_cooked_beef");
+
+        oreSmelting(recipeOutput, SALTED_CHICKEN_INGREDIENT, RecipeCategory.FOOD, ModItems.SALTEDCHICKEN.get(), 0.4f, 200, "salted_chicken");
+
+        campfireCooking(recipeOutput, SALTED_CHICKEN_INGREDIENT,RecipeCategory.FOOD, ModItems.SALTEDCHICKEN.get(), 0.4f, 600, "salted_chicken");
+
+        oreSmelting(recipeOutput, SALTED_PORKCHOPS_INGREDIENT, RecipeCategory.FOOD, ModItems.SALTEDPORKCHOPS.get(), 0.4f, 200, "salted_porkchops");
+
+        campfireCooking(recipeOutput, SALTED_PORKCHOPS_INGREDIENT,RecipeCategory.FOOD, ModItems.SALTEDPORKCHOPS.get(), 0.4f, 600, "salted_porkchops");
+
+        oreSmelting(recipeOutput, SALTED_MUTTON_INGREDIENT, RecipeCategory.FOOD, ModItems.SALTEDMUTTON.get(), 0.4f, 200, "salted_mutton");
+
+        campfireCooking(recipeOutput, SALTED_MUTTON_INGREDIENT,RecipeCategory.FOOD, ModItems.SALTEDMUTTON.get(), 0.4f, 600, "salted_mutton");
+
+        oreSmelting(recipeOutput, SALTED_RABBIT_INGREDIENT, RecipeCategory.FOOD, ModItems.SALTEDRABBIT.get(), 0.4f, 200, "salted_rabbit");
+
+        campfireCooking(recipeOutput, SALTED_RABBIT_INGREDIENT,RecipeCategory.FOOD, ModItems.SALTEDRABBIT.get(), 0.4f, 600, "salted_rabbit");
+
+        oreSmelting(recipeOutput, SALTED_COD_INGREDIENT, RecipeCategory.FOOD, ModItems.SALTEDCOOKEDCOD.get(), 0.4f, 200, "salted_cooked_cod");
+
+        campfireCooking(recipeOutput, SALTED_COD_INGREDIENT,RecipeCategory.FOOD, ModItems.SALTEDCOOKEDCOD.get(), 0.4f, 600, "salted_cooked_cod");
+
+        oreSmelting(recipeOutput, SALTED_SALMON_INGREDIENT, RecipeCategory.FOOD, ModItems.SALTEDCOOKEDSALMON.get(), 0.4f, 200, "salted_cooked_salmon");
+
+        campfireCooking(recipeOutput, SALTED_SALMON_INGREDIENT,RecipeCategory.FOOD, ModItems.SALTEDCOOKEDSALMON.get(), 0.4f, 600, "salted_cooked_salmon");
 
         oreSmelting(recipeOutput, CLAY_BRICK_INGREDIENT, RecipeCategory.MISC, Items.BRICK, 0.1f, 200, "brick");
 

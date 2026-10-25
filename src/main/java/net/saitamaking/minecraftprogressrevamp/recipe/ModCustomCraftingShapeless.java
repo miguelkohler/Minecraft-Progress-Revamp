@@ -1,5 +1,6 @@
 package net.saitamaking.minecraftprogressrevamp.recipe;
 
+import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.NonNullList;
@@ -23,18 +24,24 @@ import java.util.List;
 
 public class ModCustomCraftingShapeless extends ShapelessRecipe {
 
+    private final Integer damageToTool;
+    private final Boolean justTools;
     private final String group;
     private final CraftingBookCategory category;
     private final List<Ingredient> ingredients;
     private final ItemStack result;
 
     public ModCustomCraftingShapeless(
+            final Integer damageToTool,
+            final Boolean justTools,
             final String group,
             final CraftingBookCategory category,
             final ItemStack result,
             final List<Ingredient> ingredients
     ) {
         super(group, category, result, (NonNullList<Ingredient>) NonNullList.of(Ingredient.EMPTY, ingredients.toArray(new Ingredient[0])));
+        this.justTools = justTools;
+        this.damageToTool = damageToTool;
         this.group = group;
         this.category = category;
         this.ingredients = ingredients;
@@ -59,10 +66,10 @@ public class ModCustomCraftingShapeless extends ShapelessRecipe {
         return false;
     }
 
-    private static ItemStack damage(ItemStack stack) {
+    private ItemStack damage(ItemStack stack) {
         Player player = CommonHooks.getCraftingPlayer();
         if (player != null && player.level() instanceof ServerLevel serverLevel) {
-            stack.hurtAndBreak(1, serverLevel,
+            stack.hurtAndBreak(damageToTool, serverLevel,
                     player instanceof ServerPlayer sp ? sp : null,
                     item -> stack.setCount(0));
         }
@@ -77,7 +84,7 @@ public class ModCustomCraftingShapeless extends ShapelessRecipe {
             ItemStack stack = input.getItem(i);
             if (isDamageableTool(stack)) {
                 remaining.set(i, damage(stack.copy()));
-            } else if (!stack.isEmpty() && stack.is(ModTags.Items.INGOTSHAPED)) {
+            } else if (!justTools && !stack.isEmpty() && stack.is(ModTags.Items.INGOTSHAPED)) {
                 remaining.set(i, stack.copyWithCount(1));
             } else {
                 remaining.set(i, CommonHooks.getCraftingRemainingItem(stack));
@@ -91,6 +98,8 @@ public class ModCustomCraftingShapeless extends ShapelessRecipe {
 
     public static final MapCodec<ModCustomCraftingShapeless> CODEC = RecordCodecBuilder.mapCodec(instance ->
             instance.group(
+                    Codec.INT.optionalFieldOf("damageToTools", 1).forGetter(r -> r.damageToTool),
+                    Codec.BOOL.optionalFieldOf("justTools", true).forGetter(r -> r.justTools),
                     com.mojang.serialization.Codec.STRING.optionalFieldOf("group", "").forGetter(r -> r.group),
                     CraftingBookCategory.CODEC.optionalFieldOf("category", CraftingBookCategory.MISC).forGetter(r -> r.category),
                     ItemStack.STRICT_CODEC.fieldOf("result").forGetter(r -> r.result),
@@ -98,6 +107,8 @@ public class ModCustomCraftingShapeless extends ShapelessRecipe {
             ).apply(instance, ModCustomCraftingShapeless::new));
 
     public static final StreamCodec<RegistryFriendlyByteBuf, ModCustomCraftingShapeless> STREAM_CODEC = StreamCodec.composite(
+            ByteBufCodecs.INT, r -> r.damageToTool,
+            ByteBufCodecs.BOOL, r -> r.justTools,
             ByteBufCodecs.STRING_UTF8, r -> r.group,
             CraftingBookCategory.STREAM_CODEC, r -> r.category,
             ItemStack.STREAM_CODEC, r -> r.result,

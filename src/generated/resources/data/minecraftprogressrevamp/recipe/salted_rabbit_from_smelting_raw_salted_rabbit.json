@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.4,
+  "group": "salted_rabbit",
+  "ingredient": {
+    "item": "minecraftprogressrevamp:raw_salted_rabbit"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:salted_rabbit"
+  }
+}

@@ -49,6 +49,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.UNFIREDCLAYBUCKET);
                         output.accept(ModItems.CERAMICBUCKET);
                         output.accept(ModItems.WATER_CERAMICBUCKET);
+                        output.accept(ModItems.ABRASIVEDUST);
+                        output.accept(ModItems.CERAMICDUST);
                         output.accept(ModItems.COALPOWDER);
                         output.accept(ModItems.FIRECLAYBALL);
                         output.accept(ModBlocks.FIRECLAY);
@@ -61,6 +63,18 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SALT);
                         output.accept(ModItems.SALTEDBEEF);
                         output.accept(ModItems.SALTEDCOOKEDBEEF);
+                        output.accept(ModItems.RAWSALTEDPORKCHOPS);
+                        output.accept(ModItems.SALTEDPORKCHOPS);
+                        output.accept(ModItems.RAWSALTEDCHICKEN);
+                        output.accept(ModItems.SALTEDCHICKEN);
+                        output.accept(ModItems.RAWSALTEDMUTTON);
+                        output.accept(ModItems.SALTEDMUTTON);
+                        output.accept(ModItems.RAWSALTEDRABBIT);
+                        output.accept(ModItems.SALTEDRABBIT);
+                        output.accept(ModItems.RAWSALTEDCOD);
+                        output.accept(ModItems.SALTEDCOOKEDCOD);
+                        output.accept(ModItems.RAWSALTEDSALMON);
+                        output.accept(ModItems.SALTEDCOOKEDSALMON);
                         output.accept(ModBlocks.CHARCOALBLOCK);
                         output.accept(ModBlocks.WOODENCRATE);
 

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 600,
+  "experience": 0.4,
+  "group": "salted_cooked_salmon",
+  "ingredient": {
+    "item": "minecraftprogressrevamp:raw_salted_salmon"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:salted_cooked_salmon"
+  }
+}

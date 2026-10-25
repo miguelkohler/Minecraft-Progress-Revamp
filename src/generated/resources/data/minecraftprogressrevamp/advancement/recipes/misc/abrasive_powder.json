@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_ceramic_dust": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:ceramic_powder"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_sand": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:sand"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraftprogressrevamp:abrasive_powder"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_sand",
+      "has_ceramic_dust"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraftprogressrevamp:abrasive_powder"
+    ]
+  }
+}

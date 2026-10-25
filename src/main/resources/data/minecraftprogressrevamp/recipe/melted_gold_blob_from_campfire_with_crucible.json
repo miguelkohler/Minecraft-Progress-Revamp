@@ -1,0 +1,9 @@
+{
+  "type": "minecraftprogressrevamp:campfire_with_crucible",
+  "ingredient": {
+      "tag": "minecraftprogressrevamp:gold_blob_meltables"
+  },
+  "result": {
+    "id": "minecraftprogressrevamp:melted_gold_blob"
+  }
+}

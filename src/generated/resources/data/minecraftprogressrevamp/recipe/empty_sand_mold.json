@@ -1,5 +1,6 @@
 {
   "type": "minecraftprogressrevamp:durability_shapeless",
+  "damageToTools": 0,
   "ingredients": [
     {
       "item": "minecraft:sand"

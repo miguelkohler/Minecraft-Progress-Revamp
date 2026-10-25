@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_raw_salted_chicken": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:raw_salted_chicken"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraftprogressrevamp:salted_chicken_from_campfire_cooking_raw_salted_chicken"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_raw_salted_chicken"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraftprogressrevamp:salted_chicken_from_campfire_cooking_raw_salted_chicken"
+    ]
+  }
+}

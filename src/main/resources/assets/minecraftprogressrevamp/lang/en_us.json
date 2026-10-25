@@ -13,7 +13,7 @@
   "item.minecraftprogressrevamp.refined_crucible": "Crucible",
   "item.minecraftprogressrevamp.salt": "Salt",
   "item.minecraftprogressrevamp.salted_cooked_beef": "Salted Steak",
-  "item.minecraftprogressrevamp.salted_beef": "Salted Raw Beef",
+  "item.minecraftprogressrevamp.salted_beef": "Raw Salted Beef",
   "item.minecraftprogressrevamp.primitive_knife": "Primitive Knife",
   "item.minecraftprogressrevamp.straw": "Straw",
   "item.minecraftprogressrevamp.straw_string": "Straw String",
@@ -81,6 +81,20 @@
   "item.minecraftprogressrevamp.copper_small_blade_dull": "Dull Small Copper Blade",
   "item.minecraftprogressrevamp.copper_small_blade_hot": "Hot Small Copper Blade",
   "item.minecraftprogressrevamp.magnifying_glass": "Magnifying Glass",
+  "item.minecraftprogressrevamp.ceramic_powder": "Ceramic Powder",
+  "item.minecraftprogressrevamp.abrasive_powder": "Abrasive Powder",
+  "item.minecraftprogressrevamp.salted_cooked_cod": "Salted Cooked Cod",
+  "item.minecraftprogressrevamp.raw_salted_cod": "Raw Salted Cod",
+  "item.minecraftprogressrevamp.salted_cooked_salmon": "Salted Cooked Salmon",
+  "item.minecraftprogressrevamp.raw_salted_salmon": "Raw Salted Salmon",
+  "item.minecraftprogressrevamp.salted_chicken": "Salted Cooked Chicken",
+  "item.minecraftprogressrevamp.raw_salted_chicken": "Raw Salted Chicken",
+  "item.minecraftprogressrevamp.salted_mutton": "Salted Cooked Mutton",
+  "item.minecraftprogressrevamp.raw_salted_mutton": "Raw Salted Mutton",
+  "item.minecraftprogressrevamp.salted_porkchops": "Salted Cooked Porkchop",
+  "item.minecraftprogressrevamp.raw_salted_porkchops": "Raw Salted Porkchop",
+  "item.minecraftprogressrevamp.salted_rabbit": "Salted Cooked Rabbit",
+  "item.minecraftprogressrevamp.raw_salted_rabbit": "Raw Salted Rabbit",
 
   "block.minecraftprogressrevamp.primitive_crafting_table": "Primitive Crafting Table",
   "block.minecraftprogressrevamp.rudimentary_crafting_table": "Rudimentary Crafting Table",
@@ -99,6 +113,8 @@
 
   "creativetab.minecraftprogressrevamp.primitive_items": "Primitive Items",
   "creativetab.minecraftprogressrevamp.copper_age_items": "Copper Age Items",
+
+  "jei.minecraftprogressrevamp.campfire_with_crucible_recipe": "Campfire With Crucible Melting",
 
   "tooltip.minecraftprogressrevamp.primitive_saw.shift_down": "Can strip wood on right click",
   "tooltip.minecraftprogressrevamp.primitive_saw.not_shift_down": "§8Press [SHIFT] for more information",
