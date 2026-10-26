@@ -35,6 +35,14 @@ public class PrimitiveCraftingTableEntity extends BlockEntity implements MenuPro
             super.setSize(SLOTS);
         }
     };
+    private float rotation;
+    public float getRenderingRotation() {
+        rotation += 0.5f;
+        if(rotation >= 360) {
+            rotation = 0;
+        }
+        return rotation;
+    }
 
     public PrimitiveCraftingTableEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.PRIMITIVECRAFTINGTABLE_BE.get(), pos, state);

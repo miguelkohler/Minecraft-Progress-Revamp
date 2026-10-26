@@ -33,6 +33,15 @@ public class RudimentaryCraftingTableEntity extends BlockEntity implements MenuP
         }
     };
 
+    private float rotation;
+    public float getRenderingRotation() {
+        rotation += 0.5f;
+        if(rotation >= 360) {
+            rotation = 0;
+        }
+        return rotation;
+    }
+
     public RudimentaryCraftingTableEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.RUDIMENTARYCRAFTINGTABLE_BE.get(), pos, state);
     }

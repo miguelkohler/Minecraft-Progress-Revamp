@@ -32,6 +32,15 @@ public class CobblestoneAnvilEntity extends BlockEntity implements MenuProvider 
         }
     };
 
+    private float rotation;
+    public float getRenderingRotation() {
+        rotation += 0.5f;
+        if(rotation >= 360) {
+            rotation = 0;
+        }
+        return rotation;
+    }
+
     public CobblestoneAnvilEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.COBBLESTONEANVIL_BE.get(), pos, state);
     }

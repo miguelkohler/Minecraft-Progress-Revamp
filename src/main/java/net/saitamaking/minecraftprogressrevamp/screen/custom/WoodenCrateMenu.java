@@ -30,6 +30,8 @@ public class WoodenCrateMenu extends AbstractContainerMenu {
         this.blockEntity = ((WoodenCrateEntity) blockEntity);
         this.level = inv.player.level();
 
+        ((WoodenCrateEntity) blockEntity).startOpen(inv.player);
+
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
 
@@ -93,6 +95,12 @@ public class WoodenCrateMenu extends AbstractContainerMenu {
         }
         sourceSlot.onTake(playerIn, sourceStack);
         return copyOfSourceStack;
+    }
+
+    @Override
+    public void removed(Player player) {
+        super.removed(player);
+        blockEntity.stopOpen(player);
     }
 
     @Override

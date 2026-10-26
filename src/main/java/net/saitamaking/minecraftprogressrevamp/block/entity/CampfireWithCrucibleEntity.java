@@ -164,6 +164,15 @@ public class CampfireWithCrucibleEntity extends BlockEntity implements MenuProvi
         maxProgress = 1200;
     }
 
+    private float rotation;
+    public float getRenderingRotation() {
+        rotation += 0.5f;
+        if(rotation >= 360) {
+            rotation = 0;
+        }
+        return rotation;
+    }
+
     private boolean hasCraftingFinished() {
         return this.progress >= this.maxProgress;
     }

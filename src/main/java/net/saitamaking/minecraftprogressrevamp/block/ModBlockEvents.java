@@ -8,8 +8,13 @@ import net.minecraft.world.item.component.Tool;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.ModelEvent;
 import net.neoforged.neoforge.event.level.BlockDropsEvent;
 import net.saitamaking.minecraftprogressrevamp.ProgressRevamp;
+import net.saitamaking.minecraftprogressrevamp.block.entity.ModBlockEntities;
+import net.saitamaking.minecraftprogressrevamp.block.entity.RudimentaryCraftingTableEntity;
+import net.saitamaking.minecraftprogressrevamp.block.entity.renderer.*;
 import net.saitamaking.minecraftprogressrevamp.util.ModTags;
 
 @EventBusSubscriber(modid = ProgressRevamp.MODID)
@@ -66,5 +71,19 @@ public class ModBlockEvents {
             return toolComponent.isCorrectForDrops(state);
         }
         return false;
+    }
+
+    @SubscribeEvent
+    public static void registerModels(ModelEvent.RegisterAdditional event) {
+        event.register(WoodenCrateRenderer.LID_MODEL);
+    }
+
+    @SubscribeEvent
+    public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerBlockEntityRenderer(ModBlockEntities.WOODENCRATE_BE.get(), WoodenCrateRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.PRIMITIVECRAFTINGTABLE_BE.get(), PrimitiveCraftingTableRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.RUDIMENTARYCRAFTINGTABLE_BE.get(), RudimentaryCraftingTableRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.COBBLESTONEANVIL_BE.get(), CobblestoneAnvilRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.CAMPFIREWITHCRUCIBLE_BE.get(), CampfireWithCrucibleRenderer::new);
     }
 }
