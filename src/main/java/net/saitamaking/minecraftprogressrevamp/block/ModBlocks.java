@@ -64,6 +64,9 @@ public class ModBlocks {
     public static final DeferredBlock<Block> COBBLESTONEANVIL = registerBlock("cobblestone_anvil",
             () -> new CobblestoneAnvilBlock(BlockBehaviour.Properties.of().strength(2.0F, 5.0F).sound(SoundType.STONE).noOcclusion()));
 
+    public static final DeferredBlock<Block> BELLOW = registerBlock("bellow",
+            () -> new BellowBlock(BlockBehaviour.Properties.of().strength(2.0F, 3.0F).noOcclusion().sound(SoundType.WOOD)));
+
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block){
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);

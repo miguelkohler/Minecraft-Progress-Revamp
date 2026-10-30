@@ -39,6 +39,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                         ModBlocks.PRIMITIVECRAFTINGTABLE.get(),
                         ModBlocks.RUDIMENTARYCRAFTINGTABLE.get(),
                         ModBlocks.STEELCUTTER.get(),
+                        ModBlocks.BELLOW.get(),
                         ModBlocks.WOODENCRATE.get()
                 );
         tag(BlockTags.NEEDS_STONE_TOOL)

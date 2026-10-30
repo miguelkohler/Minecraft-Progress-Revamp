@@ -36,6 +36,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 new ModelFile.UncheckedModelFile(modLoc("block/cobblestone_anvil")));
         horizontalBlock(ModBlocks.WOODENCRATE.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/wooden_crate")));
+        horizontalBlock(ModBlocks.BELLOW.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/bellow")));
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock) {

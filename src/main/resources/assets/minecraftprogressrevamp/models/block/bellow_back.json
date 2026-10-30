@@ -1,0 +1,38 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"0": "minecraftprogressrevamp:block/bellow_back",
+		"2": "minecraftprogressrevamp:block/bellow_side",
+		"particle": "minecraftprogressrevamp:block/bellow_back"
+	},
+	"elements": [
+		{
+			"from": [1, 1, 9],
+			"to": [15, 15, 14],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 16, 0]},
+			"faces": {
+				"north": {"uv": [1, 1, 15, 6], "rotation": 180, "texture": "#2"},
+				"east": {"uv": [1, 1, 15, 6], "rotation": 270, "texture": "#2"},
+				"south": {"uv": [1, 1, 15, 6], "texture": "#2"},
+				"west": {"uv": [2, 1, 14, 6], "rotation": 90, "texture": "#2"},
+				"up": {"uv": [1, 1, 15, 6], "rotation": 180, "texture": "#2"},
+				"down": {"uv": [1, 1, 15, 6], "texture": "#2"}
+			}
+		},
+		{
+			"from": [0, 0, 14],
+			"to": [16, 16, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 14]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "rotation": 90, "texture": "#0"},
+				"east": {"uv": [0, 14, 16, 16], "rotation": 270, "texture": "#0"},
+				"south": {"uv": [0, 0, 16, 16], "rotation": 270, "texture": "#0"},
+				"west": {"uv": [0, 0, 16, 2], "rotation": 270, "texture": "#0"},
+				"up": {"uv": [14, 0, 16, 16], "rotation": 270, "texture": "#0"},
+				"down": {"uv": [0, 0, 2, 16], "rotation": 270, "texture": "#0"}
+			}
+		}
+	]
+}

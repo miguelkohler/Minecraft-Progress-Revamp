@@ -34,6 +34,10 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("cobblestone_anvil_be", () -> BlockEntityType.Builder.of(
                     CobblestoneAnvilEntity::new, ModBlocks.COBBLESTONEANVIL.get()).build(null));
 
+    public static final Supplier<BlockEntityType<BellowEntity>> BELLOW_BE =
+            BLOCK_ENTITIES.register("bellow_be", () -> BlockEntityType.Builder.of(
+                    BellowEntity::new, ModBlocks.BELLOW.get()).build(null));
+
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

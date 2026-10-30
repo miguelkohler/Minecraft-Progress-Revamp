@@ -548,6 +548,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_wooden_handle", has(ModItems.WOODENHANDLE))
                 .save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.BELLOW.get())
+                .pattern("XXX")
+                .pattern("/O ")
+                .pattern("XXX")
+                .define('X', Items.LEATHER)
+                .define('O', ItemTags.PLANKS)
+                .define('/', Items.STICK)
+                .unlockedBy("has_stick", has(Items.STICK))
+                .unlockedBy("has_planks", has(ItemTags.PLANKS))
+                .unlockedBy("has_leather", has(Items.LEATHER))
+                .save(recipeOutput);
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, Items.CRAFTING_TABLE)
                 .requires(ModBlocks.RUDIMENTARYCRAFTINGTABLE)
                 .requires(ModItems.STARTERTOOLBOX)

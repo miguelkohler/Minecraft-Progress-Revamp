@@ -142,6 +142,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.IRONBARBLOCK);
                         output.accept(Blocks.COPPER_BLOCK);
 
+                        output.accept(ModBlocks.BELLOW);
                         output.accept(ModItems.MAGNIFYINGGLASS);
                         output.accept(ModBlocks.STEELCUTTER);
 

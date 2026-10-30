@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "minecraftprogressrevamp:block/bellow",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "minecraftprogressrevamp:block/bellow"
+    },
+    "facing=south": {
+      "model": "minecraftprogressrevamp:block/bellow",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "minecraftprogressrevamp:block/bellow",
+      "y": 270
+    }
+  }
+}

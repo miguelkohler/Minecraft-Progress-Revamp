@@ -76,6 +76,8 @@ public class ModBlockEvents {
     @SubscribeEvent
     public static void registerModels(ModelEvent.RegisterAdditional event) {
         event.register(WoodenCrateRenderer.LID_MODEL);
+        event.register(BellowRenderer.BELLOW_BACK);
+        event.register(BellowRenderer.BELLOW_MIDDLE);
     }
 
     @SubscribeEvent
@@ -85,5 +87,6 @@ public class ModBlockEvents {
         event.registerBlockEntityRenderer(ModBlockEntities.RUDIMENTARYCRAFTINGTABLE_BE.get(), RudimentaryCraftingTableRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.COBBLESTONEANVIL_BE.get(), CobblestoneAnvilRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.CAMPFIREWITHCRUCIBLE_BE.get(), CampfireWithCrucibleRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.BELLOW_BE.get(), BellowRenderer::new);
     }
 }
