@@ -33,7 +33,7 @@ public class RudimentaryCraftingTableMenu extends AbstractContainerMenu {
     private static final int RESULT_SLOT_INDEX = 36;
     private static final int INPUT_FIRST_SLOT_INDEX = 37;
     private static final int INPUT_SLOT_COUNT = 7;
-    private static final int INPUT_END_INDEX = INPUT_FIRST_SLOT_INDEX + INPUT_SLOT_COUNT; // 42
+    private static final int INPUT_END_INDEX = INPUT_FIRST_SLOT_INDEX + INPUT_SLOT_COUNT;
 
     // onde cada slot do cai na grade 3x3:
     private static final int[] SLOT_TO_GRID = {0, 1, 2, 3, 4, 5, 7};

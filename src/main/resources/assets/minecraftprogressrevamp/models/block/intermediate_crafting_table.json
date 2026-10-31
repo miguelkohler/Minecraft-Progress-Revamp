@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "minecraft:block/oak_planks",
+    "east": "minecraftprogressrevamp:block/intermediate_crafting_table_front",
+    "north": "minecraftprogressrevamp:block/intermediate_crafting_table_side",
+    "particle": "minecraftprogressrevamp:block/intermediate_crafting_table_front",
+    "south": "minecraftprogressrevamp:block/intermediate_crafting_table_back",
+    "up": "minecraftprogressrevamp:block/intermediate_crafting_table_top",
+    "west": "minecraftprogressrevamp:block/intermediate_crafting_table_back"
+  }
+}

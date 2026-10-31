@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraftprogressrevamp:small_oak_box"
+    },
+    "F": {
+      "item": "minecraftprogressrevamp:copper_saw"
+    },
+    "P": {
+      "item": "minecraftprogressrevamp:copper_hammer"
+    },
+    "T": {
+      "item": "minecraftprogressrevamp:copper_nail"
+    },
+    "U": {
+      "item": "minecraftprogressrevamp:copper_shears"
+    },
+    "Y": {
+      "item": "minecraftprogressrevamp:copper_chisel"
+    }
+  },
+  "pattern": [
+    "TYT",
+    "F#P",
+    "TUT"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:intermediate_toolbox"
+  }
+}

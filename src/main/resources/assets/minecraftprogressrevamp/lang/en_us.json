@@ -95,9 +95,12 @@
   "item.minecraftprogressrevamp.raw_salted_porkchops": "Raw Salted Porkchop",
   "item.minecraftprogressrevamp.salted_rabbit": "Salted Cooked Rabbit",
   "item.minecraftprogressrevamp.raw_salted_rabbit": "Raw Salted Rabbit",
+  "item.minecraftprogressrevamp.firestarter": "Firestarter",
+  "item.minecraftprogressrevamp.intermediate_toolbox": "Intermediate Toolbox",
 
   "block.minecraftprogressrevamp.primitive_crafting_table": "Primitive Crafting Table",
   "block.minecraftprogressrevamp.rudimentary_crafting_table": "Rudimentary Crafting Table",
+  "block.minecraftprogressrevamp.intermediate_crafting_table": "Intermediate Crafting Table",
   "block.minecraftprogressrevamp.steel_cutter": "Steel Cutter",
   "block.minecraftprogressrevamp.charcoal_block": "Charcoal Block",
   "block.minecraftprogressrevamp.fireclay": "Fireclay",
@@ -111,6 +114,7 @@
   "block.minecraftprogressrevamp.campfire_with_crucible": "Campfire With Crucible",
   "block.minecraftprogressrevamp.cobblestone_anvil": "Cobblestone Anvil",
   "block.minecraftprogressrevamp.bellow": "Bellow",
+  "block.minecraftprogressrevamp.small_oak_box": "Small Box",
 
   "creativetab.minecraftprogressrevamp.primitive_items": "Primitive Items",
   "creativetab.minecraftprogressrevamp.copper_age_items": "Copper Age Items",
@@ -123,6 +127,7 @@
   "tooltip.minecraftprogressrevamp.primitive_knife.not_shift_down": "§8Press [SHIFT] for more information",
   "tooltip.minecraftprogressrevamp.starter_toolbox.shift_down": "Can do everything the tools used to make it do",
   "tooltip.minecraftprogressrevamp.starter_toolbox.not_shift_down": "§8Press [SHIFT] for more information",
+  "tooltip.minecraftprogressrevamp.intermediate_toolbox.shift_down": "Can do everything the tools used to make it do\nWhen right cliked without holding shift\nwill do the actions of the hammer, shears and saw\nWhen Shifting while right click, will act like a chisel",
   "tooltip.minecraftprogressrevamp.dull_item.not_shift_down": "§8Press [SHIFT] for more information",
   "tooltip.minecraftprogressrevamp.dull_item.shift_down": "This looks a little dull, maybe you need to sharpen it in a §eGrindstone",
   "tooltip.minecraftprogressrevamp.hot_item.not_shift_down": "§8Press [SHIFT] for more information",

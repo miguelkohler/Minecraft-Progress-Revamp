@@ -1,6 +1,8 @@
 {
   "values": [
     "minecraftprogressrevamp:primitive_shears",
+    "minecraftprogressrevamp:starter_toolbox",
+    "minecraftprogressrevamp:intermediate_toolbox",
     "minecraft:shears",
     "minecraftprogressrevamp:copper_shears"
   ]

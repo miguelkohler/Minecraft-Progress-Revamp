@@ -45,6 +45,8 @@ public class ModItemTagProvider extends ItemTagsProvider {
                         ModItems.PRIMITIVEAXE.get(),
                         ModItems.COPPERAXE.get(),
                         ModItems.PRIMITIVESAW.get(),
+                        ModItems.STARTERTOOLBOX.get(),
+                        ModItems.INTERMEDIATETOOLBOX.get(),
                         ModItems.COPPERSAW.get()
                 );
         tag(ItemTags.PICKAXES)
@@ -55,11 +57,15 @@ public class ModItemTagProvider extends ItemTagsProvider {
         tag(ModTags.Items.SAWS)
                 .add(
                         ModItems.PRIMITIVESAW.get(),
+                        ModItems.STARTERTOOLBOX.get(),
+                        ModItems.INTERMEDIATETOOLBOX.get(),
                         ModItems.COPPERSAW.get()
                 );
         tag(ModTags.Items.HAMMERS)
                 .add(
                         ModItems.PRIMITIVEHAMMER.get(),
+                        ModItems.STARTERTOOLBOX.get(),
+                        ModItems.INTERMEDIATETOOLBOX.get(),
                         ModItems.COPPERHAMMER.get()
                 );
         tag(ModTags.Items.KNIVES)
@@ -71,12 +77,22 @@ public class ModItemTagProvider extends ItemTagsProvider {
         tag(ModTags.Items.SHEARS)
                 .add(
                         ModItems.PRIMITIVESHEARS.get(),
+                        ModItems.STARTERTOOLBOX.get(),
+                        ModItems.INTERMEDIATETOOLBOX.get(),
                         Items.SHEARS,
                         ModItems.COPPERSHEARS.get()
+                );
+        tag(ModTags.Items.CHISELS)
+                .add(
+                        ModItems.INTERMEDIATETOOLBOX.get(),
+                        ModItems.COPPERCHISEL.get()
                 );
         tag(ModTags.Items.WATERCONTAINERS)
                 .add(Items.WATER_BUCKET)
                 .add(ModItems.WATER_CERAMICBUCKET.get());
+        tag(ModTags.Items.FIRESTARTERS)
+                .add(Items.FLINT_AND_STEEL)
+                .add(ModItems.FIRESTARTER.get());
         tag(ModTags.Items.SANDMOLDS)
                 .add(ModItems.EMPTYSANDMOLD.get())
                 .add(ModItems.INGOTSANDMOLD.get());
@@ -90,6 +106,12 @@ public class ModItemTagProvider extends ItemTagsProvider {
         tag(ModTags.Items.COALBLOCKS)
                 .add(Items.COAL_BLOCK)
                 .add(ModBlocks.CHARCOALBLOCK.asItem());
+        tag(ModTags.Items.STONESLABCRAFTINGMATERIAL)
+                .add(
+                        Items.COBBLESTONE_SLAB,
+                        Items.BLACKSTONE_SLAB,
+                        Items.COBBLED_DEEPSLATE_SLAB
+                );
         tag(ModTags.Items.COPPERBLOBMELTABLES)
                 .add(Items.RAW_COPPER)
                 .add(Items.COPPER_INGOT)

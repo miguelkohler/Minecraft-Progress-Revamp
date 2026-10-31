@@ -1,21 +1,35 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "key": {
-    "/": {
-      "item": "minecraft:stick"
+  "type": "minecraftprogressrevamp:intermediate_crafting_table",
+  "ingredients": [
+    {
+      "item": "minecraft:leather"
     },
-    "O": {
+    {
+      "item": "minecraft:leather"
+    },
+    {
       "tag": "minecraft:planks"
     },
-    "X": {
+    {
+      "tag": "minecraft:planks"
+    },
+    [],
+    [],
+    {
       "item": "minecraft:leather"
-    }
-  },
-  "pattern": [
-    "XXX",
-    "/O ",
-    "XXX"
+    },
+    {
+      "item": "minecraft:leather"
+    },
+    {
+      "tag": "minecraft:planks"
+    },
+    [],
+    {
+      "item": "minecraft:stick"
+    },
+    [],
+    []
   ],
   "result": {
     "count": 1,

@@ -36,6 +36,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.PRIMITIVEKNIFE);
                         output.accept(ModItems.STRAW);
                         output.accept(ModItems.STRAWSTRING);
+                        output.accept(ModItems.FIRESTARTER);
                         output.accept(ModItems.STARTERTOOLBOX);
                         output.accept(ModItems.LEATHERSTICK);
                         output.accept(ModItems.WOODENHANDLE);
@@ -76,6 +77,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.RAWSALTEDSALMON);
                         output.accept(ModItems.SALTEDCOOKEDSALMON);
                         output.accept(ModBlocks.CHARCOALBLOCK);
+                        output.accept(ModBlocks.SMALLOAKBOX);
                         output.accept(ModBlocks.WOODENCRATE);
 
 
@@ -142,6 +144,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.IRONBARBLOCK);
                         output.accept(Blocks.COPPER_BLOCK);
 
+                        output.accept(ModItems.INTERMEDIATETOOLBOX);
+                        output.accept(ModBlocks.INTERMEDIATECRAFTINGTABLE);
                         output.accept(ModBlocks.BELLOW);
                         output.accept(ModItems.MAGNIFYINGGLASS);
                         output.accept(ModBlocks.STEELCUTTER);

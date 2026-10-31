@@ -11,7 +11,7 @@ import net.saitamaking.minecraftprogressrevamp.ProgressRevamp;
 
 public class WoodenCrateScreen extends AbstractContainerScreen<WoodenCrateMenu> {
     private static final ResourceLocation GUI_TEXTURE =
-            ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "textures/gui/woodencrate/wooden_crate_gui.png");
+            ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "textures/gui/storages/wooden_crate_gui.png");
 
     public WoodenCrateScreen(WoodenCrateMenu menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title);

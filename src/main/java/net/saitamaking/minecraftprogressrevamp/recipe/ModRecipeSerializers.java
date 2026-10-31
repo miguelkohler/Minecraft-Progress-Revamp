@@ -25,6 +25,8 @@ public class ModRecipeSerializers {
             RECIPE_SERIALIZERS.register("campfire_with_crucible", CampfireWithCrucibleRecipe.Serializer::new);
     public static final Supplier<RecipeSerializer<CobblestoneAnvilRecipe>> COBBLESTONE_ANVIL_SERIALIZER =
             RECIPE_SERIALIZERS.register("cobblestone_anvil", CobblestoneAnvilRecipe.Serializer::new);
+    public static final Supplier<RecipeSerializer<TierOneCraftingTableRecipe>> TIER_ONE_CRAFTING_TABLE_SERIALIZER =
+            RECIPE_SERIALIZERS.register("intermediate_crafting_table", TierOneCraftingTableRecipe.Serializer::new);
     public static final DeferredHolder<RecipeType<?>, RecipeType<CampfireWithCrucibleRecipe>> CAMPFIRE_WITH_CRUCIBLE_TYPE =
             TYPES.register("campfire_with_crucible", () -> new RecipeType<CampfireWithCrucibleRecipe>() {
                 @Override
@@ -35,4 +37,8 @@ public class ModRecipeSerializers {
     public static final Supplier<RecipeType<CobblestoneAnvilRecipe>> COBBLESTONE_ANVIL_TYPE =
             TYPES.register("cobblestone_anvil", () -> RecipeType.simple(
                     ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "cobblestone_anvil")));
+
+    public static final Supplier<RecipeType<TierOneCraftingTableRecipe>> TIER_ONE_CRAFTING_TABLE_TYPE =
+            TYPES.register("intermediate_crafting_table", () -> RecipeType.simple(
+                    ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "intermediate_crafting_table")));
 }

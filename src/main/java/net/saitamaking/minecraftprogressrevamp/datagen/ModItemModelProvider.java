@@ -43,6 +43,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.FIRECLAYBALL.get());
         basicItem(ModItems.MELTEDCOPPERPLATE.get());
         basicItem(ModItems.CLAYBRICK.get());
+        handheldItem(ModItems.FIRESTARTER.get());
         handheldItem(ModItems.PRIMITIVEAXE.get());
         handheldItem(ModItems.PRIMITIVEHAMMER.get());
         handheldItem(ModItems.PRIMITIVEPICKAXE.get());
@@ -83,6 +84,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.SMALLMELTEDGOLDBLOB.get());
         basicItem(ModItems.INGOTSANDMOLD.get());
         handheldItem(ModItems.STARTERTOOLBOX.get());
+        handheldItem(ModItems.INTERMEDIATETOOLBOX.get());
         basicItem(ModItems.UNREFINEDCRUCIBLE.get());
         basicItem(ModItems.WOODENHANDLE.get());
         basicItem(ModItems.CERAMICDUST.get());

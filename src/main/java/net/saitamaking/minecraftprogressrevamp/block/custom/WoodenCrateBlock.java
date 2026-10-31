@@ -36,7 +36,7 @@ import net.saitamaking.minecraftprogressrevamp.block.entity.WoodenCrateEntity;
 public class WoodenCrateBlock extends BaseEntityBlock {
     public static final DirectionProperty FACING;
     public static final VoxelShape SHAPE = Block.box(0,0,0,16,16,16);
-    public static final MapCodec<CampfireWithCrucibleBlock> CODEC = simpleCodec(CampfireWithCrucibleBlock::new);
+public static final MapCodec<WoodenCrateBlock> CODEC = simpleCodec(WoodenCrateBlock::new);
 
     public WoodenCrateBlock(Properties properties) {
         super(properties);

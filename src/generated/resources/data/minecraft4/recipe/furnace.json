@@ -1,0 +1,42 @@
+{
+  "type": "minecraftprogressrevamp:intermediate_crafting_table",
+  "ingredients": [
+    {
+      "tag": "minecraft:stone_crafting_materials"
+    },
+    {
+      "tag": "minecraft:stone_crafting_materials"
+    },
+    {
+      "tag": "minecraft:stone_crafting_materials"
+    },
+    [],
+    {
+      "tag": "minecraftprogressrevamp:stone_slab_crafting_material"
+    },
+    [],
+    {
+      "tag": "minecraft:stone_crafting_materials"
+    },
+    {
+      "tag": "minecraftprogressrevamp:firestarters"
+    },
+    {
+      "tag": "minecraft:stone_crafting_materials"
+    },
+    [],
+    {
+      "item": "minecraftprogressrevamp:bellow"
+    },
+    {
+      "item": "minecraftprogressrevamp:bellow"
+    },
+    {
+      "tag": "minecraftprogressrevamp:coal_blocks"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:furnace"
+  }
+}

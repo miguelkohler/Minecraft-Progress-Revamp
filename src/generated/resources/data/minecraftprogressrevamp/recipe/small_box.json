@@ -1,0 +1,23 @@
+{
+  "type": "minecraftprogressrevamp:durability_shaped",
+  "key": {
+    "#": {
+      "tag": "minecraft:planks"
+    },
+    "-": {
+      "tag": "minecraft:wooden_slabs"
+    },
+    "T": {
+      "tag": "minecraftprogressrevamp:chisels"
+    }
+  },
+  "pattern": [
+    " - ",
+    " T ",
+    " # "
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:small_oak_box"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_copper_chisel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:copper_chisel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_copper_hammer": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:copper_hammer"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_copper_nail": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:copper_nail"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_copper_saw": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:copper_saw"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_copper_shears": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:copper_shears"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_small_oak_box": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:small_oak_box"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:intermediate_toolbox"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_copper_hammer",
+      "has_copper_chisel",
+      "has_copper_saw",
+      "has_copper_shears",
+      "has_copper_nail",
+      "has_small_oak_box"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:intermediate_toolbox"
+    ]
+  }
+}

@@ -26,6 +26,7 @@ import net.neoforged.neoforge.common.IShearable;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.ItemAbility;
 import net.saitamaking.minecraftprogressrevamp.block.ModBlocks;
+import net.saitamaking.minecraftprogressrevamp.item.ModItems;
 
 import java.util.List;
 import java.util.Map;
@@ -76,17 +77,23 @@ public class StarterToolboxItem extends Item {
                         item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
 
                 level.playSound(null, context.getClickedPos(), SoundEvents.ANVIL_BREAK, SoundSource.BLOCKS);
+
+                return InteractionResult.SUCCESS;
             }
         }
 
         if(CHISEL_MAP2.containsKey(clickedBlock)) {
             if(!level.isClientSide()){
-                level.setBlockAndUpdate(context.getClickedPos(), CHISEL_MAP2.get(clickedBlock).defaultBlockState());
+                if(context.getItemInHand().is(ModItems.STARTERTOOLBOX)) {
+                    level.setBlockAndUpdate(context.getClickedPos(), CHISEL_MAP2.get(clickedBlock).defaultBlockState());
 
-                context.getItemInHand().hurtAndBreak(1, ((ServerLevel) level), context.getPlayer(),
-                        item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
+                    context.getItemInHand().hurtAndBreak(1, ((ServerLevel) level), context.getPlayer(),
+                            item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
 
-                level.playSound(null, context.getClickedPos(), SoundEvents.AXE_STRIP, SoundSource.BLOCKS);
+                    level.playSound(null, context.getClickedPos(), SoundEvents.AXE_STRIP, SoundSource.BLOCKS);
+
+                    return InteractionResult.SUCCESS;
+                }
             }
         }
 
@@ -98,10 +105,12 @@ public class StarterToolboxItem extends Item {
                         item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
 
                 level.playSound(null, context.getClickedPos(), SoundEvents.SMITHING_TABLE_USE, SoundSource.BLOCKS);
+
+                return InteractionResult.SUCCESS;
             }
         }
 
-        return InteractionResult.SUCCESS;
+        return InteractionResult.SUCCESS_NO_ITEM_USED;
     }
 
     public static Tool createToolProperties() {

@@ -32,6 +32,7 @@ public class ModTags {
         public static final TagKey<Item> HAMMERS = createTag("hammers");
         public static final TagKey<Item> KNIVES = createTag("knives");
         public static final TagKey<Item> SHEARS = createTag("shears");
+        public static final TagKey<Item> CHISELS = createTag("chisels");
         public static final TagKey<Item> ALLTHEWOODITEM = createTag("all_the_wood_item");
         public static final TagKey<Item> WATERCONTAINERS = createTag("water_containers");
         public static final TagKey<Item> SANDMOLDS = createTag("sand_molds");
@@ -42,6 +43,8 @@ public class ModTags {
         public static final TagKey<Item> COALBLOCKS = createTag("coal_blocks");
         public static final TagKey<Item> COPPERBLOBMELTABLES = createTag("copper_blob_meltables");
         public static final TagKey<Item> GOLDBLOBMELTABLES = createTag("gold_blob_meltables");
+        public static final TagKey<Item> FIRESTARTERS = createTag("firestarters");
+        public static final TagKey<Item> STONESLABCRAFTINGMATERIAL = createTag("stone_slab_crafting_material");
 
         private static TagKey<Item> createTag(String name){
 

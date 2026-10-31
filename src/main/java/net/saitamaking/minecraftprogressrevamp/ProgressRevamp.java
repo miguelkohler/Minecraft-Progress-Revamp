@@ -44,7 +44,7 @@ public class ProgressRevamp {
         ModRecipeSerializers.RECIPE_SERIALIZERS.register(modEventBus);
         ModRecipeSerializers.TYPES.register(modEventBus);
 
-        ShapedRecipePattern.setCraftingSize(4, 3);
+        ShapedRecipePattern.setCraftingSize(5, 5);
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);

@@ -17,6 +17,7 @@ import net.saitamaking.minecraftprogressrevamp.item.ModItems;
 import net.saitamaking.minecraftprogressrevamp.recipe.CobblestoneAnvilRecipeBuilder;
 import net.saitamaking.minecraftprogressrevamp.recipe.ModCustomCraftingShaped;
 import net.saitamaking.minecraftprogressrevamp.recipe.ModCustomCraftingShapeless;
+import net.saitamaking.minecraftprogressrevamp.recipe.TierOneCraftingTableRecipeBuilder;
 import net.saitamaking.minecraftprogressrevamp.util.ModTags;
 
 import java.util.List;
@@ -548,23 +549,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_wooden_handle", has(ModItems.WOODENHANDLE))
                 .save(recipeOutput);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.BELLOW.get())
-                .pattern("XXX")
-                .pattern("/O ")
-                .pattern("XXX")
-                .define('X', Items.LEATHER)
-                .define('O', ItemTags.PLANKS)
-                .define('/', Items.STICK)
-                .unlockedBy("has_stick", has(Items.STICK))
-                .unlockedBy("has_planks", has(ItemTags.PLANKS))
-                .unlockedBy("has_leather", has(Items.LEATHER))
-                .save(recipeOutput);
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, Items.CRAFTING_TABLE)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.CRAFTING_TABLE)
                 .requires(ModBlocks.RUDIMENTARYCRAFTINGTABLE)
                 .requires(ModItems.STARTERTOOLBOX)
                 .unlockedBy("has_rudimentary_crafting_table", has(ModBlocks.RUDIMENTARYCRAFTINGTABLE))
                 .unlockedBy("has_starter_toolbox", has(ModItems.STARTERTOOLBOX))
+                .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.INTERMEDIATECRAFTINGTABLE)
+                .requires(Blocks.CRAFTING_TABLE)
+                .requires(ModItems.INTERMEDIATETOOLBOX)
+                .unlockedBy("has_crafting_table", has(Blocks.CRAFTING_TABLE))
+                .unlockedBy("has_intermediate_toolbox", has(ModItems.INTERMEDIATETOOLBOX))
                 .save(recipeOutput);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, Items.OAK_PLANKS, 2)
@@ -693,6 +689,24 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_primitive_shears", has(ModItems.PRIMITIVESHEARS))
                 .unlockedBy("has_primitive_hammer", has(ModItems.PRIMITIVEHAMMER))
                 .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.INTERMEDIATETOOLBOX.get())
+                .pattern("TYT")
+                .pattern("F#P")
+                .pattern("TUT")
+                .define('F', ModItems.COPPERSAW)
+                .define('U', ModItems.COPPERSHEARS)
+                .define('Y', ModItems.COPPERCHISEL)
+                .define('P', ModItems.COPPERHAMMER)
+                .define('T', ModItems.COPPERNAIL)
+                .define('#', ModBlocks.SMALLOAKBOX)
+                .unlockedBy("has_copper_hammer", has(ModItems.COPPERHAMMER))
+                .unlockedBy("has_copper_chisel", has(ModItems.COPPERCHISEL))
+                .unlockedBy("has_copper_saw", has(ModItems.COPPERSAW))
+                .unlockedBy("has_copper_shears", has(ModItems.COPPERSHEARS))
+                .unlockedBy("has_copper_nail", has(ModItems.COPPERNAIL))
+                .unlockedBy("has_small_oak_box", has(ModBlocks.SMALLOAKBOX))
+                .save(recipeOutput, "intermediate_toolbox");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.STARTERTOOLBOX.get())
                 .pattern("S S")
@@ -1239,6 +1253,40 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         .addCriterion("has_saw", RecipeProvider.has(ModTags.Items.SAWS))
                         .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "planks_to_sticks_with_saw6").withPrefix("recipes/"))
         );
+
+        ShapedRecipePattern Mod_shaped_pattern18 = ShapedRecipePattern.of(
+                Map.of(
+                        '#', Ingredient.of(ItemTags.PLANKS),
+                        '-', Ingredient.of(ItemTags.WOODEN_SLABS),
+                        'T', Ingredient.of(ModTags.Items.CHISELS)
+                ),
+                List.of(
+                        " - ",
+                        " T ",
+                        " # "
+                )
+        );
+
+        ModCustomCraftingShaped Mod_shaped_recipe18 = new ModCustomCraftingShaped(
+                "",
+                CraftingBookCategory.MISC,
+                Mod_shaped_pattern18,
+                new ItemStack(ModBlocks.SMALLOAKBOX.get())
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "small_box"),
+                Mod_shaped_recipe18,
+                recipeOutput.advancement()
+                        .addCriterion("has_planks", RecipeProvider.has(ItemTags.PLANKS))
+                        .addCriterion("has_wooden_slabs", RecipeProvider.has(ItemTags.WOODEN_SLABS))
+                        .addCriterion("has_chisel", RecipeProvider.has(ModTags.Items.CHISELS))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "small_box").withPrefix("recipes/"))
+        );
+
+
+
+
 
 
         List<Ingredient> Mod_shapeless_ingredients1 = List.of(
@@ -2427,6 +2475,41 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_melted_copper_plate", has(ModItems.MELTEDCOPPERPLATE))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
                         ProgressRevamp.MODID, "copper_chisel_blade_hot2"));
+
+
+
+        TierOneCraftingTableRecipeBuilder.intermediate_recipe(ModBlocks.BELLOW.get())
+                .pattern("     ")
+                .pattern(" ##H ")
+                .pattern("/H   ")
+                .pattern(" ##H ")
+                .pattern("     ")
+                .define('#', Items.LEATHER)
+                .define('H', ItemTags.PLANKS)
+                .define('/', Items.STICK)
+                .unlockedBy("has_leather", has(Items.LEATHER))
+                .unlockedBy("has_stick", has(Items.STICK))
+                .unlockedBy("has_planks", has(ItemTags.PLANKS))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "bellow"));
+
+
+        TierOneCraftingTableRecipeBuilder.intermediate_recipe(Blocks.FURNACE)
+                .pattern("     ")
+                .pattern(" ### ")
+                .pattern("H - H")
+                .pattern(" #X# ")
+                .pattern("  W  ")
+                .define('#', ItemTags.STONE_CRAFTING_MATERIALS)
+                .define('H', ModBlocks.BELLOW)
+                .define('-', ModTags.Items.STONESLABCRAFTINGMATERIAL)
+                .define('X', ModTags.Items.FIRESTARTERS)
+                .define('W', ModTags.Items.COALBLOCKS)
+                .unlockedBy("has_stone_crafting_material", has(ItemTags.STONE_CRAFTING_MATERIALS))
+                .unlockedBy("has_bellow", has(ModBlocks.BELLOW))
+                .unlockedBy("has_stone_slab_crafting_material", has(ModTags.Items.STONESLABCRAFTINGMATERIAL))
+                .unlockedBy("has_firestarter", has(ModTags.Items.FIRESTARTERS))
+                .unlockedBy("has_coal_blocks", has(ModTags.Items.COALBLOCKS))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath("minecraft4", "furnace"));
 
         List<ItemLike> SALTED_BEEF_INGREDIENT = List.of( ModItems.SALTEDBEEF );
         List<ItemLike> SALTED_CHICKEN_INGREDIENT = List.of( ModItems.RAWSALTEDCHICKEN );

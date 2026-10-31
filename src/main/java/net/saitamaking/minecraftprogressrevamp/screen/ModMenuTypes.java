@@ -29,8 +29,14 @@ public class ModMenuTypes {
     public static final DeferredHolder<MenuType<?>, MenuType<RudimentaryCraftingTableMenu>> RUDIMENTARY_CRAFTING_TABLE_MENU =
             registerMenuType("rudimentary_crafting_table_menu", RudimentaryCraftingTableMenu::new);
 
+    public static final DeferredHolder<MenuType<?>, MenuType<IntermediateCraftingTableMenu>> INTERMEDIATE_CRAFTING_TABLE_MENU =
+            registerMenuType("intermediate_crafting_table_menu", IntermediateCraftingTableMenu::new);
+
     public static final DeferredHolder<MenuType<?>, MenuType<CobblestoneAnvilMenu>> COBBLESTONE_ANVIL_MENU =
             registerMenuType("cobblestone_anvil_menu", CobblestoneAnvilMenu::new);
+
+    public static final DeferredHolder<MenuType<?>, MenuType<SmallBoxMenu>> SMALL_BOX_MENU =
+            registerMenuType("small_box_menu", SmallBoxMenu::new);
 
     private static <T extends AbstractContainerMenu>DeferredHolder<MenuType<?>, MenuType<T>> registerMenuType(String name,
                                                                                                               IContainerFactory<T> factory){

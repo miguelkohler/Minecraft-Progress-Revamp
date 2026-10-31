@@ -78,6 +78,7 @@ public class ModBlockEvents {
         event.register(WoodenCrateRenderer.LID_MODEL);
         event.register(BellowRenderer.BELLOW_BACK);
         event.register(BellowRenderer.BELLOW_MIDDLE);
+        event.register(SmallBoxRenderer.LID_MODEL);
     }
 
     @SubscribeEvent
@@ -88,5 +89,7 @@ public class ModBlockEvents {
         event.registerBlockEntityRenderer(ModBlockEntities.COBBLESTONEANVIL_BE.get(), CobblestoneAnvilRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.CAMPFIREWITHCRUCIBLE_BE.get(), CampfireWithCrucibleRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.BELLOW_BE.get(), BellowRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.INTERMEDIATECRAFTINGTABLE_BE.get(), IntermediateCraftingTableRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.SMALLBOX_BE.get(), SmallBoxRenderer::new);
     }
 }

@@ -43,7 +43,10 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                         ModBlocks.WOODENCRATE.get()
                 );
         tag(BlockTags.NEEDS_STONE_TOOL)
-                .add(ModBlocks.STEELCUTTER.get())
+                .add(
+                        ModBlocks.STEELCUTTER.get(),
+                        ModBlocks.INTERMEDIATECRAFTINGTABLE.get()
+                )
                 .add(Blocks.CRAFTING_TABLE)
                 .add(Blocks.COAL_ORE)
                 .remove(

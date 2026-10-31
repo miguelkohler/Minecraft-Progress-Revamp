@@ -30,6 +30,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
     protected void generate() {
         dropSelf(ModBlocks.PRIMITIVECRAFTINGTABLE.get());
         dropSelf(ModBlocks.RUDIMENTARYCRAFTINGTABLE.get());
+        dropSelf(ModBlocks.INTERMEDIATECRAFTINGTABLE.get());
         dropSelf(ModBlocks.STEELCUTTER.get());
         dropSelf(ModBlocks.CHARCOALBLOCK.get());
         dropSelf(ModBlocks.MELTEDCOPPERBLOCK.get());
@@ -38,6 +39,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.CAMPFIREWITHCRUCIBLE.get());
         dropSelf(ModBlocks.COBBLESTONEANVIL.get());
         dropSelf(ModBlocks.BELLOW.get());
+        dropSelf(ModBlocks.SMALLOAKBOX.get());
 
         add(ModBlocks.FIRECLAY.get(),
                 block -> createExactDrops(ModBlocks.FIRECLAY.get(), ModItems.FIRECLAYBALL.get(), 4));

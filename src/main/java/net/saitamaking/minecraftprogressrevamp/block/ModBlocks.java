@@ -28,6 +28,9 @@ public class ModBlocks {
     public static final DeferredBlock<Block> RUDIMENTARYCRAFTINGTABLE = registerBlock("rudimentary_crafting_table",
             () -> new RudimentaryCraftingTableBlock(BlockBehaviour.Properties.of().strength(2.5f).requiresCorrectToolForDrops().sound(SoundType.WOOD)));
 
+    public static final DeferredBlock<Block> INTERMEDIATECRAFTINGTABLE = registerBlock("intermediate_crafting_table",
+            () -> new IntermediateCraftingTableBlock(BlockBehaviour.Properties.of().strength(2.5f).requiresCorrectToolForDrops().sound(SoundType.WOOD)));
+
     public static final DeferredBlock<Block> STEELCUTTER = registerBlock("steel_cutter",
             () -> new SteelCutterBlock(BlockBehaviour.Properties.of().strength(3.5f).requiresCorrectToolForDrops().sound(SoundType.WOOD)));
 
@@ -57,6 +60,9 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> WOODENCRATE = registerBlock("wooden_crate",
             () -> new WoodenCrateBlock(BlockBehaviour.Properties.of().strength(2.0F, 3.0F).noOcclusion().sound(SoundType.WOOD)));
+
+    public static final DeferredBlock<Block> SMALLOAKBOX = registerBlock("small_oak_box",
+            () -> new SmallBoxBlock(BlockBehaviour.Properties.of().strength(2.0F, 3.0F).noOcclusion().sound(SoundType.WOOD)));
 
     public static final DeferredBlock<Block> CAMPFIREWITHCRUCIBLE = registerBlock("campfire_with_crucible",
             () -> new CampfireWithCrucibleBlock(BlockBehaviour.Properties.of().strength(2.0F).sound(SoundType.WOOD).lightLevel(state -> 15).noOcclusion().ignitedByLava()));

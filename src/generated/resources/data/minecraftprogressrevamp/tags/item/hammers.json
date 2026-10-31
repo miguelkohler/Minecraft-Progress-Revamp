@@ -1,6 +1,8 @@
 {
   "values": [
     "minecraftprogressrevamp:primitive_hammer",
+    "minecraftprogressrevamp:starter_toolbox",
+    "minecraftprogressrevamp:intermediate_toolbox",
     "minecraftprogressrevamp:copper_hammer"
   ]
 }

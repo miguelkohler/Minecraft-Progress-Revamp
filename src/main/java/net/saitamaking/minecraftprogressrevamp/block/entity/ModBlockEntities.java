@@ -30,9 +30,17 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("rudimentary_crafting_table_be", () -> BlockEntityType.Builder.of(
                     RudimentaryCraftingTableEntity::new, ModBlocks.RUDIMENTARYCRAFTINGTABLE.get()).build(null));
 
+    public static final Supplier<BlockEntityType<IntermediateCraftingTableEntity>> INTERMEDIATECRAFTINGTABLE_BE =
+            BLOCK_ENTITIES.register("intermediate_crafting_table_be", () -> BlockEntityType.Builder.of(
+                    IntermediateCraftingTableEntity::new, ModBlocks.INTERMEDIATECRAFTINGTABLE.get()).build(null));
+
     public static final Supplier<BlockEntityType<CobblestoneAnvilEntity>> COBBLESTONEANVIL_BE =
             BLOCK_ENTITIES.register("cobblestone_anvil_be", () -> BlockEntityType.Builder.of(
                     CobblestoneAnvilEntity::new, ModBlocks.COBBLESTONEANVIL.get()).build(null));
+
+    public static final Supplier<BlockEntityType<SmallBoxEntity>> SMALLBOX_BE =
+            BLOCK_ENTITIES.register("small_box_be", () -> BlockEntityType.Builder.of(
+                    SmallBoxEntity::new, ModBlocks.SMALLOAKBOX.get()).build(null));
 
     public static final Supplier<BlockEntityType<BellowEntity>> BELLOW_BE =
             BLOCK_ENTITIES.register("bellow_be", () -> BlockEntityType.Builder.of(

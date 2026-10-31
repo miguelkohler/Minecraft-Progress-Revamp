@@ -39,5 +39,7 @@ public class ExampleModClient {
         event.register(ModMenuTypes.PRIMITIVE_CRAFTING_TABLE_MENU.get(), PrimitiveCraftingTableScreen::new);
         event.register(ModMenuTypes.RUDIMENTARY_CRAFTING_TABLE_MENU.get(), RudimentaryCraftingTableScreen::new);
         event.register(ModMenuTypes.COBBLESTONE_ANVIL_MENU.get(), CobblestoneAnvilScreen::new);
+        event.register(ModMenuTypes.INTERMEDIATE_CRAFTING_TABLE_MENU.get(), IntermediateCraftingTableScreen::new);
+        event.register(ModMenuTypes.SMALL_BOX_MENU.get(), SmallBoxScreen::new);
     }
 }

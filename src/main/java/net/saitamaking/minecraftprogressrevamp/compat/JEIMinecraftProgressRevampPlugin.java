@@ -15,6 +15,7 @@ import net.saitamaking.minecraftprogressrevamp.block.ModBlocks;
 import net.saitamaking.minecraftprogressrevamp.recipe.CampfireWithCrucibleRecipe;
 import net.saitamaking.minecraftprogressrevamp.recipe.CobblestoneAnvilRecipe;
 import net.saitamaking.minecraftprogressrevamp.recipe.ModRecipeSerializers;
+import net.saitamaking.minecraftprogressrevamp.recipe.TierOneCraftingTableRecipe;
 import net.saitamaking.minecraftprogressrevamp.screen.ModMenuTypes;
 import net.saitamaking.minecraftprogressrevamp.screen.custom.*;
 
@@ -31,6 +32,7 @@ public class JEIMinecraftProgressRevampPlugin implements IModPlugin {
     public void registerCategories(IRecipeCategoryRegistration registration) {
         registration.addRecipeCategories(new CampfireWithCrucibleRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new CobblestoneAnvilRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new IntermediateCraftingTableRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
     }
 
     @Override
@@ -46,6 +48,11 @@ public class JEIMinecraftProgressRevampPlugin implements IModPlugin {
                 ModRecipeSerializers.COBBLESTONE_ANVIL_TYPE.get()).stream().map(RecipeHolder::value).toList();
 
         registration.addRecipes(CobblestoneAnvilRecipeCategory.COBBLESTONE_ANVIL_RECIPE_RECIPE_TYPE, cobblestoneAnvilRecipes);
+
+        List<TierOneCraftingTableRecipe> tierOneCraftingTableRecipes = recipeManager.getAllRecipesFor(
+                ModRecipeSerializers.TIER_ONE_CRAFTING_TABLE_TYPE.get()).stream().map(RecipeHolder::value).toList();
+
+        registration.addRecipes(IntermediateCraftingTableRecipeCategory.INTERMEDIATE_CRAFTING_TABLE_RECIPE_RECIPE_TYPE, tierOneCraftingTableRecipes);
     }
 
     @Override
@@ -58,6 +65,8 @@ public class JEIMinecraftProgressRevampPlugin implements IModPlugin {
                 RecipeTypes.CRAFTING);
         registration.addRecipeClickArea(RudimentaryCraftingTableScreen.class, 90, 32, 24, 18,
                 RecipeTypes.CRAFTING);
+        registration.addRecipeClickArea(IntermediateCraftingTableScreen.class, 108, 50, 24, 18,
+                IntermediateCraftingTableRecipeCategory.INTERMEDIATE_CRAFTING_TABLE_RECIPE_RECIPE_TYPE);
     }
 
     @Override
@@ -66,6 +75,8 @@ public class JEIMinecraftProgressRevampPlugin implements IModPlugin {
                 CampfireWithCrucibleRecipeCategory.CAMPFIRE_WITH_CRUCIBLE_RECIPE_RECIPE_TYPE);
         registration.addRecipeCatalyst(new ItemStack(ModBlocks.COBBLESTONEANVIL.asItem()),
                 CobblestoneAnvilRecipeCategory.COBBLESTONE_ANVIL_RECIPE_RECIPE_TYPE);
+        registration.addRecipeCatalyst(new ItemStack(ModBlocks.INTERMEDIATECRAFTINGTABLE.asItem()),
+                IntermediateCraftingTableRecipeCategory.INTERMEDIATE_CRAFTING_TABLE_RECIPE_RECIPE_TYPE);
     }
 
     @Override
@@ -79,6 +90,16 @@ public class JEIMinecraftProgressRevampPlugin implements IModPlugin {
                 CampfireWithCrucibleMenu.class,
                 ModMenuTypes.CAMPFIRE_WITH_CRUCIBLE_MENU.get(),
                 CampfireWithCrucibleRecipeCategory.CAMPFIRE_WITH_CRUCIBLE_RECIPE_RECIPE_TYPE, 36, 1, 0, 36
+        );
+        registration.addRecipeTransferHandler(
+                IntermediateCraftingTableMenu.class,
+                ModMenuTypes.INTERMEDIATE_CRAFTING_TABLE_MENU.get(),
+                IntermediateCraftingTableRecipeCategory.INTERMEDIATE_CRAFTING_TABLE_RECIPE_RECIPE_TYPE, 37, 13, 0, 36
+        );
+        registration.addRecipeTransferHandler(
+                IntermediateCraftingTableMenu.class,
+                ModMenuTypes.INTERMEDIATE_CRAFTING_TABLE_MENU.get(),
+                RecipeTypes.CRAFTING, 37, 9, 0, 36
         );
     }
 }

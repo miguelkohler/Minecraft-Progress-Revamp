@@ -42,7 +42,7 @@ public class RudimentaryCraftingTableRenderer implements BlockEntityRenderer<Rud
             float x;
             float z;
 
-            if (slot == 0 || slot == 3) {
+            if (slot % 3 == 0 && slot != 6) {
                 x = 0.75f;
             } else if(slot == 1 || slot == 4 || slot == 6){
                 x = 0.5f;
