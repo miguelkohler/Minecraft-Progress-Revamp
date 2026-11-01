@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraftprogressrevamp:primitive_crafting_table"
+    },
+    {
+      "item": "minecraftprogressrevamp:primitive_axe"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:rudimentary_crafting_table"
+  }
+}

@@ -20,6 +20,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         blockWithItem(ModBlocks.CHARCOALBLOCK);
         blockWithItem(ModBlocks.MELTEDCOPPERBLOCK);
+        blockWithItem(ModBlocks.MELTEDIRONBLOCK);
         blockWithItem(ModBlocks.MELTEDGOLDBLOCK);
         blockWithItem(ModBlocks.FIRECLAY);
         steelCutterBlock(ModBlocks.STEELCUTTER, "steel_cutter");
@@ -36,6 +37,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 new ModelFile.UncheckedModelFile(modLoc("block/cobblestone_anvil")));
         horizontalBlock(ModBlocks.WOODENCRATE.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/wooden_crate")));
+        horizontalBlock(ModBlocks.COPPERCRATE.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/copper_crate")));
         horizontalBlock(ModBlocks.BELLOW.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/bellow")));
     }

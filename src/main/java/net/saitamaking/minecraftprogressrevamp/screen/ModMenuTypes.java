@@ -20,6 +20,9 @@ public class ModMenuTypes {
     public static final DeferredHolder<MenuType<?>, MenuType<WoodenCrateMenu>> WOODEN_CRATE_MENU =
             registerMenuType("wooden_crate_menu", WoodenCrateMenu::new);
 
+    public static final DeferredHolder<MenuType<?>, MenuType<CopperCrateMenu>> COPPER_CRATE_MENU =
+            registerMenuType("copper_crate_menu", CopperCrateMenu::new);
+
     public static final DeferredHolder<MenuType<?>, MenuType<CampfireWithCrucibleMenu>> CAMPFIRE_WITH_CRUCIBLE_MENU =
             registerMenuType("campfire_with_crucible_menu", CampfireWithCrucibleMenu::new);
 

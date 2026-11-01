@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.4,
+  "group": "melted_copper_blob",
+  "ingredient": {
+    "item": "minecraft:deepslate_copper_ore"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:melted_copper_blob"
+  }
+}

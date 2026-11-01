@@ -95,6 +95,7 @@ public class ModCreativeModeTabs {
                         output.accept(Items.COPPER_INGOT);
                         output.accept(ModBlocks.COPPERBARBLOCK);
                         output.accept(ModItems.MELTEDCOPPERPLATE);
+                        output.accept(ModItems.COPPERPLATE);
                         output.accept(ModItems.COPPERAXEHEADHOT);
                         output.accept(ModItems.COPPERPICKAXEHEADHOT);
                         output.accept(ModItems.COPPERHOEHEADHOT);
@@ -137,18 +138,37 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.COPPERCHESTPLATE);
                         output.accept(ModItems.COPPERLEGGINGS);
                         output.accept(ModItems.COPPERBOOTS);
+                        output.accept(Blocks.COPPER_BLOCK);
                         output.accept(ModItems.MELTEDGOLDBLOB);
                         output.accept(ModItems.SMALLMELTEDGOLDBLOB);
                         output.accept(ModBlocks.MELTEDGOLDBLOCK);
+                        output.accept(Items.GOLD_INGOT);
                         output.accept(ModBlocks.GOLDBARBLOCK);
-                        output.accept(ModBlocks.IRONBARBLOCK);
-                        output.accept(Blocks.COPPER_BLOCK);
+                        output.accept(Blocks.GOLD_BLOCK);
+                        output.accept(Blocks.FURNACE);
+                        output.accept(ModBlocks.COPPERCRATE);
 
                         output.accept(ModItems.INTERMEDIATETOOLBOX);
                         output.accept(ModBlocks.INTERMEDIATECRAFTINGTABLE);
                         output.accept(ModBlocks.BELLOW);
                         output.accept(ModItems.MAGNIFYINGGLASS);
                         output.accept(ModBlocks.STEELCUTTER);
+
+
+                    }).build());
+
+    public static final Supplier<CreativeModeTab> IRON_AGE_ITEMS_TAB = CREATIVE_MODE_TAB.register("iron_age_items_tab",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(Items.IRON_INGOT))
+                    .title(Component.translatable("creativetab.minecraftprogressrevamp.iron_age_items"))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "copper_age_items_tab"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModItems.MELTEDIRONBLOB);
+                        output.accept(ModItems.SMALLMELTEDIRONBLOB);
+                        output.accept(ModItems.MELTEDIRONPLATE);
+                        output.accept(ModBlocks.MELTEDIRONBLOCK);
+                        output.accept(Items.IRON_INGOT);
+                        output.accept(ModBlocks.IRONBARBLOCK);
+
 
 
                     }).build());

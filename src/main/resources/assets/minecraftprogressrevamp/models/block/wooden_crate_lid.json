@@ -2,7 +2,7 @@
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "minecraft:block/oak_planks",
+		"1": "block/oak_planks",
 		"2": "minecraftprogressrevamp:block/wooden_crate_outline",
 		"particle": "minecraftprogressrevamp:block/wooden_crate_inside"
 	},

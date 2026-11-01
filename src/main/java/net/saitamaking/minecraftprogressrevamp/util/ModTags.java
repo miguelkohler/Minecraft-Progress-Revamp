@@ -40,6 +40,7 @@ public class ModTags {
         public static final TagKey<Item> COPPERTOOLS = createTag("copper_tools");
         public static final TagKey<Item> COPPERARMOR = createTag("copper_armor");
         public static final TagKey<Item> COPPERTOOLPARTS = createTag("copper_tool_parts");
+        public static final TagKey<Item> COPPERPLATES = createTag("copper_plates");
         public static final TagKey<Item> COALBLOCKS = createTag("coal_blocks");
         public static final TagKey<Item> COPPERBLOBMELTABLES = createTag("copper_blob_meltables");
         public static final TagKey<Item> GOLDBLOBMELTABLES = createTag("gold_blob_meltables");

@@ -46,6 +46,7 @@
   "item.minecraftprogressrevamp.copper_leggings": "Copper Leggings",
   "item.minecraftprogressrevamp.copper_boots": "Copper Boots",
   "item.minecraftprogressrevamp.melted_copper_plate": "Melted Copper Plate",
+  "item.minecraftprogressrevamp.copper_plate": "Copper Plate",
   "item.minecraftprogressrevamp.clay_brick": "Clay Brick",
   "item.minecraftprogressrevamp.copper_axe_head": "Copper Axe Head",
   "item.minecraftprogressrevamp.copper_hoe_head": "Copper Hoe Head",
@@ -97,6 +98,9 @@
   "item.minecraftprogressrevamp.raw_salted_rabbit": "Raw Salted Rabbit",
   "item.minecraftprogressrevamp.firestarter": "Firestarter",
   "item.minecraftprogressrevamp.intermediate_toolbox": "Intermediate Toolbox",
+  "item.minecraftprogressrevamp.melted_iron_blob": "Melted Iron Blob",
+  "item.minecraftprogressrevamp.melted_iron_plate": "Melted Iron Plate",
+  "item.minecraftprogressrevamp.small_melted_iron_blob": "Small Melted Iron Blob",
 
   "block.minecraftprogressrevamp.primitive_crafting_table": "Primitive Crafting Table",
   "block.minecraftprogressrevamp.rudimentary_crafting_table": "Rudimentary Crafting Table",
@@ -107,10 +111,12 @@
   "block.minecraftprogressrevamp.pebble": "Pebble",
   "block.minecraftprogressrevamp.melted_copper_block": "Melted Copper Block",
   "block.minecraftprogressrevamp.melted_gold_block": "Melted Gold Block",
+  "block.minecraftprogressrevamp.melted_iron_block": "Melted Iron Block",
   "block.minecraftprogressrevamp.copper_bar_block": "Block of Copper Ingots",
   "block.minecraftprogressrevamp.gold_bar_block": "Block of Gold Ingots",
   "block.minecraftprogressrevamp.iron_bar_block": "Block of Iron Ingots",
   "block.minecraftprogressrevamp.wooden_crate": "Wooden Crate",
+  "block.minecraftprogressrevamp.copper_crate": "Copper Crate",
   "block.minecraftprogressrevamp.campfire_with_crucible": "Campfire With Crucible",
   "block.minecraftprogressrevamp.cobblestone_anvil": "Cobblestone Anvil",
   "block.minecraftprogressrevamp.bellow": "Bellow",
@@ -118,6 +124,7 @@
 
   "creativetab.minecraftprogressrevamp.primitive_items": "Primitive Items",
   "creativetab.minecraftprogressrevamp.copper_age_items": "Copper Age Items",
+  "creativetab.minecraftprogressrevamp.iron_age_items": "Iron Age Items",
 
   "jei.minecraftprogressrevamp.campfire_with_crucible_recipe": "Campfire With Crucible Melting",
 

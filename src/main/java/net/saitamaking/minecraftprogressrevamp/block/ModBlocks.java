@@ -15,8 +15,7 @@ import net.saitamaking.minecraftprogressrevamp.item.ModItems;
 
 import java.util.function.Supplier;
 
-import static net.minecraft.world.level.block.Blocks.COPPER_BLOCK;
-import static net.minecraft.world.level.block.Blocks.GOLD_BLOCK;
+import static net.minecraft.world.level.block.Blocks.*;
 
 public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
@@ -49,6 +48,9 @@ public class ModBlocks {
     public static final DeferredBlock<MeltedMetalBlock> MELTEDGOLDBLOCK = registerBlock("melted_gold_block",
             () -> new MeltedMetalBlock(GOLD_BLOCK, BlockBehaviour.Properties.of().strength(2.0F, 4.0F).sound(SoundType.FROGLIGHT)));
 
+    public static final DeferredBlock<MeltedMetalBlock> MELTEDIRONBLOCK = registerBlock("melted_iron_block",
+            () -> new MeltedMetalBlock(IRON_BLOCK, BlockBehaviour.Properties.of().strength(2.0F, 5.0F).sound(SoundType.FROGLIGHT)));
+
     public static final DeferredBlock<Block> COPPERBARBLOCK = registerBlock("copper_bar_block",
             () -> new FourDirectionalBlock(BlockBehaviour.Properties.of().strength(2.5F, 5.0F).sound(SoundType.COPPER).noOcclusion()));
 
@@ -60,6 +62,9 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> WOODENCRATE = registerBlock("wooden_crate",
             () -> new WoodenCrateBlock(BlockBehaviour.Properties.of().strength(2.0F, 3.0F).noOcclusion().sound(SoundType.WOOD)));
+
+    public static final DeferredBlock<Block> COPPERCRATE = registerBlock("copper_crate",
+            () -> new CopperCrateBlock(BlockBehaviour.Properties.of().strength(3.0F, 6.0F).noOcclusion().sound(SoundType.COPPER)));
 
     public static final DeferredBlock<Block> SMALLOAKBOX = registerBlock("small_oak_box",
             () -> new SmallBoxBlock(BlockBehaviour.Properties.of().strength(2.0F, 3.0F).noOcclusion().sound(SoundType.WOOD)));

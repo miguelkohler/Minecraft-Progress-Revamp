@@ -82,7 +82,13 @@ public class ModItems {
     public static final DeferredItem<Item> WOODENHANDLE = ITEMS.register("wooden_handle",
             () -> new Item(new Item.Properties()));
 
+    public static final DeferredItem<Item> COPPERPLATE = ITEMS.register("copper_plate",
+            () -> new Item(new Item.Properties()));
+
     public static final DeferredItem<Item> MELTEDCOPPERPLATE = ITEMS.register("melted_copper_plate",
+            () -> new TransformItem("water_cauldron",COPPERPLATE,new Item.Properties()));
+
+    public static final DeferredItem<Item> MELTEDIRONPLATE = ITEMS.register("melted_iron_plate",
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> CLAYBRICK = ITEMS.register("clay_brick",
@@ -146,6 +152,12 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> SMALLMELTEDGOLDBLOB = ITEMS.register("small_melted_gold_blob",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> MELTEDIRONBLOB = ITEMS.register("melted_iron_blob",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> SMALLMELTEDIRONBLOB = ITEMS.register("small_melted_iron_blob",
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> COPPERNAIL = ITEMS.register("copper_nail",

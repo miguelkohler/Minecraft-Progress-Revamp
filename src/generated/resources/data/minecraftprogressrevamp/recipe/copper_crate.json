@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "minecraftprogressrevamp:copper_plates"
+    },
+    "T": {
+      "item": "minecraftprogressrevamp:copper_nail"
+    },
+    "X": {
+      "item": "minecraftprogressrevamp:wooden_crate"
+    }
+  },
+  "pattern": [
+    "T#T",
+    "#X#",
+    "T#T"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:copper_crate"
+  }
+}

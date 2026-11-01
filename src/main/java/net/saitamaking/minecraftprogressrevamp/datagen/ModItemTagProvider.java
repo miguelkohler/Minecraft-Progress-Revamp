@@ -121,7 +121,10 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(Items.RAW_GOLD)
                 .add(Items.GOLD_INGOT)
                 .add(Items.DEEPSLATE_GOLD_ORE)
+                .add(Items.NETHER_GOLD_ORE)
                 .add(Items.GOLD_ORE);
+        tag(ModTags.Items.COPPERPLATES)
+                .add(ModItems.COPPERPLATE.get());
         tag(ModTags.Items.ALLTHEWOODITEM)
                 .addTag(ItemTags.ACACIA_LOGS)
                 .addTag(ItemTags.BIRCH_LOGS)

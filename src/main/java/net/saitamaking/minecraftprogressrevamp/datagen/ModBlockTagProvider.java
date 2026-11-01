@@ -26,12 +26,14 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                         ModBlocks.COPPERBARBLOCK.get(),
                         ModBlocks.GOLDBARBLOCK.get(),
                         ModBlocks.COBBLESTONEANVIL.get(),
+                        ModBlocks.COPPERCRATE.get(),
                         ModBlocks.CHARCOALBLOCK.get()
                 );
         tag(BlockTags.MINEABLE_WITH_SHOVEL)
                 .add(
                         ModBlocks.FIRECLAY.get(),
                         ModBlocks.MELTEDGOLDBLOCK.get(),
+                        ModBlocks.MELTEDIRONBLOCK.get(),
                         ModBlocks.MELTEDCOPPERBLOCK.get()
                 );
         tag(BlockTags.MINEABLE_WITH_AXE)
@@ -45,6 +47,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(
                         ModBlocks.STEELCUTTER.get(),
+                        ModBlocks.COPPERCRATE.get(),
                         ModBlocks.INTERMEDIATECRAFTINGTABLE.get()
                 )
                 .add(Blocks.CRAFTING_TABLE)

@@ -76,6 +76,7 @@ public class ModBlockEvents {
     @SubscribeEvent
     public static void registerModels(ModelEvent.RegisterAdditional event) {
         event.register(WoodenCrateRenderer.LID_MODEL);
+        event.register(CopperCrateRenderer.LID_MODEL);
         event.register(BellowRenderer.BELLOW_BACK);
         event.register(BellowRenderer.BELLOW_MIDDLE);
         event.register(SmallBoxRenderer.LID_MODEL);
@@ -84,6 +85,7 @@ public class ModBlockEvents {
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(ModBlockEntities.WOODENCRATE_BE.get(), WoodenCrateRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.COPPERCRATE_BE.get(), CopperCrateRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.PRIMITIVECRAFTINGTABLE_BE.get(), PrimitiveCraftingTableRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.RUDIMENTARYCRAFTINGTABLE_BE.get(), RudimentaryCraftingTableRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.COBBLESTONEANVIL_BE.get(), CobblestoneAnvilRenderer::new);
