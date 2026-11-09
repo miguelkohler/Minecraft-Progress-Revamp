@@ -95,7 +95,14 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.FIRESTARTER.get());
         tag(ModTags.Items.SANDMOLDS)
                 .add(ModItems.EMPTYSANDMOLD.get())
+                .add(ModItems.NAILSANDMOLD.get())
+                .add(ModItems.NUGGETSANDMOLD.get())
                 .add(ModItems.INGOTSANDMOLD.get());
+        tag(ModTags.Items.GOLDMOLDS)
+                .add(ModItems.EMPTYGOLDMOLD.get())
+                .add(ModItems.NAILGOLDMOLD.get())
+                .add(ModItems.NUGGETGOLDMOLD.get())
+                .add(ModItems.INGOTGOLDMOLD.get());
         tag(ModTags.Items.INGOTSHAPED)
                 .add(Items.BRICK)
                 .add(Items.NETHER_BRICK)
@@ -103,9 +110,33 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(Items.IRON_INGOT)
                 .add(Items.GOLD_INGOT)
                 .add(Items.NETHERITE_INGOT);
+        tag(ModTags.Items.NUGGETSHAPED)
+                .add(ModItems.COPPERNUGGET.get())
+                .add(Items.IRON_NUGGET)
+                .add(Items.GOLD_NUGGET);
+        tag(ModTags.Items.NAILSHAPED)
+                .add(ModItems.COPPERNAIL.get());
         tag(ModTags.Items.COALBLOCKS)
                 .add(Items.COAL_BLOCK)
                 .add(ModBlocks.CHARCOALBLOCK.asItem());
+        tag(ModTags.Items.IRONBLOCKMELTABLES)
+                .add(Items.IRON_BLOCK)
+                .add(Items.RAW_IRON_BLOCK)
+                .add(ModBlocks.IRONBARBLOCK.asItem());
+        tag(ModTags.Items.COPPERBLOCKMELTABLES)
+                .add(Items.COPPER_BLOCK)
+                .add(Items.RAW_COPPER_BLOCK)
+                .add(ModBlocks.COPPERBARBLOCK.asItem());
+        tag(ModTags.Items.GOLDBLOCKMELTABLES)
+                .add(Items.GOLD_BLOCK)
+                .add(Items.RAW_GOLD_BLOCK)
+                .add(ModBlocks.GOLDBARBLOCK.asItem());
+        tag(ModTags.Items.SMALLCOPPERBLOBMELTABLES)
+                .add(ModItems.COPPERNUGGET.get());
+        tag(ModTags.Items.SMALLGOLDBLOBMELTABLES)
+                .add(Items.GOLD_NUGGET);
+        tag(ModTags.Items.SMALLIRONBLOBMELTABLES)
+                .add(Items.IRON_NUGGET);
         tag(ModTags.Items.STONESLABCRAFTINGMATERIAL)
                 .add(
                         Items.COBBLESTONE_SLAB,
@@ -123,8 +154,17 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(Items.DEEPSLATE_GOLD_ORE)
                 .add(Items.NETHER_GOLD_ORE)
                 .add(Items.GOLD_ORE);
+        tag(ModTags.Items.IRONBLOBMELTABLES)
+                .add(Items.RAW_IRON)
+                .add(Items.IRON_INGOT)
+                .add(Items.DEEPSLATE_IRON_ORE)
+                .add(Items.IRON_ORE);
         tag(ModTags.Items.COPPERPLATES)
                 .add(ModItems.COPPERPLATE.get());
+        tag(ModTags.Items.GOLDPLATES)
+                .add(ModItems.GOLDPLATE.get());
+        tag(ModTags.Items.IRONPLATES)
+                .add(ModItems.IRONPLATE.get());
         tag(ModTags.Items.ALLTHEWOODITEM)
                 .addTag(ItemTags.ACACIA_LOGS)
                 .addTag(ItemTags.BIRCH_LOGS)

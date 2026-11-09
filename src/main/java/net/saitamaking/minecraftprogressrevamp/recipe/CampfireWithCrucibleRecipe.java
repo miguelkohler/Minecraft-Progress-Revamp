@@ -1,5 +1,6 @@
 package net.saitamaking.minecraftprogressrevamp.recipe;
 
+import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.HolderLookup;
@@ -11,14 +12,14 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 
-public record CampfireWithCrucibleRecipe(Ingredient inputItem, ItemStack output) implements Recipe<CampfireWithCrucibleRecipeInput> {
+public record CampfireWithCrucibleRecipe(Ingredient inputItem, ItemStack output,int cookingTime) implements Recipe<CampfireWithCrucibleRecipeInput> {
     // input and output are read from JSON file, RecipeInput reads inventory of the block
 
     @Override
     public NonNullList<Ingredient> getIngredients() {
         NonNullList<Ingredient> list = NonNullList.create();
         list.add(inputItem);
-        return Recipe.super.getIngredients();
+        return list;
     }
 
     @Override
@@ -57,13 +58,15 @@ public record CampfireWithCrucibleRecipe(Ingredient inputItem, ItemStack output)
 
     public static final MapCodec<CampfireWithCrucibleRecipe> CODEC = RecordCodecBuilder.mapCodec(inst -> inst.group(
             Ingredient.CODEC_NONEMPTY.fieldOf("ingredient").forGetter(CampfireWithCrucibleRecipe::inputItem),
-            ItemStack.CODEC.fieldOf("result").forGetter(CampfireWithCrucibleRecipe::output)
+            ItemStack.CODEC.fieldOf("result").forGetter(CampfireWithCrucibleRecipe::output),
+            Codec.INT.optionalFieldOf("cooking_time", 1200).forGetter(CampfireWithCrucibleRecipe::cookingTime)
     ).apply(inst, CampfireWithCrucibleRecipe::new));
 
     public static final StreamCodec<RegistryFriendlyByteBuf, CampfireWithCrucibleRecipe> STREAM_CODEC =
             StreamCodec.composite(
                 Ingredient.CONTENTS_STREAM_CODEC, r -> r.inputItem,
                 ItemStack.STREAM_CODEC, r -> r.output,
+                ByteBufCodecs.VAR_INT, r -> r.cookingTime,
                 CampfireWithCrucibleRecipe::new
             );
 

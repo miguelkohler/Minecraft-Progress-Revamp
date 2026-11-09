@@ -14,10 +14,7 @@ import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import net.saitamaking.minecraftprogressrevamp.ProgressRevamp;
 import net.saitamaking.minecraftprogressrevamp.block.ModBlocks;
 import net.saitamaking.minecraftprogressrevamp.item.ModItems;
-import net.saitamaking.minecraftprogressrevamp.recipe.CobblestoneAnvilRecipeBuilder;
-import net.saitamaking.minecraftprogressrevamp.recipe.ModCustomCraftingShaped;
-import net.saitamaking.minecraftprogressrevamp.recipe.ModCustomCraftingShapeless;
-import net.saitamaking.minecraftprogressrevamp.recipe.TierOneCraftingTableRecipeBuilder;
+import net.saitamaking.minecraftprogressrevamp.recipe.*;
 import net.saitamaking.minecraftprogressrevamp.util.ModTags;
 
 import java.util.List;
@@ -131,6 +128,26 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_nail_sand_mold", has(ModItems.NAILSANDMOLD))
                 .save(recipeOutput, "copper_nail1");
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.IRONNAIL.get())
+                .pattern(" #X")
+                .pattern(" ##")
+                .pattern("#  ")
+                .define('#', ModItems.SMALLMELTEDIRONBLOB.get())
+                .define('X', ModItems.NAILSANDMOLD.get())
+                .unlockedBy("has_small_melted_iron_blob", has(ModItems.SMALLMELTEDIRONBLOB))
+                .unlockedBy("has_nail_sand_mold", has(ModItems.NAILSANDMOLD))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.IRONNAIL.get())
+                .pattern("#  ")
+                .pattern(" ##")
+                .pattern(" #X")
+                .define('#', ModItems.SMALLMELTEDIRONBLOB.get())
+                .define('X', ModItems.NAILSANDMOLD.get())
+                .unlockedBy("has_small_melted_iron_blob", has(ModItems.SMALLMELTEDIRONBLOB))
+                .unlockedBy("has_nail_sand_mold", has(ModItems.NAILSANDMOLD))
+                .save(recipeOutput, "iron_nail1");
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.WOODENCRATE.get())
                 .pattern("---")
                 .pattern("# #")
@@ -195,6 +212,27 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_ingot_sand_mold", has(ModItems.INGOTSANDMOLD))
                 .unlockedBy("has_melted_iron_blob", has(ModItems.MELTEDIRONBLOB))
                 .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.COPPERNUGGET)
+                .requires(ModItems.NUGGETSANDMOLD)
+                .requires(ModItems.SMALLMELTEDCOPPERBLOB)
+                .unlockedBy("has_nugget_sand_mold", has(ModItems.NUGGETSANDMOLD))
+                .unlockedBy("has_small_melted_copper_blob", has(ModItems.SMALLMELTEDCOPPERBLOB))
+                .save(recipeOutput,"coppper_nugget_sand_mold");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.GOLD_NUGGET)
+                .requires(ModItems.NUGGETSANDMOLD)
+                .requires(ModItems.SMALLMELTEDGOLDBLOB)
+                .unlockedBy("has_nugget_sand_mold", has(ModItems.NUGGETSANDMOLD))
+                .unlockedBy("has_small_melted_gold_blob", has(ModItems.SMALLMELTEDGOLDBLOB))
+                .save(recipeOutput,"gold_nugget_sand_mold");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.IRON_NUGGET)
+                .requires(ModItems.NUGGETSANDMOLD)
+                .requires(ModItems.SMALLMELTEDIRONBLOB)
+                .unlockedBy("has_nugget_sand_mold", has(ModItems.NUGGETSANDMOLD))
+                .unlockedBy("has_small_melted_iron_blob", has(ModItems.SMALLMELTEDIRONBLOB))
+                .save(recipeOutput,"iron_nugget_sand_mold");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.MELTEDCOPPERBLOCK.get())
                 .pattern("###")
@@ -574,6 +612,108 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_copper_small_blade", has(ModItems.COPPERSMALLBLADE))
                 .save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPERKNIFE)
+                .pattern(" X ")
+                .pattern("#  ")
+                .pattern("   ")
+                .define('#', ModItems.COPPERKNIFE)
+                .define('X', ModItems.COPPERSMALLBLADE)
+                .unlockedBy("has_copper_knife", has(ModItems.COPPERKNIFE))
+                .unlockedBy("has_copper_small_blade", has(ModItems.COPPERSMALLBLADE))
+                .save(recipeOutput,"copper_knife_blade_replacing");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPERSAW)
+                .pattern(" X ")
+                .pattern("#  ")
+                .pattern("   ")
+                .define('#', ModItems.COPPERSAW)
+                .define('X', ModItems.COPPERSAWBLADE)
+                .unlockedBy("has_copper_saw", has(ModItems.COPPERSAW))
+                .unlockedBy("has_copper_saw_blade", has(ModItems.COPPERSAWBLADE))
+                .save(recipeOutput,"copper_saw_blade_replacing");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPERHAMMER)
+                .pattern(" X ")
+                .pattern("#  ")
+                .pattern("   ")
+                .define('#', ModItems.COPPERHAMMER)
+                .define('X', ModItems.COPPERHAMMERHEAD)
+                .unlockedBy("has_copper_hammer", has(ModItems.COPPERHAMMER))
+                .unlockedBy("has_copper_hammer_head", has(ModItems.COPPERHAMMERHEAD))
+                .save(recipeOutput,"copper_hammer_head_replacing");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPERCHISEL)
+                .pattern(" X ")
+                .pattern("#  ")
+                .pattern("   ")
+                .define('#', ModItems.COPPERCHISEL)
+                .define('X', ModItems.COPPERCHISELBLADE)
+                .unlockedBy("has_copper_chisel", has(ModItems.COPPERCHISEL))
+                .unlockedBy("has_copper_chisel_blade", has(ModItems.COPPERCHISELBLADE))
+                .save(recipeOutput,"copper_chisel_blade_replacing");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPERSHEARS)
+                .pattern("X  ")
+                .pattern("#X ")
+                .pattern("   ")
+                .define('#', ModItems.COPPERSHEARS)
+                .define('X', ModItems.COPPERSMALLBLADE)
+                .unlockedBy("has_copper_shears", has(ModItems.COPPERSHEARS))
+                .unlockedBy("has_copper_small_blade", has(ModItems.COPPERSMALLBLADE))
+                .save(recipeOutput,"copper_shears_blade_replacing");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPERPICKAXE)
+                .pattern(" X ")
+                .pattern("#  ")
+                .pattern("   ")
+                .define('#', ModItems.COPPERPICKAXE)
+                .define('X', ModItems.COPPERPICKAXEHEAD)
+                .unlockedBy("has_copper_pickaxe", has(ModItems.COPPERPICKAXE))
+                .unlockedBy("has_copper_pickaxe_head", has(ModItems.COPPERPICKAXEHEAD))
+                .save(recipeOutput,"copper_pickaxe_head_replacing");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPERAXE)
+                .pattern(" X ")
+                .pattern("#  ")
+                .pattern("   ")
+                .define('#', ModItems.COPPERAXE)
+                .define('X', ModItems.COPPERAXEHEAD)
+                .unlockedBy("has_copper_axe", has(ModItems.COPPERAXE))
+                .unlockedBy("has_copper_axe_head", has(ModItems.COPPERAXEHEAD))
+                .save(recipeOutput,"copper_axe_head_replacing");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPERSHOVEL)
+                .pattern(" X ")
+                .pattern("#  ")
+                .pattern("   ")
+                .define('#', ModItems.COPPERSHOVEL)
+                .define('X', ModItems.COPPERSHOVELHEAD)
+                .unlockedBy("has_copper_shovel", has(ModItems.COPPERSHOVEL))
+                .unlockedBy("has_copper_shovel_head", has(ModItems.COPPERSHOVELHEAD))
+                .save(recipeOutput,"copper_shovel_head_replacing");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPERHOE)
+                .pattern(" X ")
+                .pattern("#  ")
+                .pattern("   ")
+                .define('#', ModItems.COPPERHOE)
+                .define('X', ModItems.COPPERHOEHEAD)
+                .unlockedBy("has_copper_hoe", has(ModItems.COPPERHOE))
+                .unlockedBy("has_copper_hoe_head", has(ModItems.COPPERHOEHEAD))
+                .save(recipeOutput,"copper_hoe_head_replacing");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPERSWORD)
+                .pattern("  /")
+                .pattern(" X ")
+                .pattern("#  ")
+                .define('#', ModItems.COPPERSWORD)
+                .define('X', ModItems.COPPERCROSSGUARD)
+                .define('/', ModItems.COPPERSWORDHEAD)
+                .unlockedBy("has_copper_sword", has(ModItems.COPPERSWORD))
+                .unlockedBy("has_copper_sword_head", has(ModItems.COPPERSWORDHEAD))
+                .unlockedBy("has_copper_crossguard", has(ModItems.COPPERCROSSGUARD))
+                .save(recipeOutput,"copper_sword_head_replacing");
+
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPERSHEARS)
                 .pattern(" X ")
                 .pattern("# X")
@@ -585,6 +725,32 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_copper_small_blade", has(ModItems.COPPERSMALLBLADE))
                 .unlockedBy("has_wooden_handle", has(ModItems.WOODENHANDLE))
                 .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.STARTERTOOLBOX)
+                .pattern("X#X")
+                .pattern("#O#")
+                .pattern("X#X")
+                .define('#', Items.COBBLESTONE)
+                .define('X', ModItems.SHARPPEBBLE)
+                .define('O', ModItems.STARTERTOOLBOX)
+                .unlockedBy("has_cobblestone", has(Items.COBBLESTONE))
+                .unlockedBy("has_sharp_pebble", has(ModItems.SHARPPEBBLE))
+                .unlockedBy("has_starter_toolbox", has(ModItems.STARTERTOOLBOX))
+                .save(recipeOutput,"starter_toolbox_tool_replacing");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.INTERMEDIATETOOLBOX)
+                .pattern("X X")
+                .pattern("KOT")
+                .pattern(" Y ")
+                .define('K', ModItems.COPPERSAWBLADE)
+                .define('Y', ModItems.COPPERCHISELBLADE)
+                .define('T', ModItems.COPPERHAMMERHEAD)
+                .define('X', ModItems.COPPERSMALLBLADE)
+                .define('O', ModItems.INTERMEDIATETOOLBOX)
+                .unlockedBy("has_cobblestone", has(Items.COBBLESTONE))
+                .unlockedBy("has_sharp_pebble", has(ModItems.SHARPPEBBLE))
+                .unlockedBy("has_intermediate_toolbox", has(ModItems.INTERMEDIATETOOLBOX))
+                .save(recipeOutput,"intermediate_toolbox_tool_replacing");
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.RUDIMENTARYCRAFTINGTABLE)
                 .requires(ModBlocks.PRIMITIVECRAFTINGTABLE)
@@ -1166,6 +1332,119 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         .addCriterion("has_wooden_slabs", RecipeProvider.has(ItemTags.WOODEN_SLABS))
                         .addCriterion("has_chisel", RecipeProvider.has(ModTags.Items.CHISELS))
                         .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "small_box").withPrefix("recipes/"))
+        );
+
+
+        ShapedRecipePattern Mod_shaped_pattern19 = ShapedRecipePattern.of(
+                Map.of(
+                        '#', Ingredient.of(ModItems.NAILGOLDMOLD),
+                        'O', Ingredient.of(ModItems.SMALLMELTEDCOPPERBLOB)
+                ),
+                List.of(
+                        " O#",
+                        " OO",
+                        "O  "
+                )
+        );
+
+        ModCustomCraftingShaped Mod_shaped_recipe19 = new ModCustomCraftingShaped(
+                "",
+                CraftingBookCategory.MISC,
+                Mod_shaped_pattern19,
+                new ItemStack(ModItems.COPPERNAIL.get())
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "copper_nail_gold_mold1"),
+                Mod_shaped_recipe19,
+                recipeOutput.advancement()
+                        .addCriterion("has_nail_gold_mold", RecipeProvider.has(ModItems.NAILGOLDMOLD))
+                        .addCriterion("has_small_melted_copper_blob", RecipeProvider.has(ModItems.SMALLMELTEDCOPPERBLOB))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "copper_nail_gold_mold1").withPrefix("recipes/"))
+        );
+
+        ShapedRecipePattern Mod_shaped_pattern20 = ShapedRecipePattern.of(
+                Map.of(
+                        '#', Ingredient.of(ModItems.NAILGOLDMOLD),
+                        'O', Ingredient.of(ModItems.SMALLMELTEDCOPPERBLOB)
+                ),
+                List.of(
+                        "O  ",
+                        " OO",
+                        " O#"
+                )
+        );
+
+        ModCustomCraftingShaped Mod_shaped_recipe20 = new ModCustomCraftingShaped(
+                "",
+                CraftingBookCategory.MISC,
+                Mod_shaped_pattern20,
+                new ItemStack(ModItems.COPPERNAIL.get())
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "copper_nail_gold_mold2"),
+                Mod_shaped_recipe20,
+                recipeOutput.advancement()
+                        .addCriterion("has_nail_gold_mold", RecipeProvider.has(ModItems.NAILGOLDMOLD))
+                        .addCriterion("has_small_melted_copper_blob", RecipeProvider.has(ModItems.SMALLMELTEDCOPPERBLOB))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "copper_nail_gold_mold2").withPrefix("recipes/"))
+        );
+
+        ShapedRecipePattern Mod_shaped_pattern21 = ShapedRecipePattern.of(
+                Map.of(
+                        '#', Ingredient.of(ModItems.NAILGOLDMOLD),
+                        'O', Ingredient.of(ModItems.SMALLMELTEDIRONBLOB)
+                ),
+                List.of(
+                        " O#",
+                        " OO",
+                        "O  "
+                )
+        );
+
+        ModCustomCraftingShaped Mod_shaped_recipe21 = new ModCustomCraftingShaped(
+                "",
+                CraftingBookCategory.MISC,
+                Mod_shaped_pattern21,
+                new ItemStack(ModItems.IRONNAIL.get())
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "iron_nail_gold_mold1"),
+                Mod_shaped_recipe21,
+                recipeOutput.advancement()
+                        .addCriterion("has_nail_gold_mold", RecipeProvider.has(ModItems.NAILGOLDMOLD))
+                        .addCriterion("has_small_melted_iron_blob", RecipeProvider.has(ModItems.SMALLMELTEDIRONBLOB))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "iron_nail_gold_mold1").withPrefix("recipes/"))
+        );
+
+        ShapedRecipePattern Mod_shaped_pattern22 = ShapedRecipePattern.of(
+                Map.of(
+                        '#', Ingredient.of(ModItems.NAILGOLDMOLD),
+                        'O', Ingredient.of(ModItems.SMALLMELTEDIRONBLOB)
+                ),
+                List.of(
+                        "O  ",
+                        " OO",
+                        " O#"
+                )
+        );
+
+        ModCustomCraftingShaped Mod_shaped_recipe22 = new ModCustomCraftingShaped(
+                "",
+                CraftingBookCategory.MISC,
+                Mod_shaped_pattern22,
+                new ItemStack(ModItems.IRONNAIL.get())
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "iron_nail_gold_mold2"),
+                Mod_shaped_recipe22,
+                recipeOutput.advancement()
+                        .addCriterion("has_nail_gold_mold", RecipeProvider.has(ModItems.NAILGOLDMOLD))
+                        .addCriterion("has_small_melted_iron_blob", RecipeProvider.has(ModItems.SMALLMELTEDIRONBLOB))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "iron_nail_gold_mold2").withPrefix("recipes/"))
         );
 
 
@@ -2043,6 +2322,236 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "coal_powder_from_block").withPrefix("recipes/"))
         );
 
+        List<Ingredient> Mod_shapeless_ingredients39 = List.of(
+                Ingredient.of(ModTags.Items.NUGGETSHAPED),
+                Ingredient.of(ModItems.EMPTYSANDMOLD)
+        );
+
+        ModCustomCraftingShapeless Mod_shapeless_recipe39 = new ModCustomCraftingShapeless(
+                0,
+                false,
+                "",
+                CraftingBookCategory.MISC,
+                new ItemStack(ModItems.NUGGETSANDMOLD.get()),
+                Mod_shapeless_ingredients39
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "nugget_sand_mold"),
+                Mod_shapeless_recipe39,
+                recipeOutput.advancement()
+                        .addCriterion("has_empty_sand_mold", RecipeProvider.has(ModItems.EMPTYSANDMOLD))
+                        .addCriterion("has_nugget_shaped", RecipeProvider.has(ModTags.Items.NUGGETSHAPED))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "nugget_sand_mold").withPrefix("recipes/"))
+        );
+
+        List<Ingredient> Mod_shapeless_ingredients40 = List.of(
+                Ingredient.of(ModTags.Items.NUGGETSHAPED),
+                Ingredient.of(ModItems.MELTEDEMPTYGOLDMOLD)
+        );
+
+        ModCustomCraftingShapeless Mod_shapeless_recipe40 = new ModCustomCraftingShapeless(
+                0,
+                false,
+                "",
+                CraftingBookCategory.MISC,
+                new ItemStack(ModItems.MELTEDNUGGETGOLDMOLD.get()),
+                Mod_shapeless_ingredients40
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "melted_nugget_gold_mold"),
+                Mod_shapeless_recipe40,
+                recipeOutput.advancement()
+                        .addCriterion("has_melted_empty_gold_mold", RecipeProvider.has(ModItems.MELTEDEMPTYGOLDMOLD))
+                        .addCriterion("has_nugget_shaped", RecipeProvider.has(ModTags.Items.NUGGETSHAPED))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "melted_nugget_gold_mold").withPrefix("recipes/"))
+        );
+
+        List<Ingredient> Mod_shapeless_ingredients41 = List.of(
+                Ingredient.of(ModTags.Items.INGOTSHAPED),
+                Ingredient.of(ModItems.MELTEDEMPTYGOLDMOLD)
+        );
+
+        ModCustomCraftingShapeless Mod_shapeless_recipe41 = new ModCustomCraftingShapeless(
+                0,
+                false,
+                "",
+                CraftingBookCategory.MISC,
+                new ItemStack(ModItems.MELTEDINGOTGOLDMOLD.get()),
+                Mod_shapeless_ingredients41
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "melted_ingot_gold_mold"),
+                Mod_shapeless_recipe41,
+                recipeOutput.advancement()
+                        .addCriterion("has_melted_empty_gold_mold", RecipeProvider.has(ModItems.MELTEDEMPTYGOLDMOLD))
+                        .addCriterion("has_ingot_shaped", RecipeProvider.has(ModTags.Items.INGOTSHAPED))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "melted_ingot_gold_mold").withPrefix("recipes/"))
+        );
+
+        List<Ingredient> Mod_shapeless_ingredients42 = List.of(
+                Ingredient.of(ModTags.Items.NAILSHAPED),
+                Ingredient.of(ModItems.MELTEDEMPTYGOLDMOLD)
+        );
+
+        ModCustomCraftingShapeless Mod_shapeless_recipe42 = new ModCustomCraftingShapeless(
+                0,
+                false,
+                "",
+                CraftingBookCategory.MISC,
+                new ItemStack(ModItems.MELTEDNAILGOLDMOLD.get()),
+                Mod_shapeless_ingredients42
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "melted_nail_gold_mold"),
+                Mod_shapeless_recipe42,
+                recipeOutput.advancement()
+                        .addCriterion("has_melted_empty_gold_mold", RecipeProvider.has(ModItems.MELTEDEMPTYGOLDMOLD))
+                        .addCriterion("has_nail_shaped", RecipeProvider.has(ModTags.Items.NAILSHAPED))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "melted_nail_gold_mold").withPrefix("recipes/"))
+        );
+
+        List<Ingredient> Mod_shapeless_ingredients43 = List.of(
+                Ingredient.of(ModItems.MELTEDCOPPERBLOB),
+                Ingredient.of(ModItems.INGOTGOLDMOLD)
+        );
+
+        ModCustomCraftingShapeless Mod_shapeless_recipe43 = new ModCustomCraftingShapeless(
+                1,
+                true,
+                "",
+                CraftingBookCategory.MISC,
+                new ItemStack(Items.COPPER_INGOT),
+                Mod_shapeless_ingredients43
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "copper_ingot_gold_mold"),
+                Mod_shapeless_recipe43,
+                recipeOutput.advancement()
+                        .addCriterion("has_ingot_gold_mold", RecipeProvider.has(ModItems.INGOTGOLDMOLD))
+                        .addCriterion("has_melted_copper_blob", RecipeProvider.has(ModItems.MELTEDCOPPERBLOB))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "copper_ingot_gold_mold").withPrefix("recipes/"))
+        );
+
+        List<Ingredient> Mod_shapeless_ingredients44 = List.of(
+                Ingredient.of(ModItems.MELTEDGOLDBLOB),
+                Ingredient.of(ModItems.INGOTGOLDMOLD)
+        );
+
+        ModCustomCraftingShapeless Mod_shapeless_recipe44 = new ModCustomCraftingShapeless(
+                1,
+                true,
+                "",
+                CraftingBookCategory.MISC,
+                new ItemStack(Items.GOLD_INGOT),
+                Mod_shapeless_ingredients44
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "gold_ingot_gold_mold"),
+                Mod_shapeless_recipe44,
+                recipeOutput.advancement()
+                        .addCriterion("has_ingot_gold_mold", RecipeProvider.has(ModItems.INGOTGOLDMOLD))
+                        .addCriterion("has_melted_gold_blob", RecipeProvider.has(ModItems.MELTEDGOLDBLOB))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "gold_ingot_gold_mold").withPrefix("recipes/"))
+        );
+
+        List<Ingredient> Mod_shapeless_ingredients45 = List.of(
+                Ingredient.of(ModItems.MELTEDIRONBLOB),
+                Ingredient.of(ModItems.INGOTGOLDMOLD)
+        );
+
+        ModCustomCraftingShapeless Mod_shapeless_recipe45 = new ModCustomCraftingShapeless(
+                1,
+                true,
+                "",
+                CraftingBookCategory.MISC,
+                new ItemStack(Items.IRON_INGOT),
+                Mod_shapeless_ingredients45
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "iron_ingot_gold_mold"),
+                Mod_shapeless_recipe45,
+                recipeOutput.advancement()
+                        .addCriterion("has_ingot_gold_mold", RecipeProvider.has(ModItems.INGOTGOLDMOLD))
+                        .addCriterion("has_melted_iron_blob", RecipeProvider.has(ModItems.MELTEDIRONBLOB))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "iron_ingot_gold_mold").withPrefix("recipes/"))
+        );
+
+        List<Ingredient> Mod_shapeless_ingredients46 = List.of(
+                Ingredient.of(ModItems.SMALLMELTEDCOPPERBLOB),
+                Ingredient.of(ModItems.NUGGETGOLDMOLD)
+        );
+
+        ModCustomCraftingShapeless Mod_shapeless_recipe46 = new ModCustomCraftingShapeless(
+                1,
+                true,
+                "",
+                CraftingBookCategory.MISC,
+                new ItemStack(ModItems.COPPERNUGGET.get()),
+                Mod_shapeless_ingredients46
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "copper_nugget_gold_mold"),
+                Mod_shapeless_recipe46,
+                recipeOutput.advancement()
+                        .addCriterion("has_nugget_gold_mold", RecipeProvider.has(ModItems.NUGGETGOLDMOLD))
+                        .addCriterion("has_small_melted_copper_blob", RecipeProvider.has(ModItems.SMALLMELTEDCOPPERBLOB))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "copper_nugget_gold_mold").withPrefix("recipes/"))
+        );
+
+        List<Ingredient> Mod_shapeless_ingredients47 = List.of(
+                Ingredient.of(ModItems.SMALLMELTEDIRONBLOB),
+                Ingredient.of(ModItems.NUGGETGOLDMOLD)
+        );
+
+        ModCustomCraftingShapeless Mod_shapeless_recipe47 = new ModCustomCraftingShapeless(
+                1,
+                true,
+                "",
+                CraftingBookCategory.MISC,
+                new ItemStack(Items.IRON_NUGGET),
+                Mod_shapeless_ingredients47
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "iron_nugget_gold_mold"),
+                Mod_shapeless_recipe47,
+                recipeOutput.advancement()
+                        .addCriterion("has_nugget_gold_mold", RecipeProvider.has(ModItems.NUGGETGOLDMOLD))
+                        .addCriterion("has_small_melted_iron_blob", RecipeProvider.has(ModItems.SMALLMELTEDIRONBLOB))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "iron_nugget_gold_mold").withPrefix("recipes/"))
+        );
+
+        List<Ingredient> Mod_shapeless_ingredients48 = List.of(
+                Ingredient.of(ModItems.SMALLMELTEDGOLDBLOB),
+                Ingredient.of(ModItems.NUGGETGOLDMOLD)
+        );
+
+        ModCustomCraftingShapeless Mod_shapeless_recipe48 = new ModCustomCraftingShapeless(
+                1,
+                true,
+                "",
+                CraftingBookCategory.MISC,
+                new ItemStack(Items.GOLD_NUGGET),
+                Mod_shapeless_ingredients48
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "gold_nugget_gold_mold"),
+                Mod_shapeless_recipe48,
+                recipeOutput.advancement()
+                        .addCriterion("has_nugget_gold_mold", RecipeProvider.has(ModItems.NUGGETGOLDMOLD))
+                        .addCriterion("has_small_melted_gold_blob", RecipeProvider.has(ModItems.SMALLMELTEDGOLDBLOB))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "gold_nugget_gold_mold").withPrefix("recipes/"))
+        );
+
         CobblestoneAnvilRecipeBuilder.anvil(ModItems.MELTEDCOPPERPLATE)
                 .pattern(" #  ")
                 .pattern(" OO ")
@@ -2108,6 +2617,83 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_melted_iron_blob", has(ModItems.MELTEDIRONBLOB))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
                         ProgressRevamp.MODID, "melted_iron_plate_3"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.MELTEDGOLDPLATE)
+                .pattern(" #  ")
+                .pattern(" OO ")
+                .pattern("    ")
+                .define('#', ModTags.Items.HAMMERS)
+                .define('O', ModItems.MELTEDGOLDBLOB)
+                .unlockedBy("has_hammer", has(ModTags.Items.HAMMERS))
+                .unlockedBy("has_melted_gold_blob", has(ModItems.MELTEDGOLDBLOB))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "melted_gold_plate_1"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.MELTEDGOLDPLATE)
+                .pattern("    ")
+                .pattern(" OO ")
+                .pattern("  # ")
+                .define('#', ModTags.Items.HAMMERS)
+                .define('O', ModItems.MELTEDGOLDBLOB)
+                .unlockedBy("has_hammer", has(ModTags.Items.HAMMERS))
+                .unlockedBy("has_melted_gold_blob", has(ModItems.MELTEDGOLDBLOB))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "melted_gold_plate_2"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.MELTEDGOLDPLATE)
+                .pattern("    ")
+                .pattern("#OO ")
+                .pattern("    ")
+                .define('#', ModTags.Items.HAMMERS)
+                .define('O', ModItems.MELTEDGOLDBLOB)
+                .unlockedBy("has_hammer", has(ModTags.Items.HAMMERS))
+                .unlockedBy("has_melted_gold_blob", has(ModItems.MELTEDGOLDBLOB))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "melted_gold_plate_3"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.MELTEDEMPTYGOLDMOLD)
+                .pattern("##  ")
+                .pattern("##O ")
+                .pattern("    ")
+                .define('O', ModTags.Items.HAMMERS)
+                .define('#', ModItems.MELTEDGOLDPLATE)
+                .unlockedBy("has_hammer", has(ModTags.Items.HAMMERS))
+                .unlockedBy("has_melted_gold_plate", has(ModItems.MELTEDGOLDPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "melted_empty_gold_mold_1"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.MELTEDEMPTYGOLDMOLD)
+                .pattern("##O ")
+                .pattern("##  ")
+                .pattern("    ")
+                .define('O', ModTags.Items.HAMMERS)
+                .define('#', ModItems.MELTEDGOLDPLATE)
+                .unlockedBy("has_hammer", has(ModTags.Items.HAMMERS))
+                .unlockedBy("has_melted_gold_plate", has(ModItems.MELTEDGOLDPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "melted_empty_gold_mold_2"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.MELTEDEMPTYGOLDMOLD)
+                .pattern("  O ")
+                .pattern(" ## ")
+                .pattern(" ## ")
+                .define('O', ModTags.Items.HAMMERS)
+                .define('#', ModItems.MELTEDGOLDPLATE)
+                .unlockedBy("has_hammer", has(ModTags.Items.HAMMERS))
+                .unlockedBy("has_melted_gold_plate", has(ModItems.MELTEDGOLDPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "melted_empty_gold_mold_3"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.MELTEDEMPTYGOLDMOLD)
+                .pattern(" ## ")
+                .pattern(" ## ")
+                .pattern("  O ")
+                .define('O', ModTags.Items.HAMMERS)
+                .define('#', ModItems.MELTEDGOLDPLATE)
+                .unlockedBy("has_hammer", has(ModTags.Items.HAMMERS))
+                .unlockedBy("has_melted_gold_plate", has(ModItems.MELTEDGOLDPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "melted_empty_gold_mold_4"));
 
         CobblestoneAnvilRecipeBuilder.anvil(ModItems.COPPERHELMETHOT)
                 .pattern(" OUO")
@@ -2424,6 +3010,48 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_coal_blocks", has(ModTags.Items.COALBLOCKS))
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath("minecraft", "furnace"));
 
+        TierOneCraftingTableRecipeBuilder.intermediate_recipe(ModBlocks.REINFORCEDBARREL)
+                .pattern("  T  ")
+                .pattern(" EEE ")
+                .pattern("TE#ET")
+                .pattern(" EEE ")
+                .pattern("  T  ")
+                .define('E', ModTags.Items.IRONPLATES)
+                .define('#', Blocks.BARREL)
+                .define('T', ModItems.IRONNAIL)
+                .unlockedBy("has_iron_plates", has(ModTags.Items.IRONPLATES))
+                .unlockedBy("has_barrel", has(Blocks.BARREL))
+                .unlockedBy("has_iron_nail", has(ModItems.IRONNAIL))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "reinforced_barrel"));
+
+        CampfireWithCrucibleRecipeBuilder.crucible(ModTags.Items.COPPERBLOBMELTABLES, ModItems.MELTEDCOPPERBLOB, 1200)
+                .unlockedBy("has_copper_blob_meltables", has(ModTags.Items.COPPERBLOBMELTABLES))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "crucible_melted_copper_blob"));
+
+        CampfireWithCrucibleRecipeBuilder.crucible(ModTags.Items.GOLDBLOBMELTABLES, ModItems.MELTEDGOLDBLOB, 1200)
+                .unlockedBy("has_gold_blob_meltables", has(ModTags.Items.GOLDBLOBMELTABLES))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "crucible_melted_gold_blob"));
+
+        CampfireWithCrucibleRecipeBuilder.crucible(ModTags.Items.SMALLCOPPERBLOBMELTABLES, ModItems.SMALLMELTEDCOPPERBLOB, 180)
+                .unlockedBy("has_small_copper_blob_meltables", has(ModTags.Items.SMALLCOPPERBLOBMELTABLES))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "crucible_small_melted_copper_blob"));
+
+        CampfireWithCrucibleRecipeBuilder.crucible(ModTags.Items.SMALLGOLDBLOBMELTABLES, ModItems.SMALLMELTEDGOLDBLOB, 180)
+                .unlockedBy("has_small_gold_blob_meltables", has(ModTags.Items.SMALLGOLDBLOBMELTABLES))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "crucible_small_melted_gold_blob"));
+
+        CampfireWithCrucibleRecipeBuilder.crucible(ModTags.Items.COPPERBLOCKMELTABLES, ModBlocks.MELTEDCOPPERBLOCK, 10800)
+                .unlockedBy("has_copper_block_meltables", has(ModTags.Items.COPPERBLOCKMELTABLES))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "crucible_melted_copper_block"));
+
+        CampfireWithCrucibleRecipeBuilder.crucible(ModTags.Items.GOLDBLOCKMELTABLES, ModBlocks.MELTEDGOLDBLOCK, 10800)
+                .unlockedBy("has_gold_block_meltables", has(ModTags.Items.GOLDBLOCKMELTABLES))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "crucible_melted_gold_block"));
+
+        CampfireWithCrucibleRecipeBuilder.crucible(ModItems.EMPTYGOLDMOLD, ModItems.MELTEDEMPTYGOLDMOLD, 4800)
+                .unlockedBy("has_empty_gold_mold", has(ModItems.EMPTYGOLDMOLD))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "melted_empty_gold_mold_campfire_with_crucible"));
+
         List<ItemLike> SALTED_BEEF_INGREDIENT = List.of( ModItems.SALTEDBEEF );
         List<ItemLike> SALTED_CHICKEN_INGREDIENT = List.of( ModItems.RAWSALTEDCHICKEN );
         List<ItemLike> SALTED_PORKCHOPS_INGREDIENT = List.of( ModItems.RAWSALTEDPORKCHOPS );
@@ -2453,6 +3081,36 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 Items.IRON_INGOT,
                 Items.RAW_IRON,
                 Items.DEEPSLATE_IRON_ORE
+        );
+
+        List<ItemLike> SMALL_IRON_BLOB_INGREDIENT = List.of(
+                Items.IRON_NUGGET
+        );
+
+        List<ItemLike> SMALL_COPPER_BLOB_INGREDIENT = List.of(
+                ModItems.COPPERNUGGET
+        );
+
+        List<ItemLike> SMALL_GOLD_BLOB_INGREDIENT = List.of(
+                Items.GOLD_NUGGET
+        );
+
+        List<ItemLike> IRON_BLOCK_INGREDIENT = List.of(
+                Items.IRON_BLOCK,
+                Items.RAW_IRON_BLOCK,
+                ModBlocks.IRONBARBLOCK
+        );
+
+        List<ItemLike> GOLD_BLOCK_INGREDIENT = List.of(
+                Items.GOLD_BLOCK,
+                Items.RAW_GOLD_BLOCK,
+                ModBlocks.GOLDBARBLOCK
+        );
+
+        List<ItemLike> COPPER_BLOCK_INGREDIENT = List.of(
+                Items.COPPER_BLOCK,
+                Items.RAW_COPPER_BLOCK,
+                ModBlocks.COPPERBARBLOCK
         );
 
         oreSmelting(recipeOutput, SALTED_BEEF_INGREDIENT, RecipeCategory.FOOD, ModItems.SALTEDCOOKEDBEEF.get(), 0.4f, 200, "salted_cooked_beef");
@@ -2507,6 +3165,29 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         oreBlasting(recipeOutput, COPPER_BLOB_INGREDIENT, RecipeCategory.MISC, ModItems.MELTEDCOPPERBLOB.get(), 0.4f, 100, "melted_copper_blob");
 
+        oreSmelting(recipeOutput, SMALL_IRON_BLOB_INGREDIENT, RecipeCategory.MISC, ModItems.SMALLMELTEDIRONBLOB.get(), 0.04f, 25, "small_melted_iron_blob");
+
+        oreBlasting(recipeOutput, SMALL_IRON_BLOB_INGREDIENT, RecipeCategory.MISC, ModItems.SMALLMELTEDIRONBLOB.get(), 0.04f, 12, "small_melted_iron_blob");
+
+        oreSmelting(recipeOutput, SMALL_COPPER_BLOB_INGREDIENT, RecipeCategory.MISC, ModItems.SMALLMELTEDCOPPERBLOB.get(), 0.04f, 25, "small_melted_copper_blob");
+
+        oreBlasting(recipeOutput, SMALL_COPPER_BLOB_INGREDIENT, RecipeCategory.MISC, ModItems.SMALLMELTEDCOPPERBLOB.get(), 0.04f, 12, "small_melted_copper_blob");
+
+        oreSmelting(recipeOutput, SMALL_GOLD_BLOB_INGREDIENT, RecipeCategory.MISC, ModItems.SMALLMELTEDGOLDBLOB.get(), 0.04f, 25, "small_melted_gold_blob");
+
+        oreBlasting(recipeOutput, SMALL_GOLD_BLOB_INGREDIENT, RecipeCategory.MISC, ModItems.SMALLMELTEDGOLDBLOB.get(), 0.04f, 12, "small_melted_gold_blob");
+
+        oreSmelting(recipeOutput, IRON_BLOCK_INGREDIENT, RecipeCategory.MISC, ModBlocks.MELTEDIRONBLOCK.get(), 3.6f, 1800, "melted_iron_block");
+
+        oreBlasting(recipeOutput, IRON_BLOCK_INGREDIENT, RecipeCategory.MISC, ModBlocks.MELTEDIRONBLOCK.get(), 3.6f, 900, "melted_iron_block");
+
+        oreSmelting(recipeOutput, COPPER_BLOCK_INGREDIENT, RecipeCategory.MISC, ModBlocks.MELTEDCOPPERBLOCK.get(), 3.6f, 1800, "melted_copper_block");
+
+        oreBlasting(recipeOutput, COPPER_BLOCK_INGREDIENT, RecipeCategory.MISC, ModBlocks.MELTEDCOPPERBLOCK.get(), 3.6f, 900, "melted_copper_block");
+
+        oreSmelting(recipeOutput, GOLD_BLOCK_INGREDIENT, RecipeCategory.MISC, ModBlocks.MELTEDGOLDBLOCK.get(), 3.6f, 1800, "melted_gold_block");
+
+        oreBlasting(recipeOutput, GOLD_BLOCK_INGREDIENT, RecipeCategory.MISC, ModBlocks.MELTEDGOLDBLOCK.get(), 3.6f, 900, "melted_gold_block");
     }
 
     protected static void oreSmelting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,

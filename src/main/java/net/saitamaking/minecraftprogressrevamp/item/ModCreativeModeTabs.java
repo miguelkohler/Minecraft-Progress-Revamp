@@ -59,6 +59,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.REFINEDCRUCIBLE);
                         output.accept(ModBlocks.CAMPFIREWITHCRUCIBLE);
                         output.accept(ModItems.EMPTYSANDMOLD);
+                        output.accept(ModItems.NUGGETSANDMOLD);
                         output.accept(ModItems.INGOTSANDMOLD);
                         output.accept(ModItems.NAILSANDMOLD);
                         output.accept(ModItems.SALT);
@@ -94,6 +95,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.COPPERNAIL);
                         output.accept(Items.COPPER_INGOT);
                         output.accept(ModBlocks.COPPERBARBLOCK);
+                        output.accept(ModItems.COPPERNUGGET);
                         output.accept(ModItems.MELTEDCOPPERPLATE);
                         output.accept(ModItems.COPPERPLATE);
                         output.accept(ModItems.COPPERAXEHEADHOT);
@@ -139,12 +141,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.COPPERLEGGINGS);
                         output.accept(ModItems.COPPERBOOTS);
                         output.accept(Blocks.COPPER_BLOCK);
-                        output.accept(ModItems.MELTEDGOLDBLOB);
-                        output.accept(ModItems.SMALLMELTEDGOLDBLOB);
-                        output.accept(ModBlocks.MELTEDGOLDBLOCK);
-                        output.accept(Items.GOLD_INGOT);
-                        output.accept(ModBlocks.GOLDBARBLOCK);
-                        output.accept(Blocks.GOLD_BLOCK);
                         output.accept(Blocks.FURNACE);
                         output.accept(ModBlocks.COPPERCRATE);
 
@@ -165,9 +161,28 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.MELTEDIRONBLOB);
                         output.accept(ModItems.SMALLMELTEDIRONBLOB);
                         output.accept(ModItems.MELTEDIRONPLATE);
+                        output.accept(ModItems.IRONPLATE);
+                        output.accept(ModItems.IRONNAIL);
                         output.accept(ModBlocks.MELTEDIRONBLOCK);
                         output.accept(Items.IRON_INGOT);
                         output.accept(ModBlocks.IRONBARBLOCK);
+                        output.accept(ModItems.MELTEDGOLDBLOB);
+                        output.accept(ModItems.SMALLMELTEDGOLDBLOB);
+                        output.accept(ModBlocks.MELTEDGOLDBLOCK);
+                        output.accept(ModItems.MELTEDGOLDPLATE);
+                        output.accept(ModItems.GOLDPLATE);
+                        output.accept(Items.GOLD_INGOT);
+                        output.accept(ModBlocks.GOLDBARBLOCK);
+                        output.accept(Blocks.GOLD_BLOCK);
+                        output.accept(ModItems.MELTEDEMPTYGOLDMOLD);
+                        output.accept(ModItems.MELTEDNUGGETGOLDMOLD);
+                        output.accept(ModItems.MELTEDINGOTGOLDMOLD);
+                        output.accept(ModItems.MELTEDNAILGOLDMOLD);
+                        output.accept(ModItems.EMPTYGOLDMOLD);
+                        output.accept(ModItems.NUGGETGOLDMOLD);
+                        output.accept(ModItems.INGOTGOLDMOLD);
+                        output.accept(ModItems.NAILGOLDMOLD);
+                        output.accept(ModBlocks.REINFORCEDBARREL);
 
 
 

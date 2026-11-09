@@ -1,0 +1,20 @@
+{
+  "type": "minecraftprogressrevamp:cobblestone_anvil",
+  "key": {
+    "#": {
+      "item": "minecraftprogressrevamp:melted_gold_plate"
+    },
+    "O": {
+      "tag": "minecraftprogressrevamp:hammers"
+    }
+  },
+  "pattern": [
+    "  O ",
+    " ## ",
+    " ## "
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:melted_empty_gold_mold"
+  }
+}

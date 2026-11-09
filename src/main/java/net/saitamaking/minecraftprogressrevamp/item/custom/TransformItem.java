@@ -25,11 +25,11 @@ import java.util.function.Supplier;
 public class TransformItem extends Item {
 
     private final ResourceLocation targetBlockId;
-    private final Supplier<? extends Item> result;
+    private final Item result;
 
     private static final ResourceLocation GRINDSTONE = ResourceLocation.withDefaultNamespace("grindstone");
 
-    public TransformItem(String blockKey, Supplier<? extends Item> result, Properties properties) {
+    public TransformItem(String blockKey, Item result, Properties properties) {
         super(properties);
         this.targetBlockId = ResourceLocation.parse(blockKey.contains(":") ? blockKey : "minecraft:" + blockKey);
         this.result = result;
@@ -61,7 +61,7 @@ public class TransformItem extends Item {
     }
 
     private void transform(Player player, InteractionHand hand, ItemStack stack) {
-        ItemStack newStack = new ItemStack(result.get());
+        ItemStack newStack = new ItemStack(result);
 
         if (stack.getCount() == 1) {
             player.setItemInHand(hand, newStack);

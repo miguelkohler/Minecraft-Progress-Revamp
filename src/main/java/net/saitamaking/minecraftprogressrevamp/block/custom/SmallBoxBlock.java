@@ -11,6 +11,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -76,6 +77,14 @@ public class SmallBoxBlock extends BaseEntityBlock implements SimpleWaterloggedB
 
     protected BlockState mirror(BlockState state, Mirror mirror) {
         return (BlockState)state.setValue(ROTATION, mirror.mirror((Integer)state.getValue(ROTATION), 16));
+    }
+
+    protected boolean hasAnalogOutputSignal(BlockState state) {
+        return true;
+    }
+
+    protected int getAnalogOutputSignal(BlockState blockState, Level level, BlockPos pos) {
+        return AbstractContainerMenu.getRedstoneSignalFromBlockEntity(level.getBlockEntity(pos));
     }
 
     private static final VoxelShape[] SHAPES = new VoxelShape[16];

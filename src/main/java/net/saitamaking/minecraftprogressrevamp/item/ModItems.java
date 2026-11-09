@@ -11,6 +11,11 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.saitamaking.minecraftprogressrevamp.ProgressRevamp;
 import net.saitamaking.minecraftprogressrevamp.item.custom.*;
 
+import java.util.function.Supplier;
+
+import static net.minecraft.world.item.Items.GOLD_NUGGET;
+import static net.minecraft.world.item.Items.IRON_NUGGET;
+
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ProgressRevamp.MODID);
 
@@ -85,11 +90,23 @@ public class ModItems {
     public static final DeferredItem<Item> COPPERPLATE = ITEMS.register("copper_plate",
             () -> new Item(new Item.Properties()));
 
+    public static final DeferredItem<Item> IRONPLATE = ITEMS.register("iron_plate",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> GOLDPLATE = ITEMS.register("gold_plate",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> COPPERNUGGET = ITEMS.register("copper_nugget",
+            () -> new Item(new Item.Properties()));
+
     public static final DeferredItem<Item> MELTEDCOPPERPLATE = ITEMS.register("melted_copper_plate",
-            () -> new TransformItem("water_cauldron",COPPERPLATE,new Item.Properties()));
+            () -> new TransformItem("water_cauldron",ModItems.COPPERPLATE.get(),new Item.Properties()));
 
     public static final DeferredItem<Item> MELTEDIRONPLATE = ITEMS.register("melted_iron_plate",
-            () -> new Item(new Item.Properties()));
+            () -> new TransformItem("water_cauldron",ModItems.IRONPLATE.get(),new Item.Properties()));
+
+    public static final DeferredItem<Item> MELTEDGOLDPLATE = ITEMS.register("melted_gold_plate",
+            () -> new TransformItem("water_cauldron",ModItems.GOLDPLATE.get(),new Item.Properties()));
 
     public static final DeferredItem<Item> CLAYBRICK = ITEMS.register("clay_brick",
             () -> new Item(new Item.Properties()));
@@ -108,6 +125,33 @@ public class ModItems {
 
     public static final DeferredItem<Item> NAILSANDMOLD = ITEMS.register("nail_sand_mold",
             () -> new Item(new Item.Properties().stacksTo(16)));
+
+    public static final DeferredItem<Item> NUGGETSANDMOLD = ITEMS.register("nugget_sand_mold",
+            () -> new Item(new Item.Properties().stacksTo(16)));
+
+    public static final DeferredItem<Item> EMPTYGOLDMOLD = ITEMS.register("empty_gold_mold",
+            () -> new Item(new Item.Properties().stacksTo(16)));
+
+    public static final DeferredItem<Item> INGOTGOLDMOLD = ITEMS.register("ingot_gold_mold",
+            () -> new Item(new Item.Properties().durability(64)));
+
+    public static final DeferredItem<Item> NUGGETGOLDMOLD = ITEMS.register("nugget_gold_mold",
+            () -> new Item(new Item.Properties().durability(64)));
+
+    public static final DeferredItem<Item> NAILGOLDMOLD = ITEMS.register("nail_gold_mold",
+            () -> new Item(new Item.Properties().durability(64)));
+
+    public static final DeferredItem<Item> MELTEDEMPTYGOLDMOLD = ITEMS.register("melted_empty_gold_mold",
+            () -> new TransformItem("water_cauldron", ModItems.EMPTYGOLDMOLD.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> MELTEDINGOTGOLDMOLD = ITEMS.register("melted_ingot_gold_mold",
+            () -> new TransformItem("water_cauldron", ModItems.INGOTGOLDMOLD.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> MELTEDNUGGETGOLDMOLD = ITEMS.register("melted_nugget_gold_mold",
+            () -> new TransformItem("water_cauldron", ModItems.NUGGETGOLDMOLD.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> MELTEDNAILGOLDMOLD = ITEMS.register("melted_nail_gold_mold",
+            () -> new TransformItem("water_cauldron", ModItems.NAILGOLDMOLD.get(), new Item.Properties()));
 
     public static final DeferredItem<Item> TREEBARK = ITEMS.register("tree_bark",
             () -> new Item(new Item.Properties()));
@@ -146,21 +190,24 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> SMALLMELTEDCOPPERBLOB = ITEMS.register("small_melted_copper_blob",
-            () -> new Item(new Item.Properties()));
+            () -> new TransformItem("water_cauldron", ModItems.COPPERNUGGET.get(), new Item.Properties()));
 
     public static final DeferredItem<Item> MELTEDGOLDBLOB = ITEMS.register("melted_gold_blob",
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> SMALLMELTEDGOLDBLOB = ITEMS.register("small_melted_gold_blob",
-            () -> new Item(new Item.Properties()));
+            () -> new TransformItem("water_cauldron", GOLD_NUGGET, new Item.Properties()));
 
     public static final DeferredItem<Item> MELTEDIRONBLOB = ITEMS.register("melted_iron_blob",
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> SMALLMELTEDIRONBLOB = ITEMS.register("small_melted_iron_blob",
-            () -> new Item(new Item.Properties()));
+            () -> new TransformItem("water_cauldron", IRON_NUGGET, new Item.Properties()));
 
     public static final DeferredItem<Item> COPPERNAIL = ITEMS.register("copper_nail",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> IRONNAIL = ITEMS.register("iron_nail",
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> FIRESTARTER = ITEMS.register("firestarter",
@@ -246,16 +293,16 @@ public class ModItems {
                     new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(11))));
 
     public static final DeferredItem<Item> COPPERHELMETHOT = ITEMS.register("copper_helmet_hot",
-            () -> new TransformItem("water_cauldron", COPPERHELMET, new Item.Properties().stacksTo(1)));
+            () -> new TransformItem("water_cauldron", ModItems.COPPERHELMET.get(), new Item.Properties().stacksTo(1)));
 
     public static final DeferredItem<Item> COPPERCHESTPLATEHOT = ITEMS.register("copper_chestplate_hot",
-            () -> new TransformItem("water_cauldron", COPPERCHESTPLATE, new Item.Properties().stacksTo(1)));
+            () -> new TransformItem("water_cauldron", ModItems.COPPERCHESTPLATE.get(), new Item.Properties().stacksTo(1)));
 
     public static final DeferredItem<Item> COPPERLEGGINGSHOT = ITEMS.register("copper_leggings_hot",
-            () -> new TransformItem("water_cauldron", COPPERLEGGINGS, new Item.Properties().stacksTo(1)));
+            () -> new TransformItem("water_cauldron", ModItems.COPPERLEGGINGS.get(), new Item.Properties().stacksTo(1)));
 
     public static final DeferredItem<Item> COPPERBOOTSHOT = ITEMS.register("copper_boots_hot",
-            () -> new TransformItem("water_cauldron", COPPERBOOTS, new Item.Properties().stacksTo(1)));
+            () -> new TransformItem("water_cauldron", ModItems.COPPERBOOTS.get(), new Item.Properties().stacksTo(1)));
 
     public static final DeferredItem<Item> COPPERAXEHEAD = ITEMS.register("copper_axe_head",
             () -> new Item(new Item.Properties()));
@@ -288,46 +335,46 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> COPPERSWORDHEADDULL = ITEMS.register("copper_sword_head_dull",
-            () -> new TransformItem("grindstone",ModItems.COPPERSWORDHEAD,new Item.Properties()));
+            () -> new TransformItem("grindstone",ModItems.COPPERSWORDHEAD.get(),new Item.Properties()));
 
     public static final DeferredItem<Item> COPPERAXEHEADDULL = ITEMS.register("copper_axe_head_dull",
-            () -> new TransformItem("grindstone",ModItems.COPPERAXEHEAD,new Item.Properties()));
+            () -> new TransformItem("grindstone",ModItems.COPPERAXEHEAD.get(),new Item.Properties()));
 
     public static final DeferredItem<Item> COPPERSMALLBLADEDULL = ITEMS.register("copper_small_blade_dull",
-            () -> new TransformItem("grindstone",ModItems.COPPERSMALLBLADE,new Item.Properties()));
+            () -> new TransformItem("grindstone",ModItems.COPPERSMALLBLADE.get(),new Item.Properties()));
 
     public static final DeferredItem<Item> COPPERCHISELBLADEDULL = ITEMS.register("copper_chisel_blade_dull",
-            () -> new TransformItem("grindstone",ModItems.COPPERCHISELBLADE,new Item.Properties()));
+            () -> new TransformItem("grindstone",ModItems.COPPERCHISELBLADE.get(),new Item.Properties()));
 
     public static final DeferredItem<Item> COPPERAXEHEADHOT = ITEMS.register("copper_axe_head_hot",
-            () -> new TransformItem("water_cauldron", COPPERAXEHEADDULL, new Item.Properties()));
+            () -> new TransformItem("water_cauldron", ModItems.COPPERAXEHEADDULL.get(), new Item.Properties()));
 
     public static final DeferredItem<Item> COPPERSHOVELHEADHOT = ITEMS.register("copper_shovel_head_hot",
-            () -> new TransformItem("water_cauldron", COPPERSHOVELHEAD, new Item.Properties()));
+            () -> new TransformItem("water_cauldron", ModItems.COPPERSHOVELHEAD.get(), new Item.Properties()));
 
     public static final DeferredItem<Item> COPPERPICKAXEHEADHOT = ITEMS.register("copper_pickaxe_head_hot",
-            () -> new TransformItem("water_cauldron", COPPERPICKAXEHEAD, new Item.Properties()));
+            () -> new TransformItem("water_cauldron", ModItems.COPPERPICKAXEHEAD.get(), new Item.Properties()));
 
     public static final DeferredItem<Item> COPPERHOEHEADHOT = ITEMS.register("copper_hoe_head_hot",
-            () -> new TransformItem("water_cauldron", COPPERHOEHEAD, new Item.Properties()));
+            () -> new TransformItem("water_cauldron", ModItems.COPPERHOEHEAD.get(), new Item.Properties()));
 
     public static final DeferredItem<Item> COPPERCROSSGUARDHOT = ITEMS.register("copper_cross_guard_hot",
-            () -> new TransformItem("water_cauldron", COPPERCROSSGUARD, new Item.Properties()));
+            () -> new TransformItem("water_cauldron", ModItems.COPPERCROSSGUARD.get(), new Item.Properties()));
 
     public static final DeferredItem<Item> COPPERSWORDHEADHOT = ITEMS.register("copper_sword_head_hot",
-            () -> new TransformItem("water_cauldron", COPPERSWORDHEADDULL, new Item.Properties()));
+            () -> new TransformItem("water_cauldron", ModItems.COPPERSWORDHEADDULL.get(), new Item.Properties()));
 
     public static final DeferredItem<Item> COPPERHAMMERHEADHOT = ITEMS.register("copper_hammer_head_hot",
-            () -> new TransformItem("water_cauldron", COPPERHAMMERHEAD, new Item.Properties()));
+            () -> new TransformItem("water_cauldron", ModItems.COPPERHAMMERHEAD.get(), new Item.Properties()));
 
     public static final DeferredItem<Item> COPPERSAWBLADEHOT = ITEMS.register("copper_saw_blade_hot",
-            () -> new TransformItem("water_cauldron", COPPERSAWBLADE, new Item.Properties()));
+            () -> new TransformItem("water_cauldron", ModItems.COPPERSAWBLADE.get(), new Item.Properties()));
 
     public static final DeferredItem<Item> COPPERSMALLBLADEHOT = ITEMS.register("copper_small_blade_hot",
-            () -> new TransformItem("water_cauldron", COPPERSMALLBLADEDULL, new Item.Properties()));
+            () -> new TransformItem("water_cauldron", ModItems.COPPERSMALLBLADEDULL.get(), new Item.Properties()));
 
     public static final DeferredItem<Item> COPPERCHISELBLADEHOT = ITEMS.register("copper_chisel_blade_hot",
-            () -> new TransformItem("water_cauldron", COPPERCHISELBLADEDULL, new Item.Properties()));
+            () -> new TransformItem("water_cauldron", ModItems.COPPERCHISELBLADEDULL.get(), new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

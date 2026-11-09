@@ -9,6 +9,7 @@ import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
@@ -55,6 +56,14 @@ public class PrimitiveCraftingTableBlock extends BaseEntityBlock {
 
     protected BlockState mirror(BlockState state, Mirror mirror) {
         return state.rotate(mirror.getRotation((Direction)state.getValue(FACING)));
+    }
+
+    protected boolean hasAnalogOutputSignal(BlockState state) {
+        return true;
+    }
+
+    protected int getAnalogOutputSignal(BlockState blockState, Level level, BlockPos pos) {
+        return AbstractContainerMenu.getRedstoneSignalFromBlockEntity(level.getBlockEntity(pos));
     }
 
     public PrimitiveCraftingTableBlock(BlockBehaviour.Properties properties) {

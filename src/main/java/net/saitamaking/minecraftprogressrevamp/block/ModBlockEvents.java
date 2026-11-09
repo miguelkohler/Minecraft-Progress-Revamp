@@ -93,5 +93,6 @@ public class ModBlockEvents {
         event.registerBlockEntityRenderer(ModBlockEntities.BELLOW_BE.get(), BellowRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.INTERMEDIATECRAFTINGTABLE_BE.get(), IntermediateCraftingTableRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.SMALLBOX_BE.get(), SmallBoxRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.REINFORCEDBARREL_BE.get(), ReinforcedBarrelRenderer::new);
     }
 }

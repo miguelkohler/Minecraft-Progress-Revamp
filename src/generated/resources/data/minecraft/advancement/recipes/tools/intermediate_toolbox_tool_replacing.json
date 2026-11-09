@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cobblestone": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:cobblestone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_intermediate_toolbox": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:intermediate_toolbox"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_sharp_pebble": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:sharp_pebble"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:intermediate_toolbox_tool_replacing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cobblestone",
+      "has_sharp_pebble",
+      "has_intermediate_toolbox"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:intermediate_toolbox_tool_replacing"
+    ]
+  }
+}

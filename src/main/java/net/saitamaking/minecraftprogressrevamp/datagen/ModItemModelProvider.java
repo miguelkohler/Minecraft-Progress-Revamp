@@ -42,6 +42,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.LOOSEPEBBLE.get());
         basicItem(ModItems.FIRECLAYBALL.get());
         basicItem(ModItems.MELTEDCOPPERPLATE.get());
+        basicItem(ModItems.MELTEDGOLDPLATE.get());
         basicItem(ModItems.CLAYBRICK.get());
         handheldItem(ModItems.FIRESTARTER.get());
         handheldItem(ModItems.PRIMITIVEAXE.get());
@@ -77,7 +78,17 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.TREEBARK.get());
         basicItem(ModItems.EMPTYSANDMOLD.get());
         basicItem(ModItems.NAILSANDMOLD.get());
+        basicItem(ModItems.NUGGETSANDMOLD.get());
+        basicItem(ModItems.EMPTYGOLDMOLD.get());
+        basicItem(ModItems.NAILGOLDMOLD.get());
+        basicItem(ModItems.NUGGETGOLDMOLD.get());
+        basicItem(ModItems.INGOTGOLDMOLD.get());
+        basicItem(ModItems.MELTEDEMPTYGOLDMOLD.get());
+        basicItem(ModItems.MELTEDNAILGOLDMOLD.get());
+        basicItem(ModItems.MELTEDNUGGETGOLDMOLD.get());
+        basicItem(ModItems.MELTEDINGOTGOLDMOLD.get());
         basicItem(ModItems.COPPERNAIL.get());
+        basicItem(ModItems.IRONNAIL.get());
         basicItem(ModItems.MELTEDCOPPERBLOB.get());
         basicItem(ModItems.SMALLMELTEDCOPPERBLOB.get());
         basicItem(ModItems.MELTEDGOLDBLOB.get());
@@ -130,10 +141,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.COPPERHOE.get());
         handheldItem(ModItems.MAGNIFYINGGLASS.get());
         basicItem(ModItems.COPPERPLATE.get());
+        basicItem(ModItems.COPPERNUGGET.get());
         basicItem(ModItems.MELTEDIRONBLOB.get());
         basicItem(ModItems.MELTEDIRONPLATE.get());
         basicItem(ModItems.SMALLMELTEDIRONBLOB.get());
-        basicItem(ModItems.MELTEDIRONPLATE.get());
+        basicItem(ModItems.GOLDPLATE.get());
+        basicItem(ModItems.IRONPLATE.get());
 
         trimmedArmorItem(ModItems.HIDEVEST);
         trimmedArmorItem(ModItems.HIDESHORTS);

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:cobblestone"
+    },
+    "O": {
+      "item": "minecraftprogressrevamp:starter_toolbox"
+    },
+    "X": {
+      "item": "minecraftprogressrevamp:sharp_pebble"
+    }
+  },
+  "pattern": [
+    "X#X",
+    "#O#",
+    "X#X"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:starter_toolbox"
+  }
+}

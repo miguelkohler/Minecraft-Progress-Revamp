@@ -1,0 +1,17 @@
+{
+  "type": "minecraftprogressrevamp:durability_shapeless",
+  "damageToTools": 0,
+  "ingredients": [
+    {
+      "tag": "minecraftprogressrevamp:nugget_shaped"
+    },
+    {
+      "item": "minecraftprogressrevamp:empty_sand_mold"
+    }
+  ],
+  "justTools": false,
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:nugget_sand_mold"
+  }
+}

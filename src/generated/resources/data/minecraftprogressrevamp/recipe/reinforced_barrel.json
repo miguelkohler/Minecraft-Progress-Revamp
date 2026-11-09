@@ -1,0 +1,48 @@
+{
+  "type": "minecraftprogressrevamp:intermediate_crafting_table",
+  "ingredients": [
+    {
+      "tag": "minecraftprogressrevamp:iron_plates"
+    },
+    {
+      "tag": "minecraftprogressrevamp:iron_plates"
+    },
+    {
+      "tag": "minecraftprogressrevamp:iron_plates"
+    },
+    {
+      "tag": "minecraftprogressrevamp:iron_plates"
+    },
+    {
+      "item": "minecraft:barrel"
+    },
+    {
+      "tag": "minecraftprogressrevamp:iron_plates"
+    },
+    {
+      "tag": "minecraftprogressrevamp:iron_plates"
+    },
+    {
+      "tag": "minecraftprogressrevamp:iron_plates"
+    },
+    {
+      "tag": "minecraftprogressrevamp:iron_plates"
+    },
+    {
+      "item": "minecraftprogressrevamp:iron_nail"
+    },
+    {
+      "item": "minecraftprogressrevamp:iron_nail"
+    },
+    {
+      "item": "minecraftprogressrevamp:iron_nail"
+    },
+    {
+      "item": "minecraftprogressrevamp:iron_nail"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:reinforced_barrel"
+  }
+}

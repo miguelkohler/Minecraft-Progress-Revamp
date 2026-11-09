@@ -46,6 +46,7 @@ public class ModCustomCraftingShaped extends ShapedRecipe {
                 ModTags.Items.SHEARS,
                 ModTags.Items.HAMMERS,
                 ModTags.Items.CHISELS,
+                ModTags.Items.GOLDMOLDS,
                 ItemTags.AXES,
                 ModTags.Items.KNIVES
         );

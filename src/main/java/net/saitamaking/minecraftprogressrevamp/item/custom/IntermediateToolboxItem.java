@@ -122,15 +122,17 @@ public class IntermediateToolboxItem extends Item {
                 }
             }
 
-            if(INSTABREAK_MAP.containsKey(clickedBlock)) {
-                if(!level.isClientSide()){
-                    if(context.getItemInHand().is(ModItems.INTERMEDIATETOOLBOX)){
-                        level.setBlockAndUpdate(context.getClickedPos(), INSTABREAK_MAP.get(clickedBlock).defaultBlockState());
+            if(Screen.hasShiftDown()){
+                if(INSTABREAK_MAP.containsKey(clickedBlock)) {
+                    if(!level.isClientSide()){
+                        if(context.getItemInHand().is(ModItems.INTERMEDIATETOOLBOX)){
+                            level.setBlockAndUpdate(context.getClickedPos(), INSTABREAK_MAP.get(clickedBlock).defaultBlockState());
 
-                        context.getItemInHand().shrink(1);
+                            context.getItemInHand().shrink(1);
 
-                        level.playSound(null, context.getClickedPos(), SoundEvents.SMITHING_TABLE_USE, SoundSource.BLOCKS);
-                        return InteractionResult.SUCCESS;
+                            level.playSound(null, context.getClickedPos(), SoundEvents.SMITHING_TABLE_USE, SoundSource.BLOCKS);
+                            return InteractionResult.SUCCESS;
+                        }
                     }
                 }
             }
@@ -223,7 +225,12 @@ public class IntermediateToolboxItem extends Item {
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
         if(Screen.hasShiftDown()){
-            tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.intermediate_toolbox.shift_down"));
+            tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.intermediate_toolbox.shift_down")
+                    .append(Component.literal(" ")));
+            tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.crafting_table_transform_item"));
+            tooltipComponents.add(Component.translatable("block.minecraft.crafting_table")
+                    .append(Component.literal(" into a "))
+                    .append(Component.translatable("block.minecraftprogressrevamp.intermediate_crafting_table")));
         } else {
             tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.starter_toolbox.not_shift_down"));
         }

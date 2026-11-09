@@ -1,0 +1,11 @@
+{
+  "type": "minecraftprogressrevamp:campfire_with_crucible",
+  "cooking_time": 4800,
+  "ingredient": {
+    "item": "minecraftprogressrevamp:empty_gold_mold"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:melted_empty_gold_mold"
+  }
+}

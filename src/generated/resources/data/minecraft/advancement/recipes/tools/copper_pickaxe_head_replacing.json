@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_copper_pickaxe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:copper_pickaxe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_copper_pickaxe_head": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:copper_pickaxe_head"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:copper_pickaxe_head_replacing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_copper_pickaxe",
+      "has_copper_pickaxe_head"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:copper_pickaxe_head_replacing"
+    ]
+  }
+}

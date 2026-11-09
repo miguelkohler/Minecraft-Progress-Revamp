@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "category": "blocks",
+  "cookingtime": 900,
+  "experience": 3.6,
+  "group": "melted_gold_block",
+  "ingredient": {
+    "item": "minecraft:raw_gold_block"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:melted_gold_block"
+  }
+}

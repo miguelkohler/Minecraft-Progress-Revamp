@@ -1,0 +1,17 @@
+{
+  "type": "minecraftprogressrevamp:durability_shapeless",
+  "damageToTools": 0,
+  "ingredients": [
+    {
+      "tag": "minecraftprogressrevamp:ingot_shaped"
+    },
+    {
+      "item": "minecraftprogressrevamp:melted_empty_gold_mold"
+    }
+  ],
+  "justTools": false,
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:melted_ingot_gold_mold"
+  }
+}

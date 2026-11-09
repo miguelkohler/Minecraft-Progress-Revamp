@@ -53,6 +53,7 @@ public class ModCustomCraftingShapeless extends ShapelessRecipe {
                 ModTags.Items.SAWS,
                 ModTags.Items.SHEARS,
                 ModTags.Items.HAMMERS,
+                ModTags.Items.GOLDMOLDS,
                 ItemTags.AXES,
                 ModTags.Items.KNIVES
         );
@@ -84,7 +85,8 @@ public class ModCustomCraftingShapeless extends ShapelessRecipe {
             ItemStack stack = input.getItem(i);
             if (isDamageableTool(stack)) {
                 remaining.set(i, damage(stack.copy()));
-            } else if (!justTools && !stack.isEmpty() && stack.is(ModTags.Items.INGOTSHAPED)) {
+            } else if (!justTools && !stack.isEmpty() && stack.is(ModTags.Items.INGOTSHAPED) || stack.is(ModTags.Items.NUGGETSHAPED)
+            || stack.is(ModTags.Items.NAILSHAPED)) {
                 remaining.set(i, stack.copyWithCount(1));
             } else {
                 remaining.set(i, CommonHooks.getCraftingRemainingItem(stack));

@@ -22,6 +22,10 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("copper_crate_be", () -> BlockEntityType.Builder.of(
                     CopperCrateEntity::new, ModBlocks.COPPERCRATE.get()).build(null));
 
+    public static final Supplier<BlockEntityType<ReinforcedBarrelEntity>> REINFORCEDBARREL_BE =
+            BLOCK_ENTITIES.register("reinforced_barrel_be", () -> BlockEntityType.Builder.of(
+                    ReinforcedBarrelEntity::new, ModBlocks.REINFORCEDBARREL.get()).build(null));
+
     public static final Supplier<BlockEntityType<CampfireWithCrucibleEntity>> CAMPFIREWITHCRUCIBLE_BE =
             BLOCK_ENTITIES.register("campfire_with_crucible_be", () -> BlockEntityType.Builder.of(
                     CampfireWithCrucibleEntity::new, ModBlocks.CAMPFIREWITHCRUCIBLE.get()).build(null));

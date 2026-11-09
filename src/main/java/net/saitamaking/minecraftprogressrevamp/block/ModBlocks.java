@@ -4,6 +4,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CraftingTableBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
@@ -77,6 +78,9 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> BELLOW = registerBlock("bellow",
             () -> new BellowBlock(BlockBehaviour.Properties.of().strength(2.0F, 3.0F).noOcclusion().sound(SoundType.WOOD)));
+
+    public static final DeferredBlock<Block> REINFORCEDBARREL = registerBlock("reinforced_barrel",
+            () -> new ReinforcedBarrelBlock(BlockBehaviour.Properties.of().strength(3.5F, 12.0F).sound(SoundType.METAL).noOcclusion()));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block){
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

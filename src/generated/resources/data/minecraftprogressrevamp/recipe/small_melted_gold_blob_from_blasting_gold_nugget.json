@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 12,
+  "experience": 0.04,
+  "group": "small_melted_gold_blob",
+  "ingredient": {
+    "item": "minecraft:gold_nugget"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:small_melted_gold_blob"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "category": "blocks",
+  "cookingtime": 900,
+  "experience": 3.6,
+  "group": "melted_iron_block",
+  "ingredient": {
+    "item": "minecraft:iron_block"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:melted_iron_block"
+  }
+}

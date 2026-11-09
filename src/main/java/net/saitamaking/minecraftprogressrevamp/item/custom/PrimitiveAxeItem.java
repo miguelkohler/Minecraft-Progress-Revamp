@@ -2,8 +2,10 @@ package net.saitamaking.minecraftprogressrevamp.item.custom;
 
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -29,6 +31,7 @@ import net.neoforged.neoforge.registries.datamaps.builtin.Strippable;
 import net.saitamaking.minecraftprogressrevamp.block.ModBlocks;
 
 import javax.annotation.Nullable;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -104,16 +107,18 @@ public class PrimitiveAxeItem extends DiggerItem {
         Player player = context.getPlayer();
         Block clickedBlock = level.getBlockState(context.getClickedPos()).getBlock();
 
-        if(CHISEL_MAP.containsKey(clickedBlock)) {
-            if(!level.isClientSide()){
-                level.setBlockAndUpdate(context.getClickedPos(), CHISEL_MAP.get(clickedBlock).defaultBlockState());
+        if(Screen.hasShiftDown()){
+            if(CHISEL_MAP.containsKey(clickedBlock)) {
+                if(!level.isClientSide()){
+                    level.setBlockAndUpdate(context.getClickedPos(), CHISEL_MAP.get(clickedBlock).defaultBlockState());
 
-                context.getItemInHand().hurtAndBreak(999999, ((ServerLevel) level), context.getPlayer(),
-                        item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
+                    context.getItemInHand().hurtAndBreak(999999, ((ServerLevel) level), context.getPlayer(),
+                            item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
 
-                level.playSound(null, context.getClickedPos(), SoundEvents.ITEM_BREAK, SoundSource.BLOCKS);
+                    level.playSound(null, context.getClickedPos(), SoundEvents.ITEM_BREAK, SoundSource.BLOCKS);
 
-                return InteractionResult.SUCCESS;
+                    return InteractionResult.SUCCESS;
+                }
             }
         }
 
@@ -138,5 +143,18 @@ public class PrimitiveAxeItem extends DiggerItem {
                 return InteractionResult.sidedSuccess(level.isClientSide);
             }
         }
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+        if(Screen.hasShiftDown()){
+            tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.crafting_table_transform_item"));
+            tooltipComponents.add(Component.translatable( "block.minecraftprogressrevamp.primitive_crafting_table")
+                    .append(Component.literal(" into a "))
+                    .append(Component.translatable( "block.minecraftprogressrevamp.rudimentary_crafting_table")));
+        } else {
+            tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.starter_toolbox.not_shift_down"));
+        }
+        super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }
 }

@@ -156,7 +156,12 @@ public class StarterToolboxItem extends Item {
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
         if(Screen.hasShiftDown()){
-            tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.starter_toolbox.shift_down"));
+            tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.starter_toolbox.shift_down")
+                    .append(Component.literal(" ")));
+            tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.crafting_table_transform_item"));
+            tooltipComponents.add(Component.translatable("block.minecraftprogressrevamp.rudimentary_crafting_table")
+                    .append(Component.literal(" into a "))
+                    .append(Component.translatable("block.minecraft.crafting_table")));
         } else {
             tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.starter_toolbox.not_shift_down"));
         }

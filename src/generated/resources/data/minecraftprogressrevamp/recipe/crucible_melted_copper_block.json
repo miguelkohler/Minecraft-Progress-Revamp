@@ -1,0 +1,11 @@
+{
+  "type": "minecraftprogressrevamp:campfire_with_crucible",
+  "cooking_time": 10800,
+  "ingredient": {
+    "tag": "minecraftprogressrevamp:copper_block_meltables"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:melted_copper_block"
+  }
+}

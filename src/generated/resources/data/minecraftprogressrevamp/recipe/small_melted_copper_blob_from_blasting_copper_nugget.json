@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 12,
+  "experience": 0.04,
+  "group": "small_melted_copper_blob",
+  "ingredient": {
+    "item": "minecraftprogressrevamp:copper_nugget"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:small_melted_copper_blob"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraftprogressrevamp:durability_shaped",
+  "key": {
+    "#": {
+      "item": "minecraftprogressrevamp:nail_gold_mold"
+    },
+    "O": {
+      "item": "minecraftprogressrevamp:small_melted_iron_blob"
+    }
+  },
+  "pattern": [
+    " O#",
+    " OO",
+    "O  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:iron_nail"
+  }
+}

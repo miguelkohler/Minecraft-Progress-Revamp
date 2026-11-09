@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "K": {
+      "item": "minecraftprogressrevamp:copper_saw_blade"
+    },
+    "O": {
+      "item": "minecraftprogressrevamp:intermediate_toolbox"
+    },
+    "T": {
+      "item": "minecraftprogressrevamp:copper_hammer_head"
+    },
+    "X": {
+      "item": "minecraftprogressrevamp:copper_small_blade"
+    },
+    "Y": {
+      "item": "minecraftprogressrevamp:copper_chisel_blade"
+    }
+  },
+  "pattern": [
+    "X X",
+    "KOT",
+    " Y "
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:intermediate_toolbox"
+  }
+}

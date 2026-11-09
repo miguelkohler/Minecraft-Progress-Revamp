@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraftprogressrevamp:nugget_sand_mold"
+    },
+    {
+      "item": "minecraftprogressrevamp:small_melted_copper_blob"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:copper_nugget"
+  }
+}

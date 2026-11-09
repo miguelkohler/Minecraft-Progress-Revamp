@@ -135,18 +135,25 @@ public class CampfireWithCrucibleEntity extends BlockEntity implements MenuProvi
 
     public void tick(Level level, BlockPos blockPos, BlockState blockState) {
         //gets called every tick and can do a bunch of things, will do normal furnace like behavior
-        if(hasRecipe()){
+        Optional<RecipeHolder<CampfireWithCrucibleRecipe>> recipe = getCurrentRecipe();
+        if (hasRecipe(recipe)) {
+            maxProgress = recipe.get().value().cookingTime();
             increaseCraftingProgress();
             setChanged(level, blockPos, blockState);
 
-            if(hasCraftingFinished()){
+            if (hasCraftingFinished()) {
                 craftItem();
                 resetProgress();
             }
-
         } else {
             resetProgress();
         }
+    }
+
+    private boolean hasRecipe(Optional<RecipeHolder<CampfireWithCrucibleRecipe>> recipe) {
+        if (recipe.isEmpty()) return false;
+        ItemStack output = recipe.get().value().output();
+        return canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output);
     }
 
     private void craftItem() {

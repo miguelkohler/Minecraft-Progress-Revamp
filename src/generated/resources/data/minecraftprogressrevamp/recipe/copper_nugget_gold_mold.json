@@ -1,0 +1,15 @@
+{
+  "type": "minecraftprogressrevamp:durability_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraftprogressrevamp:small_melted_copper_blob"
+    },
+    {
+      "item": "minecraftprogressrevamp:nugget_gold_mold"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:copper_nugget"
+  }
+}

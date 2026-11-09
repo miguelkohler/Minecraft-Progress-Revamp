@@ -1,7 +1,9 @@
 package net.saitamaking.minecraftprogressrevamp.item.custom;
 
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -48,18 +50,22 @@ public class SharpRockItem extends DiggerItem {
         Level level = context.getLevel();
         Block clickedBlock = level.getBlockState(context.getClickedPos()).getBlock();
 
-        if(CHISEL_MAP.containsKey(clickedBlock)) {
-            if(!level.isClientSide()){
-                level.setBlockAndUpdate(context.getClickedPos(), CHISEL_MAP.get(clickedBlock).defaultBlockState());
+        if(Screen.hasShiftDown()){
+            if(CHISEL_MAP.containsKey(clickedBlock)) {
+                if(!level.isClientSide()){
+                    level.setBlockAndUpdate(context.getClickedPos(), CHISEL_MAP.get(clickedBlock).defaultBlockState());
 
-                context.getItemInHand().hurtAndBreak(16, ((ServerLevel) level), context.getPlayer(),
-                        item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
+                    context.getItemInHand().hurtAndBreak(16, ((ServerLevel) level), context.getPlayer(),
+                            item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
 
-                level.playSound(null, context.getClickedPos(), SoundEvents.AXE_STRIP, SoundSource.BLOCKS);
+                    level.playSound(null, context.getClickedPos(), SoundEvents.AXE_STRIP, SoundSource.BLOCKS);
+
+                    return InteractionResult.SUCCESS;
+                }
             }
         }
 
-        return InteractionResult.SUCCESS;
+        return InteractionResult.SUCCESS_NO_ITEM_USED;
     }
 
     public SharpRockItem(Tier p_40521_, Item.Properties p_40524_) {
@@ -88,5 +94,18 @@ public class SharpRockItem extends DiggerItem {
 
     public void postHurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         stack.hurtAndBreak(1, attacker, EquipmentSlot.MAINHAND);
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+        if(Screen.hasShiftDown()){
+            tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.crafting_table_transform_item"));
+            tooltipComponents.add(Component.translatable( "block.minecraftprogressrevamp.log_block")
+                    .append(Component.literal(" into a "))
+                    .append(Component.translatable( "block.minecraftprogressrevamp.primitive_crafting_table")));
+        } else {
+            tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.starter_toolbox.not_shift_down"));
+        }
+        super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }
 }

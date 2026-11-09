@@ -27,6 +27,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                         ModBlocks.GOLDBARBLOCK.get(),
                         ModBlocks.COBBLESTONEANVIL.get(),
                         ModBlocks.COPPERCRATE.get(),
+                        ModBlocks.REINFORCEDBARREL.get(),
                         ModBlocks.CHARCOALBLOCK.get()
                 );
         tag(BlockTags.MINEABLE_WITH_SHOVEL)
@@ -69,6 +70,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 );
         tag(ModTags.Blocks.NEEDS_COPPER_TOOLS)
                 .add(
+                        ModBlocks.REINFORCEDBARREL.get(),
                         Blocks.IRON_ORE,
                         Blocks.DEEPSLATE_IRON_ORE,
                         Blocks.IRON_BLOCK,

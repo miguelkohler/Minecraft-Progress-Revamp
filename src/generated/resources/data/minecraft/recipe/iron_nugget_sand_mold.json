@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraftprogressrevamp:nugget_sand_mold"
+    },
+    {
+      "item": "minecraftprogressrevamp:small_melted_iron_blob"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:iron_nugget"
+  }
+}

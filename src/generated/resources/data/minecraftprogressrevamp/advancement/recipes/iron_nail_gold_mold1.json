@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_nail_gold_mold": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:nail_gold_mold"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_small_melted_iron_blob": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:small_melted_iron_blob"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_nail_gold_mold"
+    ],
+    [
+      "has_small_melted_iron_blob"
+    ]
+  ]
+}
