@@ -1,0 +1,11 @@
+{
+  "type": "minecraftprogressrevamp:campfire_with_crucible",
+  "cooking_time": 180,
+  "ingredient": {
+    "tag": "minecraftprogressrevamp:small_rose_gold_blob_meltables"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:small_melted_rose_gold_blob"
+  }
+}

@@ -12,9 +12,9 @@ import net.saitamaking.minecraftprogressrevamp.ProgressRevamp;
 public class CampfireWithCrucibleScreen extends AbstractContainerScreen<CampfireWithCrucibleMenu> {
 
     private static final ResourceLocation GUI_TEXTURE =
-            ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "textures/gui/campfirewithcrucible/campfire_with_crucible_gui.png");
+            ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "textures/gui/furnacelike/campfire_with_crucible_gui.png");
     private static final ResourceLocation ARROW_TEXTURE =
-            ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "textures/gui/arrow_progress.png");
+            ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "textures/gui/otherguitextures/arrow_progress.png");
 
     public CampfireWithCrucibleScreen(CampfireWithCrucibleMenu menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title);

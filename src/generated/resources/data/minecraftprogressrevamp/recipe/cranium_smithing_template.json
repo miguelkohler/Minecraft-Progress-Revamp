@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:deepslate"
+    },
+    "O": {
+      "item": "minecraft:diamond"
+    },
+    "X": {
+      "item": "minecraftprogressrevamp:cranium_smithing_template"
+    }
+  },
+  "pattern": [
+    "OXO",
+    "O#O",
+    "OOO"
+  ],
+  "result": {
+    "count": 2,
+    "id": "minecraftprogressrevamp:cranium_smithing_template"
+  }
+}

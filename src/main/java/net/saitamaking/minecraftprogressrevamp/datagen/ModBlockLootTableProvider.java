@@ -40,6 +40,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.COPPERCRATE.get());
         dropSelf(ModBlocks.REINFORCEDBARREL.get());
         dropSelf(ModBlocks.CAMPFIREWITHCRUCIBLE.get());
+        dropSelf(ModBlocks.RUDIMENTARYALLOYFURNACE.get());
         dropSelf(ModBlocks.COBBLESTONEANVIL.get());
         dropSelf(ModBlocks.BELLOW.get());
         dropSelf(ModBlocks.SMALLOAKBOX.get());
@@ -55,6 +56,12 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
         add(ModBlocks.IRONBARBLOCK.get(),
                 block -> createExactDrops(ModBlocks.IRONBARBLOCK.get(), Items.IRON_INGOT, 9));
+
+        add(ModBlocks.ROSEGOLDBARBLOCK.get(),
+                block -> createExactDrops(ModBlocks.ROSEGOLDBARBLOCK.get(), ModItems.ROSEGOLDINGOT.get(), 9));
+
+        add(ModBlocks.NETHERITEBARBLOCK.get(),
+                block -> createExactDrops(ModBlocks.NETHERITEBARBLOCK.get(), Items.NETHERITE_INGOT, 9));
 
         add(ModBlocks.PEBBLE.get(),
                 block -> createExactDrops(ModBlocks.PEBBLE.get(), ModItems.LOOSEPEBBLE.get(), 1));

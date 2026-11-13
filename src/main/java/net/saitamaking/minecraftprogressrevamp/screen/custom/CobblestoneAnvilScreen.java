@@ -11,7 +11,7 @@ import net.saitamaking.minecraftprogressrevamp.ProgressRevamp;
 
 public class CobblestoneAnvilScreen extends AbstractContainerScreen<CobblestoneAnvilMenu> {
     private static final ResourceLocation GUI_TEXTURE =
-            ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "textures/gui/cobblestoneanvil/cobblestone_anvil_gui.png");
+            ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "textures/gui/craftingtables/cobblestone_anvil_gui.png");
 
     public CobblestoneAnvilScreen(CobblestoneAnvilMenu menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title);

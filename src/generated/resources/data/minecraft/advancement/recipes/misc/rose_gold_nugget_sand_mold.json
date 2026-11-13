@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_nugget_sand_mold": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:nugget_sand_mold"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_small_melted_rose_gold_blob": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:small_melted_rose_gold_blob"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:rose_gold_nugget_sand_mold"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_nugget_sand_mold",
+      "has_small_melted_rose_gold_blob"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:rose_gold_nugget_sand_mold"
+    ]
+  }
+}

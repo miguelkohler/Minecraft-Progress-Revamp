@@ -34,7 +34,11 @@ public class CampfireWithCrucibleMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         this.addSlot(new SlotItemHandler(this.blockEntity.itemHandler, 0, 56, 34));
-        this.addSlot(new SlotItemHandler(this.blockEntity.itemHandler, 1, 116, 34));
+        this.addSlot(new SlotItemHandler(this.blockEntity.itemHandler, 1, 116, 34){
+            @Override
+            public boolean mayPlace(ItemStack stack) { return false; }
+        });
+
 
         addDataSlots(data);
     }

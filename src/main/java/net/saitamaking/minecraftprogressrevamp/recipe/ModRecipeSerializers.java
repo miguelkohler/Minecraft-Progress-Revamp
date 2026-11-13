@@ -23,6 +23,8 @@ public class ModRecipeSerializers {
             RECIPE_SERIALIZERS.register("durability_shapeless", ModCustomCraftingShapeless.Serializer::new);
     public static final DeferredHolder<RecipeSerializer<?>, CampfireWithCrucibleRecipe.Serializer> CAMPFIRE_WITH_CRUCIBLE_SERIALIZER =
             RECIPE_SERIALIZERS.register("campfire_with_crucible", CampfireWithCrucibleRecipe.Serializer::new);
+    public static final DeferredHolder<RecipeSerializer<?>, RudimentaryAlloyFurnaceRecipe.Serializer> RUDIMENTARY_ALLOY_FURNACE_SERIALIZER =
+            RECIPE_SERIALIZERS.register("rudimentary_alloy_furnace", RudimentaryAlloyFurnaceRecipe.Serializer::new);
     public static final Supplier<RecipeSerializer<CobblestoneAnvilRecipe>> COBBLESTONE_ANVIL_SERIALIZER =
             RECIPE_SERIALIZERS.register("cobblestone_anvil", CobblestoneAnvilRecipe.Serializer::new);
     public static final Supplier<RecipeSerializer<TierOneCraftingTableRecipe>> TIER_ONE_CRAFTING_TABLE_SERIALIZER =
@@ -34,6 +36,9 @@ public class ModRecipeSerializers {
                     return "campfire_with_crucible";
                 }
             });
+    public static final Supplier<RecipeType<RudimentaryAlloyFurnaceRecipe>> RUDIMENTARY_ALLOY_FURNACE_TYPE =
+            TYPES.register("rudimentary_alloy_furnace", () -> RecipeType.simple(
+                    ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "rudimentary_alloy_furnace")));
     public static final Supplier<RecipeType<CobblestoneAnvilRecipe>> COBBLESTONE_ANVIL_TYPE =
             TYPES.register("cobblestone_anvil", () -> RecipeType.simple(
                     ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "cobblestone_anvil")));

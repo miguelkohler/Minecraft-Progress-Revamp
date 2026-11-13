@@ -38,6 +38,7 @@ public class ExampleModClient {
         event.register(ModMenuTypes.COPPER_CRATE_MENU.get(), CopperCrateScreen::new);
         event.register(ModMenuTypes.REINFORCED_BARREL_MENU.get(), ReinforcedBarrelScreen::new);
         event.register(ModMenuTypes.CAMPFIRE_WITH_CRUCIBLE_MENU.get(), CampfireWithCrucibleScreen::new);
+        event.register(ModMenuTypes.RUDIMENTARY_ALLOY_FURNACE_MENU.get(), RudimentaryAlloyFurnaceScreen::new);
         event.register(ModMenuTypes.PRIMITIVE_CRAFTING_TABLE_MENU.get(), PrimitiveCraftingTableScreen::new);
         event.register(ModMenuTypes.RUDIMENTARY_CRAFTING_TABLE_MENU.get(), RudimentaryCraftingTableScreen::new);
         event.register(ModMenuTypes.COBBLESTONE_ANVIL_MENU.get(), CobblestoneAnvilScreen::new);

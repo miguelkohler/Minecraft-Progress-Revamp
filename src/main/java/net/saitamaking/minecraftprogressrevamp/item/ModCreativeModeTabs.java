@@ -182,7 +182,15 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.NUGGETGOLDMOLD);
                         output.accept(ModItems.INGOTGOLDMOLD);
                         output.accept(ModItems.NAILGOLDMOLD);
+                        output.accept(ModBlocks.RUDIMENTARYALLOYFURNACE);
+                        output.accept(ModItems.MELTEDROSEGOLDBLOB);
+                        output.accept(ModItems.SMALLMELTEDROSEGOLDBLOB);
+                        output.accept(ModItems.ROSEGOLDINGOT);
+                        output.accept(ModItems.ROSEGOLDNUGGET);
+                        output.accept(ModBlocks.ROSEGOLDBARBLOCK);
                         output.accept(ModBlocks.REINFORCEDBARREL);
+                        output.accept(ModBlocks.NETHERITEBARBLOCK);
+                        output.accept(ModItems.CRANIUMSMITHINGTEMPLATE );
 
 
 

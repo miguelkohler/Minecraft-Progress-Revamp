@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraftprogressrevamp:netherite_bar_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "minecraft:netherite_ingot"
+  }
+}

@@ -1,0 +1,25 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"1": "minecraftprogressrevamp:block/rudimentary_alloy_furnace_top",
+		"2": "minecraftprogressrevamp:block/rudimentary_alloy_furnace_side",
+		"3": "minecraftprogressrevamp:block/rudimentary_alloy_furnace_bottom",
+		"4": "minecraftprogressrevamp:block/rudimentary_alloy_furnace_front_lit",
+		"particle": "minecraftprogressrevamp:block/rudimentary_alloy_furnace_front"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#4"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#2"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#2"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#2"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#3"}
+			}
+		}
+	]
+}

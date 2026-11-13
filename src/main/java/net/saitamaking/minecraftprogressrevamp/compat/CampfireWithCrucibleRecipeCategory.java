@@ -21,7 +21,7 @@ import org.jetbrains.annotations.Nullable;
 public class CampfireWithCrucibleRecipeCategory implements IRecipeCategory<CampfireWithCrucibleRecipe> {
     public static final ResourceLocation UID = ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "campfire_with_crucible");
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID,
-            "textures/gui/campfirewithcrucible/campfire_with_crucible_gui.png");
+            "textures/gui/furnacelike/campfire_with_crucible_gui.png");
 
     public static final RecipeType<CampfireWithCrucibleRecipe> CAMPFIRE_WITH_CRUCIBLE_RECIPE_RECIPE_TYPE =
             new RecipeType<>(UID, CampfireWithCrucibleRecipe.class);

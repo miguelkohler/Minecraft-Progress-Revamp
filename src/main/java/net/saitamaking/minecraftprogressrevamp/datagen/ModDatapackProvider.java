@@ -7,6 +7,8 @@ import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import net.saitamaking.minecraftprogressrevamp.ProgressRevamp;
+import net.saitamaking.minecraftprogressrevamp.trim.ModTrimMaterials;
+import net.saitamaking.minecraftprogressrevamp.trim.ModTrimPatterns;
 import net.saitamaking.minecraftprogressrevamp.worldgen.ModBiomeModifiers;
 import net.saitamaking.minecraftprogressrevamp.worldgen.ModConfiguredFeatures;
 import net.saitamaking.minecraftprogressrevamp.worldgen.ModPlacedFeatures;
@@ -18,7 +20,9 @@ public class ModDatapackProvider extends DatapackBuiltinEntriesProvider {
     public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
             .add(Registries.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap)
             .add(Registries.PLACED_FEATURE, ModPlacedFeatures::bootstrap)
-            .add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, ModBiomeModifiers::bootstrap);
+            .add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, ModBiomeModifiers::bootstrap)
+            .add(Registries.TRIM_MATERIAL, ModTrimMaterials::bootstrap)
+            .add(Registries.TRIM_PATTERN, ModTrimPatterns::bootstrap);
 
     public ModDatapackProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
         super(output, registries, BUILDER, Set.of(ProgressRevamp.MODID));

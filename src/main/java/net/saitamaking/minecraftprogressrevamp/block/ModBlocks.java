@@ -61,6 +61,12 @@ public class ModBlocks {
     public static final DeferredBlock<Block> IRONBARBLOCK = registerBlock("iron_bar_block",
             () -> new FourDirectionalBlock(BlockBehaviour.Properties.of().strength(3.5F, 5.0F).sound(SoundType.METAL).noOcclusion()));
 
+    public static final DeferredBlock<Block> ROSEGOLDBARBLOCK = registerBlock("rose_gold_bar_block",
+            () -> new FourDirectionalBlock(BlockBehaviour.Properties.of().strength(3.5F, 5.0F).sound(SoundType.METAL).noOcclusion()));
+
+    public static final DeferredBlock<Block> NETHERITEBARBLOCK = registerBlock("netherite_bar_block",
+            () -> new FourDirectionalBlock(BlockBehaviour.Properties.of().strength(5.0F, 1200.0F).sound(SoundType.NETHERITE_BLOCK).noOcclusion()));
+
     public static final DeferredBlock<Block> WOODENCRATE = registerBlock("wooden_crate",
             () -> new WoodenCrateBlock(BlockBehaviour.Properties.of().strength(2.0F, 3.0F).noOcclusion().sound(SoundType.WOOD)));
 
@@ -72,6 +78,9 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> CAMPFIREWITHCRUCIBLE = registerBlock("campfire_with_crucible",
             () -> new CampfireWithCrucibleBlock(BlockBehaviour.Properties.of().strength(2.0F).sound(SoundType.WOOD).lightLevel(state -> 15).noOcclusion().ignitedByLava()));
+
+    public static final DeferredBlock<Block> RUDIMENTARYALLOYFURNACE = registerBlock("rudimentary_alloy_furnace",
+            () -> new RudimentaryAlloySmelterBlock(BlockBehaviour.Properties.of().strength(3.0F, 2.0F).sound(SoundType.DEEPSLATE)));
 
     public static final DeferredBlock<Block> COBBLESTONEANVIL = registerBlock("cobblestone_anvil",
             () -> new CobblestoneAnvilBlock(BlockBehaviour.Properties.of().strength(2.0F, 5.0F).sound(SoundType.STONE).noOcclusion()));

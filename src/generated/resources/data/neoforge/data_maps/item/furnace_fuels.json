@@ -4,12 +4,15 @@
       "burn_time": 14400
     },
     "minecraftprogressrevamp:coal_powder": {
-      "burn_time": 1600
+      "burn_time": 800
     },
     "minecraftprogressrevamp:primitive_crafting_table": {
       "burn_time": 300
     },
     "minecraftprogressrevamp:rudimentary_crafting_table": {
+      "burn_time": 300
+    },
+    "minecraftprogressrevamp:intermediate_crafting_table": {
       "burn_time": 300
     },
     "minecraftprogressrevamp:straw": {

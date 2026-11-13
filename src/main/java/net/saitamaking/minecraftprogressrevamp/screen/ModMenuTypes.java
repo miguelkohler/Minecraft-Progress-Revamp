@@ -29,6 +29,9 @@ public class ModMenuTypes {
     public static final DeferredHolder<MenuType<?>, MenuType<CampfireWithCrucibleMenu>> CAMPFIRE_WITH_CRUCIBLE_MENU =
             registerMenuType("campfire_with_crucible_menu", CampfireWithCrucibleMenu::new);
 
+    public static final DeferredHolder<MenuType<?>, MenuType<RudimentaryAlloyFurnaceMenu>> RUDIMENTARY_ALLOY_FURNACE_MENU =
+            registerMenuType("rudimentary_alloy_furnace_menu", RudimentaryAlloyFurnaceMenu::new);
+
     public static final DeferredHolder<MenuType<?>, MenuType<PrimitiveCraftingTableMenu>> PRIMITIVE_CRAFTING_TABLE_MENU =
             registerMenuType("primitive_crafting_table_menu", PrimitiveCraftingTableMenu::new);
 

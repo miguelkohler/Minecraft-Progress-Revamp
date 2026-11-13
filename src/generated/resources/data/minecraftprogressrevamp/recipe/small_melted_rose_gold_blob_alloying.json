@@ -1,0 +1,13 @@
+{
+  "type": "minecraftprogressrevamp:rudimentary_alloy_furnace",
+  "ingredient_a": {
+    "tag": "minecraftprogressrevamp:small_gold_blob_meltables"
+  },
+  "ingredient_b": {
+    "tag": "minecraftprogressrevamp:small_copper_blob_meltables"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:small_melted_rose_gold_blob"
+  }
+}

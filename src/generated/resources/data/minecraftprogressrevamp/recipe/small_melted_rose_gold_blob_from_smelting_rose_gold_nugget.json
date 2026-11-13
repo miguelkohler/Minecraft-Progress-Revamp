@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 25,
+  "experience": 0.04,
+  "group": "small_melted_rose_gold_blob",
+  "ingredient": {
+    "item": "minecraftprogressrevamp:rose_gold_nugget"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:small_melted_rose_gold_blob"
+  }
+}

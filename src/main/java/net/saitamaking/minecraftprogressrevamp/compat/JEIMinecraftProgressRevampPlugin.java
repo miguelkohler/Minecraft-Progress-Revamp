@@ -12,10 +12,7 @@ import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeManager;
 import net.saitamaking.minecraftprogressrevamp.ProgressRevamp;
 import net.saitamaking.minecraftprogressrevamp.block.ModBlocks;
-import net.saitamaking.minecraftprogressrevamp.recipe.CampfireWithCrucibleRecipe;
-import net.saitamaking.minecraftprogressrevamp.recipe.CobblestoneAnvilRecipe;
-import net.saitamaking.minecraftprogressrevamp.recipe.ModRecipeSerializers;
-import net.saitamaking.minecraftprogressrevamp.recipe.TierOneCraftingTableRecipe;
+import net.saitamaking.minecraftprogressrevamp.recipe.*;
 import net.saitamaking.minecraftprogressrevamp.screen.ModMenuTypes;
 import net.saitamaking.minecraftprogressrevamp.screen.custom.*;
 
@@ -33,6 +30,7 @@ public class JEIMinecraftProgressRevampPlugin implements IModPlugin {
         registration.addRecipeCategories(new CampfireWithCrucibleRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new CobblestoneAnvilRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new IntermediateCraftingTableRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new RudimentaryAlloyFurnaceRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
     }
 
     @Override
@@ -53,6 +51,11 @@ public class JEIMinecraftProgressRevampPlugin implements IModPlugin {
                 ModRecipeSerializers.TIER_ONE_CRAFTING_TABLE_TYPE.get()).stream().map(RecipeHolder::value).toList();
 
         registration.addRecipes(IntermediateCraftingTableRecipeCategory.INTERMEDIATE_CRAFTING_TABLE_RECIPE_RECIPE_TYPE, tierOneCraftingTableRecipes);
+
+        List<RudimentaryAlloyFurnaceRecipe> rudimentaryAlloyFurnaceRecipes = recipeManager.getAllRecipesFor(
+                ModRecipeSerializers.RUDIMENTARY_ALLOY_FURNACE_TYPE.get()).stream().map(RecipeHolder::value).toList();
+
+        registration.addRecipes(RudimentaryAlloyFurnaceRecipeCategory.RUDIMENTARY_ALLOY_FURNACE_RECIPE_RECIPE_TYPE, rudimentaryAlloyFurnaceRecipes);
     }
 
     @Override
@@ -67,6 +70,10 @@ public class JEIMinecraftProgressRevampPlugin implements IModPlugin {
                 RecipeTypes.CRAFTING);
         registration.addRecipeClickArea(IntermediateCraftingTableScreen.class, 108, 50, 24, 18,
                 IntermediateCraftingTableRecipeCategory.INTERMEDIATE_CRAFTING_TABLE_RECIPE_RECIPE_TYPE);
+        registration.addRecipeClickArea(IntermediateCraftingTableScreen.class, 108, 50, 24, 18,
+                RecipeTypes.CRAFTING);
+        registration.addRecipeClickArea(RudimentaryAlloyFurnaceScreen.class, 76, 25, 24, 27,
+                RudimentaryAlloyFurnaceRecipeCategory.RUDIMENTARY_ALLOY_FURNACE_RECIPE_RECIPE_TYPE);
     }
 
     @Override
@@ -77,6 +84,10 @@ public class JEIMinecraftProgressRevampPlugin implements IModPlugin {
                 CobblestoneAnvilRecipeCategory.COBBLESTONE_ANVIL_RECIPE_RECIPE_TYPE);
         registration.addRecipeCatalyst(new ItemStack(ModBlocks.INTERMEDIATECRAFTINGTABLE.asItem()),
                 IntermediateCraftingTableRecipeCategory.INTERMEDIATE_CRAFTING_TABLE_RECIPE_RECIPE_TYPE);
+        registration.addRecipeCatalyst(new ItemStack(ModBlocks.INTERMEDIATECRAFTINGTABLE.asItem()),
+                RecipeTypes.CRAFTING);
+        registration.addRecipeCatalyst(new ItemStack(ModBlocks.RUDIMENTARYALLOYFURNACE.asItem()),
+                RudimentaryAlloyFurnaceRecipeCategory.RUDIMENTARY_ALLOY_FURNACE_RECIPE_RECIPE_TYPE);
     }
 
     @Override
@@ -100,6 +111,11 @@ public class JEIMinecraftProgressRevampPlugin implements IModPlugin {
                 IntermediateCraftingTableMenu.class,
                 ModMenuTypes.INTERMEDIATE_CRAFTING_TABLE_MENU.get(),
                 RecipeTypes.CRAFTING, 37, 9, 0, 36
+        );
+        registration.addRecipeTransferHandler(
+                RudimentaryAlloyFurnaceMenu.class,
+                ModMenuTypes.RUDIMENTARY_ALLOY_FURNACE_MENU.get(),
+                RudimentaryAlloyFurnaceRecipeCategory.RUDIMENTARY_ALLOY_FURNACE_RECIPE_RECIPE_TYPE, 36, 4, 0, 36
         );
     }
 }

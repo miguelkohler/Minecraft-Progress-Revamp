@@ -1,6 +1,7 @@
 package net.saitamaking.minecraftprogressrevamp.item;
 
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.Fluid;
@@ -86,6 +87,18 @@ public class ModItems {
 
     public static final DeferredItem<Item> WOODENHANDLE = ITEMS.register("wooden_handle",
             () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> ROSEGOLDINGOT = ITEMS.register("rose_gold_ingot",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> ROSEGOLDNUGGET = ITEMS.register("rose_gold_nugget",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> MELTEDROSEGOLDBLOB = ITEMS.register("melted_rose_gold_blob",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> SMALLMELTEDROSEGOLDBLOB = ITEMS.register("small_melted_rose_gold_blob",
+            () -> new TransformItem("water_cauldron",ModItems.ROSEGOLDNUGGET.get(),new Item.Properties()));
 
     public static final DeferredItem<Item> COPPERPLATE = ITEMS.register("copper_plate",
             () -> new Item(new Item.Properties()));
@@ -375,6 +388,9 @@ public class ModItems {
 
     public static final DeferredItem<Item> COPPERCHISELBLADEHOT = ITEMS.register("copper_chisel_blade_hot",
             () -> new TransformItem("water_cauldron", ModItems.COPPERCHISELBLADEDULL.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> CRANIUMSMITHINGTEMPLATE = ITEMS.register("cranium_smithing_template",
+            () -> SmithingTemplateItem.createArmorTrimTemplate(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "cranium")));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

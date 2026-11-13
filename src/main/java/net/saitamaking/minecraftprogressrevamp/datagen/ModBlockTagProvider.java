@@ -25,6 +25,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(
                         ModBlocks.COPPERBARBLOCK.get(),
                         ModBlocks.GOLDBARBLOCK.get(),
+                        ModBlocks.IRONBARBLOCK.get(),
+                        ModBlocks.ROSEGOLDBARBLOCK.get(),
                         ModBlocks.COBBLESTONEANVIL.get(),
                         ModBlocks.COPPERCRATE.get(),
                         ModBlocks.REINFORCEDBARREL.get(),
@@ -71,6 +73,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(ModTags.Blocks.NEEDS_COPPER_TOOLS)
                 .add(
                         ModBlocks.REINFORCEDBARREL.get(),
+                        ModBlocks.RUDIMENTARYALLOYFURNACE.get(),
                         Blocks.IRON_ORE,
                         Blocks.DEEPSLATE_IRON_ORE,
                         Blocks.IRON_BLOCK,

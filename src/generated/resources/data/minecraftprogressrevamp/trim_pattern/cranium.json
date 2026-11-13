@@ -1,0 +1,8 @@
+{
+  "asset_id": "minecraftprogressrevamp:cranium",
+  "decal": false,
+  "description": {
+    "translate": "trim_pattern.minecraftprogressrevamp.cranium"
+  },
+  "template_item": "minecraftprogressrevamp:cranium_smithing_template"
+}

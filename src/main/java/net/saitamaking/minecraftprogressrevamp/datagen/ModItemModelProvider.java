@@ -147,6 +147,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.SMALLMELTEDIRONBLOB.get());
         basicItem(ModItems.GOLDPLATE.get());
         basicItem(ModItems.IRONPLATE.get());
+        basicItem(ModItems.ROSEGOLDINGOT.get());
+        basicItem(ModItems.ROSEGOLDNUGGET.get());
+        basicItem(ModItems.MELTEDROSEGOLDBLOB.get());
+        basicItem(ModItems.SMALLMELTEDROSEGOLDBLOB.get());
+        basicItem(ModItems.CRANIUMSMITHINGTEMPLATE.get());
 
         trimmedArmorItem(ModItems.HIDEVEST);
         trimmedArmorItem(ModItems.HIDESHORTS);

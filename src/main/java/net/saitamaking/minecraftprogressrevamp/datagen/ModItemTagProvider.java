@@ -109,13 +109,20 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(Items.COPPER_INGOT)
                 .add(Items.IRON_INGOT)
                 .add(Items.GOLD_INGOT)
+                .add(
+                        ModItems.ROSEGOLDINGOT.get()
+                )
                 .add(Items.NETHERITE_INGOT);
         tag(ModTags.Items.NUGGETSHAPED)
-                .add(ModItems.COPPERNUGGET.get())
+                .add(
+                        ModItems.COPPERNUGGET.get(),
+                        ModItems.ROSEGOLDNUGGET.get()
+                )
                 .add(Items.IRON_NUGGET)
                 .add(Items.GOLD_NUGGET);
         tag(ModTags.Items.NAILSHAPED)
-                .add(ModItems.COPPERNAIL.get());
+                .add(ModItems.COPPERNAIL.get())
+                .add(ModItems.IRONNAIL.get());
         tag(ModTags.Items.COALBLOCKS)
                 .add(Items.COAL_BLOCK)
                 .add(ModBlocks.CHARCOALBLOCK.asItem());
@@ -135,6 +142,8 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.COPPERNUGGET.get());
         tag(ModTags.Items.SMALLGOLDBLOBMELTABLES)
                 .add(Items.GOLD_NUGGET);
+        tag(ModTags.Items.SMALLROSEGOLDBLOBMELTABLES)
+                .add(ModItems.ROSEGOLDNUGGET.get());
         tag(ModTags.Items.SMALLIRONBLOBMELTABLES)
                 .add(Items.IRON_NUGGET);
         tag(ModTags.Items.STONESLABCRAFTINGMATERIAL)
@@ -159,6 +168,8 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(Items.IRON_INGOT)
                 .add(Items.DEEPSLATE_IRON_ORE)
                 .add(Items.IRON_ORE);
+        tag(ModTags.Items.ROSEGOLDBLOBMELTABLES)
+                .add(ModItems.ROSEGOLDINGOT.get());
         tag(ModTags.Items.COPPERPLATES)
                 .add(ModItems.COPPERPLATE.get());
         tag(ModTags.Items.GOLDPLATES)
@@ -222,5 +233,10 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.HIDEBOOTS.get())
                 .add(ModItems.HIDESHORTS.get());
 
+        this.tag(ItemTags.TRIM_MATERIALS)
+                .add(ModItems.ROSEGOLDINGOT.get());
+
+        this.tag(ItemTags.TRIM_TEMPLATES)
+                .add(ModItems.CRANIUMSMITHINGTEMPLATE.get());
     }
 }

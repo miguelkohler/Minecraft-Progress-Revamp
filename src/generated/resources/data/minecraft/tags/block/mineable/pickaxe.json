@@ -2,6 +2,8 @@
   "values": [
     "minecraftprogressrevamp:copper_bar_block",
     "minecraftprogressrevamp:gold_bar_block",
+    "minecraftprogressrevamp:iron_bar_block",
+    "minecraftprogressrevamp:rose_gold_bar_block",
     "minecraftprogressrevamp:cobblestone_anvil",
     "minecraftprogressrevamp:copper_crate",
     "minecraftprogressrevamp:reinforced_barrel",

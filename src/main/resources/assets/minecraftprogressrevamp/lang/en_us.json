@@ -115,6 +115,11 @@
   "item.minecraftprogressrevamp.melted_empty_gold_mold": "Melted Empty Gold Mold",
   "item.minecraftprogressrevamp.melted_ingot_gold_mold": "Melted Ingot Gold Mold",
   "item.minecraftprogressrevamp.melted_nail_gold_mold": "Melted Nail Gold Mold",
+  "item.minecraftprogressrevamp.melted_rose_gold_blob": "Melted Rose Gold Blob",
+  "item.minecraftprogressrevamp.small_melted_rose_gold_blob": "Small Melted Rose Gold Blob",
+  "item.minecraftprogressrevamp.rose_gold_ingot": "Rose Gold Ingot",
+  "item.minecraftprogressrevamp.rose_gold_nugget": "Rose Gold Nugget",
+  "item.minecraftprogressrevamp.cranium_smithing_template": "Smithing Template",
 
   "block.minecraftprogressrevamp.primitive_crafting_table": "Primitive Crafting Table",
   "block.minecraftprogressrevamp.rudimentary_crafting_table": "Rudimentary Crafting Table",
@@ -129,6 +134,8 @@
   "block.minecraftprogressrevamp.copper_bar_block": "Block of Copper Ingots",
   "block.minecraftprogressrevamp.gold_bar_block": "Block of Gold Ingots",
   "block.minecraftprogressrevamp.iron_bar_block": "Block of Iron Ingots",
+  "block.minecraftprogressrevamp.rose_gold_bar_block": "Block of Rose Gold Ingots",
+  "block.minecraftprogressrevamp.netherite_bar_block": "Block of Netherite Ingots",
   "block.minecraftprogressrevamp.wooden_crate": "Wooden Crate",
   "block.minecraftprogressrevamp.copper_crate": "Copper Crate",
   "block.minecraftprogressrevamp.campfire_with_crucible": "Campfire With Crucible",
@@ -137,6 +144,7 @@
   "block.minecraftprogressrevamp.small_oak_box": "Small Box",
   "block.minecraftprogressrevamp.log_block": "Log",
   "block.minecraftprogressrevamp.reinforced_barrel": "Reinforced Barrel",
+  "block.minecraftprogressrevamp.rudimentary_alloy_furnace": "Rudimentary Alloy Furnace",
 
   "creativetab.minecraftprogressrevamp.primitive_items": "Primitive Items",
   "creativetab.minecraftprogressrevamp.copper_age_items": "Copper Age Items",
@@ -161,5 +169,8 @@
   "tooltip.minecraftprogressrevamp.magnifying_glass.not_shift_down": "§8Press [SHIFT] for more information",
   "tooltip.minecraftprogressrevamp.primitive_hammer.shift_down": "Can crack bricks on right click",
   "tooltip.minecraftprogressrevamp.primitive_hammer.not_shift_down": "§8Press [SHIFT] for more information",
-  "tooltip.minecraftprogressrevamp.crafting_table_transform_item": "Shift Right click to §dtransform §fa"
+  "tooltip.minecraftprogressrevamp.crafting_table_transform_item": "Shift Right click to §dtransform §fa",
+
+  "trim_pattern.minecraftprogressrevamp.cranium": "Cranium Armor Trim",
+  "trim_material.minecraftprogressrevamp.rose_gold": "Rose Gold Material"
 }

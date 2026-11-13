@@ -49,11 +49,13 @@ public class ModTags {
         public static final TagKey<Item> COALBLOCKS = createTag("coal_blocks");
         public static final TagKey<Item> COPPERBLOBMELTABLES = createTag("copper_blob_meltables");
         public static final TagKey<Item> GOLDBLOBMELTABLES = createTag("gold_blob_meltables");
+        public static final TagKey<Item> ROSEGOLDBLOBMELTABLES = createTag("rose_gold_blob_meltables");
         public static final TagKey<Item> IRONBLOBMELTABLES = createTag("iron_blob_meltables");
         public static final TagKey<Item> FIRESTARTERS = createTag("firestarters");
         public static final TagKey<Item> STONESLABCRAFTINGMATERIAL = createTag("stone_slab_crafting_material");
         public static final TagKey<Item> SMALLCOPPERBLOBMELTABLES = createTag("small_copper_blob_meltables");
         public static final TagKey<Item> SMALLGOLDBLOBMELTABLES = createTag("small_gold_blob_meltables");
+        public static final TagKey<Item> SMALLROSEGOLDBLOBMELTABLES = createTag("small_rose_gold_blob_meltables");
         public static final TagKey<Item> SMALLIRONBLOBMELTABLES = createTag("small_iron_blob_meltables");
         public static final TagKey<Item> COPPERBLOCKMELTABLES = createTag("copper_block_meltables");
         public static final TagKey<Item> GOLDBLOCKMELTABLES = createTag("gold_block_meltables");
