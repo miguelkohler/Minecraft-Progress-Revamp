@@ -2686,6 +2686,29 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "rose_gold_nugget_gold_mold").withPrefix("recipes/"))
         );
 
+        List<Ingredient> Mod_shapeless_ingredients52 = List.of(
+                Ingredient.of(ModTags.Items.SHARP_PEBBLES),
+                Ingredient.of(ItemTags.SAPLINGS)
+        );
+
+        ModCustomCraftingShapeless Mod_shapeless_recipe52 = new ModCustomCraftingShapeless(
+                1,
+                true,
+                "",
+                CraftingBookCategory.MISC,
+                new ItemStack(Items.STICK),
+                Mod_shapeless_ingredients52
+        );
+
+        recipeOutput.accept(
+                ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "stick_from_sapplings"),
+                Mod_shapeless_recipe52,
+                recipeOutput.advancement()
+                        .addCriterion("has_sharp_pebbles", RecipeProvider.has(ModTags.Items.SHARP_PEBBLES))
+                        .addCriterion("has_sapplings", RecipeProvider.has(ItemTags.SAPLINGS))
+                        .build(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "stick_from_sapplings").withPrefix("recipes/"))
+        );
+
         CobblestoneAnvilRecipeBuilder.anvil(ModItems.MELTEDCOPPERPLATE)
                 .pattern(" #  ")
                 .pattern(" OO ")
@@ -3109,6 +3132,146 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
                         ProgressRevamp.MODID, "copper_chisel_blade_hot2"));
 
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.BUCKETHOT)
+                .pattern("# #")
+                .pattern("HTH")
+                .pattern(" H ")
+                .define('T', ModTags.Items.COPPERORBETTERHAMMERS)
+                .define('H', ModItems.MELTEDIRONPLATE)
+                .define('#', ModItems.MELTEDIRONBLOB)
+                .unlockedBy("has_copper_or_better_hammer", has(ModTags.Items.COPPERORBETTERHAMMERS))
+                .unlockedBy("has_melted_iron_blob", has(ModItems.MELTEDIRONBLOB))
+                .unlockedBy("has_melted_iron_plate", has(ModItems.MELTEDIRONPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "bucket_hot1" ));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.BUCKETHOT)
+                .pattern("#T#")
+                .pattern("H H")
+                .pattern(" H ")
+                .define('T', ModTags.Items.COPPERORBETTERHAMMERS)
+                .define('H', ModItems.MELTEDIRONPLATE)
+                .define('#', ModItems.MELTEDIRONBLOB)
+                .unlockedBy("has_copper_or_better_hammer", has(ModTags.Items.COPPERORBETTERHAMMERS))
+                .unlockedBy("has_melted_iron_blob", has(ModItems.MELTEDIRONBLOB))
+                .unlockedBy("has_melted_iron_plate", has(ModItems.MELTEDIRONPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "bucket_hot2" ));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.MINECARTHOT)
+                .pattern("H TH")
+                .pattern("HHHH")
+                .pattern("    ")
+                .define('T', ModTags.Items.COPPERORBETTERHAMMERS)
+                .define('H', ModItems.MELTEDIRONPLATE)
+                .unlockedBy("has_copper_or_better_hammer", has(ModTags.Items.COPPERORBETTERHAMMERS))
+                .unlockedBy("has_melted_iron_plate", has(ModItems.MELTEDIRONPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "minecart_hot" ));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.IRONHELMETHOT)
+                .pattern(" OUO")
+                .pattern(" U#U")
+                .pattern("    ")
+                .define('#', ModTags.Items.COPPERORBETTERHAMMERS)
+                .define('O', ModItems.MELTEDIRONBLOB)
+                .define('U', ModItems.MELTEDIRONPLATE)
+                .unlockedBy("has_copper_or_better_hammer", has(ModTags.Items.COPPERORBETTERHAMMERS))
+                .unlockedBy("has_melted_iron_blob", has(ModItems.MELTEDIRONBLOB))
+                .unlockedBy("has_melted_iron_plate", has(ModItems.MELTEDIRONPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "iron_helmet_hot"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.IRONHELMETHOT)
+                .pattern("  UO")
+                .pattern("  #U")
+                .pattern("  UO")
+                .define('#', ModTags.Items.COPPERORBETTERHAMMERS)
+                .define('O', ModItems.MELTEDIRONBLOB)
+                .define('U', ModItems.MELTEDIRONPLATE)
+                .unlockedBy("has_copper_or_better_hammer", has(ModTags.Items.COPPERORBETTERHAMMERS))
+                .unlockedBy("has_melted_iron_blob", has(ModItems.MELTEDIRONBLOB))
+                .unlockedBy("has_melted_iron_plate", has(ModItems.MELTEDIRONPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "iron_helmet_hot2"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.IRONCHESTPLATEHOT)
+                .pattern("UOUO")
+                .pattern("OUO#")
+                .pattern("UOUO")
+                .define('#', ModTags.Items.COPPERORBETTERHAMMERS)
+                .define('O', ModItems.MELTEDIRONBLOB)
+                .define('U', ModItems.MELTEDIRONPLATE)
+                .unlockedBy("has_copper_or_better_hammer", has(ModTags.Items.COPPERORBETTERHAMMERS))
+                .unlockedBy("has_melted_iron_blob", has(ModItems.MELTEDIRONBLOB))
+                .unlockedBy("has_melted_iron_plate", has(ModItems.MELTEDIRONPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "iron_chestplate_hot"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.IRONLEGGINGSHOT)
+                .pattern("UOUO")
+                .pattern("  #U")
+                .pattern("UOUO")
+                .define('#', ModTags.Items.COPPERORBETTERHAMMERS)
+                .define('O', ModItems.MELTEDIRONBLOB)
+                .define('U', ModItems.MELTEDIRONPLATE)
+                .unlockedBy("has_copper_or_better_hammer", has(ModTags.Items.COPPERORBETTERHAMMERS))
+                .unlockedBy("has_melted_iron_blob", has(ModItems.MELTEDIRONBLOB))
+                .unlockedBy("has_melted_iron_plate", has(ModItems.MELTEDIRONPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "iron_leggings_hot"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.IRONBOOTSHOT)
+                .pattern(" UO ")
+                .pattern("  # ")
+                .pattern(" UO ")
+                .define('#', ModTags.Items.COPPERORBETTERHAMMERS)
+                .define('O', ModItems.MELTEDIRONBLOB)
+                .define('U', ModItems.MELTEDIRONPLATE)
+                .unlockedBy("has_copper_or_better_hammer", has(ModTags.Items.COPPERORBETTERHAMMERS))
+                .unlockedBy("has_melted_iron_blob", has(ModItems.MELTEDIRONBLOB))
+                .unlockedBy("has_melted_iron_plate", has(ModItems.MELTEDIRONPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "iron_boots_hot"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.IRONBOOTSHOT)
+                .pattern(" O#O")
+                .pattern(" U U")
+                .pattern("    ")
+                .define('#', ModTags.Items.COPPERORBETTERHAMMERS)
+                .define('O', ModItems.MELTEDIRONBLOB)
+                .define('U', ModItems.MELTEDIRONPLATE)
+                .unlockedBy("has_copper_or_better_hammer", has(ModTags.Items.COPPERORBETTERHAMMERS))
+                .unlockedBy("has_melted_iron_blob", has(ModItems.MELTEDIRONBLOB))
+                .unlockedBy("has_melted_iron_plate", has(ModItems.MELTEDIRONPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "iron_boots_hot2"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.IRONBOOTSHOT)
+                .pattern(" UO ")
+                .pattern(" #  ")
+                .pattern(" UO ")
+                .define('#', ModTags.Items.COPPERORBETTERHAMMERS)
+                .define('O', ModItems.MELTEDIRONBLOB)
+                .define('U', ModItems.MELTEDIRONPLATE)
+                .unlockedBy("has_copper_or_better_hammer", has(ModTags.Items.COPPERORBETTERHAMMERS))
+                .unlockedBy("has_melted_iron_blob", has(ModItems.MELTEDIRONBLOB))
+                .unlockedBy("has_melted_iron_plate", has(ModItems.MELTEDIRONPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "iron_boots_hot3"));
+
+        CobblestoneAnvilRecipeBuilder.anvil(ModItems.IRONBOOTSHOT)
+                .pattern(" O O")
+                .pattern(" U#U")
+                .pattern("    ")
+                .define('#', ModTags.Items.COPPERORBETTERHAMMERS)
+                .define('O', ModItems.MELTEDIRONBLOB)
+                .define('U', ModItems.MELTEDIRONPLATE)
+                .unlockedBy("has_copper_or_better_hammer", has(ModTags.Items.COPPERORBETTERHAMMERS))
+                .unlockedBy("has_melted_iron_blob", has(ModItems.MELTEDIRONBLOB))
+                .unlockedBy("has_melted_iron_plate", has(ModItems.MELTEDIRONPLATE))
+                .save(recipeOutput, ResourceLocation.fromNamespaceAndPath(
+                        ProgressRevamp.MODID, "iron_boots_hot4"));
 
 
         TierOneCraftingTableRecipeBuilder.intermediate_recipe(ModBlocks.BELLOW.get())

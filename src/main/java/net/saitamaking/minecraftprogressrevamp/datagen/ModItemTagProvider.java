@@ -29,17 +29,8 @@ public class ModItemTagProvider extends ItemTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
         tag(ModTags.Items.LOOSE_PEBBLES)
                 .add(ModItems.LOOSEPEBBLE.get());
-        tag(ModTags.Items.PRIMITIVE_TOOLS)
-                .add(ModItems.SHARPPEBBLE.get())
-                .add(ModItems.PRIMITIVEAXE.get())
-                .add(ModItems.PRIMITIVEHAMMER.get())
-                .add(ModItems.PRIMITIVESAW.get())
-                .add(ModItems.PRIMITIVEPICKAXE.get())
-                .add(ModItems.STARTERTOOLBOX.get())
-                .add(ModItems.PRIMITIVEKNIFE.get())
-                .add(ModItems.CERAMICBUCKET.get())
-                .add(ModItems.WATER_CERAMICBUCKET.get())
-                .add(ModItems.PRIMITIVESHEARS.get());
+        tag(ModTags.Items.SHARP_PEBBLES)
+                .add(ModItems.SHARPPEBBLE.get());
         tag(ItemTags.AXES)
                 .add(
                         ModItems.PRIMITIVEAXE.get(),
@@ -65,6 +56,11 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(
                         ModItems.PRIMITIVEHAMMER.get(),
                         ModItems.STARTERTOOLBOX.get(),
+                        ModItems.INTERMEDIATETOOLBOX.get(),
+                        ModItems.COPPERHAMMER.get()
+                );
+        tag(ModTags.Items.COPPERORBETTERHAMMERS)
+                .add(
                         ModItems.INTERMEDIATETOOLBOX.get(),
                         ModItems.COPPERHAMMER.get()
                 );

@@ -104,7 +104,7 @@ public class SharpRockItem extends DiggerItem {
                     .append(Component.literal(" into a "))
                     .append(Component.translatable( "block.minecraftprogressrevamp.primitive_crafting_table")));
         } else {
-            tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.starter_toolbox.not_shift_down"));
+            tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.not_shift_down"));
         }
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }

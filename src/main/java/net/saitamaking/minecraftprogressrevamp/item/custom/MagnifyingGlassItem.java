@@ -62,7 +62,7 @@ public class MagnifyingGlassItem extends Item {
         if(Screen.hasShiftDown()){
             tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.magnifying_glass.shift_down"));
         } else {
-            tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.magnifying_glass.not_shift_down"));
+            tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.not_shift_down"));
         }
 
         Block saved = stack.get(ModDataComponents.BLOCKNAME.get());

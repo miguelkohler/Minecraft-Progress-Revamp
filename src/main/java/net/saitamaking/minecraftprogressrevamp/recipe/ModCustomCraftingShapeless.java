@@ -50,6 +50,7 @@ public class ModCustomCraftingShapeless extends ShapelessRecipe {
 
     private static List<TagKey<Item>> tools() {
         return List.of(
+                ModTags.Items.SHARP_PEBBLES,
                 ModTags.Items.SAWS,
                 ModTags.Items.SHEARS,
                 ModTags.Items.HAMMERS,

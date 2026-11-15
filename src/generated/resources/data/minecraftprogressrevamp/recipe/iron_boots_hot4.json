@@ -1,0 +1,23 @@
+{
+  "type": "minecraftprogressrevamp:cobblestone_anvil",
+  "key": {
+    "#": {
+      "tag": "minecraftprogressrevamp:copper_or_better_hammers"
+    },
+    "O": {
+      "item": "minecraftprogressrevamp:melted_iron_blob"
+    },
+    "U": {
+      "item": "minecraftprogressrevamp:melted_iron_plate"
+    }
+  },
+  "pattern": [
+    " O O",
+    " U#U",
+    "    "
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:iron_boots_hot"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraftprogressrevamp:cobblestone_anvil",
+  "key": {
+    "H": {
+      "item": "minecraftprogressrevamp:melted_iron_plate"
+    },
+    "T": {
+      "tag": "minecraftprogressrevamp:copper_or_better_hammers"
+    }
+  },
+  "pattern": [
+    "H TH",
+    "HHHH",
+    "    "
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:minecart_hot"
+  }
+}

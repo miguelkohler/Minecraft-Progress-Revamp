@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_sapplings": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:saplings"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_sharp_pebbles": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraftprogressrevamp:sharp_pebbles"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_sharp_pebbles"
+    ],
+    [
+      "has_sapplings"
+    ]
+  ]
+}

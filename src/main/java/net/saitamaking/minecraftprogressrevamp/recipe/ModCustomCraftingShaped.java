@@ -42,6 +42,7 @@ public class ModCustomCraftingShaped extends ShapedRecipe {
 
     private static List<TagKey<Item>> tools() {
         return List.of(
+                ModTags.Items.SHARP_PEBBLES,
                 ModTags.Items.SAWS,
                 ModTags.Items.SHEARS,
                 ModTags.Items.HAMMERS,

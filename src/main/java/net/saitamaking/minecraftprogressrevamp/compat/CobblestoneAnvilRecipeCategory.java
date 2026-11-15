@@ -23,7 +23,7 @@ import org.jetbrains.annotations.Nullable;
 public class CobblestoneAnvilRecipeCategory implements IRecipeCategory<CobblestoneAnvilRecipe> {
     public static final ResourceLocation UID = ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "cobblestone_anvil");
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID,
-            "textures/gui/cobblestoneanvil/cobblestone_anvil_gui.png");
+            "textures/gui/craftingtables/cobblestone_anvil_gui.png");
 
     public static final RecipeType<CobblestoneAnvilRecipe> COBBLESTONE_ANVIL_RECIPE_RECIPE_TYPE =
             new RecipeType<>(UID, CobblestoneAnvilRecipe.class);

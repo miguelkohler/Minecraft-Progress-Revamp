@@ -3,16 +3,12 @@ package net.saitamaking.minecraftprogressrevamp.item;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.saitamaking.minecraftprogressrevamp.ProgressRevamp;
 import net.saitamaking.minecraftprogressrevamp.item.custom.*;
-
-import java.util.function.Supplier;
 
 import static net.minecraft.world.item.Items.GOLD_NUGGET;
 import static net.minecraft.world.item.Items.IRON_NUGGET;
@@ -34,17 +30,17 @@ public class ModItems {
     public static final DeferredItem<PickaxeItem> PRIMITIVEPICKAXE = ITEMS.register("primitive_pickaxe",
             () -> new PickaxeItem(ModToolTiers.PRIMAL, new Item.Properties().attributes(PickaxeItem.createAttributes(ModToolTiers.PRIMAL, 1.0F, -2.8F))));
 
-    public static final DeferredItem<PrimitiveHammerItem> PRIMITIVEHAMMER = ITEMS.register("primitive_hammer",
-            () -> new PrimitiveHammerItem(ModToolTiers.PRIMAL, new Item.Properties().attributes(PrimitiveHammerItem.createAttributes(ModToolTiers.PRIMAL, 9.5F, -3.6F))));
+    public static final DeferredItem<HammerItem> PRIMITIVEHAMMER = ITEMS.register("primitive_hammer",
+            () -> new HammerItem(ModToolTiers.PRIMAL, new Item.Properties().attributes(HammerItem.createAttributes(ModToolTiers.PRIMAL, 9.5F, -3.6F))));
 
     public static final DeferredItem<ShearsItem> PRIMITIVESHEARS = ITEMS.register("primitive_shears",
             () -> new ShearsItem((new Item.Properties()).durability(32).component(DataComponents.TOOL, ShearsItem.createToolProperties())));
 
-    public static final DeferredItem<PrimitiveSawItem> PRIMITIVESAW = ITEMS.register("primitive_saw",
-            () -> new PrimitiveSawItem(ModToolTiers.PRIMAL, new Item.Properties().attributes(PrimitiveSawItem.createAttributes(ModToolTiers.PRIMAL, 0.5F, 2.4F))));
+    public static final DeferredItem<SawItem> PRIMITIVESAW = ITEMS.register("primitive_saw",
+            () -> new SawItem(ModToolTiers.PRIMAL, new Item.Properties().attributes(SawItem.createAttributes(ModToolTiers.PRIMAL, 0.5F, 2.4F))));
 
-    public static final DeferredItem<PrimitiveKnifeItem> PRIMITIVEKNIFE = ITEMS.register("primitive_knife",
-            () -> new PrimitiveKnifeItem(ModToolTiers.PRIMAL, new Item.Properties().attributes(PrimitiveSawItem.createAttributes(ModToolTiers.PRIMAL, 1.0F, -1.6F))));
+    public static final DeferredItem<KnifeItem> PRIMITIVEKNIFE = ITEMS.register("primitive_knife",
+            () -> new KnifeItem(ModToolTiers.PRIMAL, new Item.Properties().attributes(SawItem.createAttributes(ModToolTiers.PRIMAL, 1.0F, -1.6F))));
 
     public static final DeferredItem<AxeItem> COPPERAXE = ITEMS.register("copper_axe",
             () -> new AxeItem(ModToolTiers.COPPER, new Item.Properties().attributes(AxeItem.createAttributes(ModToolTiers.COPPER, 7.0F, -3.2F))));
@@ -61,17 +57,17 @@ public class ModItems {
     public static final DeferredItem<SwordItem> COPPERSWORD = ITEMS.register("copper_sword",
             () -> new SwordItem(ModToolTiers.COPPER, new Item.Properties().attributes(SwordItem.createAttributes(ModToolTiers.COPPER, 3.0F, -2.4F))));
 
-    public static final DeferredItem<PrimitiveKnifeItem> COPPERKNIFE = ITEMS.register("copper_knife",
-            () -> new PrimitiveKnifeItem(ModToolTiers.COPPER, new Item.Properties().attributes(PrimitiveKnifeItem.createAttributes(ModToolTiers.COPPER, 1.0F, -1.6F))));
+    public static final DeferredItem<KnifeItem> COPPERKNIFE = ITEMS.register("copper_knife",
+            () -> new KnifeItem(ModToolTiers.COPPER, new Item.Properties().attributes(KnifeItem.createAttributes(ModToolTiers.COPPER, 1.0F, -1.6F))));
 
-    public static final DeferredItem<PrimitiveHammerItem> COPPERHAMMER = ITEMS.register("copper_hammer",
-            () -> new PrimitiveHammerItem(ModToolTiers.COPPER, new Item.Properties().attributes(PrimitiveHammerItem.createAttributes(ModToolTiers.COPPER, 10.0F, -3.6F))));
+    public static final DeferredItem<HammerItem> COPPERHAMMER = ITEMS.register("copper_hammer",
+            () -> new HammerItem(ModToolTiers.COPPER, new Item.Properties().attributes(HammerItem.createAttributes(ModToolTiers.COPPER, 10.0F, -3.6F))));
 
-    public static final DeferredItem<PrimitiveSawItem> COPPERSAW = ITEMS.register("copper_saw",
-            () -> new PrimitiveSawItem(ModToolTiers.COPPER, new Item.Properties().attributes(PrimitiveSawItem.createAttributes(ModToolTiers.COPPER, -0.5F, 2.4F))));
+    public static final DeferredItem<SawItem> COPPERSAW = ITEMS.register("copper_saw",
+            () -> new SawItem(ModToolTiers.COPPER, new Item.Properties().attributes(SawItem.createAttributes(ModToolTiers.COPPER, -0.5F, 2.4F))));
 
     public static final DeferredItem<ChiselItem> COPPERCHISEL = ITEMS.register("copper_chisel",
-            () -> new ChiselItem(ModToolTiers.COPPER, new Item.Properties().attributes(PrimitiveSawItem.createAttributes(ModToolTiers.COPPER, -1.0F, -1.8F))));
+            () -> new ChiselItem(ModToolTiers.COPPER, new Item.Properties().attributes(SawItem.createAttributes(ModToolTiers.COPPER, -1.0F, -1.8F))));
 
     public static final DeferredItem<ShearsItem> COPPERSHEARS = ITEMS.register("copper_shears",
             () -> new ShearsItem((new Item.Properties()).durability(191).component(DataComponents.TOOL, ShearsItem.createToolProperties())));
@@ -223,6 +219,12 @@ public class ModItems {
     public static final DeferredItem<Item> IRONNAIL = ITEMS.register("iron_nail",
             () -> new Item(new Item.Properties()));
 
+    public static final DeferredItem<Item> BUCKETHOT = ITEMS.register("bucket_hot",
+            () -> new TransformItem("water_cauldron", Items.BUCKET, new Item.Properties().stacksTo(16)));
+
+    public static final DeferredItem<Item> MINECARTHOT = ITEMS.register("minecart_hot",
+            () -> new TransformItem("water_cauldron", Items.MINECART, new Item.Properties().stacksTo(1)));
+
     public static final DeferredItem<Item> FIRESTARTER = ITEMS.register("firestarter",
             () -> new FlintAndSteelItem(new Item.Properties().durability(1)));
 
@@ -316,6 +318,18 @@ public class ModItems {
 
     public static final DeferredItem<Item> COPPERBOOTSHOT = ITEMS.register("copper_boots_hot",
             () -> new TransformItem("water_cauldron", ModItems.COPPERBOOTS.get(), new Item.Properties().stacksTo(1)));
+
+    public static final DeferredItem<Item> IRONHELMETHOT = ITEMS.register("iron_helmet_hot",
+            () -> new TransformItem("water_cauldron", Items.IRON_HELMET, new Item.Properties().stacksTo(1)));
+
+    public static final DeferredItem<Item> IRONCHESTPLATEHOT = ITEMS.register("iron_chestplate_hot",
+            () -> new TransformItem("water_cauldron", Items.IRON_CHESTPLATE, new Item.Properties().stacksTo(1)));
+
+    public static final DeferredItem<Item> IRONLEGGINGSHOT = ITEMS.register("iron_leggings_hot",
+            () -> new TransformItem("water_cauldron", Items.IRON_LEGGINGS, new Item.Properties().stacksTo(1)));
+
+    public static final DeferredItem<Item> IRONBOOTSHOT = ITEMS.register("iron_boots_hot",
+            () -> new TransformItem("water_cauldron", Items.IRON_BOOTS, new Item.Properties().stacksTo(1)));
 
     public static final DeferredItem<Item> COPPERAXEHEAD = ITEMS.register("copper_axe_head",
             () -> new Item(new Item.Properties()));

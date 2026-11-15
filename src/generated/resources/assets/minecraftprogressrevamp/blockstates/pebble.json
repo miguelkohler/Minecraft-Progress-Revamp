@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
+    "facing=east": {
+      "model": "minecraftprogressrevamp:block/pebble",
+      "y": 90
+    },
+    "facing=north": {
       "model": "minecraftprogressrevamp:block/pebble"
+    },
+    "facing=south": {
+      "model": "minecraftprogressrevamp:block/pebble",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "minecraftprogressrevamp:block/pebble",
+      "y": 270
     }
   }
 }

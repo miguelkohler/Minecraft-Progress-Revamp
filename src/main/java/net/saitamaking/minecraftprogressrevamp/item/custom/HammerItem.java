@@ -17,7 +17,7 @@ import net.minecraft.world.level.block.Blocks;
 import java.util.List;
 import java.util.Map;
 
-public class PrimitiveHammerItem extends DiggerItem {
+public class HammerItem extends DiggerItem {
     private static final Map<Block, Block> CHISEL_MAP =
             Map.of(
                     Blocks.STONE_BRICKS, Blocks.CRACKED_STONE_BRICKS,
@@ -27,7 +27,7 @@ public class PrimitiveHammerItem extends DiggerItem {
                     Blocks.POLISHED_BLACKSTONE_BRICKS, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS
             );
 
-    public PrimitiveHammerItem(Tier tier, Properties properties) {
+    public HammerItem(Tier tier, Properties properties) {
         super(tier, BlockTags.MINEABLE_WITH_PICKAXE, properties);
     }
 
@@ -54,9 +54,9 @@ public class PrimitiveHammerItem extends DiggerItem {
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
         if(Screen.hasShiftDown()){
-            tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.primitive_hammer.shift_down"));
+            tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.hammer.shift_down"));
         } else {
-            tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.primitive_hammer.not_shift_down"));
+            tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.not_shift_down"));
         }
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }

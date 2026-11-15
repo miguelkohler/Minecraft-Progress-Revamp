@@ -8,7 +8,6 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.DiggerItem;
 import net.minecraft.world.item.ItemStack;
@@ -23,7 +22,7 @@ import net.saitamaking.minecraftprogressrevamp.item.ModItems;
 import java.util.List;
 import java.util.Map;
 
-public class PrimitiveKnifeItem extends DiggerItem {
+public class KnifeItem extends DiggerItem {
     private static final Map<Block, Block> CHISEL_MAP =
             Map.of(
                     Blocks.OAK_LOG, Blocks.STRIPPED_OAK_LOG,
@@ -44,7 +43,7 @@ public class PrimitiveKnifeItem extends DiggerItem {
                     Blocks.TALL_GRASS, Blocks.AIR
             );
 
-    public PrimitiveKnifeItem(Tier tier, Properties properties) {
+    public KnifeItem(Tier tier, Properties properties) {
         super(tier, BlockTags.SWORD_EFFICIENT, properties);
     }
 
@@ -92,9 +91,9 @@ public class PrimitiveKnifeItem extends DiggerItem {
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
         if(Screen.hasShiftDown()){
-            tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.primitive_knife.shift_down"));
+            tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.knife.shift_down"));
         } else {
-            tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.primitive_knife.not_shift_down"));
+            tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.not_shift_down"));
         }
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }

@@ -24,7 +24,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.MELTEDGOLDBLOCK);
         blockWithItem(ModBlocks.FIRECLAY);
         steelCutterBlock(ModBlocks.STEELCUTTER, "steel_cutter");
-        pebbleBlock(ModBlocks.PEBBLE, "pebble");
         horizontalBlock(ModBlocks.COPPERBARBLOCK.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/copper_bar_block")));
         horizontalBlock(ModBlocks.GOLDBARBLOCK.get(),
@@ -45,6 +44,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 new ModelFile.UncheckedModelFile(modLoc("block/copper_crate")));
         horizontalBlock(ModBlocks.BELLOW.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/bellow")));
+        horizontalBlock(ModBlocks.PEBBLE.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/pebble")));
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock) {
@@ -78,31 +79,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 .to(15, 16, 8)
                 .face(Direction.NORTH).uvs(1, 9, 15, 16).texture("#saw").tintindex(0).end()
                 .face(Direction.SOUTH).uvs(15, 9, 1, 16).texture("#saw").tintindex(0).end()
-                .end();
-
-        simpleBlock(block, model);
-        simpleBlockItem(block, model);
-    }
-
-    private void pebbleBlock(DeferredBlock<?> deferredBlock, String name) {
-        Block block = deferredBlock.get();
-
-        BlockModelBuilder model = models().getBuilder(name)
-                .parent(models().getExistingFile(mcLoc("block/block")))
-                .texture("particle", modLoc("block/" + name + "_top"))
-                .texture("bottom", modLoc("block/" + name + "_top"))
-                .texture("top", modLoc("block/" + name + "_top"))
-                .texture("side", modLoc("block/" + name + "_side"));
-
-        model.element()
-                .from(3, 0, 3)
-                .to(13, 6, 13)
-                .face(Direction.DOWN).uvs(3, 6, 13, 16).texture("#top").cullface(Direction.DOWN).end()
-                .face(Direction.UP).uvs(3, 6, 13, 16).texture("#top").end()
-                .face(Direction.NORTH).uvs(3, 10, 13, 16).texture("#side").cullface(Direction.NORTH).end()
-                .face(Direction.SOUTH).uvs(3, 10, 13, 16).texture("#side").cullface(Direction.SOUTH).end()
-                .face(Direction.WEST).uvs(3, 10, 13, 16).texture("#side").cullface(Direction.WEST).end()
-                .face(Direction.EAST).uvs(3, 10, 13, 16).texture("#side").cullface(Direction.EAST).end()
                 .end();
 
         simpleBlock(block, model);

@@ -5,18 +5,28 @@ import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.constants.RecipeTypes;
 import mezz.jei.api.registration.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.CraftingBookCategory;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeManager;
+import net.minecraft.world.level.block.Block;
 import net.saitamaking.minecraftprogressrevamp.ProgressRevamp;
 import net.saitamaking.minecraftprogressrevamp.block.ModBlocks;
+import net.saitamaking.minecraftprogressrevamp.block.custom.MeltedMetalBlock;
+import net.saitamaking.minecraftprogressrevamp.item.ModItems;
+import net.saitamaking.minecraftprogressrevamp.item.custom.TransformItem;
 import net.saitamaking.minecraftprogressrevamp.recipe.*;
 import net.saitamaking.minecraftprogressrevamp.screen.ModMenuTypes;
 import net.saitamaking.minecraftprogressrevamp.screen.custom.*;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @JeiPlugin
 public class JEIMinecraftProgressRevampPlugin implements IModPlugin {
@@ -56,6 +66,44 @@ public class JEIMinecraftProgressRevampPlugin implements IModPlugin {
                 ModRecipeSerializers.RUDIMENTARY_ALLOY_FURNACE_TYPE.get()).stream().map(RecipeHolder::value).toList();
 
         registration.addRecipes(RudimentaryAlloyFurnaceRecipeCategory.RUDIMENTARY_ALLOY_FURNACE_RECIPE_RECIPE_TYPE, rudimentaryAlloyFurnaceRecipes);
+
+        Map<ResourceLocation, List<ItemStack>> resultsByTarget = new HashMap<>();
+
+        for (Item item : BuiltInRegistries.ITEM) {
+            if (item instanceof TransformItem transformItem) {
+                ResourceLocation target = transformItem.getTargetBlockId();
+
+                resultsByTarget
+                        .computeIfAbsent(target, k -> new ArrayList<>())
+                        .add(new ItemStack(transformItem.getResult()));
+            }
+        }
+
+        resultsByTarget.forEach((blockId, stacks) ->
+                registration.addItemStackInfo(
+                        stacks,
+                        Component.translatable("jei.minecraftprogressrevamp.transform_result." + blockId.getPath())
+                )
+        );
+
+        Map<ResourceLocation, List<ItemStack>> blockResultsByTarget = new HashMap<>();
+
+        for (Block block : BuiltInRegistries.BLOCK) {
+            if (block instanceof MeltedMetalBlock metalBlock) {
+                ResourceLocation target = metalBlock.getTargetBlockId();
+
+                blockResultsByTarget
+                        .computeIfAbsent(target, k -> new ArrayList<>())
+                        .add(new ItemStack(metalBlock.getResult()));
+            }
+        }
+
+        blockResultsByTarget.forEach((blockId, stacks) ->
+                registration.addItemStackInfo(
+                        stacks,
+                        Component.translatable("jei.minecraftprogressrevamp.melted_metal")
+                )
+        );
     }
 
     @Override

@@ -17,7 +17,7 @@ import net.minecraft.world.level.block.Blocks;
 import java.util.List;
 import java.util.Map;
 
-public class PrimitiveSawItem extends DiggerItem {
+public class SawItem extends DiggerItem {
     private static final Map<Block, Block> CHISEL_MAP =
             Map.of(
                     Blocks.OAK_LOG, Blocks.STRIPPED_OAK_LOG,
@@ -32,7 +32,7 @@ public class PrimitiveSawItem extends DiggerItem {
                     Blocks.CRIMSON_STEM, Blocks.STRIPPED_CRIMSON_STEM
             );
 
-    public PrimitiveSawItem(Tier tier, Properties properties) {
+    public SawItem(Tier tier, Properties properties) {
         super(tier, BlockTags.MINEABLE_WITH_AXE, properties);
     }
 
@@ -59,9 +59,9 @@ public class PrimitiveSawItem extends DiggerItem {
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
         if(Screen.hasShiftDown()){
-            tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.primitive_saw.shift_down"));
+            tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.saw.shift_down"));
         } else {
-            tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.primitive_saw.not_shift_down"));
+            tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.not_shift_down"));
         }
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }

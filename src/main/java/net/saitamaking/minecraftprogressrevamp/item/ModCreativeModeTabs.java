@@ -164,6 +164,12 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.IRONPLATE);
                         output.accept(ModItems.IRONNAIL);
                         output.accept(ModBlocks.MELTEDIRONBLOCK);
+                        output.accept(ModItems.BUCKETHOT);
+                        output.accept(ModItems.MINECARTHOT);
+                        output.accept(ModItems.IRONHELMETHOT);
+                        output.accept(ModItems.IRONCHESTPLATEHOT);
+                        output.accept(ModItems.IRONLEGGINGSHOT);
+                        output.accept(ModItems.IRONBOOTSHOT);
                         output.accept(Items.IRON_INGOT);
                         output.accept(ModBlocks.IRONBARBLOCK);
                         output.accept(ModItems.MELTEDGOLDBLOB);

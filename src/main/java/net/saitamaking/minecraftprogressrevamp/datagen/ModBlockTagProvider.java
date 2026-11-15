@@ -43,6 +43,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(
                         ModBlocks.PRIMITIVECRAFTINGTABLE.get(),
                         ModBlocks.RUDIMENTARYCRAFTINGTABLE.get(),
+                        ModBlocks.CAMPFIREWITHCRUCIBLE.get(),
                         ModBlocks.STEELCUTTER.get(),
                         ModBlocks.BELLOW.get(),
                         ModBlocks.WOODENCRATE.get()

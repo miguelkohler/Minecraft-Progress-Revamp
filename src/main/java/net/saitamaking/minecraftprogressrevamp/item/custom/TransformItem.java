@@ -73,6 +73,14 @@ public class TransformItem extends Item {
         }
     }
 
+    public Item getResult() {
+        return result;
+    }
+
+    public ResourceLocation getTargetBlockId() {
+        return targetBlockId;
+    }
+
     private void playTransformSound(Level level, BlockPos pos) {
         SoundEvent sound;
         float pitch;
@@ -97,13 +105,13 @@ public class TransformItem extends Item {
             if (Screen.hasShiftDown()) {
                 tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.dull_item.shift_down"));
             } else {
-                tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.dull_item.not_shift_down"));
+                tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.not_shift_down"));
             }
         } else if(targetBlockId.getPath().endsWith("cauldron")){
             if (Screen.hasShiftDown()) {
                 tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.hot_item.shift_down"));
             } else {
-                tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.hot_item.not_shift_down"));
+                tooltipComponents.add(Component.translatable("tooltip.minecraftprogressrevamp.not_shift_down"));
             }
         }
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
