@@ -4,11 +4,9 @@
     {
       "condition": "neoforge:loot_table_id",
       "loot_table_id": "minecraft:entities/horse"
-    },
-    {
-      "chance": 2.0,
-      "condition": "minecraft:random_chance"
     }
   ],
-  "item": "minecraftprogressrevamp:animal_hide"
+  "item": "minecraftprogressrevamp:animal_hide",
+  "maxLoot": 3,
+  "minLoot": 2
 }

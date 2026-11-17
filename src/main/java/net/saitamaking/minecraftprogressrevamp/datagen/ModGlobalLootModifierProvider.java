@@ -3,6 +3,7 @@ package net.saitamaking.minecraftprogressrevamp.datagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.neoforged.neoforge.common.data.GlobalLootModifierProvider;
@@ -10,6 +11,7 @@ import net.neoforged.neoforge.common.loot.LootTableIdCondition;
 import net.saitamaking.minecraftprogressrevamp.ProgressRevamp;
 import net.saitamaking.minecraftprogressrevamp.item.ModItems;
 import net.saitamaking.minecraftprogressrevamp.loot.AddItemModifier;
+import net.saitamaking.minecraftprogressrevamp.loot.RemoveLootModifier;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -42,25 +44,29 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
         this.add("hide_from_cow",
                 new AddItemModifier(new LootItemCondition[] {
                         new LootTableIdCondition.Builder(ResourceLocation.withDefaultNamespace("entities/cow")).build()
-                }, ModItems.ANIMALHIDE.get()));
+                }, ModItems.ANIMALHIDE.get(), 1, 2));
+
+        this.add("remove_leather_from_cow",
+                new RemoveLootModifier(new LootItemCondition[] {
+                        new LootTableIdCondition.Builder(ResourceLocation.withDefaultNamespace("entities/cow")).build()
+                }, Items.LEATHER));
 
         this.add("hide_from_horse",
                 new AddItemModifier(new LootItemCondition[] {
-                        new LootTableIdCondition.Builder(ResourceLocation.withDefaultNamespace("entities/horse")).build(),
-                        LootItemRandomChanceCondition.randomChance(2.0f).build()
-                }, ModItems.ANIMALHIDE.get()));
+                        new LootTableIdCondition.Builder(ResourceLocation.withDefaultNamespace("entities/horse")).build()
+                }, ModItems.ANIMALHIDE.get(), 2, 3));
 
         this.add("hide_from_sheep",
                 new AddItemModifier(new LootItemCondition[] {
                         new LootTableIdCondition.Builder(ResourceLocation.withDefaultNamespace("entities/sheep")).build(),
                         LootItemRandomChanceCondition.randomChance(0.35f).build()
-                }, ModItems.ANIMALHIDE.get()));
+                }, ModItems.ANIMALHIDE.get(), 1, 2));
 
         this.add("hide_from_pig",
                 new AddItemModifier(new LootItemCondition[] {
-                        new LootTableIdCondition.Builder(ResourceLocation.withDefaultNamespace("entities/cow")).build(),
+                        new LootTableIdCondition.Builder(ResourceLocation.withDefaultNamespace("entities/pig")).build(),
                         LootItemRandomChanceCondition.randomChance(0.2f).build()
-                }, ModItems.ANIMALHIDE.get()));
+                }, ModItems.ANIMALHIDE.get(), 1, 1));
 
     }
 }

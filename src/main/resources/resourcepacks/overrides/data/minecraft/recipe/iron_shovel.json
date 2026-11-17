@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraftprogressrevamp:leather_stick"
+    },
+    "X": {
+      "item": "minecraftprogressrevamp:iron_shovel_head"
+    }
+  },
+  "pattern": [
+    " X ",
+    "#  ",
+    "   "
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:iron_shovel"
+  }
+}

@@ -3,12 +3,14 @@
   "conditions": [
     {
       "condition": "neoforge:loot_table_id",
-      "loot_table_id": "minecraft:entities/cow"
+      "loot_table_id": "minecraft:entities/pig"
     },
     {
       "chance": 0.2,
       "condition": "minecraft:random_chance"
     }
   ],
-  "item": "minecraftprogressrevamp:animal_hide"
+  "item": "minecraftprogressrevamp:animal_hide",
+  "maxLoot": 1,
+  "minLoot": 1
 }

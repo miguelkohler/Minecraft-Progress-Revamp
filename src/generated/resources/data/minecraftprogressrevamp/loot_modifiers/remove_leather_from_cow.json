@@ -1,0 +1,10 @@
+{
+  "type": "minecraftprogressrevamp:remove_item",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:entities/cow"
+    }
+  ],
+  "item": "minecraft:leather"
+}

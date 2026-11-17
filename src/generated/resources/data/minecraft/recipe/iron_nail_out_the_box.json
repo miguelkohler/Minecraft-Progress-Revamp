@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraftprogressrevamp:iron_nail_box"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "minecraftprogressrevamp:iron_nail"
+  }
+}

@@ -23,6 +23,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.MELTEDIRONBLOCK);
         blockWithItem(ModBlocks.MELTEDGOLDBLOCK);
         blockWithItem(ModBlocks.FIRECLAY);
+        blockWithItem(ModBlocks.SALTBLOCK);
         steelCutterBlock(ModBlocks.STEELCUTTER, "steel_cutter");
         horizontalBlock(ModBlocks.COPPERBARBLOCK.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/copper_bar_block")));

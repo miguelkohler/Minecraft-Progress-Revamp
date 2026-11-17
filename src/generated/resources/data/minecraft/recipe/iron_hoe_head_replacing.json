@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:iron_hoe"
+    },
+    "X": {
+      "item": "minecraftprogressrevamp:iron_hoe_head"
+    }
+  },
+  "pattern": [
+    " X ",
+    "#  ",
+    "   "
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:iron_hoe"
+  }
+}

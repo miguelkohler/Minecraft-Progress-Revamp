@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraftprogressrevamp:iron_knife"
+    },
+    "X": {
+      "item": "minecraftprogressrevamp:iron_small_blade"
+    }
+  },
+  "pattern": [
+    " X ",
+    "#  ",
+    "   "
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:iron_knife"
+  }
+}

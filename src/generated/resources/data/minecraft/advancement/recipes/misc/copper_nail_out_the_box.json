@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_copper_nail_box": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:copper_nail_box"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:copper_nail_out_the_box"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_copper_nail_box"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:copper_nail_out_the_box"
+    ]
+  }
+}

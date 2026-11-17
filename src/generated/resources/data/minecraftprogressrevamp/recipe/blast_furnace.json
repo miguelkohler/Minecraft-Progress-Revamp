@@ -1,0 +1,48 @@
+{
+  "type": "minecraftprogressrevamp:intermediate_crafting_table",
+  "ingredients": [
+    {
+      "tag": "minecraftprogressrevamp:iron_plates"
+    },
+    {
+      "tag": "minecraftprogressrevamp:iron_plates"
+    },
+    {
+      "tag": "minecraftprogressrevamp:iron_plates"
+    },
+    {
+      "item": "minecraft:iron_bars"
+    },
+    {
+      "item": "minecraft:furnace"
+    },
+    {
+      "item": "minecraft:iron_bars"
+    },
+    {
+      "item": "minecraft:iron_bars"
+    },
+    {
+      "item": "minecraft:iron_bars"
+    },
+    {
+      "item": "minecraft:iron_bars"
+    },
+    {
+      "item": "minecraftprogressrevamp:iron_nail_box"
+    },
+    {
+      "tag": "minecraftprogressrevamp:iron_plates"
+    },
+    {
+      "tag": "minecraftprogressrevamp:iron_plates"
+    },
+    {
+      "tag": "minecraftprogressrevamp:copper_or_better_hammers"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:blast_furnace"
+  }
+}

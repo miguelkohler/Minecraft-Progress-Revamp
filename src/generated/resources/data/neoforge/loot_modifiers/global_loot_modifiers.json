@@ -1,6 +1,7 @@
 {
   "entries": [
     "minecraftprogressrevamp:hide_from_cow",
+    "minecraftprogressrevamp:remove_leather_from_cow",
     "minecraftprogressrevamp:hide_from_horse",
     "minecraftprogressrevamp:hide_from_sheep",
     "minecraftprogressrevamp:hide_from_pig"

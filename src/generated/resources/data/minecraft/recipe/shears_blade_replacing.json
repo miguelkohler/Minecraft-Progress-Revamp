@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:shears"
+    },
+    "X": {
+      "item": "minecraftprogressrevamp:iron_small_blade"
+    }
+  },
+  "pattern": [
+    "X  ",
+    "#X ",
+    "   "
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:shears"
+  }
+}

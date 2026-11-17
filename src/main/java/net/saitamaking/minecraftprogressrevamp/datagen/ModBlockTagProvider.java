@@ -37,6 +37,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                         ModBlocks.FIRECLAY.get(),
                         ModBlocks.MELTEDGOLDBLOCK.get(),
                         ModBlocks.MELTEDIRONBLOCK.get(),
+                        ModBlocks.SALTBLOCK.get(),
                         ModBlocks.MELTEDCOPPERBLOCK.get()
                 );
         tag(BlockTags.MINEABLE_WITH_AXE)

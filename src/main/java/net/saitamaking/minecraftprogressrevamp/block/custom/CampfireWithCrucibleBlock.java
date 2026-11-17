@@ -1,6 +1,7 @@
 package net.saitamaking.minecraftprogressrevamp.block.custom;
 
 import com.mojang.serialization.MapCodec;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
@@ -31,6 +32,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.saitamaking.minecraftprogressrevamp.block.entity.CampfireWithCrucibleEntity;
 import net.saitamaking.minecraftprogressrevamp.block.entity.ModBlockEntities;
+import net.saitamaking.minecraftprogressrevamp.item.ModItems;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.EnumMap;
@@ -139,16 +141,21 @@ public class CampfireWithCrucibleBlock extends BaseEntityBlock {
     protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,
                                               Player player, InteractionHand hand, BlockHitResult hitResult) {
 
-        if(level.getBlockEntity(pos) instanceof CampfireWithCrucibleEntity campfireWithCrucibleEntity){
-            if(!level.isClientSide()) {
-                ((ServerPlayer) player).openMenu(new SimpleMenuProvider(campfireWithCrucibleEntity, Component.literal("Crucible Above A Campfire")), pos);
-                return ItemInteractionResult.SUCCESS;
+        if(Screen.hasShiftDown()){
+            level.setBlock(pos, Blocks.CAMPFIRE.defaultBlockState(), 3);
+            Block.popResource(level, pos, new ItemStack(ModItems.REFINEDCRUCIBLE.get()));
+            return ItemInteractionResult.SUCCESS;
+        } else{
+            if(level.getBlockEntity(pos) instanceof CampfireWithCrucibleEntity campfireWithCrucibleEntity){
+                if(!level.isClientSide()) {
+                    ((ServerPlayer) player).openMenu(new SimpleMenuProvider(campfireWithCrucibleEntity, Component.literal("Crucible Above A Campfire")), pos);
+                    return ItemInteractionResult.SUCCESS;
+                }
+            } else {
+                throw new IllegalStateException("Container provider is missing!");
             }
-        } else {
-            throw new IllegalStateException("Container provider is missing!");
+            return ItemInteractionResult.SUCCESS;
         }
-
-        return ItemInteractionResult.SUCCESS;
     }
 
     @Override

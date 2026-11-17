@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraftprogressrevamp:small_oak_box"
+    },
+    "T": {
+      "item": "minecraftprogressrevamp:iron_nail"
+    }
+  },
+  "pattern": [
+    " T ",
+    "T#T",
+    " T "
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:iron_nail_box"
+  }
+}

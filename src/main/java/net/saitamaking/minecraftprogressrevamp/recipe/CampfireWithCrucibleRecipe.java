@@ -9,6 +9,7 @@ import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 
@@ -81,5 +82,20 @@ public record CampfireWithCrucibleRecipe(Ingredient inputItem, ItemStack output,
         public StreamCodec<RegistryFriendlyByteBuf, CampfireWithCrucibleRecipe> streamCodec() {
             return STREAM_CODEC;
         }
+    }
+
+    @Override
+    public NonNullList<ItemStack> getRemainingItems(CampfireWithCrucibleRecipeInput input) {
+        NonNullList<ItemStack> remainders = NonNullList.withSize(input.size(), ItemStack.EMPTY);
+        ItemStack stack = input.getItem(0);
+
+        ItemStack remainder = stack.getCraftingRemainingItem();
+        
+        if (remainder.isEmpty() && stack.is(Items.POTION)) {
+            remainder = new ItemStack(Items.GLASS_BOTTLE);
+        }
+
+        remainders.set(0, remainder);
+        return remainders;
     }
 }

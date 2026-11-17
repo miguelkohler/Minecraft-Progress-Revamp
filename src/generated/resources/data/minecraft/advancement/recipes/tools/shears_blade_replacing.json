@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_iron_small_blade": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:iron_small_blade"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_shears": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:shears"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:shears_blade_replacing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_shears",
+      "has_iron_small_blade"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:shears_blade_replacing"
+    ]
+  }
+}

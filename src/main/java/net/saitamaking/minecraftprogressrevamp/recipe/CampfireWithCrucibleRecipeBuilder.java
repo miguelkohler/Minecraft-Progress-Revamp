@@ -36,12 +36,12 @@ public class CampfireWithCrucibleRecipeBuilder implements RecipeBuilder {
         return new CampfireWithCrucibleRecipeBuilder(input, new ItemStack(result, count), cookingTime);
     }
 
-    public static CampfireWithCrucibleRecipeBuilder crucible(ItemLike input, ItemLike result, int cookingTime) {
-        return crucible(Ingredient.of(input), result, 1, cookingTime);
+    public static CampfireWithCrucibleRecipeBuilder crucible(ItemLike input, ItemLike result, int count, int cookingTime) {
+        return new CampfireWithCrucibleRecipeBuilder(Ingredient.of(input), new ItemStack(result, count), cookingTime);
     }
 
-    public static CampfireWithCrucibleRecipeBuilder crucible(TagKey<Item> input, ItemLike result, int cookingTime) {
-        return crucible(Ingredient.of(input), result, 1, cookingTime);
+    public static CampfireWithCrucibleRecipeBuilder crucible(TagKey<Item> input, ItemLike result, int count, int cookingTime) {
+        return new CampfireWithCrucibleRecipeBuilder(Ingredient.of(input), new ItemStack(result, count), cookingTime);
     }
 
     @Override

@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_iron_hammer": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:iron_hammer"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_iron_hammer_head": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:iron_hammer_head"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:iron_hammer_head_replacing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_iron_hammer",
+      "has_iron_hammer_head"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:iron_hammer_head_replacing"
+    ]
+  }
+}

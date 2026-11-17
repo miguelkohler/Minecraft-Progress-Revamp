@@ -1,0 +1,20 @@
+{
+  "type": "minecraftprogressrevamp:cobblestone_anvil",
+  "key": {
+    "H": {
+      "item": "minecraftprogressrevamp:melted_iron_blob"
+    },
+    "T": {
+      "tag": "minecraftprogressrevamp:copper_or_better_hammers"
+    }
+  },
+  "pattern": [
+    " HHT",
+    "  HH",
+    "   H"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:iron_pickaxe_head_hot"
+  }
+}

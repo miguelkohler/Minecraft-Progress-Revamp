@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_iron_crossguard": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:iron_cross_guard"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_iron_sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:iron_sword"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_iron_sword_head": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:iron_sword_head"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:iron_sword_head_replacing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_iron_sword",
+      "has_iron_sword_head",
+      "has_iron_crossguard"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:iron_sword_head_replacing"
+    ]
+  }
+}

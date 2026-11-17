@@ -1,11 +1,9 @@
 package net.saitamaking.minecraftprogressrevamp.block;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.CraftingTableBlock;
-import net.minecraft.world.level.block.RotatedPillarBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -39,6 +37,14 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> FIRECLAY = registerBlock("fireclay",
             () -> new Block(BlockBehaviour.Properties.of().strength(0.6F).sound(SoundType.GRAVEL)));
+
+    public static final DeferredBlock<Block> SALTBLOCK = registerBlock("salt_block",
+            () -> new FallingBlock(BlockBehaviour.Properties.of().strength(0.5F).sound(SoundType.SAND)) {
+                @Override
+                protected MapCodec<? extends FallingBlock> codec() {
+                    return null;
+                }
+            });
 
     public static final DeferredBlock<Block> PEBBLE = registerBlock("pebble",
             () -> new PebbleBlock(BlockBehaviour.Properties.of().strength(0.1F).sound(SoundType.STONE)));
@@ -77,7 +83,8 @@ public class ModBlocks {
             () -> new SmallBoxBlock(BlockBehaviour.Properties.of().strength(2.0F, 3.0F).noOcclusion().sound(SoundType.WOOD)));
 
     public static final DeferredBlock<Block> CAMPFIREWITHCRUCIBLE = registerBlock("campfire_with_crucible",
-            () -> new CampfireWithCrucibleBlock(BlockBehaviour.Properties.of().strength(2.0F).sound(SoundType.WOOD).lightLevel(state -> 15).noOcclusion().ignitedByLava()));
+            () -> new CampfireWithCrucibleBlock(BlockBehaviour.Properties.of().strength(2.0F).sound(SoundType.WOOD).lightLevel(state -> 15).noOcclusion()
+                    .ignitedByLava()));
 
     public static final DeferredBlock<Block> RUDIMENTARYALLOYFURNACE = registerBlock("rudimentary_alloy_furnace",
             () -> new RudimentaryAlloySmelterBlock(BlockBehaviour.Properties.of().strength(3.0F, 2.0F).sound(SoundType.DEEPSLATE)));

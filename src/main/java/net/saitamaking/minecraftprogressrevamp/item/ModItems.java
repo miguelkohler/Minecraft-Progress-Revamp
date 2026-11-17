@@ -3,26 +3,32 @@ package net.saitamaking.minecraftprogressrevamp.item;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.saitamaking.minecraftprogressrevamp.ProgressRevamp;
+import net.saitamaking.minecraftprogressrevamp.block.ModBlocks;
 import net.saitamaking.minecraftprogressrevamp.item.custom.*;
+
+import java.util.function.Supplier;
 
 import static net.minecraft.world.item.Items.GOLD_NUGGET;
 import static net.minecraft.world.item.Items.IRON_NUGGET;
+import static net.saitamaking.minecraftprogressrevamp.block.ModBlocks.BLOCKS;
 
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ProgressRevamp.MODID);
 
     //base attributes to remember when adding tools: base attack damage= 0.5, base attack speed = 4
 
-    public static final DeferredItem<Item> LOOSEPEBBLE = ITEMS.register("loose_pebble",
-            () -> new Item(new Item.Properties()));
-
     public static final DeferredItem<SharpRockItem> SHARPPEBBLE = ITEMS.register("sharp_pebble",
             () -> new SharpRockItem(ModToolTiers.PRIMAL, new Item.Properties().attributes(SharpRockItem.createAttributes(ModToolTiers.PRIMAL, 2, -2.0F))));
+
+    public static final DeferredItem<Item> LOOSEPEBBLE = ITEMS.register("loose_pebble",
+            () -> new TransformItem("grindstone",ModItems.SHARPPEBBLE.get(),new Item.Properties()));
 
     public static final DeferredItem<PrimitiveAxeItem> PRIMITIVEAXE = ITEMS.register("primitive_axe",
             () -> new PrimitiveAxeItem(ModToolTiers.PRIMAL, new Item.Properties().attributes(PrimitiveAxeItem.createAttributes(ModToolTiers.PRIMAL, 3.0F, -2.0F))));
@@ -219,6 +225,32 @@ public class ModItems {
     public static final DeferredItem<Item> IRONNAIL = ITEMS.register("iron_nail",
             () -> new Item(new Item.Properties()));
 
+    public static final DeferredItem<Item> COPPERNAILBOX = ITEMS.register("copper_nail_box",
+            () -> new Item(new Item.Properties()) {
+                @Override
+                public boolean hasCraftingRemainingItem(ItemStack stack) {
+                    return true;
+                }
+
+                @Override
+                public ItemStack getCraftingRemainingItem(ItemStack stack) {
+                    return new ItemStack(ModBlocks.SMALLOAKBOX.asItem());
+                }
+            });
+
+    public static final DeferredItem<Item> IRONNAILBOX = ITEMS.register("iron_nail_box",
+            () -> new Item(new Item.Properties()) {
+                @Override
+                public boolean hasCraftingRemainingItem(ItemStack stack) {
+                    return true;
+                }
+
+                @Override
+                public ItemStack getCraftingRemainingItem(ItemStack stack) {
+                    return new ItemStack(ModBlocks.SMALLOAKBOX.asItem());
+                }
+            });
+
     public static final DeferredItem<Item> BUCKETHOT = ITEMS.register("bucket_hot",
             () -> new TransformItem("water_cauldron", Items.BUCKET, new Item.Properties().stacksTo(16)));
 
@@ -405,6 +437,90 @@ public class ModItems {
 
     public static final DeferredItem<Item> CRANIUMSMITHINGTEMPLATE = ITEMS.register("cranium_smithing_template",
             () -> SmithingTemplateItem.createArmorTrimTemplate(ResourceLocation.fromNamespaceAndPath(ProgressRevamp.MODID, "cranium")));
+
+    public static final DeferredItem<KnifeItem> IRONKNIFE = ITEMS.register("iron_knife",
+            () -> new KnifeItem(Tiers.IRON, new Item.Properties().attributes(KnifeItem.createAttributes(Tiers.IRON, 1.0F, -1.6F))));
+
+    public static final DeferredItem<HammerItem> IRONHAMMER = ITEMS.register("iron_hammer",
+            () -> new HammerItem(Tiers.IRON, new Item.Properties().attributes(HammerItem.createAttributes(Tiers.IRON, 10.0F, -3.6F))));
+
+    public static final DeferredItem<SawItem> IRONSAW = ITEMS.register("iron_saw",
+            () -> new SawItem(Tiers.IRON, new Item.Properties().attributes(SawItem.createAttributes(Tiers.IRON, -0.5F, 2.4F))));
+
+    public static final DeferredItem<ChiselItem> IRONCHISEL = ITEMS.register("iron_chisel",
+            () -> new ChiselItem(Tiers.IRON, new Item.Properties().attributes(SawItem.createAttributes(Tiers.IRON, -1.0F, -1.8F))));
+
+    public static final DeferredItem<Item> IRONAXEHEAD = ITEMS.register("iron_axe_head",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> IRONSHOVELHEAD = ITEMS.register("iron_shovel_head",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> IRONPICKAXEHEAD = ITEMS.register("iron_pickaxe_head",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> IRONHOEHEAD = ITEMS.register("iron_hoe_head",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> IRONCROSSGUARD = ITEMS.register("iron_cross_guard",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> IRONSWORDHEAD = ITEMS.register("iron_sword_head",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> IRONHAMMERHEAD = ITEMS.register("iron_hammer_head",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> IRONSMALLBLADE = ITEMS.register("iron_small_blade",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> IRONSAWBLADE = ITEMS.register("iron_saw_blade",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> IRONCHISELBLADE = ITEMS.register("iron_chisel_blade",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> IRONSWORDHEADDULL = ITEMS.register("iron_sword_head_dull",
+            () -> new TransformItem("grindstone",ModItems.IRONSWORDHEAD.get(),new Item.Properties()));
+
+    public static final DeferredItem<Item> IRONAXEHEADDULL = ITEMS.register("iron_axe_head_dull",
+            () -> new TransformItem("grindstone",ModItems.IRONAXEHEAD.get(),new Item.Properties()));
+
+    public static final DeferredItem<Item> IRONSMALLBLADEDULL = ITEMS.register("iron_small_blade_dull",
+            () -> new TransformItem("grindstone",ModItems.IRONSMALLBLADE.get(),new Item.Properties()));
+
+    public static final DeferredItem<Item> IRONCHISELBLADEDULL = ITEMS.register("iron_chisel_blade_dull",
+            () -> new TransformItem("grindstone",ModItems.IRONCHISELBLADE.get(),new Item.Properties()));
+
+    public static final DeferredItem<Item> IRONAXEHEADHOT = ITEMS.register("iron_axe_head_hot",
+            () -> new TransformItem("water_cauldron", ModItems.IRONAXEHEADDULL.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> IRONSHOVELHEADHOT = ITEMS.register("iron_shovel_head_hot",
+            () -> new TransformItem("water_cauldron", ModItems.IRONSHOVELHEAD.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> IRONPICKAXEHEADHOT = ITEMS.register("iron_pickaxe_head_hot",
+            () -> new TransformItem("water_cauldron", ModItems.IRONPICKAXEHEAD.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> IRONHOEHEADHOT = ITEMS.register("iron_hoe_head_hot",
+            () -> new TransformItem("water_cauldron", ModItems.IRONHOEHEAD.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> IRONCROSSGUARDHOT = ITEMS.register("iron_cross_guard_hot",
+            () -> new TransformItem("water_cauldron", ModItems.IRONCROSSGUARD.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> IRONSWORDHEADHOT = ITEMS.register("iron_sword_head_hot",
+            () -> new TransformItem("water_cauldron", ModItems.IRONSWORDHEADDULL.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> IRONHAMMERHEADHOT = ITEMS.register("iron_hammer_head_hot",
+            () -> new TransformItem("water_cauldron", ModItems.IRONHAMMERHEAD.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> IRONSAWBLADEHOT = ITEMS.register("iron_saw_blade_hot",
+            () -> new TransformItem("water_cauldron", ModItems.IRONSAWBLADE.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> IRONSMALLBLADEHOT = ITEMS.register("iron_small_blade_hot",
+            () -> new TransformItem("water_cauldron", ModItems.IRONSMALLBLADEDULL.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> IRONCHISELBLADEHOT = ITEMS.register("iron_chisel_blade_hot",
+            () -> new TransformItem("water_cauldron", ModItems.IRONCHISELBLADEDULL.get(), new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:iron_sword"
+    },
+    "/": {
+      "item": "minecraftprogressrevamp:iron_sword_head"
+    },
+    "X": {
+      "item": "minecraftprogressrevamp:iron_cross_guard"
+    }
+  },
+  "pattern": [
+    "  /",
+    " X ",
+    "#  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:iron_sword"
+  }
+}

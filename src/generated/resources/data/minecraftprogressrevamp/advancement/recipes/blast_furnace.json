@@ -1,0 +1,76 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_copper_or_better_hammers": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraftprogressrevamp:copper_or_better_hammers"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_furnace": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:furnace"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_iron_bars": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:iron_bars"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_iron_nail_box": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:iron_nail_box"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_iron_plates": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraftprogressrevamp:iron_plates"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraftprogressrevamp:blast_furnace"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_iron_plates",
+      "has_furnace",
+      "has_iron_nail_box",
+      "has_iron_bars",
+      "has_copper_or_better_hammers"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraftprogressrevamp:blast_furnace"
+    ]
+  }
+}

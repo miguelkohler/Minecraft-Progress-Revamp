@@ -10,5 +10,7 @@
       "condition": "minecraft:random_chance"
     }
   ],
-  "item": "minecraftprogressrevamp:animal_hide"
+  "item": "minecraftprogressrevamp:animal_hide",
+  "maxLoot": 2,
+  "minLoot": 1
 }

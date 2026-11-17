@@ -13,4 +13,6 @@ public record CampfireWithCrucibleRecipeInput(ItemStack input) implements Recipe
     public int size() {
         return 1;
     }
+
+    
 }

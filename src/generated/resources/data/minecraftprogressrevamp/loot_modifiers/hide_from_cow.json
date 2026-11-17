@@ -6,5 +6,7 @@
       "loot_table_id": "minecraft:entities/cow"
     }
   ],
-  "item": "minecraftprogressrevamp:animal_hide"
+  "item": "minecraftprogressrevamp:animal_hide",
+  "maxLoot": 2,
+  "minLoot": 1
 }

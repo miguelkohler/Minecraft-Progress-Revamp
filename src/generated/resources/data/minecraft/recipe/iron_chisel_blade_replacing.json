@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraftprogressrevamp:iron_chisel"
+    },
+    "X": {
+      "item": "minecraftprogressrevamp:iron_chisel_blade"
+    }
+  },
+  "pattern": [
+    " X ",
+    "#  ",
+    "   "
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraftprogressrevamp:iron_chisel"
+  }
+}

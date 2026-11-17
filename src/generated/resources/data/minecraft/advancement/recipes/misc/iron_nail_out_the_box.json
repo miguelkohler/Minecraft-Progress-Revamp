@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_iron_nail_box": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraftprogressrevamp:iron_nail_box"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:iron_nail_out_the_box"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_iron_nail_box"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:iron_nail_out_the_box"
+    ]
+  }
+}
